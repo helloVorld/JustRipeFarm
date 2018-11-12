@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2041
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustRipeFarm", "JustRipe Farm 1.0\JustRipeFarm.csproj", "{09AA323A-36F5-4D77-843A-C29F1DAF0E68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustRipeFarmUnitTest", "JustRipeFarmUnitTest\JustRipeFarmUnitTest.csproj", "{07C2A3AB-56D1-4C91-974B-E8CBB8AAA9E5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{09AA323A-36F5-4D77-843A-C29F1DAF0E68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09AA323A-36F5-4D77-843A-C29F1DAF0E68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09AA323A-36F5-4D77-843A-C29F1DAF0E68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09AA323A-36F5-4D77-843A-C29F1DAF0E68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07C2A3AB-56D1-4C91-974B-E8CBB8AAA9E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07C2A3AB-56D1-4C91-974B-E8CBB8AAA9E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07C2A3AB-56D1-4C91-974B-E8CBB8AAA9E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07C2A3AB-56D1-4C91-974B-E8CBB8AAA9E5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A062BFBF-47DA-4ADD-8904-9D13665052B7}
+	EndGlobalSection
+EndGlobal
