@@ -12,8 +12,47 @@ namespace JustRipeFarm
         private int quantity;
         private string growthStage;
 
-        public string Name { get => name; set => name = value; }
-        public int Quantity { get => quantity; set => quantity = value; }
-        public string GrowthStage { get => growthStage; set => growthStage = value; }
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+
+            set
+            {
+                name = value;
+            }
+        }
+
+        public int Quantity
+        {
+            get
+            {
+                return quantity;
+            }
+
+            set
+            {
+                quantity = value;
+            }
+        }
+
+        public string GrowthStage
+        {
+            get
+            {
+                return growthStage;
+            }
+
+            set
+            {
+                growthStage = value;
+            }
+        }
+
+        //public string Name { get => name; set => name = value; }
+        //public int Quantity { get => quantity; set => quantity = value; }
+        //public string GrowthStage { get => growthStage; set => growthStage = value; }
     }
 }
