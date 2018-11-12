@@ -17,7 +17,7 @@ namespace JustRipeFarm
         public int Type { get => type; set => type = value; }
         public int Quantity { get => quantity; set => quantity = value; }
         public int SupplierId { get => supplierId; set => supplierId = value; }
-        public DateTime PurchaseDate { get => purchaseDate; set => purchaseDate = value; }
+        public DateTime PurchaseDate { get => purchaseDate; set => purchaseDate = value; } //No
         public DateTime ExpiryDate { get => expiryDate; set => expiryDate = value; }
     }
 }
