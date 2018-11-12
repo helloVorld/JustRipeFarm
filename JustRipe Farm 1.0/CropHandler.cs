@@ -16,7 +16,8 @@ namespace JustRipeFarm
 
             MySqlCommand sqlComm = new MySqlCommand(sql, conn);
             return sqlComm.ExecuteNonQuery();
-            //I CHANGED SOMETHING
+            
+            //I deleted something
         }
     }
 }

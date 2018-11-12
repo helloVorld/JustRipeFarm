@@ -29,5 +29,6 @@ namespace JustRipeFarm
             if (Application.OpenForms.Count == 0) Application.ExitThread();
             else Application.OpenForms[0].FormClosed += FormClosed;
         }
+        // i changed here too
     }
 }
