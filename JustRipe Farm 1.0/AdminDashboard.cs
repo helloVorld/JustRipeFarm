@@ -8,21 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace JustRipeFarm
 {
-    public partial class Form1 : Form
+    public partial class AdminDashboard : Form
     {
-        
-        public Form1()
+        public CommonFunc justRipeFarm = new CommonFunc();
+
+        public AdminDashboard()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void logoutBtn_Click(object sender, EventArgs e)
         {
-            Mainscreen mainscreen = new Mainscreen();
-            mainscreen.Show();
-            this.Close();
+            // back to login screen
+            justRipeFarm.Logout(this);
         }
     }
 }
