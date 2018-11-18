@@ -28,21 +28,6 @@ namespace JustRipeFarm
             panel6.Hide();
         }
 
-        private void button8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button13_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Mainscreen_Load(object sender, EventArgs e)
         {
             button6.Text = "Shop /" + Environment.NewLine + "Wholesale";
@@ -126,7 +111,7 @@ namespace JustRipeFarm
 
         private void button19_Click(object sender, EventArgs e)
         {
-            DbConnecter dbConn = new DbConnecter();
+            DbConnector dbConn = new DbConnector();
             dbConn.connect();
 
             Labourer labr = new Labourer();
@@ -141,7 +126,7 @@ namespace JustRipeFarm
 
         private void button20_Click(object sender, EventArgs e)
         {
-            DbConnecter dbConn = new DbConnecter();
+            DbConnector dbConn = new DbConnector();
             dbConn.connect();
 
             Labourer labr = new Labourer();
@@ -163,7 +148,7 @@ namespace JustRipeFarm
 
         private void button22_Click(object sender, EventArgs e)
         {
-            DbConnecter dbConn = new DbConnecter();
+            DbConnector dbConn = new DbConnector();
             dbConn.connect();
             dataGridView1.DataSource = dbConn.Load().Tables[0];
             //MySqlConnection connection = new MySqlConnection("server=localhost;user=dbcli;database=demojustripedb;port=3306;password=dbcli123");
@@ -187,10 +172,21 @@ namespace JustRipeFarm
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void showAllLabourer()
         {
-           
-            
+            // version tan for reference
+            // 1. use DbConnector class -> get mysql connection
+            // 2. use handler class -> use method get something from query
+
+            DbConnector dbConn = new DbConnector();
+            dbConn.connect();
+
+            LabourerHandler labHnd = new LabourerHandler();
+
+            dataGridView1.DataSource = labHnd.getAllLabourer(dbConn.getConn()).Tables["labourer"];
+
         }
+
+
     }
 }

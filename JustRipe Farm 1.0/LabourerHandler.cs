@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace JustRipeFarm
 {
@@ -16,6 +17,20 @@ namespace JustRipeFarm
             MySqlCommand sqlComm = new MySqlCommand(sql, conn);
 
             return sqlComm.ExecuteNonQuery();
+        }
+
+        public DataSet getAllLabourer(MySqlConnection conn)
+        {
+
+            string selectQuery = "SELECT * from demojustripedb.labourer; ";
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, conn);
+
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+            //adapter.Fill(ds,"labourer");
+
+            return ds;
         }
     }
 }

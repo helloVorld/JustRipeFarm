@@ -286,7 +286,7 @@
             this.button13.Size = new System.Drawing.Size(217, 70);
             this.button13.TabIndex = 15;
             this.button13.UseVisualStyleBackColor = false;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
+            
             // 
             // button12
             // 
@@ -332,7 +332,7 @@
             this.button8.Size = new System.Drawing.Size(237, 84);
             this.button8.TabIndex = 10;
             this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            
             // 
             // button7
             // 
@@ -433,7 +433,7 @@
             this.label3.Size = new System.Drawing.Size(75, 17);
             this.label3.TabIndex = 0;
             this.label3.Text = "Job Type: ";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+           
             // 
             // panel3
             // 
@@ -696,7 +696,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(564, 262);
             this.dataGridView1.TabIndex = 13;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            
             // 
             // button22
             // 

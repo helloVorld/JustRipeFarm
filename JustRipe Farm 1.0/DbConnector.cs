@@ -9,7 +9,7 @@ using System.Data;
 namespace JustRipeFarm
 {
     
-    public class DbConnecter
+    public class DbConnector
     {
         MySqlConnection conn;
 
