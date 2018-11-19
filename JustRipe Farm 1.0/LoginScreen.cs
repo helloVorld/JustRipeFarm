@@ -16,9 +16,25 @@ namespace JustRipeFarm
         public LoginScreen()
         {
             InitializeComponent();
+            checkMySql();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void checkMySql()
+        {
+            DbConnector dbConn = new DbConnector();
+            String status = dbConn.connect();
+            Console.WriteLine("JRP Check => "+status);
+            if (status.Equals("Done"))
+            {
+                dbStatusLbl.Text = "MySql online";
+            }
+            else
+            {
+                dbStatusLbl.Text = "MySql offline";
+            }
+        }
+
+        private void loginBtn_Click(object sender, EventArgs e)
         {
             Mainscreen mainscreen = new Mainscreen();
             mainscreen.Show();
@@ -36,6 +52,11 @@ namespace JustRipeFarm
         {
             AdminDashboard adminDash = new AdminDashboard();
             adminDash.Show();
+            this.Close();
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }

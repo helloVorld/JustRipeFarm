@@ -27,6 +27,7 @@ namespace JustRipeFarm
             catch(Exception ex)
             {
                 return ex.ToString();
+                //return ex.Message;
             }
 
             return "Done";

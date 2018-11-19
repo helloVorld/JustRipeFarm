@@ -13,6 +13,8 @@ namespace JustRipeFarm
 {
     public partial class Mainscreen : Form
     {
+        public CommonFunc justRipeFarm = new CommonFunc();
+
         public Mainscreen()
         {
             InitializeComponent();
@@ -187,6 +189,10 @@ namespace JustRipeFarm
 
         }
 
-
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            // back to login screen
+            justRipeFarm.Logout(this);
+        }
     }
 }
