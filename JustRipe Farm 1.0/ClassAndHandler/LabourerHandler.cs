@@ -19,16 +19,16 @@ namespace JustRipeFarm
             return sqlComm.ExecuteNonQuery();
         }
 
-        public DataSet getAllLabourer(MySqlConnection conn)
+        public DataSet getAllLabourer()
         {
 
             string selectQuery = "SELECT * from demojustripedb.labourer; ";
 
-            MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, conn);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, DbConnector.Instance.getConn());
 
             DataSet ds = new DataSet();
-            adapter.Fill(ds);
-            //adapter.Fill(ds,"labourer");
+            adapter.Fill(ds);               // method 1 
+            //adapter.Fill(ds,"labourer");  // method 2
 
             return ds;
         }

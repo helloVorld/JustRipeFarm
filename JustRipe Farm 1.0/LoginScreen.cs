@@ -21,16 +21,14 @@ namespace JustRipeFarm
 
         public void checkMySql()
         {
-            DbConnector dbConn = new DbConnector();
-            String status = dbConn.connect();
-            Console.WriteLine("JRP Check => "+status);
-            if (status.Equals("Done"))
+            
+            if (DbConnector.Instance.getConn().Ping())
             {
-                dbStatusLbl.Text = "MySql online";
+                dbStatusLbl.Text = "MySql Online";
             }
             else
             {
-                dbStatusLbl.Text = "MySql offline";
+                dbStatusLbl.Text = "MySql Offline";
             }
         }
 

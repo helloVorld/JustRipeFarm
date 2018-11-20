@@ -13,8 +13,7 @@ namespace JustRipeFarm
 {
     public partial class AdminDashboard : Form
     {
-        public CommonFunc justRipeFarm = new CommonFunc();
-
+        
         public AdminDashboard()
         {
             InitializeComponent();
@@ -23,7 +22,7 @@ namespace JustRipeFarm
         private void logoutBtn_Click(object sender, EventArgs e)
         {
             // back to login screen
-            justRipeFarm.Logout(this);
+            JRP.Fn.Logout(this);
         }
     }
 }

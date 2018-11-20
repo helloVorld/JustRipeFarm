@@ -17,10 +17,12 @@ namespace JustRipeFarm
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //.Run(new Form1());
+            DbConnector.Instance.connect();
             var main = new LoginScreen();
             main.FormClosed += new FormClosedEventHandler(FormClosed);
             main.Show();
             Application.Run();
+            
         }
 
         static void FormClosed(object sender, FormClosedEventArgs e)
@@ -29,6 +31,6 @@ namespace JustRipeFarm
             if (Application.OpenForms.Count == 0) Application.ExitThread();
             else Application.OpenForms[0].FormClosed += FormClosed;
         }
-        // i changed here too
+        
     }
 }

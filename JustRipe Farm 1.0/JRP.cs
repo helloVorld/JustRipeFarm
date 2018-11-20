@@ -7,9 +7,23 @@ using System.Windows.Forms;
 
 namespace JustRipeFarm
 {
-    public class CommonFunc
+    public sealed class JRP
     {
         // for general function 
+        private static JRP fn = null;
+        public static JRP Fn
+        {
+            get
+            {
+                if (fn == null)
+                {
+                    fn = new JRP();
+                    
+                }
+                return fn;
+            }
+
+        }
 
         public void Logout(Form form)
         {

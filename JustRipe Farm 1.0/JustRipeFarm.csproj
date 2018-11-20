@@ -55,7 +55,7 @@
     </Compile>
     <Compile Include="ClassAndHandler\Crop.cs" />
     <Compile Include="ClassAndHandler\CropHandler.cs" />
-    <Compile Include="CommonFunc.cs" />
+    <Compile Include="JRP.cs" />
     <Compile Include="DbConnector.cs" />
     <Compile Include="LoginScreen.cs">
       <SubType>Form</SubType>

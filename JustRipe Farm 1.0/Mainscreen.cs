@@ -13,8 +13,6 @@ namespace JustRipeFarm
 {
     public partial class Mainscreen : Form
     {
-        public CommonFunc justRipeFarm = new CommonFunc();
-
         public Mainscreen()
         {
             InitializeComponent();
@@ -113,31 +111,33 @@ namespace JustRipeFarm
 
         private void button19_Click(object sender, EventArgs e)
         {
-            DbConnector dbConn = new DbConnector();
-            dbConn.connect();
-
+            //DbConnector dbConn = new DbConnector();
+            //dbConn.connect();
+            
             Labourer labr = new Labourer();
             labr.Name = "Adam";
             labr.Age = 30;
             labr.Gender = "male";
 
             LabourerHandler labHnd = new LabourerHandler();
-            int recordCnt = labHnd.addNewLabourer(dbConn.getConn(), labr);
+            //int recordCnt = labHnd.addNewLabourer(dbConn.getConn(), labr);
+            int recordCnt = labHnd.addNewLabourer(DbConnector.Instance.getConn(), labr);
             MessageBox.Show(recordCnt + " record has been inserted !! ");
         }
 
         private void button20_Click(object sender, EventArgs e)
         {
-            DbConnector dbConn = new DbConnector();
-            dbConn.connect();
-
+            //DbConnector dbConn = new DbConnector();
+            //dbConn.connect();
+            
             Labourer labr = new Labourer();
             labr.Name = textBox2.Text;
             labr.Age = Convert.ToInt32(numericUpDown1.Value);
             labr.Gender = comboBox4.Text;
 
             LabourerHandler labHnd = new LabourerHandler();
-            int recordCnt = labHnd.addNewLabourer(dbConn.getConn(), labr);
+            //int recordCnt = labHnd.addNewLabourer(dbConn.getConn(), labr);
+            int recordCnt = labHnd.addNewLabourer(DbConnector.Instance.getConn(), labr);
             MessageBox.Show(recordCnt + " record has been inserted !! ");
         }
 
@@ -150,9 +150,10 @@ namespace JustRipeFarm
 
         private void button22_Click(object sender, EventArgs e)
         {
-            DbConnector dbConn = new DbConnector();
-            dbConn.connect();
-            dataGridView1.DataSource = dbConn.Load().Tables[0];
+            //DbConnector dbConn = new DbConnector();
+            //dbConn.connect();
+            //dataGridView1.DataSource = dbConn.Load().Tables[0];
+
             //MySqlConnection connection = new MySqlConnection("server=localhost;user=dbcli;database=demojustripedb;port=3306;password=dbcli123");
             //MySqlConnection connection = dbConn.getConn();
             //MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM demojustripedb.labourer", connection);
@@ -172,6 +173,7 @@ namespace JustRipeFarm
 
             //}
 
+            showAllLabourer();
         }
 
         public void showAllLabourer()
@@ -180,19 +182,22 @@ namespace JustRipeFarm
             // 1. use DbConnector class -> get mysql connection
             // 2. use handler class -> use method get something from query
 
-            DbConnector dbConn = new DbConnector();
-            dbConn.connect();
+            //DbConnector dbConn = new DbConnector();
+            //dbConn.connect();
 
             LabourerHandler labHnd = new LabourerHandler();
 
-            dataGridView1.DataSource = labHnd.getAllLabourer(dbConn.getConn()).Tables["labourer"];
+            // method 1
+            dataGridView1.DataSource = labHnd.getAllLabourer().Tables[0];       
+            // method 2
+            //dataGridView1.DataSource = labHnd.getAllLabourer().Tables["labourer"];
 
         }
 
         private void logoutBtn_Click(object sender, EventArgs e)
         {
             // back to login screen
-            justRipeFarm.Logout(this);
+            JRP.Fn.Logout(this);
         }
     }
 }

@@ -9,10 +9,32 @@ using System.Data;
 namespace JustRipeFarm
 {
     
-    public class DbConnector
+    public sealed class DbConnector
     {
-        MySqlConnection conn;
+        private static DbConnector instance = null;
+        private static MySqlConnection conn;
 
+        public static DbConnector Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new DbConnector();
+                    Console.WriteLine("JRF: DbConnector => singleton created");
+
+                }
+                return instance;
+            }
+            
+        }
+
+        private DbConnector()
+        {
+            
+        }
+
+      
         public string connect()
         {
             string connStr = "server=localhost;user=dbcli;database=demojustripedb;port=3306;password=dbcli123";
@@ -21,6 +43,7 @@ namespace JustRipeFarm
             try
             {
                 conn.Open();
+                Console.WriteLine("JRF: DbConnector => Connection to MySql opened.");
                 //Perform database operations
             }
 
@@ -48,6 +71,25 @@ namespace JustRipeFarm
         public MySqlConnection getConn()
         {
             return conn;
+        }
+
+        public List<string> checkMySqlTable()
+        {
+            List<string> Tablenames = new List<string>();
+
+            
+            string query = "show tables from demojustripedb";
+            MySqlCommand command = new MySqlCommand(query, conn);
+            MySqlDataReader reader = command.ExecuteReader();
+                
+            while (reader.Read())
+            {
+                Tablenames.Add(reader.GetString(0));
+            }
+
+            reader.Close();
+                
+            return Tablenames;
         }
     }
 
