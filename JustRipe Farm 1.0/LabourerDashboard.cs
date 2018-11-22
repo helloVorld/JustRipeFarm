@@ -21,7 +21,7 @@ namespace JustRipeFarm
         private void logoutBtn_Click(object sender, EventArgs e)
         {
             // back to login screen
-            JRP.Fn.Logout(this);
+            JRP.Logout(this);
         }
 
         
