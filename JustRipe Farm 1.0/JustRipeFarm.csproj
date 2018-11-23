@@ -55,6 +55,8 @@
     </Compile>
     <Compile Include="ClassAndHandler\Crop.cs" />
     <Compile Include="ClassAndHandler\CropHandler.cs" />
+    <Compile Include="ClassAndHandler\Fertiliser.cs" />
+    <Compile Include="ClassAndHandler\FertiliserHandler.cs" />
     <Compile Include="JRP.cs" />
     <Compile Include="DbConnector.cs" />
     <Compile Include="LoginScreen.cs">
