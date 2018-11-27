@@ -17,7 +17,7 @@ namespace JustRipeFarm
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //.Run(new Form1());
-            DbConnector.Instance.connect();
+            MysqlDb.Instance.connect();
             var main = new LoginScreen();
             main.FormClosed += new FormClosedEventHandler(FormClosed);
             main.Show();

@@ -9,7 +9,7 @@ using System.Data;
 namespace JustRipeFarm
 {
     
-    public sealed class DbConnector
+    private sealed class DbConnector
     {
         private static DbConnector instance = null;
         private static MySqlConnection conn;
@@ -93,7 +93,7 @@ namespace JustRipeFarm
         }
     }
 
-        
- 
+    
+   
 }
 

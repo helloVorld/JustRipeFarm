@@ -11,7 +11,7 @@ namespace JustRipeFarmUnitTest
         [TestMethod]
         public void TestAddNewCrop()
         {
-            DbConnecter dbC = new DbConnecter();
+            MysqlDb dbC = new MysqlDb();
             string resp = dbC.connect();
             Assert.AreEqual("Done", resp);
 

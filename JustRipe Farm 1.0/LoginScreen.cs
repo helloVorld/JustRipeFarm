@@ -22,7 +22,7 @@ namespace JustRipeFarm
         public void checkMySql()
         {
             
-            if (DbConnector.Instance.getConn().Ping())
+            if (MysqlDb.Instance.getConn().Ping())
             {
                 dbStatusLbl.Text = "MySql Online";
             }

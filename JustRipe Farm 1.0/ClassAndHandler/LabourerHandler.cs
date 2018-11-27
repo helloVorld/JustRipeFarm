@@ -24,7 +24,7 @@ namespace JustRipeFarm
 
             string selectQuery = "SELECT * from demojustripedb.labourer; ";
 
-            MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, DbConnector.Instance.getConn());
+            MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, MysqlDb.Instance.getConn());
 
             DataSet ds = new DataSet();
             adapter.Fill(ds);               // method 1 

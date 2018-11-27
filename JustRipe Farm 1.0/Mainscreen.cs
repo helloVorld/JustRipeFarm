@@ -121,7 +121,7 @@ namespace JustRipeFarm
 
             LabourerHandler labHnd = new LabourerHandler();
             //int recordCnt = labHnd.addNewLabourer(dbConn.getConn(), labr);
-            int recordCnt = labHnd.addNewLabourer(DbConnector.Instance.getConn(), labr);
+            int recordCnt = labHnd.addNewLabourer(MysqlDb.Instance.getConn(), labr);
             MessageBox.Show(recordCnt + " record has been inserted !! ");
         }
 
@@ -137,7 +137,7 @@ namespace JustRipeFarm
 
             LabourerHandler labHnd = new LabourerHandler();
             //int recordCnt = labHnd.addNewLabourer(dbConn.getConn(), labr);
-            int recordCnt = labHnd.addNewLabourer(DbConnector.Instance.getConn(), labr);
+            int recordCnt = labHnd.addNewLabourer(MysqlDb.Instance.getConn(), labr);
             MessageBox.Show(recordCnt + " record has been inserted !! ");
         }
 
