@@ -9,19 +9,19 @@ using System.Data;
 namespace JustRipeFarm
 {
 
-    public sealed class MysqlDb
+    public sealed class MysqlDbc
     {
-        private static MysqlDb instance = null;
+        private static MysqlDbc instance = null;
         private static MySqlConnection conn;
 
-        public static MysqlDb Instance
+        public static MysqlDbc Instance
         {
             get
             {
                 if (instance == null)
                 {
-                    instance = new MysqlDb();
-                    Console.WriteLine("JRF: MysqlDb => singleton created");
+                    instance = new MysqlDbc();
+                    Console.WriteLine("JRF: MysqlDbc => singleton created");
 
                 }
                 return instance;
@@ -29,7 +29,7 @@ namespace JustRipeFarm
 
         }
 
-        private MysqlDb()
+        private MysqlDbc()
         {
 
         }

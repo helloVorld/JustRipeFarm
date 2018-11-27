@@ -58,7 +58,7 @@
     <Compile Include="ClassAndHandler\Fertiliser.cs" />
     <Compile Include="ClassAndHandler\FertiliserHandler.cs" />
     <Compile Include="JRP.cs" />
-    <Compile Include="MysqlDb.cs" />
+    <Compile Include="MysqlDbc.cs" />
     <Compile Include="LoginScreen.cs">
       <SubType>Form</SubType>
     </Compile>
