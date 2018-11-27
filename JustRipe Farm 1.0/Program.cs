@@ -17,12 +17,15 @@ namespace JustRipeFarm
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //.Run(new Form1());
-            MysqlDbc.Instance.connect();
+            bool dbIsConnected = MysqlDbc.Instance.connect();
+            if (!dbIsConnected) {
+                MessageBox.Show("Database not connected");
+            }
             var main = new LoginScreen();
             main.FormClosed += new FormClosedEventHandler(FormClosed);
             main.Show();
             Application.Run();
-            //test merge
+            
         }
 
         static void FormClosed(object sender, FormClosedEventArgs e)

@@ -35,62 +35,84 @@ namespace JustRipeFarm
         }
 
 
-        public string connect()
+        public bool connect()
         {
-            string connStr = "server=localhost;user=dbcli;database=demojustripedb;port=3306;password=dbcli123";
+            string connStr = "server=" + JRF.dbServer
+                            + ";user=" + JRF.dbUser
+                            + ";database=" + JRF.dbName
+                            + ";port=3306;password=" + JRF.dbPassword;
+
             conn = new MySqlConnection(connStr);
 
             try
             {
                 conn.Open();
-                Console.WriteLine("JRF: DbConnector => Connection to MySql opened.");
+                Console.WriteLine("JRF: MysqlDbc => Connection to MySql established.");
                 //Perform database operations
             }
 
             catch (Exception ex)
             {
-                return ex.ToString();
+                Console.WriteLine("JRF: MysqlDbc => "+ex.ToString());
                 //return ex.Message;
+                return false;
             }
 
-            return "Done";
+            return true;
         }
 
-        public DataSet Load()
-        {
-            //string details = "SELECT * FROM demojustripedb.labourer";
-            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM demojustripedb.labourer", conn);
-
-            DataSet ds = new DataSet();
-            adapter.Fill(ds);
-            //adapter.Fill(ds,"labourer");
-
-            return ds;
-        }
 
         public MySqlConnection getConn()
         {
             return conn;
         }
 
-        public List<string> checkMySqlTable()
+        //public DataSet Load()
+        //{
+        //    //string details = "SELECT * FROM demojustripedb.labourer";
+        //    string table = JRF.dbName + ".labourer";
+        //    MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM "+table, conn);
+
+        //    DataSet ds = new DataSet();
+        //    adapter.Fill(ds);
+        //    //adapter.Fill(ds,"labourer");
+
+        //    return ds;
+        //}
+
+        public DataSet getAllLabourer()
         {
-            List<string> Tablenames = new List<string>();
+            string table = JRF.dbName + ".labourer";
+            string selectQuery = "SELECT * from "+table+"; ";
 
+            MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, conn);
 
-            string query = "show tables from demojustripedb";
-            MySqlCommand command = new MySqlCommand(query, conn);
-            MySqlDataReader reader = command.ExecuteReader();
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);               // method 1 
+            //adapter.Fill(ds,"labourer");  // method 2
 
-            while (reader.Read())
-            {
-                Tablenames.Add(reader.GetString(0));
-            }
-
-            reader.Close();
-
-            return Tablenames;
+            return ds;
         }
+
+
+        //public List<string> checkMySqlTable()
+        //{
+        //    List<string> Tablenames = new List<string>();
+
+
+        //    string query = "show tables from demojustripedb";
+        //    MySqlCommand command = new MySqlCommand(query, conn);
+        //    MySqlDataReader reader = command.ExecuteReader();
+
+        //    while (reader.Read())
+        //    {
+        //        Tablenames.Add(reader.GetString(0));
+        //    }
+
+        //    reader.Close();
+
+        //    return Tablenames;
+        //}
     }
 
 

@@ -19,18 +19,6 @@ namespace JustRipeFarm
             return sqlComm.ExecuteNonQuery();
         }
 
-        public DataSet getAllLabourer()
-        {
-
-            string selectQuery = "SELECT * from demojustripedb.labourer; ";
-
-            MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, MysqlDbc.Instance.getConn());
-
-            DataSet ds = new DataSet();
-            adapter.Fill(ds);               // method 1 
-            //adapter.Fill(ds,"labourer");  // method 2
-
-            return ds;
-        }
+        
     }
 }

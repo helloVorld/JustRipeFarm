@@ -188,7 +188,7 @@ namespace JustRipeFarm
             LabourerHandler labHnd = new LabourerHandler();
 
             // method 1
-            dataGridView1.DataSource = labHnd.getAllLabourer().Tables[0];       
+            dataGridView1.DataSource = MysqlDbc.Instance.getAllLabourer().Tables[0];       
             // method 2
             //dataGridView1.DataSource = labHnd.getAllLabourer().Tables["labourer"];
 
@@ -197,7 +197,7 @@ namespace JustRipeFarm
         private void logoutBtn_Click(object sender, EventArgs e)
         {
             // back to login screen
-            JRP.Logout(this);
+            JRF.Logout(this);
         }
     }
 }
