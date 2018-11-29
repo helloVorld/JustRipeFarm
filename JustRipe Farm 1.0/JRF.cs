@@ -38,6 +38,13 @@ namespace JustRipeFarm
             return menuList;
         }
 
+        public static void goToForm(string formName)
+        {
+
+
+
+        }
+
         
     }
 }
