@@ -57,6 +57,9 @@
             this.label10 = new System.Windows.Forms.Label();
             this.panelInventory = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
+            this.btnAddOrder = new System.Windows.Forms.Button();
+            this.btnAddCustomer = new System.Windows.Forms.Button();
+            this.btnAddEmployee = new System.Windows.Forms.Button();
             this.panelHome.SuspendLayout();
             this.panelOperation.SuspendLayout();
             this.panelFarm.SuspendLayout();
@@ -266,8 +269,9 @@
             // panelEmployee
             // 
             this.panelEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelEmployee.Controls.Add(this.btnAddEmployee);
             this.panelEmployee.Controls.Add(this.label8);
-            this.panelEmployee.Location = new System.Drawing.Point(865, 299);
+            this.panelEmployee.Location = new System.Drawing.Point(866, 293);
             this.panelEmployee.Name = "panelEmployee";
             this.panelEmployee.Size = new System.Drawing.Size(650, 400);
             this.panelEmployee.TabIndex = 20;
@@ -284,8 +288,9 @@
             // panelCustomer
             // 
             this.panelCustomer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelCustomer.Controls.Add(this.btnAddCustomer);
             this.panelCustomer.Controls.Add(this.label9);
-            this.panelCustomer.Location = new System.Drawing.Point(830, 393);
+            this.panelCustomer.Location = new System.Drawing.Point(829, 374);
             this.panelCustomer.Name = "panelCustomer";
             this.panelCustomer.Size = new System.Drawing.Size(650, 400);
             this.panelCustomer.TabIndex = 20;
@@ -302,8 +307,9 @@
             // panelOrder
             // 
             this.panelOrder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelOrder.Controls.Add(this.btnAddOrder);
             this.panelOrder.Controls.Add(this.label10);
-            this.panelOrder.Location = new System.Drawing.Point(811, 454);
+            this.panelOrder.Location = new System.Drawing.Point(792, 460);
             this.panelOrder.Name = "panelOrder";
             this.panelOrder.Size = new System.Drawing.Size(650, 400);
             this.panelOrder.TabIndex = 20;
@@ -335,17 +341,47 @@
             this.label11.TabIndex = 19;
             this.label11.Text = "panelInventory";
             // 
+            // btnAddOrder
+            // 
+            this.btnAddOrder.Location = new System.Drawing.Point(125, 27);
+            this.btnAddOrder.Name = "btnAddOrder";
+            this.btnAddOrder.Size = new System.Drawing.Size(168, 23);
+            this.btnAddOrder.TabIndex = 21;
+            this.btnAddOrder.Text = "New Order";
+            this.btnAddOrder.UseVisualStyleBackColor = true;
+            this.btnAddOrder.Click += new System.EventHandler(this.btnAddOrder_Click);
+            // 
+            // btnAddCustomer
+            // 
+            this.btnAddCustomer.Location = new System.Drawing.Point(100, 43);
+            this.btnAddCustomer.Name = "btnAddCustomer";
+            this.btnAddCustomer.Size = new System.Drawing.Size(168, 23);
+            this.btnAddCustomer.TabIndex = 21;
+            this.btnAddCustomer.Text = "New Customer";
+            this.btnAddCustomer.UseVisualStyleBackColor = true;
+            this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
+            // 
+            // btnAddEmployee
+            // 
+            this.btnAddEmployee.Location = new System.Drawing.Point(133, 16);
+            this.btnAddEmployee.Name = "btnAddEmployee";
+            this.btnAddEmployee.Size = new System.Drawing.Size(75, 23);
+            this.btnAddEmployee.TabIndex = 20;
+            this.btnAddEmployee.Text = "New Employee";
+            this.btnAddEmployee.UseVisualStyleBackColor = true;
+            this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
+            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.panelOrder);
+            this.Controls.Add(this.panelCustomer);
             this.Controls.Add(this.panelInventory);
             this.Controls.Add(this.panelProduct);
             this.Controls.Add(this.panelStoreroom);
             this.Controls.Add(this.panelFarm);
-            this.Controls.Add(this.panelOrder);
-            this.Controls.Add(this.panelCustomer);
             this.Controls.Add(this.panelEmployee);
             this.Controls.Add(this.panelHome);
             this.Controls.Add(this.panelOperation);
@@ -414,5 +450,8 @@
         private System.Windows.Forms.Button btnAddFarm;
         private System.Windows.Forms.Button btnAddStoreroom;
         private System.Windows.Forms.Button btnAddProduct;
+        private System.Windows.Forms.Button btnAddCustomer;
+        private System.Windows.Forms.Button btnAddOrder;
+        private System.Windows.Forms.Button btnAddEmployee;
     }
 }
