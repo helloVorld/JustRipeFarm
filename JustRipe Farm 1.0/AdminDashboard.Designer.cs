@@ -29,42 +29,51 @@
         private void InitializeComponent()
         {
             this.logoutBtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.jrfLabel = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.menuFLP = new System.Windows.Forms.FlowLayoutPanel();
             this.userLbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.formWidthLbl = new System.Windows.Forms.Label();
             this.formHeightLbl = new System.Windows.Forms.Label();
+            this.panelHome = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panelOperation = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panelFarm = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panelStoreroom = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panelProduct = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panelEmployee = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panelCustomer = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panelOrder = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panelInventory = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.panelHome.SuspendLayout();
+            this.panelOperation.SuspendLayout();
+            this.panelFarm.SuspendLayout();
+            this.panelStoreroom.SuspendLayout();
+            this.panelProduct.SuspendLayout();
+            this.panelEmployee.SuspendLayout();
+            this.panelCustomer.SuspendLayout();
+            this.panelOrder.SuspendLayout();
+            this.panelInventory.SuspendLayout();
             this.SuspendLayout();
             // 
             // logoutBtn
             // 
-            this.logoutBtn.Location = new System.Drawing.Point(713, 13);
+            this.logoutBtn.Location = new System.Drawing.Point(701, 11);
             this.logoutBtn.Name = "logoutBtn";
             this.logoutBtn.Size = new System.Drawing.Size(75, 23);
             this.logoutBtn.TabIndex = 0;
             this.logoutBtn.Text = "Logout";
             this.logoutBtn.UseVisualStyleBackColor = true;
             this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(182, 191);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Job";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // jrfLabel
             // 
@@ -76,81 +85,9 @@
             this.jrfLabel.TabIndex = 2;
             this.jrfLabel.Text = "Just Ripe Farm";
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(169, 77);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Employee";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(404, 216);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Order";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(592, 202);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Farm";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(304, 77);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "Customer";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(393, 77);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "Vehicle";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(519, 270);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 8;
-            this.button7.Text = "storage";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(592, 116);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 9;
-            this.button8.Text = "Product";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(474, 77);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
-            this.button9.TabIndex = 10;
-            this.button9.Text = "Inventory";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
             // menuFLP
             // 
-            this.menuFLP.Location = new System.Drawing.Point(12, 61);
+            this.menuFLP.Location = new System.Drawing.Point(12, 51);
             this.menuFLP.Name = "menuFLP";
             this.menuFLP.Size = new System.Drawing.Size(118, 305);
             this.menuFLP.TabIndex = 11;
@@ -200,30 +137,211 @@
             this.formHeightLbl.TabIndex = 16;
             this.formHeightLbl.Text = "label4";
             // 
+            // panelHome
+            // 
+            this.panelHome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelHome.Controls.Add(this.label4);
+            this.panelHome.Location = new System.Drawing.Point(136, 68);
+            this.panelHome.Name = "panelHome";
+            this.panelHome.Size = new System.Drawing.Size(650, 400);
+            this.panelHome.TabIndex = 17;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(33, 27);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 13);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "panelHome";
+            // 
+            // panelOperation
+            // 
+            this.panelOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelOperation.Controls.Add(this.label3);
+            this.panelOperation.Location = new System.Drawing.Point(1027, 68);
+            this.panelOperation.Name = "panelOperation";
+            this.panelOperation.Size = new System.Drawing.Size(650, 400);
+            this.panelOperation.TabIndex = 18;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 17);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(79, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "panelOperation";
+            // 
+            // panelFarm
+            // 
+            this.panelFarm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelFarm.Controls.Add(this.label5);
+            this.panelFarm.Location = new System.Drawing.Point(1006, 120);
+            this.panelFarm.Name = "panelFarm";
+            this.panelFarm.Size = new System.Drawing.Size(650, 400);
+            this.panelFarm.TabIndex = 20;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(16, 13);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 13);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "panelFarm";
+            // 
+            // panelStoreroom
+            // 
+            this.panelStoreroom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelStoreroom.Controls.Add(this.label6);
+            this.panelStoreroom.Location = new System.Drawing.Point(985, 167);
+            this.panelStoreroom.Name = "panelStoreroom";
+            this.panelStoreroom.Size = new System.Drawing.Size(650, 400);
+            this.panelStoreroom.TabIndex = 20;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(33, 27);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(81, 13);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "panelStoreroom";
+            // 
+            // panelProduct
+            // 
+            this.panelProduct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelProduct.Controls.Add(this.label7);
+            this.panelProduct.Location = new System.Drawing.Point(926, 241);
+            this.panelProduct.Name = "panelProduct";
+            this.panelProduct.Size = new System.Drawing.Size(650, 400);
+            this.panelProduct.TabIndex = 20;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(33, 27);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(70, 13);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "panelProduct";
+            // 
+            // panelEmployee
+            // 
+            this.panelEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelEmployee.Controls.Add(this.label8);
+            this.panelEmployee.Location = new System.Drawing.Point(865, 299);
+            this.panelEmployee.Name = "panelEmployee";
+            this.panelEmployee.Size = new System.Drawing.Size(650, 400);
+            this.panelEmployee.TabIndex = 20;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(33, 27);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(79, 13);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "panelEmployee";
+            // 
+            // panelCustomer
+            // 
+            this.panelCustomer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelCustomer.Controls.Add(this.label9);
+            this.panelCustomer.Location = new System.Drawing.Point(830, 393);
+            this.panelCustomer.Name = "panelCustomer";
+            this.panelCustomer.Size = new System.Drawing.Size(650, 400);
+            this.panelCustomer.TabIndex = 20;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(33, 27);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(77, 13);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "panelCustomer";
+            // 
+            // panelOrder
+            // 
+            this.panelOrder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelOrder.Controls.Add(this.label10);
+            this.panelOrder.Location = new System.Drawing.Point(811, 454);
+            this.panelOrder.Name = "panelOrder";
+            this.panelOrder.Size = new System.Drawing.Size(650, 400);
+            this.panelOrder.TabIndex = 20;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(33, 27);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(59, 13);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "panelOrder";
+            // 
+            // panelInventory
+            // 
+            this.panelInventory.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelInventory.Controls.Add(this.label11);
+            this.panelInventory.Location = new System.Drawing.Point(747, 498);
+            this.panelInventory.Name = "panelInventory";
+            this.panelInventory.Size = new System.Drawing.Size(650, 400);
+            this.panelInventory.TabIndex = 20;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(33, 27);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(77, 13);
+            this.label11.TabIndex = 19;
+            this.label11.Text = "panelInventory";
+            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.panelInventory);
+            this.Controls.Add(this.panelOrder);
+            this.Controls.Add(this.panelCustomer);
+            this.Controls.Add(this.panelEmployee);
+            this.Controls.Add(this.panelProduct);
+            this.Controls.Add(this.panelStoreroom);
+            this.Controls.Add(this.panelFarm);
+            this.Controls.Add(this.panelHome);
+            this.Controls.Add(this.panelOperation);
             this.Controls.Add(this.formHeightLbl);
             this.Controls.Add(this.formWidthLbl);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.userLbl);
             this.Controls.Add(this.menuFLP);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.jrfLabel);
             this.Controls.Add(this.logoutBtn);
             this.Name = "AdminDashboard";
             this.Text = "Admin Dashboard";
+            this.Load += new System.EventHandler(this.AdminDashboard_Load);
+            this.panelHome.ResumeLayout(false);
+            this.panelHome.PerformLayout();
+            this.panelOperation.ResumeLayout(false);
+            this.panelOperation.PerformLayout();
+            this.panelFarm.ResumeLayout(false);
+            this.panelFarm.PerformLayout();
+            this.panelStoreroom.ResumeLayout(false);
+            this.panelStoreroom.PerformLayout();
+            this.panelProduct.ResumeLayout(false);
+            this.panelProduct.PerformLayout();
+            this.panelEmployee.ResumeLayout(false);
+            this.panelEmployee.PerformLayout();
+            this.panelCustomer.ResumeLayout(false);
+            this.panelCustomer.PerformLayout();
+            this.panelOrder.ResumeLayout(false);
+            this.panelOrder.PerformLayout();
+            this.panelInventory.ResumeLayout(false);
+            this.panelInventory.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,21 +350,30 @@
         #endregion
 
         private System.Windows.Forms.Button logoutBtn;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label jrfLabel;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.FlowLayoutPanel menuFLP;
         private System.Windows.Forms.Label userLbl;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label formWidthLbl;
         private System.Windows.Forms.Label formHeightLbl;
+        private System.Windows.Forms.Panel panelHome;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panelOperation;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panelFarm;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panelStoreroom;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panelProduct;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panelEmployee;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panelCustomer;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panelOrder;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panelInventory;
+        private System.Windows.Forms.Label label11;
     }
 }
