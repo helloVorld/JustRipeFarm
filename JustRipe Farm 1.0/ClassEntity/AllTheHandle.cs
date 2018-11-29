@@ -11,7 +11,7 @@ namespace JustRipeFarm.ClassEntity
     {
     }
 
-    public class OrderHandler
+    public class BoxHandler
     {
         public int addNewOrder(MySqlConnection conn, Crop crop)
         {
@@ -23,6 +23,17 @@ namespace JustRipeFarm.ClassEntity
         }
     }
 
+    public class OrderHandler
+    {
+        public int addNewOrder(MySqlConnection conn, Crop crop)
+        {
+            string sql = "INSERT INTO crops (name, quantity, growth_stage) "
+                        + " Values ('" + crop.Name + "', " + crop.Quantity + ", '" + crop.GrowthStage + "')";
+
+            MySqlCommand sqlComm = new MySqlCommand(sql, conn);
+            return sqlComm.ExecuteNonQuery();
+        }
+    }
     public class ProductHandler
     {
         public int addNewProduct(MySqlConnection conn, Crop crop)
