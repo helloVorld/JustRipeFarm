@@ -53,10 +53,26 @@
     <Compile Include="AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClassEntity\AllTheHandle.cs" />
+    <Compile Include="ClassEntity\Box.cs" />
+    <Compile Include="ClassEntity\BoxStorage.cs" />
     <Compile Include="ClassEntity\Crop.cs" />
     <Compile Include="ClassEntity\CropHandler.cs" />
+    <Compile Include="ClassEntity\Customer.cs" />
+    <Compile Include="ClassEntity\Employee.cs" />
+    <Compile Include="ClassEntity\Farm.cs" />
     <Compile Include="ClassEntity\Fertiliser.cs" />
     <Compile Include="ClassEntity\FertiliserHandler.cs" />
+    <Compile Include="ClassEntity\FertilisingJob.cs" />
+    <Compile Include="ClassEntity\HarvestingJob.cs" />
+    <Compile Include="ClassEntity\Order.cs" />
+    <Compile Include="ClassEntity\Pesticide.cs" />
+    <Compile Include="ClassEntity\PesticideJob.cs" />
+    <Compile Include="ClassEntity\Product.cs" />
+    <Compile Include="ClassEntity\SowingJob.cs" />
+    <Compile Include="ClassEntity\Storeroom.cs" />
+    <Compile Include="ClassEntity\StoringJob.cs" />
+    <Compile Include="ClassEntity\Vehicle.cs" />
     <Compile Include="FormFarm.cs">
       <SubType>Form</SubType>
     </Compile>

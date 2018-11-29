@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JustRipeFarm.ClassAndHandler
+namespace JustRipeFarm.ClassEntity
 {
-    public class Fertiliser
+    public class Pesticide
     {
         private int id;
         private string name;
