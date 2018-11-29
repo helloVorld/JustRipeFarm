@@ -57,6 +57,24 @@
     <Compile Include="ClassEntity\CropHandler.cs" />
     <Compile Include="ClassEntity\Fertiliser.cs" />
     <Compile Include="ClassEntity\FertiliserHandler.cs" />
+    <Compile Include="FormFarm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFarm.Designer.cs">
+      <DependentUpon>FormFarm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProduct.Designer.cs">
+      <DependentUpon>FormProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStoreroom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStoreroom.Designer.cs">
+      <DependentUpon>FormStoreroom.cs</DependentUpon>
+    </Compile>
     <Compile Include="JRF.cs" />
     <Compile Include="MysqlDbc.cs" />
     <Compile Include="LoginScreen.cs">
@@ -85,6 +103,15 @@
     <Compile Include="ClassEntity\StockHandler.cs" />
     <EmbeddedResource Include="AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFarm.resx">
+      <DependentUpon>FormFarm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProduct.resx">
+      <DependentUpon>FormProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStoreroom.resx">
+      <DependentUpon>FormStoreroom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LabourerDashboard.resx">
       <DependentUpon>LabourerDashboard.cs</DependentUpon>

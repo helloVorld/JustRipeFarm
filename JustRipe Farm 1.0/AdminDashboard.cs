@@ -59,13 +59,13 @@ namespace JustRipeFarm
             switch (btn.Name)
             {
                 case "Home"     : panelName = "panelHome";      break;
-                case "Orders"   : panelName = "panelOperation"; break;
-                case "Products" : panelName = "panelFarm";      break;
-                case "Operation": panelName = "panelStoreroom"; break;
-                case "Farm"     : panelName = "panelProduct";   break;
+                case "Orders"   : panelName = "panelOrder"; break;
+                case "Products" : panelName = "panelProduct";      break;
+                case "Operation": panelName = "panelOperation"; break;
+                case "Farm"     : panelName = "panelFarm";   break;
                 case "Employee" : panelName = "panelEmployee";  break;
                 case "Customer" : panelName = "panelCustomer";  break;
-                case "Store"    : panelName = "panelOrder";     break;
+                case "Store"    : panelName = "panelStoreroom";     break;
                 case "Inventory": panelName = "panelInventory"; break;
                 default         : panelName = "panelHome";      break;
             }
@@ -103,6 +103,27 @@ namespace JustRipeFarm
 
             }
 
+        }
+
+        private void btnAddFarm_Click(object sender, EventArgs e)
+        {
+            FormFarm ff = new FormFarm();
+            ff.Show();
+            
+        }
+
+        private void btnAddStoreroom_Click(object sender, EventArgs e)
+        {
+            FormStoreroom fs = new FormStoreroom();
+            fs.Show(); 
+
+
+        }
+
+        private void btnAddProduct_Click(object sender, EventArgs e)
+        {
+            FormProduct fp = new FormProduct();
+            fp.Show();
         }
 
         //public void setDisplay()

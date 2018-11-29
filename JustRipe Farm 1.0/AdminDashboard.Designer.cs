@@ -41,10 +41,13 @@
             this.panelOperation = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panelFarm = new System.Windows.Forms.Panel();
+            this.btnAddFarm = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.panelStoreroom = new System.Windows.Forms.Panel();
+            this.btnAddStoreroom = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.panelProduct = new System.Windows.Forms.Panel();
+            this.btnAddProduct = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.panelEmployee = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
@@ -176,11 +179,22 @@
             // panelFarm
             // 
             this.panelFarm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelFarm.Controls.Add(this.btnAddFarm);
             this.panelFarm.Controls.Add(this.label5);
-            this.panelFarm.Location = new System.Drawing.Point(1006, 120);
+            this.panelFarm.Location = new System.Drawing.Point(1007, 121);
             this.panelFarm.Name = "panelFarm";
             this.panelFarm.Size = new System.Drawing.Size(650, 400);
             this.panelFarm.TabIndex = 20;
+            // 
+            // btnAddFarm
+            // 
+            this.btnAddFarm.Location = new System.Drawing.Point(110, 13);
+            this.btnAddFarm.Name = "btnAddFarm";
+            this.btnAddFarm.Size = new System.Drawing.Size(75, 23);
+            this.btnAddFarm.TabIndex = 20;
+            this.btnAddFarm.Text = "New Farm";
+            this.btnAddFarm.UseVisualStyleBackColor = true;
+            this.btnAddFarm.Click += new System.EventHandler(this.btnAddFarm_Click);
             // 
             // label5
             // 
@@ -194,11 +208,22 @@
             // panelStoreroom
             // 
             this.panelStoreroom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelStoreroom.Controls.Add(this.btnAddStoreroom);
             this.panelStoreroom.Controls.Add(this.label6);
-            this.panelStoreroom.Location = new System.Drawing.Point(985, 167);
+            this.panelStoreroom.Location = new System.Drawing.Point(972, 177);
             this.panelStoreroom.Name = "panelStoreroom";
             this.panelStoreroom.Size = new System.Drawing.Size(650, 400);
             this.panelStoreroom.TabIndex = 20;
+            // 
+            // btnAddStoreroom
+            // 
+            this.btnAddStoreroom.Location = new System.Drawing.Point(120, 22);
+            this.btnAddStoreroom.Name = "btnAddStoreroom";
+            this.btnAddStoreroom.Size = new System.Drawing.Size(100, 23);
+            this.btnAddStoreroom.TabIndex = 20;
+            this.btnAddStoreroom.Text = "New Storeroom";
+            this.btnAddStoreroom.UseVisualStyleBackColor = true;
+            this.btnAddStoreroom.Click += new System.EventHandler(this.btnAddStoreroom_Click);
             // 
             // label6
             // 
@@ -212,11 +237,22 @@
             // panelProduct
             // 
             this.panelProduct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelProduct.Controls.Add(this.btnAddProduct);
             this.panelProduct.Controls.Add(this.label7);
-            this.panelProduct.Location = new System.Drawing.Point(926, 241);
+            this.panelProduct.Location = new System.Drawing.Point(930, 229);
             this.panelProduct.Name = "panelProduct";
             this.panelProduct.Size = new System.Drawing.Size(650, 400);
             this.panelProduct.TabIndex = 20;
+            // 
+            // btnAddProduct
+            // 
+            this.btnAddProduct.Location = new System.Drawing.Point(134, 22);
+            this.btnAddProduct.Name = "btnAddProduct";
+            this.btnAddProduct.Size = new System.Drawing.Size(168, 23);
+            this.btnAddProduct.TabIndex = 20;
+            this.btnAddProduct.Text = "New Product";
+            this.btnAddProduct.UseVisualStyleBackColor = true;
+            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
             // 
             // label7
             // 
@@ -305,12 +341,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.panelInventory);
-            this.Controls.Add(this.panelOrder);
-            this.Controls.Add(this.panelCustomer);
-            this.Controls.Add(this.panelEmployee);
             this.Controls.Add(this.panelProduct);
             this.Controls.Add(this.panelStoreroom);
             this.Controls.Add(this.panelFarm);
+            this.Controls.Add(this.panelOrder);
+            this.Controls.Add(this.panelCustomer);
+            this.Controls.Add(this.panelEmployee);
             this.Controls.Add(this.panelHome);
             this.Controls.Add(this.panelOperation);
             this.Controls.Add(this.formHeightLbl);
@@ -375,5 +411,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panelInventory;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btnAddFarm;
+        private System.Windows.Forms.Button btnAddStoreroom;
+        private System.Windows.Forms.Button btnAddProduct;
     }
 }
