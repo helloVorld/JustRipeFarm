@@ -126,6 +126,24 @@ namespace JustRipeFarm
             fp.Show();
         }
 
+        private void btnAddOrder_Click(object sender, EventArgs e)
+        {
+            FormOrder fo = new FormOrder();
+            fo.Show();
+        }
+
+        private void btnAddCustomer_Click(object sender, EventArgs e)
+        {
+            FormCustomer fc = new FormCustomer();
+            fc.Show();
+        }
+
+        private void btnAddEmployee_Click(object sender, EventArgs e)
+        {
+            FormEmployee fe = new FormEmployee();
+            fe.Show();
+        }
+
         //public void setDisplay()
         //{
 
