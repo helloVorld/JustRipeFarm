@@ -18,7 +18,7 @@ namespace JustRipeFarm.ClassEntity
         private string email;
         private bool admin;
         private string status;
-        private string remarks;
+        private string remark;
 
         public int Id { get => id; set => id = value; }
         public string First_name { get => first_name; set => first_name = value; }
@@ -30,6 +30,6 @@ namespace JustRipeFarm.ClassEntity
         public string Email { get => email; set => email = value; }
         public bool Admin { get => admin; set => admin = value; }
         public string Status { get => status; set => status = value; }
-        public string Remarks { get => remarks; set => remarks = value; }
+        public string Remark { get => remarks; set => remarks = value; }
     }
 }

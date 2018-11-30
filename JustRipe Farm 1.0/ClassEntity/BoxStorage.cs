@@ -9,7 +9,7 @@ namespace JustRipeFarm.ClassEntity
     public class BoxStorage
     {
         private int id;
-        private int storigJob_id;
+        private int storingJob_id;
         private int product_id;
         private int box_id;
         private decimal nettWeight;
@@ -20,7 +20,7 @@ namespace JustRipeFarm.ClassEntity
         private int order_id;
 
         public int Id { get => id; set => id = value; }
-        public int StorigJob_id { get => storigJob_id; set => storigJob_id = value; }
+        public int StoringJob_id { get => storigJob_id; set => storigJob_id = value; }
         public int Product_id { get => product_id; set => product_id = value; }
         public int Box_id { get => box_id; set => box_id = value; }
         public decimal NettWeight { get => nettWeight; set => nettWeight = value; }
