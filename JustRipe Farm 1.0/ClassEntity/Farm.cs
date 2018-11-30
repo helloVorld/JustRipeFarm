@@ -16,6 +16,6 @@ namespace JustRipeFarm.ClassEntity
         public int Id { get => id; set => id = value; }
         public string Description { get => description; set => description = value; }
         public string Area { get => area; set => area = value; }
-        public string Utilize_area { get => utilize; set => utilize = value; }
+        public string Utilize_area { get => utilize_area; set => utilize_area = value; }
     }
 }

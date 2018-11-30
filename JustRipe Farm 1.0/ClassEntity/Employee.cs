@@ -30,6 +30,6 @@ namespace JustRipeFarm.ClassEntity
         public string Email { get => email; set => email = value; }
         public bool Admin { get => admin; set => admin = value; }
         public string Status { get => status; set => status = value; }
-        public string Remark { get => remarks; set => remarks = value; }
+        public string Remark { get => remark; set => remark = value; }
     }
 }
