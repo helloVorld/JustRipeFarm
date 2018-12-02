@@ -12,9 +12,11 @@ namespace JustRipeFarm
 {
     public partial class FormOrder : Form
     {
+        public string state = "";
         public FormOrder()
         {
             InitializeComponent();
+            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -25,6 +27,14 @@ namespace JustRipeFarm
         private void btnDone_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void FormOrder_Load(object sender, EventArgs e)
+        {
+            if (state != "")
+            {
+                lblState.Text = state;
+            }
         }
     }
 }

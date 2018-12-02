@@ -41,20 +41,30 @@ namespace JustRipeFarm
 
         private void labDashBtn_Click(object sender, EventArgs e)
         {
-            LabourerDashboard labourerDash = new LabourerDashboard();
-            labourerDash.Show();
-            this.Close();
+            //LabourerDashboard labourerDash = new LabourerDashboard();
+            //labourerDash.Show();
+            //this.Close();
+            goToDashBoard(false);
         }
 
         private void adminDashBtn_Click(object sender, EventArgs e)
         {
-            AdminDashboard adminDash = new AdminDashboard();
-            adminDash.Show();
-            this.Close();
+            //AdminDashboard adminDash = new AdminDashboard();
+            //adminDash.Show();
+            //this.Close();
+            goToDashBoard(true);
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        public void goToDashBoard(bool isAdmin)
+        {
+            AdminDashboard dashboard = new AdminDashboard();
+            dashboard.isAdmin = isAdmin;
+            dashboard.Show();
             this.Close();
         }
     }

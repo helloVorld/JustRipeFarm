@@ -110,6 +110,8 @@
       <DependentUpon>FormStoreroom.cs</DependentUpon>
     </Compile>
     <Compile Include="JRF.cs" />
+    <Compile Include="JRFutility\PanelButton.cs" />
+    <Compile Include="JRFutility\PanelItem.cs" />
     <Compile Include="MysqlDbc.cs" />
     <Compile Include="LoginScreen.cs">
       <SubType>Form</SubType>
@@ -188,8 +190,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="JRFutility\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
