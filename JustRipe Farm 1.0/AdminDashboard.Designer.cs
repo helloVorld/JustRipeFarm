@@ -40,35 +40,29 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panelOperation = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.panelFarm = new System.Windows.Forms.Panel();
-            this.btnAddFarm = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panelStoreroom = new System.Windows.Forms.Panel();
-            this.btnAddStoreroom = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panelProduct = new System.Windows.Forms.Panel();
-            this.btnAddProduct = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panelEmployee = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.panelCustomer = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.panelOrder = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
             this.panelInventory = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
-            this.btnAddOrder = new System.Windows.Forms.Button();
-            this.btnAddCustomer = new System.Windows.Forms.Button();
-            this.btnAddEmployee = new System.Windows.Forms.Button();
+            this.panelCommon = new System.Windows.Forms.Panel();
+            this.lblUpdateField = new System.Windows.Forms.Label();
+            this.cbUpdateField = new System.Windows.Forms.ComboBox();
+            this.btnUpdateField = new System.Windows.Forms.Button();
+            this.btnEditItem = new System.Windows.Forms.Button();
+            this.tbId = new System.Windows.Forms.TextBox();
+            this.lblId = new System.Windows.Forms.Label();
+            this.cbFilter4 = new System.Windows.Forms.ComboBox();
+            this.cbFilter3 = new System.Windows.Forms.ComboBox();
+            this.cbFilter2 = new System.Windows.Forms.ComboBox();
+            this.cbFilter1 = new System.Windows.Forms.ComboBox();
+            this.lblSearch = new System.Windows.Forms.Label();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnNewItem = new System.Windows.Forms.Button();
+            this.dgvDbTable = new System.Windows.Forms.DataGridView();
+            this.lblPanelTitle = new System.Windows.Forms.Label();
             this.panelHome.SuspendLayout();
             this.panelOperation.SuspendLayout();
-            this.panelFarm.SuspendLayout();
-            this.panelStoreroom.SuspendLayout();
-            this.panelProduct.SuspendLayout();
-            this.panelEmployee.SuspendLayout();
-            this.panelCustomer.SuspendLayout();
-            this.panelOrder.SuspendLayout();
             this.panelInventory.SuspendLayout();
+            this.panelCommon.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDbTable)).BeginInit();
             this.SuspendLayout();
             // 
             // logoutBtn
@@ -93,9 +87,10 @@
             // 
             // menuFLP
             // 
-            this.menuFLP.Location = new System.Drawing.Point(12, 51);
+            this.menuFLP.AutoScroll = true;
+            this.menuFLP.Location = new System.Drawing.Point(10, 60);
             this.menuFLP.Name = "menuFLP";
-            this.menuFLP.Size = new System.Drawing.Size(118, 305);
+            this.menuFLP.Size = new System.Drawing.Size(120, 380);
             this.menuFLP.TabIndex = 11;
             // 
             // userLbl
@@ -179,150 +174,6 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "panelOperation";
             // 
-            // panelFarm
-            // 
-            this.panelFarm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelFarm.Controls.Add(this.btnAddFarm);
-            this.panelFarm.Controls.Add(this.label5);
-            this.panelFarm.Location = new System.Drawing.Point(1007, 121);
-            this.panelFarm.Name = "panelFarm";
-            this.panelFarm.Size = new System.Drawing.Size(650, 400);
-            this.panelFarm.TabIndex = 20;
-            // 
-            // btnAddFarm
-            // 
-            this.btnAddFarm.Location = new System.Drawing.Point(110, 13);
-            this.btnAddFarm.Name = "btnAddFarm";
-            this.btnAddFarm.Size = new System.Drawing.Size(75, 23);
-            this.btnAddFarm.TabIndex = 20;
-            this.btnAddFarm.Text = "New Farm";
-            this.btnAddFarm.UseVisualStyleBackColor = true;
-            this.btnAddFarm.Click += new System.EventHandler(this.btnAddFarm_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 13);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 13);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "panelFarm";
-            // 
-            // panelStoreroom
-            // 
-            this.panelStoreroom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelStoreroom.Controls.Add(this.btnAddStoreroom);
-            this.panelStoreroom.Controls.Add(this.label6);
-            this.panelStoreroom.Location = new System.Drawing.Point(972, 177);
-            this.panelStoreroom.Name = "panelStoreroom";
-            this.panelStoreroom.Size = new System.Drawing.Size(650, 400);
-            this.panelStoreroom.TabIndex = 20;
-            // 
-            // btnAddStoreroom
-            // 
-            this.btnAddStoreroom.Location = new System.Drawing.Point(120, 22);
-            this.btnAddStoreroom.Name = "btnAddStoreroom";
-            this.btnAddStoreroom.Size = new System.Drawing.Size(100, 23);
-            this.btnAddStoreroom.TabIndex = 20;
-            this.btnAddStoreroom.Text = "New Storeroom";
-            this.btnAddStoreroom.UseVisualStyleBackColor = true;
-            this.btnAddStoreroom.Click += new System.EventHandler(this.btnAddStoreroom_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(33, 27);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(81, 13);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "panelStoreroom";
-            // 
-            // panelProduct
-            // 
-            this.panelProduct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelProduct.Controls.Add(this.btnAddProduct);
-            this.panelProduct.Controls.Add(this.label7);
-            this.panelProduct.Location = new System.Drawing.Point(930, 229);
-            this.panelProduct.Name = "panelProduct";
-            this.panelProduct.Size = new System.Drawing.Size(650, 400);
-            this.panelProduct.TabIndex = 20;
-            // 
-            // btnAddProduct
-            // 
-            this.btnAddProduct.Location = new System.Drawing.Point(134, 22);
-            this.btnAddProduct.Name = "btnAddProduct";
-            this.btnAddProduct.Size = new System.Drawing.Size(168, 23);
-            this.btnAddProduct.TabIndex = 20;
-            this.btnAddProduct.Text = "New Product";
-            this.btnAddProduct.UseVisualStyleBackColor = true;
-            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(33, 27);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 13);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "panelProduct";
-            // 
-            // panelEmployee
-            // 
-            this.panelEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelEmployee.Controls.Add(this.btnAddEmployee);
-            this.panelEmployee.Controls.Add(this.label8);
-            this.panelEmployee.Location = new System.Drawing.Point(866, 293);
-            this.panelEmployee.Name = "panelEmployee";
-            this.panelEmployee.Size = new System.Drawing.Size(650, 400);
-            this.panelEmployee.TabIndex = 20;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(33, 27);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(79, 13);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "panelEmployee";
-            // 
-            // panelCustomer
-            // 
-            this.panelCustomer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelCustomer.Controls.Add(this.btnAddCustomer);
-            this.panelCustomer.Controls.Add(this.label9);
-            this.panelCustomer.Location = new System.Drawing.Point(829, 374);
-            this.panelCustomer.Name = "panelCustomer";
-            this.panelCustomer.Size = new System.Drawing.Size(650, 400);
-            this.panelCustomer.TabIndex = 20;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(33, 27);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(77, 13);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "panelCustomer";
-            // 
-            // panelOrder
-            // 
-            this.panelOrder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelOrder.Controls.Add(this.btnAddOrder);
-            this.panelOrder.Controls.Add(this.label10);
-            this.panelOrder.Location = new System.Drawing.Point(792, 460);
-            this.panelOrder.Name = "panelOrder";
-            this.panelOrder.Size = new System.Drawing.Size(650, 400);
-            this.panelOrder.TabIndex = 20;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(33, 27);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(59, 13);
-            this.label10.TabIndex = 19;
-            this.label10.Text = "panelOrder";
-            // 
             // panelInventory
             // 
             this.panelInventory.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -341,48 +192,169 @@
             this.label11.TabIndex = 19;
             this.label11.Text = "panelInventory";
             // 
-            // btnAddOrder
+            // panelCommon
             // 
-            this.btnAddOrder.Location = new System.Drawing.Point(125, 27);
-            this.btnAddOrder.Name = "btnAddOrder";
-            this.btnAddOrder.Size = new System.Drawing.Size(168, 23);
-            this.btnAddOrder.TabIndex = 21;
-            this.btnAddOrder.Text = "New Order";
-            this.btnAddOrder.UseVisualStyleBackColor = true;
-            this.btnAddOrder.Click += new System.EventHandler(this.btnAddOrder_Click);
+            this.panelCommon.Controls.Add(this.lblUpdateField);
+            this.panelCommon.Controls.Add(this.cbUpdateField);
+            this.panelCommon.Controls.Add(this.btnUpdateField);
+            this.panelCommon.Controls.Add(this.btnEditItem);
+            this.panelCommon.Controls.Add(this.tbId);
+            this.panelCommon.Controls.Add(this.lblId);
+            this.panelCommon.Controls.Add(this.cbFilter4);
+            this.panelCommon.Controls.Add(this.cbFilter3);
+            this.panelCommon.Controls.Add(this.cbFilter2);
+            this.panelCommon.Controls.Add(this.cbFilter1);
+            this.panelCommon.Controls.Add(this.lblSearch);
+            this.panelCommon.Controls.Add(this.btnReset);
+            this.panelCommon.Controls.Add(this.btnNewItem);
+            this.panelCommon.Controls.Add(this.dgvDbTable);
+            this.panelCommon.Controls.Add(this.lblPanelTitle);
+            this.panelCommon.Location = new System.Drawing.Point(130, 60);
+            this.panelCommon.Name = "panelCommon";
+            this.panelCommon.Size = new System.Drawing.Size(650, 400);
+            this.panelCommon.TabIndex = 21;
             // 
-            // btnAddCustomer
+            // lblUpdateField
             // 
-            this.btnAddCustomer.Location = new System.Drawing.Point(100, 43);
-            this.btnAddCustomer.Name = "btnAddCustomer";
-            this.btnAddCustomer.Size = new System.Drawing.Size(168, 23);
-            this.btnAddCustomer.TabIndex = 21;
-            this.btnAddCustomer.Text = "New Customer";
-            this.btnAddCustomer.UseVisualStyleBackColor = true;
-            this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
+            this.lblUpdateField.AutoSize = true;
+            this.lblUpdateField.Location = new System.Drawing.Point(174, 360);
+            this.lblUpdateField.Name = "lblUpdateField";
+            this.lblUpdateField.Size = new System.Drawing.Size(74, 13);
+            this.lblUpdateField.TabIndex = 14;
+            this.lblUpdateField.Text = "lblUpdateField";
             // 
-            // btnAddEmployee
+            // cbUpdateField
             // 
-            this.btnAddEmployee.Location = new System.Drawing.Point(133, 16);
-            this.btnAddEmployee.Name = "btnAddEmployee";
-            this.btnAddEmployee.Size = new System.Drawing.Size(75, 23);
-            this.btnAddEmployee.TabIndex = 20;
-            this.btnAddEmployee.Text = "New Employee";
-            this.btnAddEmployee.UseVisualStyleBackColor = true;
-            this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
+            this.cbUpdateField.FormattingEnabled = true;
+            this.cbUpdateField.Location = new System.Drawing.Point(249, 356);
+            this.cbUpdateField.Name = "cbUpdateField";
+            this.cbUpdateField.Size = new System.Drawing.Size(121, 21);
+            this.cbUpdateField.TabIndex = 13;
+            // 
+            // btnUpdateField
+            // 
+            this.btnUpdateField.Location = new System.Drawing.Point(376, 354);
+            this.btnUpdateField.Name = "btnUpdateField";
+            this.btnUpdateField.Size = new System.Drawing.Size(104, 23);
+            this.btnUpdateField.TabIndex = 12;
+            this.btnUpdateField.Text = "btnUpdateField";
+            this.btnUpdateField.UseVisualStyleBackColor = true;
+            this.btnUpdateField.Click += new System.EventHandler(this.btnUpdateField_Click);
+            // 
+            // btnEditItem
+            // 
+            this.btnEditItem.Location = new System.Drawing.Point(525, 355);
+            this.btnEditItem.Name = "btnEditItem";
+            this.btnEditItem.Size = new System.Drawing.Size(103, 23);
+            this.btnEditItem.TabIndex = 11;
+            this.btnEditItem.Text = "btnEditItem";
+            this.btnEditItem.UseVisualStyleBackColor = true;
+            this.btnEditItem.Click += new System.EventHandler(this.btnEditItem_Click);
+            // 
+            // tbId
+            // 
+            this.tbId.Location = new System.Drawing.Point(69, 357);
+            this.tbId.Name = "tbId";
+            this.tbId.Size = new System.Drawing.Size(27, 20);
+            this.tbId.TabIndex = 10;
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(23, 360);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(26, 13);
+            this.lblId.TabIndex = 9;
+            this.lblId.Text = "lblId";
+            // 
+            // cbFilter4
+            // 
+            this.cbFilter4.FormattingEnabled = true;
+            this.cbFilter4.Location = new System.Drawing.Point(525, 40);
+            this.cbFilter4.Name = "cbFilter4";
+            this.cbFilter4.Size = new System.Drawing.Size(121, 21);
+            this.cbFilter4.TabIndex = 8;
+            // 
+            // cbFilter3
+            // 
+            this.cbFilter3.FormattingEnabled = true;
+            this.cbFilter3.Location = new System.Drawing.Point(388, 40);
+            this.cbFilter3.Name = "cbFilter3";
+            this.cbFilter3.Size = new System.Drawing.Size(121, 21);
+            this.cbFilter3.TabIndex = 7;
+            // 
+            // cbFilter2
+            // 
+            this.cbFilter2.FormattingEnabled = true;
+            this.cbFilter2.Location = new System.Drawing.Point(241, 40);
+            this.cbFilter2.Name = "cbFilter2";
+            this.cbFilter2.Size = new System.Drawing.Size(121, 21);
+            this.cbFilter2.TabIndex = 6;
+            // 
+            // cbFilter1
+            // 
+            this.cbFilter1.FormattingEnabled = true;
+            this.cbFilter1.Location = new System.Drawing.Point(95, 40);
+            this.cbFilter1.Name = "cbFilter1";
+            this.cbFilter1.Size = new System.Drawing.Size(121, 21);
+            this.cbFilter1.TabIndex = 5;
+            // 
+            // lblSearch
+            // 
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Location = new System.Drawing.Point(20, 40);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(47, 13);
+            this.lblSearch.TabIndex = 4;
+            this.lblSearch.Text = "Search :";
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(495, 8);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.TabIndex = 3;
+            this.btnReset.Text = "btnReset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // btnNewItem
+            // 
+            this.btnNewItem.Location = new System.Drawing.Point(105, 8);
+            this.btnNewItem.Name = "btnNewItem";
+            this.btnNewItem.Size = new System.Drawing.Size(111, 23);
+            this.btnNewItem.TabIndex = 2;
+            this.btnNewItem.Text = "btnNewItem";
+            this.btnNewItem.UseVisualStyleBackColor = true;
+            this.btnNewItem.Click += new System.EventHandler(this.btnNewItem_Click);
+            // 
+            // dgvDbTable
+            // 
+            this.dgvDbTable.AllowUserToAddRows = false;
+            this.dgvDbTable.AllowUserToDeleteRows = false;
+            this.dgvDbTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDbTable.Location = new System.Drawing.Point(20, 80);
+            this.dgvDbTable.Name = "dgvDbTable";
+            this.dgvDbTable.ReadOnly = true;
+            this.dgvDbTable.Size = new System.Drawing.Size(610, 250);
+            this.dgvDbTable.TabIndex = 1;
+            // 
+            // lblPanelTitle
+            // 
+            this.lblPanelTitle.AutoSize = true;
+            this.lblPanelTitle.Location = new System.Drawing.Point(20, 10);
+            this.lblPanelTitle.Name = "lblPanelTitle";
+            this.lblPanelTitle.Size = new System.Drawing.Size(64, 13);
+            this.lblPanelTitle.TabIndex = 0;
+            this.lblPanelTitle.Text = "lblPanelTitle";
             // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 749);
-            this.Controls.Add(this.panelOrder);
-            this.Controls.Add(this.panelCustomer);
+            this.Controls.Add(this.panelCommon);
             this.Controls.Add(this.panelInventory);
-            this.Controls.Add(this.panelProduct);
-            this.Controls.Add(this.panelStoreroom);
-            this.Controls.Add(this.panelFarm);
-            this.Controls.Add(this.panelEmployee);
             this.Controls.Add(this.panelHome);
             this.Controls.Add(this.panelOperation);
             this.Controls.Add(this.formHeightLbl);
@@ -400,20 +372,11 @@
             this.panelHome.PerformLayout();
             this.panelOperation.ResumeLayout(false);
             this.panelOperation.PerformLayout();
-            this.panelFarm.ResumeLayout(false);
-            this.panelFarm.PerformLayout();
-            this.panelStoreroom.ResumeLayout(false);
-            this.panelStoreroom.PerformLayout();
-            this.panelProduct.ResumeLayout(false);
-            this.panelProduct.PerformLayout();
-            this.panelEmployee.ResumeLayout(false);
-            this.panelEmployee.PerformLayout();
-            this.panelCustomer.ResumeLayout(false);
-            this.panelCustomer.PerformLayout();
-            this.panelOrder.ResumeLayout(false);
-            this.panelOrder.PerformLayout();
             this.panelInventory.ResumeLayout(false);
             this.panelInventory.PerformLayout();
+            this.panelCommon.ResumeLayout(false);
+            this.panelCommon.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDbTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -433,25 +396,23 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panelOperation;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panelFarm;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panelStoreroom;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panelProduct;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel panelEmployee;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Panel panelCustomer;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Panel panelOrder;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panelInventory;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button btnAddFarm;
-        private System.Windows.Forms.Button btnAddStoreroom;
-        private System.Windows.Forms.Button btnAddProduct;
-        private System.Windows.Forms.Button btnAddCustomer;
-        private System.Windows.Forms.Button btnAddOrder;
-        private System.Windows.Forms.Button btnAddEmployee;
+        private System.Windows.Forms.Panel panelCommon;
+        private System.Windows.Forms.Label lblUpdateField;
+        private System.Windows.Forms.ComboBox cbUpdateField;
+        private System.Windows.Forms.Button btnUpdateField;
+        private System.Windows.Forms.Button btnEditItem;
+        private System.Windows.Forms.TextBox tbId;
+        private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.ComboBox cbFilter4;
+        private System.Windows.Forms.ComboBox cbFilter3;
+        private System.Windows.Forms.ComboBox cbFilter2;
+        private System.Windows.Forms.ComboBox cbFilter1;
+        private System.Windows.Forms.Label lblSearch;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnNewItem;
+        private System.Windows.Forms.DataGridView dgvDbTable;
+        private System.Windows.Forms.Label lblPanelTitle;
     }
 }
