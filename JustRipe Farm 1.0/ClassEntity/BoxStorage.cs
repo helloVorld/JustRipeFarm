@@ -12,7 +12,7 @@ namespace JustRipeFarm.ClassEntity
         private int storingJob_id;
         private int product_id;
         private int box_id;
-        private decimal nettWeight;
+        private double nettWeight;
         private int storeroom_id;
         private DateTime add_date;
         private DateTime best_before;
@@ -23,7 +23,7 @@ namespace JustRipeFarm.ClassEntity
         public int StoringJob_id { get => storingJob_id; set => storingJob_id = value; }
         public int Product_id { get => product_id; set => product_id = value; }
         public int Box_id { get => box_id; set => box_id = value; }
-        public decimal NettWeight { get => nettWeight; set => nettWeight = value; }
+        public double NettWeight { get => nettWeight; set => nettWeight = value; }
         public int Storeroom_id { get => storeroom_id; set => storeroom_id = value; }
         public DateTime Add_date { get => add_date; set => add_date = value; }
         public DateTime Best_before { get => best_before; set => best_before = value; }

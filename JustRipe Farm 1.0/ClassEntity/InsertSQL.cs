@@ -33,8 +33,8 @@ namespace JustRipeFarm.ClassEntity
                 "                               customer_id, order_date, collection_date, price, status, remark) "
                         + " Values ('" + order.Description + "', " + order.Product_id + ", " + order.Quantity_box + ", " 
                         + order.Weight + " , '" + order.PalletAllocation + "', " + order.Customer_id + " , " 
-                        + order.Order_date +" ," + order.Collection_date +" , " + order.Price + ", '"
-                        + order.Status + "' , '" + order.Remark + "' )";
+                        + order.Order_date.ToString("yyyy-MM-dd") + " ," + order.Collection_date.ToString("yyyy-MM-dd") + " , " 
+                        + order.Price + ", '" + order.Status + "' , '" + order.Remark + "' )";
 
             MySqlCommand sqlComm = new MySqlCommand(sql, conn);
             return sqlComm.ExecuteNonQuery();
@@ -72,10 +72,12 @@ namespace JustRipeFarm.ClassEntity
             string sql = "INSERT INTO employee (first_name, last_name, username, password, dob, " +
                                                  "mobile, email, admin, status, remark) "
                         + " Values ('" + employee.First_name + "', '" + employee.Last_name + "', '" + employee.Username + "' , '"
-                        + employee.Password + "' , '" + employee.Dob + "' , '" + employee.Mobile + "' , " + employee.Admin + " , '"
+                        + employee.Password + "' , " + employee.Dob + " , '" + employee.Mobile + "' , " + employee.Admin + " , '"
                         + employee.Status + "' , '" + employee.Remark + "')";
 
             MySqlCommand sqlComm = new MySqlCommand(sql, conn);
+            
+
             return sqlComm.ExecuteNonQuery();
         }
     }
@@ -124,8 +126,9 @@ namespace JustRipeFarm.ClassEntity
         public int addNewVehicle(MySqlConnection conn, Vehicle vehicle)
         {
             string sql = "INSERT INTO vehicle (name, serial_number, buy_date, last_service_date, remark) "
-                        + " Values ('" + vehicle.Name + "', " + vehicle.Serial_number + ", " + vehicle.Buy_date + " , "
-                        + vehicle.Last_service_date + " , '" + vehicle.Remark + "')";
+                        + " Values ('" + vehicle.Name + "', " + vehicle.Serial_number + ", " 
+                        + vehicle.Buy_date.ToString("yyyy-MM-dd") + " , "
+                        + vehicle.Last_service_date.ToString("yyyy-MM-dd") + " , '" + vehicle.Remark + "')";
 
             MySqlCommand sqlComm = new MySqlCommand(sql, conn);
             return sqlComm.ExecuteNonQuery();
@@ -139,8 +142,9 @@ namespace JustRipeFarm.ClassEntity
             string sql = "INSERT INTO boxStorage (storingJob_id, product_id, box_id, nettWeight, storeroom_id" +
                          " add_date, best_before, out_date, order_id) "
                         + " Values (" + boxstorage.StoringJob_id + ", " + boxstorage.Product_id + ", " + boxstorage.Box_id + " , "
-                        + boxstorage.NettWeight + " , " + boxstorage.Storeroom_id + " , " + boxstorage.Add_date + " , "
-                        + boxstorage.Best_before + " , " + boxstorage.Out_date + " , " + boxstorage.Order_id + " )";
+                        + boxstorage.NettWeight + " , " + boxstorage.Storeroom_id + " , " 
+                        + boxstorage.Add_date.ToString("yyyy-MM-dd") + " , " + boxstorage.Best_before.ToString("yyyy-MM-dd") + " , " 
+                        + boxstorage.Out_date.ToString("yyyy-MM-dd") + " , " + boxstorage.Order_id + " )";
 
             MySqlCommand sqlComm = new MySqlCommand(sql, conn);
             return sqlComm.ExecuteNonQuery();
@@ -155,8 +159,8 @@ namespace JustRipeFarm.ClassEntity
                          " vehicle_id, employee_id, date, time_start, time_end) "
                         + " Values ('" + sowingjob.Description + "', " + sowingjob.Crop_id + ", " + sowingjob.Quantity_prop + " , "
                         + sowingjob.Farm_id + " , '" + sowingjob.Used_area + "' , " + sowingjob.Vehicle_id + " , "
-                        + sowingjob.Employee_id + " , " + sowingjob.Date + " , " + sowingjob.Time_start + "," 
-                        + sowingjob.Time_end + ")";
+                        + sowingjob.Employee_id + " , " + sowingjob.Date.ToString("yyyy-MM-dd") + " , " 
+                        + sowingjob.Time_start.ToString("yyyy-MM-dd") + "," + sowingjob.Time_end.ToString("yyyy-MM-dd") + ")";
 
             MySqlCommand sqlComm = new MySqlCommand(sql, conn);
             return sqlComm.ExecuteNonQuery();
@@ -171,8 +175,10 @@ namespace JustRipeFarm.ClassEntity
                          "est_quantity, harvested_quantity, employee_id, date, time_start, time_end) "
                         + " Values ('" + harvestingjob.Description + "', " + harvestingjob.SowingJob_id  + ", " + harvestingjob.Farm_id + " , "
                         + harvestingjob.Crop_id + " , " + harvestingjob.Vehicle_id + " , " + harvestingjob.Est_quantity + " , "
-                        + harvestingjob.Harvested_quantity + " , " + harvestingjob.Employee_id + " , " + harvestingjob.Date + ", "
-                        + harvestingjob.Time_start + " , " + harvestingjob.Time_end + ")";
+                        + harvestingjob.Harvested_quantity + " , " + harvestingjob.Employee_id + " , " 
+                        + harvestingjob.Date.ToString("yyyy-MM-dd") + ", "
+                        + harvestingjob.Time_start.ToString("yyyy-MM-dd") + " , " 
+                        + harvestingjob.Time_end.ToString("yyyy-MM-dd") + ")";
 
             MySqlCommand sqlComm = new MySqlCommand(sql, conn);
             return sqlComm.ExecuteNonQuery();
@@ -187,8 +193,9 @@ namespace JustRipeFarm.ClassEntity
                          "vehicle_id, employee_id, date, time_start, time_end) "
                         + " Values ('" + storingjob.Description + "', " + storingjob.Harvest_id + ", " + storingjob.Crop_id + " , "
                         + storingjob.Box_id + " , " + storingjob.Quantity + " , " + storingjob.Vehicle_id + " , "
-                        + storingjob.Employee_id + " , " + storingjob.Date + ", " + storingjob.Time_start + " ,"
-                        + storingjob.Time_end + ")";
+                        + storingjob.Employee_id + " , " + storingjob.Date.ToString("yyyy-MM-dd") + ", " 
+                        + storingjob.Time_start.ToString("yyyy-MM-dd") + " ,"
+                        + storingjob.Time_end.ToString("yyyy-MM-dd") + ")";
 
             MySqlCommand sqlComm = new MySqlCommand(sql, conn);
             return sqlComm.ExecuteNonQuery();
@@ -203,8 +210,10 @@ namespace JustRipeFarm.ClassEntity
                          "crop_id, vehicle_id, employee_id, date, time_start, time_end) "
                         + " Values ('" + fertilisingjob.Description + "', " + fertilisingjob.Fertiliser_id + ", " + fertilisingjob.Quantity_kg + " , "
                         + fertilisingjob.SowingJob_id + " , " + fertilisingjob.Farm_id + " , " + fertilisingjob.Crop_id + " , "
-                        + fertilisingjob.Vehicle_id + " , " + fertilisingjob.Employee_id + " , " + fertilisingjob.Date + " , "
-                        + fertilisingjob.Time_start + " , " + fertilisingjob.Time_end + ")";
+                        + fertilisingjob.Vehicle_id + " , " + fertilisingjob.Employee_id + " , " 
+                        + fertilisingjob.Date.ToString("yyyy-MM-dd") + " , "
+                        + fertilisingjob.Time_start.ToString("yyyy-MM-dd") + " , " 
+                        + fertilisingjob.Time_end.ToString("yyyy-MM-dd") + ")";
 
             MySqlCommand sqlComm = new MySqlCommand(sql, conn);
             return sqlComm.ExecuteNonQuery();
@@ -219,8 +228,10 @@ namespace JustRipeFarm.ClassEntity
                          "crop_id, vehicle_id, employee_id, date, time_start, time_end) "
                         + " Values ('" + pesticidejob.Description + "', " + pesticidejob.Pesticide_id + ", " + pesticidejob.Quantity_kg + " , "
                         + pesticidejob.SowingJob_id + " , " + pesticidejob.Farm_id + " , " + pesticidejob.Crop_id + " , "
-                        + pesticidejob.Vehicle_id + " , " + pesticidejob.Employee_id + " , " + pesticidejob.Date + " , "
-                        + pesticidejob.Time_start + " , " + pesticidejob.Time_end + ")";
+                        + pesticidejob.Vehicle_id + " , " + pesticidejob.Employee_id + " , " 
+                        + pesticidejob.Date.ToString("yyyy-MM-dd") + " , "
+                        + pesticidejob.Time_start.ToString("yyyy-MM-dd") + " , " 
+                        + pesticidejob.Time_end.ToString("yyyy-MM-dd") + ")";
 
             MySqlCommand sqlComm = new MySqlCommand(sql, conn);
             return sqlComm.ExecuteNonQuery();

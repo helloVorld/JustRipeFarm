@@ -13,10 +13,10 @@ namespace JustRipeFarm.ClassEntity
         private string last_name;
         private string username;
         private string password;
-        private string dob;
+        private int dob;
         private string mobile;
         private string email;
-        private bool admin;
+        private int admin;
         private string status;
         private string remark;
 
@@ -25,10 +25,10 @@ namespace JustRipeFarm.ClassEntity
         public string Last_name { get => last_name; set => last_name = value; }
         public string Username { get => username; set => username = value; }
         public string Password { get => password; set => password = value; }
-        public string Dob { get => dob; set => dob = value; }
+        public int Dob { get => dob; set => dob = value; }
         public string Mobile { get => mobile; set => mobile = value; }
         public string Email { get => email; set => email = value; }
-        public bool Admin { get => admin; set => admin = value; }
+        public int Admin { get => admin; set => admin = value; }
         public string Status { get => status; set => status = value; }
         public string Remark { get => remark; set => remark = value; }
     }

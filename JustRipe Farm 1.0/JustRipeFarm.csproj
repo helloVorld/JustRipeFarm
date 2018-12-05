@@ -57,12 +57,12 @@
     <Compile Include="ClassEntity\Box.cs" />
     <Compile Include="ClassEntity\BoxStorage.cs" />
     <Compile Include="ClassEntity\Crop.cs" />
-    <Compile Include="ClassEntity\CropHandler.cs" />
     <Compile Include="ClassEntity\Customer.cs" />
     <Compile Include="ClassEntity\Employee.cs" />
     <Compile Include="ClassEntity\Farm.cs" />
     <Compile Include="ClassEntity\Fertiliser.cs" />
     <Compile Include="ClassEntity\FertiliserHandler.cs" />
+    <Compile Include="ClassEntity\UpdateSQL.cs" />
     <Compile Include="FormSowingJob.cs">
       <SubType>Form</SubType>
     </Compile>

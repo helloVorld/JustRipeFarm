@@ -50,6 +50,8 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TestAddSQL.cs" />
+    <Compile Include="UnitTest1.cs" />
     <Compile Include="UnitTestCropHandler.cs" />
     <Compile Include="UnitTestStockHandler.cs" />
     <Compile Include="UnitTestLabourerHandler.cs" />
