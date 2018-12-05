@@ -95,7 +95,7 @@
             this.menuFLP.Name = "menuFLP";
             this.menuFLP.Size = new System.Drawing.Size(160, 468);
             this.menuFLP.TabIndex = 11;
-            this.menuFLP.Paint += new System.Windows.Forms.PaintEventHandler(this.menuFLP_Paint);
+            
             // 
             // userLbl
             // 
