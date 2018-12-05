@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data;
 
 
 namespace JustRipeFarm
@@ -21,6 +22,7 @@ namespace JustRipeFarm
         public bool showInventory = false;
         public string currentPanel = "panelHome";
         public bool isAdmin = true;
+        public DataTable currentDataSet = new DataTable();
 
         public AdminDashboard()
         {
@@ -271,12 +273,16 @@ namespace JustRipeFarm
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-
+            //reset all combo box field
         }
 
         private void btnUpdateField_Click(object sender, EventArgs e)
         {
-
+            foreach(DataRow dr in currentDataSet.Rows)
+            {
+                string t1 = dr[1].ToString();
+                Console.WriteLine("data table row => " + t1);
+            }
         }
 
         public void displayForAdmin(bool isAdmin)
@@ -308,6 +314,9 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[0].BtnNew;
                     btnEditItem.Text = pnItems[0].BtnEdit;
                     btnUpdateField.Text = pnItems[0].BtnUpdate;
+                    currentDataSet = MysqlDbc.Instance.getAllLabourer().Tables[0];
+                    
+                    
                     break;
                 case "Product" :
                     lblPanelTitle.Text = pnItems[1].PnTitle;
@@ -432,7 +441,7 @@ namespace JustRipeFarm
                     break;
             default: break;
             }
-
+            dgvDbTable.DataSource = currentDataSet;
         }
 
         public void goToForm(string btnName,string newOrEdit)
@@ -450,7 +459,8 @@ namespace JustRipeFarm
                     fp.Show();
                     break;
                 case "Sowing":
-                    
+                    FormSowingJob fsj = new FormSowingJob();
+                    fsj.Show();
                     break;
                 case "Harvesting":
                     
@@ -501,6 +511,14 @@ namespace JustRipeFarm
             }
         }
 
-
+        private void dgvDbTable_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dgvDbTable.Select();
+            int currentRowIndex = dgvDbTable.CurrentRow.Index;
+            dgvDbTable.Rows[currentRowIndex].Selected = true;
+            string id = dgvDbTable.CurrentRow.Cells[0].Value.ToString();
+            Console.WriteLine("DGV : selected row id: " + id);
+            tbId.Text = id;
+        }
     }
 }

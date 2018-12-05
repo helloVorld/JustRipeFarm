@@ -253,6 +253,7 @@
             // 
             // tbId
             // 
+            this.tbId.Enabled = false;
             this.tbId.Location = new System.Drawing.Point(69, 357);
             this.tbId.Name = "tbId";
             this.tbId.Size = new System.Drawing.Size(27, 20);
@@ -338,6 +339,7 @@
             this.dgvDbTable.ReadOnly = true;
             this.dgvDbTable.Size = new System.Drawing.Size(610, 250);
             this.dgvDbTable.TabIndex = 1;
+            this.dgvDbTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDbTable_CellClick);
             // 
             // lblPanelTitle
             // 

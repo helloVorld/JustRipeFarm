@@ -250,4 +250,91 @@ namespace JustRipeFarm.ClassEntity
             return sqlComm.ExecuteNonQuery();
         }
     }
+
+    /// <summary>
+    /// SAMPLE
+    /// </summary>
+    public class TestSQL
+    {
+        public bool addNewSowingJob(DateTime dt/*SowingJob sj*/)
+        {
+            // can test at main screen "btnTestSql"
+            try
+            {
+                
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = MysqlDbc.Instance.getConn();
+                cmd.CommandText = "INSERT INTO sowingjob VALUES(@id, @description, @crop_id, @quantity_prop, @farm_id, @used_area, @vehicle_id, @employee_id, @date, @time_start, @time_end)";
+                cmd.Prepare();
+
+                cmd.Parameters.AddWithValue("@id"           , 0);
+                cmd.Parameters.AddWithValue("@description"  , "sowing at helpcat"/*sj.Description*/);
+                cmd.Parameters.AddWithValue("@crop_id"      , 1/*sj.Crop_id*/);
+                cmd.Parameters.AddWithValue("@quantity_prop", 213/*sj.Quantity_prop*/);
+                cmd.Parameters.AddWithValue("@farm_id"      , 2/*sj.Farm_id*/);
+                cmd.Parameters.AddWithValue("@used_area"    , "please change to int"/*sj.Used_area*/);
+                cmd.Parameters.AddWithValue("@vehicle_id"   , 3/*sj.Vehicle_id*/);
+                cmd.Parameters.AddWithValue("@employee_id"  , 4/*sj.Employee_id*/);
+                cmd.Parameters.AddWithValue("@date"         , dt.ToString("yyyy-MM-dd")/*sj.Date.ToString("yyyy-MM-dd")*/);
+                cmd.Parameters.AddWithValue("@time_start"   , dt.ToString("HH:mm:ss")/*sj.Time_start.ToString("HH:mm:ss")*/);
+                cmd.Parameters.AddWithValue("@time_end"     , dt.ToString("HH:mm:ss")/*sj.Time_end.ToString("HH:mm:ss")*/);
+                cmd.ExecuteNonQuery();
+
+                Console.WriteLine("MySQL addNewSowingJob: success");
+                return true;
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("MySQL Error: {0}", ex.ToString());
+
+            }
+            return false;
+        }
+
+        // can test at form sowing job 
+        // access through operation -> sowing job -> new sowing
+        public List<Crop> GetCropList()
+        {
+            List<Crop> cropLists = new List<Crop>();
+            MySqlDataReader rdr = null;
+            try
+            {
+                
+
+                string stm = "SELECT * FROM crop";
+                MySqlCommand cmd = new MySqlCommand(stm, MysqlDbc.Instance.getConn());
+                rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    Crop cr = new Crop();
+                    cr.Id = rdr.GetInt32("id");
+                    cr.Name = rdr.GetString("name");
+                    cr.Type = rdr.GetString("type");
+                    cr.Quantity_plot = rdr.GetInt32("quantity_plot");
+                    cr.Remark = rdr.GetString("remark");
+
+                    Console.WriteLine("crop => "+cr);
+                    cropLists.Add(cr);
+                    
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+            }
+
+            return cropLists;
+        }
+    }
 }

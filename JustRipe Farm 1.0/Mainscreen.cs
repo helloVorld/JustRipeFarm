@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using JustRipeFarm.ClassEntity;
+
 
 namespace JustRipeFarm
 {
@@ -198,6 +200,31 @@ namespace JustRipeFarm
         {
             // back to login screen
             JRF.Logout(this);
+        }
+
+        private void dateTimePicker6_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime dt = new DateTime();
+            dt = dateTimePicker6.Value;
+            string dtstr = dateTimePicker6.Text;
+
+            Console.WriteLine("Test Date=> " + dt + " => " + dtstr);
+
+
+        }
+
+        /// <summary>
+        /// Sample
+        /// </summary>
+        private void btnTestSql_Click(object sender, EventArgs e)
+        {
+            DateTime dt = new DateTime();
+            dt = dateTimePicker6.Value;
+            string dtstr = dateTimePicker6.Text;
+
+            Console.WriteLine("Test Date=> " + dt + " => " + dtstr);
+            TestSQL ts = new TestSQL();
+            ts.addNewSowingJob(dt);
         }
     }
 }
