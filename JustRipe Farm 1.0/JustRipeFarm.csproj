@@ -109,6 +109,12 @@
     <Compile Include="FormStoreroom.Designer.cs">
       <DependentUpon>FormStoreroom.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVehicle.Designer.cs">
+      <DependentUpon>FormVehicle.cs</DependentUpon>
+    </Compile>
     <Compile Include="JRF.cs" />
     <Compile Include="JRFutility\PanelButton.cs" />
     <Compile Include="JRFutility\PanelItem.cs" />
@@ -157,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormStoreroom.resx">
       <DependentUpon>FormStoreroom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVehicle.resx">
+      <DependentUpon>FormVehicle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LabourerDashboard.resx">
       <DependentUpon>LabourerDashboard.cs</DependentUpon>

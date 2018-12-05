@@ -9,6 +9,102 @@ namespace JustRipeFarm.ClassEntity
 {
     class InsertSQL
     {
+        public int addNewCustomer(Customer customer)
+        {
+            string sql = "INSERT INTO customer (name, email, phone, remark) "
+                        + " Values ('" + customer.Name + "', '" + customer.Email + "', '" + customer.Phone + "' , '"
+                        + customer.Remark + "')";
+
+            MySqlCommand sqlComm = new MySqlCommand(sql, MysqlDbc.Instance.getConn());
+            return sqlComm.ExecuteNonQuery();
+        }
+
+
+        public int addNewStore(Storeroom storeroom)
+        {
+            int availability = storeroom.Availability ? 1 : 0;
+            Console.WriteLine("i want to see this => " + storeroom.Availability + " " + availability);
+            string sql = "INSERT INTO storeroom (description, storingQty, temperature, availability) "
+                        + " Values ('" + storeroom.Description + "', " + storeroom.StoringQty + ", " + storeroom.Temperature + " , '"
+                        + availability + "')"; 
+
+
+            MySqlCommand sqlComm = new MySqlCommand(sql, MysqlDbc.Instance.getConn());
+            return sqlComm.ExecuteNonQuery();
+        }
+
+        public int addNewVehicle(Vehicle vehicle)
+        {
+            
+            MySqlCommand sqlComm = new MySqlCommand("INSERT INTO" + " vehicle(name,serial_number,buy_date,last_service_date,remark)" +
+                                           " VALUES" + " (@name,@serial_number,@buy_date,@last_service_date,@remark)", MysqlDbc.Instance.getConn());
+            sqlComm.Parameters.Add("@name", MySqlDbType.Text).Value = vehicle.Name;
+            sqlComm.Parameters.Add("@serial_number", MySqlDbType.Text).Value = vehicle.Serial_number;
+            sqlComm.Parameters.Add("@buy_date", MySqlDbType.Date).Value = vehicle.Buy_date;
+            sqlComm.Parameters.Add("@last_service_date", MySqlDbType.Date).Value = vehicle.Last_service_date;
+            sqlComm.Parameters.Add("@remark", MySqlDbType.Text).Value = vehicle.Remark;
+
+            return sqlComm.ExecuteNonQuery();
+        }
+
+        public int addNewOrder(Order order)
+        {
+
+            MySqlCommand sqlComm = new MySqlCommand("INSERT INTO" + " orders(description,product_id,quantity_box,weight,palletAllocation,customer_id,order_date,collection,price,status,remark)" +
+                                           " VALUES" + " (@description,@product_id,@quantity_box,@weight,@palletAllocation,@customer_id,@order_date,@collection,@price,@status,@remark)", MysqlDbc.Instance.getConn());
+            sqlComm.Parameters.Add("@description", MySqlDbType.Text).Value = order.Description;
+            sqlComm.Parameters.Add("@product_id", MySqlDbType.Text).Value = order.Product_id;
+            sqlComm.Parameters.Add("@quantity_box", MySqlDbType.Text).Value = order.Quantity_box;
+            sqlComm.Parameters.Add("@weight", MySqlDbType.Text).Value = order.Weight;
+            sqlComm.Parameters.Add("@palletAllocation", MySqlDbType.Text).Value = order.PalletAllocation;
+            sqlComm.Parameters.Add("@customer_id", MySqlDbType.Text).Value = order.Customer_id;
+            sqlComm.Parameters.Add("@order_date", MySqlDbType.Date).Value = order.Order_date;
+            sqlComm.Parameters.Add("@collection", MySqlDbType.Date).Value = order.Collection_date;
+            sqlComm.Parameters.Add("@price", MySqlDbType.Decimal).Value = order.Price;
+            sqlComm.Parameters.Add("@status", MySqlDbType.Text).Value = order.Status;
+            sqlComm.Parameters.Add("@remark", MySqlDbType.Text).Value = order.Remark;
+
+            return sqlComm.ExecuteNonQuery();
+        }
+
+        public int addNewProduct(Product product)
+        {
+            MySqlCommand sqlComm = new MySqlCommand("INSERT INTO" + " product(name,type,quantity_box,weight,box_id)" +
+                                          " VALUES" + " (@name,@type,@quantity_box,@weight,@box_id)", MysqlDbc.Instance.getConn());
+            sqlComm.Parameters.Add("@name", MySqlDbType.Text).Value = product.Name;
+            sqlComm.Parameters.Add("@type", MySqlDbType.Text).Value = product.Type;
+            sqlComm.Parameters.Add("@quantity_box", MySqlDbType.Text).Value = product.Quantity_box;
+            sqlComm.Parameters.Add("@weight", MySqlDbType.Decimal).Value = product.Weight;
+            sqlComm.Parameters.Add("@box_id", MySqlDbType.Text).Value = product.Box_id;
+            return sqlComm.ExecuteNonQuery();
+        }
+
+        public int addNewFarm(Farm farm)
+        {
+            MySqlCommand sqlComm = new MySqlCommand("INSERT INTO" + " farm(description,area,utilize_area)" +
+                                          " VALUES" + " (@description,@area,@utilize_area)", MysqlDbc.Instance.getConn());
+            sqlComm.Parameters.Add("@description", MySqlDbType.Text).Value = farm.Description;
+            sqlComm.Parameters.Add("@area", MySqlDbType.Text).Value = farm.Area;
+            sqlComm.Parameters.Add("@utilize_area", MySqlDbType.Text).Value = farm.Utilize_area;
+            return sqlComm.ExecuteNonQuery();
+        }
+
+        public int addNewEmployee(Employee employee)
+        {
+            MySqlCommand sqlComm = new MySqlCommand("INSERT INTO" + " employee(first_name,last_name,username,password,dob,mobile,email,admin,status,remark)" +
+                                          " VALUES" + " (@first_name,@last_name,@username,@password,@dob,@mobile,@email,@admin,@status,@remark)", MysqlDbc.Instance.getConn());
+            sqlComm.Parameters.Add("@first_name", MySqlDbType.Text).Value = employee.First_name;
+            sqlComm.Parameters.Add("@last_name", MySqlDbType.Text).Value = employee.Last_name;
+            sqlComm.Parameters.Add("@username", MySqlDbType.Text).Value = employee.Username;
+            sqlComm.Parameters.Add("@password", MySqlDbType.Text).Value = employee.Password;
+            sqlComm.Parameters.Add("@dob", MySqlDbType.Text).Value = employee.Dob;
+            sqlComm.Parameters.Add("@mobile", MySqlDbType.Text).Value = employee.Mobile;
+            sqlComm.Parameters.Add("@email", MySqlDbType.Text).Value = employee.Email;
+            sqlComm.Parameters.Add("@admin", MySqlDbType.Text).Value = employee.Admin;
+            sqlComm.Parameters.Add("@status", MySqlDbType.Text).Value = employee.Status;
+            sqlComm.Parameters.Add("@remark", MySqlDbType.Text).Value = employee.Remark;
+            return sqlComm.ExecuteNonQuery();
+        }
     }
 
     public class BoxHandler
@@ -27,85 +123,85 @@ namespace JustRipeFarm.ClassEntity
 
     public class OrderHandler
     {
-        public int addNewOrder(MySqlConnection conn, Order order)
-        {
-            string sql = "INSERT INTO orders (description, product_id, quantity_box, weight, palletAllocation, " +
-                "                               customer_id, order_date, collection_date, price, status, remark) "
-                        + " Values ('" + order.Description + "', " + order.Product_id + ", " + order.Quantity_box + ", " 
-                        + order.Weight + " , '" + order.PalletAllocation + "', " + order.Customer_id + " , " 
-                        + order.Order_date.ToString("yyyy-MM-dd") + " ," + order.Collection_date.ToString("yyyy-MM-dd") + " , " 
-                        + order.Price + ", '" + order.Status + "' , '" + order.Remark + "' )";
+        //public int addNewOrder(MySqlConnection conn, Order order)
+        //{
+        //    string sql = "INSERT INTO orders (description, product_id, quantity_box, weight, palletAllocation, " +
+        //        "                               customer_id, order_date, collection_date, price, status, remark) "
+        //                + " Values ('" + order.Description + "', " + order.Product_id + ", " + order.Quantity_box + ", " 
+        //                + order.Weight + " , '" + order.PalletAllocation + "', " + order.Customer_id + " , " 
+        //                + order.Order_date.ToString("yyyy-MM-dd") + " ," + order.Collection_date.ToString("yyyy-MM-dd") + " , " 
+        //                + order.Price + ", '" + order.Status + "' , '" + order.Remark + "' )";
 
-            MySqlCommand sqlComm = new MySqlCommand(sql, conn);
-            return sqlComm.ExecuteNonQuery();
-        }
+        //    MySqlCommand sqlComm = new MySqlCommand(sql, conn);
+        //    return sqlComm.ExecuteNonQuery();
+        //}
     }
-    public class ProductHandler
-    {
-        public int addNewProduct(MySqlConnection conn, Product product)
-        {
-            string sql = "INSERT INTO product (name, type, quantity_box, weight, box_id) "
-                        + " Values ('" + product.Name + "', '" + product.Type + "', " + product.Quantity_box + " , "
-                        + product.Weight + " , " +product.Box_id + "`)";
+    //public class ProductHandler
+    //{
+    //    public int addNewProduct(MySqlConnection conn, Product product)
+    //    {
+    //        string sql = "INSERT INTO product (name, type, quantity_box, weight, box_id) "
+    //                    + " Values ('" + product.Name + "', '" + product.Type + "', " + product.Quantity_box + " , "
+    //                    + product.Weight + " , " +product.Box_id + "`)";
 
-            MySqlCommand sqlComm = new MySqlCommand(sql, conn);
-            return sqlComm.ExecuteNonQuery();
-        }
-    }
+    //        MySqlCommand sqlComm = new MySqlCommand(sql, conn);
+    //        return sqlComm.ExecuteNonQuery();
+    //    }
+    //}
 
-    public class FarmHandler
-    {
-        public int addNewFarm(MySqlConnection conn, Farm farm)
-        {
-            string sql = "INSERT INTO farm (description, area, utilize_area) "
-                        + " Values ('" + farm.Description + "', '" + farm.Area + "', '" + farm.Utilize_area + "')";
+    //public class FarmHandler
+    //{
+    //    public int addNewFarm(MySqlConnection conn, Farm farm)
+    //    {
+    //        string sql = "INSERT INTO farm (description, area, utilize_area) "
+    //                    + " Values ('" + farm.Description + "', '" + farm.Area + "', '" + farm.Utilize_area + "')";
 
-            MySqlCommand sqlComm = new MySqlCommand(sql, conn);
-            return sqlComm.ExecuteNonQuery();
-        }
-    }
+    //        MySqlCommand sqlComm = new MySqlCommand(sql, conn);
+    //        return sqlComm.ExecuteNonQuery();
+    //    }
+    //}
 
     public class EmployeeHandler
     {
-        public int addNewEmployee(MySqlConnection conn, Employee employee)
-        {
-            string sql = "INSERT INTO employee (first_name, last_name, username, password, dob, " +
-                                                 "mobile, email, admin, status, remark) "
-                        + " Values ('" + employee.First_name + "', '" + employee.Last_name + "', '" + employee.Username + "' , '"
-                        + employee.Password + "' , " + employee.Dob + " , '" + employee.Mobile + "' , " + employee.Admin + " , '"
-                        + employee.Status + "' , '" + employee.Remark + "')";
+        //public int addNewEmployee(MySqlConnection conn, Employee employee)
+        //{
+        //    string sql = "INSERT INTO employee (first_name, last_name, username, password, dob, " +
+        //                                         "mobile, email, admin, status, remark) "
+        //                + " Values ('" + employee.First_name + "', '" + employee.Last_name + "', '" + employee.Username + "' , '"
+        //                + employee.Password + "' , " + employee.Dob + " , '" + employee.Mobile + "' , " + employee.Admin + " , '"
+        //                + employee.Status + "' , '" + employee.Remark + "')";
 
-            MySqlCommand sqlComm = new MySqlCommand(sql, conn);
-            
+        //    MySqlCommand sqlComm = new MySqlCommand(sql, conn);
 
-            return sqlComm.ExecuteNonQuery();
-        }
+
+        //    return sqlComm.ExecuteNonQuery();
+        //}
     }
 
     public class CustomerHandler
     {
-        public int addNewCustomer(MySqlConnection conn, Customer customer)
-        {
-            string sql = "INSERT INTO customer (name, email, phone, remark) "
-                        + " Values ('" + customer.Name + "', '" + customer.Email + "', '" + customer.Phone + "' , '"
-                        + customer.Remark + "')";
+        //public int addNewCustomer( Customer customer)
+        //{
+        //    string sql = "INSERT INTO customer (name, email, phone, remark) "
+        //                + " Values ('" + customer.Name + "', '" + customer.Email + "', '" + customer.Phone + "' , '"
+        //                + customer.Remark + "')";
 
-            MySqlCommand sqlComm = new MySqlCommand(sql, conn);
-            return sqlComm.ExecuteNonQuery();
-        }
+        //    MySqlCommand sqlComm = new MySqlCommand(sql, MysqlDbc.Instance.getConn());
+        //    return sqlComm.ExecuteNonQuery();
+        //}
     }
 
     public class StoreroomHandler
     {
-        public int addNewStore(MySqlConnection conn, Storeroom storeroom)
-        {
-            string sql = "INSERT INTO storeroom (description, storingQty, temperature, availability) "
-                        + " Values ('" + storeroom.Description + "', " + storeroom.StoringQty + ", " + storeroom.Temperature + " , '"
-                        + storeroom.Availability + "')";
+        //public int addNewStore(MySqlConnection conn, Storeroom storeroom)
+        //{
+        //    string sql = "INSERT INTO storeroom (description, storingQty, temperature, availability) "
+        //                + " Values ('" + storeroom.Description + "', " + storeroom.StoringQty + ", " + storeroom.Temperature + " , '"
+        //                + storeroom.Availability + "')";
 
-            MySqlCommand sqlComm = new MySqlCommand(sql, conn);
-            return sqlComm.ExecuteNonQuery();
-        }
+        //    MySqlCommand sqlComm = new MySqlCommand(sql, conn);
+        //    return sqlComm.ExecuteNonQuery();
+        //}
     }
 
     public class CropHandler
@@ -123,16 +219,16 @@ namespace JustRipeFarm.ClassEntity
 
     public class VehicleHandler
     {
-        public int addNewVehicle(MySqlConnection conn, Vehicle vehicle)
-        {
-            string sql = "INSERT INTO vehicle (name, serial_number, buy_date, last_service_date, remark) "
-                        + " Values ('" + vehicle.Name + "', " + vehicle.Serial_number + ", " 
-                        + vehicle.Buy_date.ToString("yyyy-MM-dd") + " , "
-                        + vehicle.Last_service_date.ToString("yyyy-MM-dd") + " , '" + vehicle.Remark + "')";
+        //public int addNewVehicle(MySqlConnection conn, Vehicle vehicle)
+        //{
+        //    string sql = "INSERT INTO vehicle (name, serial_number, buy_date, last_service_date, remark) "
+        //                + " Values ('" + vehicle.Name + "', " + vehicle.Serial_number + ", " 
+        //                + vehicle.Buy_date.ToString("yyyy-MM-dd") + " , "
+        //                + vehicle.Last_service_date.ToString("yyyy-MM-dd") + " , '" + vehicle.Remark + "')";
 
-            MySqlCommand sqlComm = new MySqlCommand(sql, conn);
-            return sqlComm.ExecuteNonQuery();
-        }
+        //    MySqlCommand sqlComm = new MySqlCommand(sql, conn);
+        //    return sqlComm.ExecuteNonQuery();
+        //}
     }
 
     public class BoxStorageHandler
