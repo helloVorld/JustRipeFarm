@@ -63,6 +63,12 @@
     <Compile Include="ClassEntity\Fertiliser.cs" />
     <Compile Include="ClassEntity\FertiliserHandler.cs" />
     <Compile Include="ClassEntity\UpdateSQL.cs" />
+    <Compile Include="FormSowingJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSowingJob.Designer.cs">
+      <DependentUpon>FormSowingJob.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormProduct.resx">
       <DependentUpon>FormProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSowingJob.resx">
+      <DependentUpon>FormSowingJob.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormStoreroom.resx">
       <DependentUpon>FormStoreroom.cs</DependentUpon>
