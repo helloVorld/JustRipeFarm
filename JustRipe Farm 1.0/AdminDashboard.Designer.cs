@@ -333,6 +333,7 @@
             // 
             this.dgvDbTable.AllowUserToAddRows = false;
             this.dgvDbTable.AllowUserToDeleteRows = false;
+            this.dgvDbTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDbTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDbTable.Location = new System.Drawing.Point(20, 80);
             this.dgvDbTable.Name = "dgvDbTable";

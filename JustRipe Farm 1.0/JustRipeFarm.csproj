@@ -62,6 +62,7 @@
     <Compile Include="ClassEntity\Farm.cs" />
     <Compile Include="ClassEntity\Fertiliser.cs" />
     <Compile Include="ClassEntity\FertiliserHandler.cs" />
+    <Compile Include="ClassEntity\JRFdataset.cs" />
     <Compile Include="ClassEntity\UpdateSQL.cs" />
     <Compile Include="FormSowingJob.cs">
       <SubType>Form</SubType>

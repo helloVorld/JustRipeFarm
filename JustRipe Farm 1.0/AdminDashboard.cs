@@ -314,9 +314,10 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[0].BtnNew;
                     btnEditItem.Text = pnItems[0].BtnEdit;
                     btnUpdateField.Text = pnItems[0].BtnUpdate;
-                    currentDataSet = MysqlDbc.Instance.getAllLabourer().Tables[0];
-                    
-                    
+                    //currentDataSet = MysqlDbc.Instance.getAllLabourer().Tables[0];
+                    currentDataSet = JRFdataset.Table.getAllLabourer().Tables[0];
+
+
                     break;
                 case "Product" :
                     lblPanelTitle.Text = pnItems[1].PnTitle;
@@ -413,6 +414,8 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[12].BtnNew;
                     btnEditItem.Text = pnItems[12].BtnEdit;
                     btnUpdateField.Text = pnItems[12].BtnUpdate;
+                    currentDataSet = JRFdataset.Table.getAllCrop().Tables[0];
+
                     break;
                 case "Fertiliser":
                     lblPanelTitle.Text = pnItems[13].PnTitle;
