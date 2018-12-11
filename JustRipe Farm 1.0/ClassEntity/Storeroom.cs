@@ -12,12 +12,12 @@ namespace JustRipeFarm.ClassEntity
         private string description;
         private int storingQty;
         private int temperature;
-        private int availability;
+        private bool availability;
 
         public int Id { get => id; set => id = value; }
         public string Description { get => description; set => description = value; }
         public int StoringQty { get => storingQty; set => storingQty = value; }
         public int Temperature { get => temperature; set => temperature = value; }
-        public int Availability { get => availability; set => availability = value; }
+        public bool Availability { get => availability; set => availability = value; }
     }
 }

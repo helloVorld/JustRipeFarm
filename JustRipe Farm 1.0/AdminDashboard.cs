@@ -489,13 +489,17 @@ namespace JustRipeFarm
                     break;
                 case "Customer":
                     FormCustomer fc = new FormCustomer();
+                    fc.Show();
 
                     break;
                 case "Storeroom":
                     FormStoreroom fstor = new FormStoreroom();
+                    fstor.Show();
 
                     break;
                 case "Vehicle":
+                    FormVehicle fv = new FormVehicle();
+                    fv.Show();
                     
                     break;
                 case "Crop":
@@ -525,3 +529,4 @@ namespace JustRipeFarm
         }
     }
 }
+
