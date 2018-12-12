@@ -269,10 +269,18 @@ namespace JustRipeFarm
 
         private void btnEditItem_Click(object sender, EventArgs e)
         {
-            Button btn = sender as Button;
-            goToForm(currentPanel, "Edit");
-            Console.WriteLine("Common panel =>" + currentPanel + " => Edit ");
-           
+            if (datagridDidPress)
+            {
+                Button btn = sender as Button;
+                goToForm(currentPanel, "Edit");
+                Console.WriteLine("Common panel =>" + currentPanel + " => Edit ");
+            }
+            else
+            {
+                ErrorMsg.PlsSelectRow();
+            }
+
+
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -601,5 +609,6 @@ namespace JustRipeFarm
             
         }
     }
+    
 }
 
