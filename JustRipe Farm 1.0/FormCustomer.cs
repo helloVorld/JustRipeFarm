@@ -14,7 +14,10 @@ namespace JustRipeFarm
 {
     public partial class FormCustomer : Form
     {
+        public string state = "";
+        public Customer cust;
         public FormCustomer()
+    
         {
             InitializeComponent();
         }

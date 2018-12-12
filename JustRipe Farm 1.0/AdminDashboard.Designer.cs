@@ -41,6 +41,41 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panelOperation = new System.Windows.Forms.Panel();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.lblPendingPest = new System.Windows.Forms.Label();
+            this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.lblTodayPest = new System.Windows.Forms.Label();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.lblPendingFertilising = new System.Windows.Forms.Label();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.lblTodayFertilising = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.lblPendingStore = new System.Windows.Forms.Label();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.lblTodayStore = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.lblPendingHarvest = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.lblTodayHarvest = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.lblPendingSowing = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.lblTodaySowing = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panelInventory = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
@@ -84,63 +119,28 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.lblTodaySowing = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.lblPendingSowing = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.lblPendingHarvest = new System.Windows.Forms.Label();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.lblTodayHarvest = new System.Windows.Forms.Label();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.lblPendingStore = new System.Windows.Forms.Label();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.lblTodayStore = new System.Windows.Forms.Label();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.lblPendingFertilising = new System.Windows.Forms.Label();
-            this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.lblTodayFertilising = new System.Windows.Forms.Label();
-            this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.groupBox14 = new System.Windows.Forms.GroupBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.lblPendingPest = new System.Windows.Forms.Label();
-            this.groupBox15 = new System.Windows.Forms.GroupBox();
-            this.label34 = new System.Windows.Forms.Label();
-            this.lblTodayPest = new System.Windows.Forms.Label();
             this.panelHome.SuspendLayout();
             this.panelOperation.SuspendLayout();
+            this.groupBox13.SuspendLayout();
+            this.groupBox14.SuspendLayout();
+            this.groupBox15.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            this.groupBox11.SuspendLayout();
+            this.groupBox12.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.panelInventory.SuspendLayout();
             this.panelCommon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDbTable)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            this.groupBox8.SuspendLayout();
-            this.groupBox9.SuspendLayout();
-            this.groupBox10.SuspendLayout();
-            this.groupBox11.SuspendLayout();
-            this.groupBox12.SuspendLayout();
-            this.groupBox13.SuspendLayout();
-            this.groupBox14.SuspendLayout();
-            this.groupBox15.SuspendLayout();
             this.SuspendLayout();
             // 
             // logoutBtn
@@ -257,7 +257,6 @@
             // 
             // panelOperation
             // 
-            this.panelOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelOperation.Controls.Add(this.groupBox13);
             this.panelOperation.Controls.Add(this.groupBox10);
             this.panelOperation.Controls.Add(this.groupBox7);
@@ -269,6 +268,361 @@
             this.panelOperation.Size = new System.Drawing.Size(650, 400);
             this.panelOperation.TabIndex = 18;
             this.panelOperation.Paint += new System.Windows.Forms.PaintEventHandler(this.panelOperation_Paint);
+            // 
+            // groupBox13
+            // 
+            this.groupBox13.Controls.Add(this.groupBox14);
+            this.groupBox13.Controls.Add(this.groupBox15);
+            this.groupBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox13.Location = new System.Drawing.Point(337, 233);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(180, 140);
+            this.groupBox13.TabIndex = 9;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "Pest Control";
+            // 
+            // groupBox14
+            // 
+            this.groupBox14.Controls.Add(this.label32);
+            this.groupBox14.Controls.Add(this.lblPendingPest);
+            this.groupBox14.Location = new System.Drawing.Point(93, 25);
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.Size = new System.Drawing.Size(80, 110);
+            this.groupBox14.TabIndex = 8;
+            this.groupBox14.TabStop = false;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(6, 29);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(67, 20);
+            this.label32.TabIndex = 6;
+            this.label32.Text = "Pending";
+            // 
+            // lblPendingPest
+            // 
+            this.lblPendingPest.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPendingPest.Location = new System.Drawing.Point(6, 66);
+            this.lblPendingPest.Name = "lblPendingPest";
+            this.lblPendingPest.Size = new System.Drawing.Size(65, 29);
+            this.lblPendingPest.TabIndex = 5;
+            this.lblPendingPest.Text = "1000";
+            this.lblPendingPest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // groupBox15
+            // 
+            this.groupBox15.Controls.Add(this.label34);
+            this.groupBox15.Controls.Add(this.lblTodayPest);
+            this.groupBox15.Location = new System.Drawing.Point(6, 25);
+            this.groupBox15.Name = "groupBox15";
+            this.groupBox15.Size = new System.Drawing.Size(80, 110);
+            this.groupBox15.TabIndex = 7;
+            this.groupBox15.TabStop = false;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(6, 27);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(72, 25);
+            this.label34.TabIndex = 6;
+            this.label34.Text = "Today";
+            // 
+            // lblTodayPest
+            // 
+            this.lblTodayPest.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTodayPest.Location = new System.Drawing.Point(6, 66);
+            this.lblTodayPest.Name = "lblTodayPest";
+            this.lblTodayPest.Size = new System.Drawing.Size(65, 29);
+            this.lblTodayPest.TabIndex = 5;
+            this.lblTodayPest.Text = "1000";
+            this.lblTodayPest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.groupBox11);
+            this.groupBox10.Controls.Add(this.groupBox12);
+            this.groupBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox10.Location = new System.Drawing.Point(127, 230);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(180, 140);
+            this.groupBox10.TabIndex = 9;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Fertillising";
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.label28);
+            this.groupBox11.Controls.Add(this.lblPendingFertilising);
+            this.groupBox11.Location = new System.Drawing.Point(93, 25);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(80, 110);
+            this.groupBox11.TabIndex = 8;
+            this.groupBox11.TabStop = false;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(6, 29);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(67, 20);
+            this.label28.TabIndex = 6;
+            this.label28.Text = "Pending";
+            // 
+            // lblPendingFertilising
+            // 
+            this.lblPendingFertilising.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPendingFertilising.Location = new System.Drawing.Point(6, 66);
+            this.lblPendingFertilising.Name = "lblPendingFertilising";
+            this.lblPendingFertilising.Size = new System.Drawing.Size(65, 29);
+            this.lblPendingFertilising.TabIndex = 5;
+            this.lblPendingFertilising.Text = "1";
+            this.lblPendingFertilising.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.label30);
+            this.groupBox12.Controls.Add(this.lblTodayFertilising);
+            this.groupBox12.Location = new System.Drawing.Point(6, 25);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(80, 110);
+            this.groupBox12.TabIndex = 7;
+            this.groupBox12.TabStop = false;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(6, 27);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(72, 25);
+            this.label30.TabIndex = 6;
+            this.label30.Text = "Today";
+            // 
+            // lblTodayFertilising
+            // 
+            this.lblTodayFertilising.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTodayFertilising.Location = new System.Drawing.Point(6, 66);
+            this.lblTodayFertilising.Name = "lblTodayFertilising";
+            this.lblTodayFertilising.Size = new System.Drawing.Size(65, 29);
+            this.lblTodayFertilising.TabIndex = 5;
+            this.lblTodayFertilising.Text = "1000";
+            this.lblTodayFertilising.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.groupBox8);
+            this.groupBox7.Controls.Add(this.groupBox9);
+            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox7.Location = new System.Drawing.Point(440, 72);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(180, 140);
+            this.groupBox7.TabIndex = 9;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Storing";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.label24);
+            this.groupBox8.Controls.Add(this.lblPendingStore);
+            this.groupBox8.Location = new System.Drawing.Point(93, 25);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(80, 110);
+            this.groupBox8.TabIndex = 8;
+            this.groupBox8.TabStop = false;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(6, 29);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(67, 20);
+            this.label24.TabIndex = 6;
+            this.label24.Text = "Pending";
+            // 
+            // lblPendingStore
+            // 
+            this.lblPendingStore.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPendingStore.Location = new System.Drawing.Point(6, 66);
+            this.lblPendingStore.Name = "lblPendingStore";
+            this.lblPendingStore.Size = new System.Drawing.Size(65, 29);
+            this.lblPendingStore.TabIndex = 5;
+            this.lblPendingStore.Text = "1000";
+            this.lblPendingStore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.label26);
+            this.groupBox9.Controls.Add(this.lblTodayStore);
+            this.groupBox9.Location = new System.Drawing.Point(6, 25);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(80, 110);
+            this.groupBox9.TabIndex = 7;
+            this.groupBox9.TabStop = false;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(6, 27);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(72, 25);
+            this.label26.TabIndex = 6;
+            this.label26.Text = "Today";
+            // 
+            // lblTodayStore
+            // 
+            this.lblTodayStore.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTodayStore.Location = new System.Drawing.Point(6, 66);
+            this.lblTodayStore.Name = "lblTodayStore";
+            this.lblTodayStore.Size = new System.Drawing.Size(65, 29);
+            this.lblTodayStore.TabIndex = 5;
+            this.lblTodayStore.Text = "1000";
+            this.lblTodayStore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.groupBox5);
+            this.groupBox4.Controls.Add(this.groupBox6);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(230, 72);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(180, 140);
+            this.groupBox4.TabIndex = 9;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Harvesting";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.label20);
+            this.groupBox5.Controls.Add(this.lblPendingHarvest);
+            this.groupBox5.Location = new System.Drawing.Point(93, 25);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(80, 110);
+            this.groupBox5.TabIndex = 8;
+            this.groupBox5.TabStop = false;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(6, 29);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(67, 20);
+            this.label20.TabIndex = 6;
+            this.label20.Text = "Pending";
+            // 
+            // lblPendingHarvest
+            // 
+            this.lblPendingHarvest.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPendingHarvest.Location = new System.Drawing.Point(6, 66);
+            this.lblPendingHarvest.Name = "lblPendingHarvest";
+            this.lblPendingHarvest.Size = new System.Drawing.Size(65, 29);
+            this.lblPendingHarvest.TabIndex = 5;
+            this.lblPendingHarvest.Text = "1000";
+            this.lblPendingHarvest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.label22);
+            this.groupBox6.Controls.Add(this.lblTodayHarvest);
+            this.groupBox6.Location = new System.Drawing.Point(6, 25);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(80, 110);
+            this.groupBox6.TabIndex = 7;
+            this.groupBox6.TabStop = false;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(6, 27);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(72, 25);
+            this.label22.TabIndex = 6;
+            this.label22.Text = "Today";
+            // 
+            // lblTodayHarvest
+            // 
+            this.lblTodayHarvest.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTodayHarvest.Location = new System.Drawing.Point(6, 66);
+            this.lblTodayHarvest.Name = "lblTodayHarvest";
+            this.lblTodayHarvest.Size = new System.Drawing.Size(65, 29);
+            this.lblTodayHarvest.TabIndex = 5;
+            this.lblTodayHarvest.Text = "1000";
+            this.lblTodayHarvest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.groupBox3);
+            this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(25, 72);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(180, 140);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Sowing";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label16);
+            this.groupBox3.Controls.Add(this.lblPendingSowing);
+            this.groupBox3.Location = new System.Drawing.Point(93, 25);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(80, 110);
+            this.groupBox3.TabIndex = 8;
+            this.groupBox3.TabStop = false;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(6, 29);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(67, 20);
+            this.label16.TabIndex = 6;
+            this.label16.Text = "Pending";
+            // 
+            // lblPendingSowing
+            // 
+            this.lblPendingSowing.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPendingSowing.Location = new System.Drawing.Point(6, 66);
+            this.lblPendingSowing.Name = "lblPendingSowing";
+            this.lblPendingSowing.Size = new System.Drawing.Size(65, 29);
+            this.lblPendingSowing.TabIndex = 5;
+            this.lblPendingSowing.Text = "1000";
+            this.lblPendingSowing.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label18);
+            this.groupBox2.Controls.Add(this.lblTodaySowing);
+            this.groupBox2.Location = new System.Drawing.Point(6, 25);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(80, 110);
+            this.groupBox2.TabIndex = 7;
+            this.groupBox2.TabStop = false;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(6, 27);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(72, 25);
+            this.label18.TabIndex = 6;
+            this.label18.Text = "Today";
+            // 
+            // lblTodaySowing
+            // 
+            this.lblTodaySowing.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTodaySowing.Location = new System.Drawing.Point(6, 66);
+            this.lblTodaySowing.Name = "lblTodaySowing";
+            this.lblTodaySowing.Size = new System.Drawing.Size(65, 29);
+            this.lblTodaySowing.TabIndex = 5;
+            this.lblTodaySowing.Text = "1000";
+            this.lblTodaySowing.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
@@ -678,361 +1032,6 @@
             this.label12.TabIndex = 27;
             this.label12.Text = "Change Password";
             // 
-            // lblTodaySowing
-            // 
-            this.lblTodaySowing.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTodaySowing.Location = new System.Drawing.Point(6, 66);
-            this.lblTodaySowing.Name = "lblTodaySowing";
-            this.lblTodaySowing.Size = new System.Drawing.Size(65, 29);
-            this.lblTodaySowing.TabIndex = 5;
-            this.lblTodaySowing.Text = "1000";
-            this.lblTodaySowing.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(25, 72);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(180, 140);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Sowing";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(6, 27);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(72, 25);
-            this.label18.TabIndex = 6;
-            this.label18.Text = "Today";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label18);
-            this.groupBox2.Controls.Add(this.lblTodaySowing);
-            this.groupBox2.Location = new System.Drawing.Point(6, 25);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(80, 110);
-            this.groupBox2.TabIndex = 7;
-            this.groupBox2.TabStop = false;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.label16);
-            this.groupBox3.Controls.Add(this.lblPendingSowing);
-            this.groupBox3.Location = new System.Drawing.Point(93, 25);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(80, 110);
-            this.groupBox3.TabIndex = 8;
-            this.groupBox3.TabStop = false;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(6, 29);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(67, 20);
-            this.label16.TabIndex = 6;
-            this.label16.Text = "Pending";
-            // 
-            // lblPendingSowing
-            // 
-            this.lblPendingSowing.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPendingSowing.Location = new System.Drawing.Point(6, 66);
-            this.lblPendingSowing.Name = "lblPendingSowing";
-            this.lblPendingSowing.Size = new System.Drawing.Size(65, 29);
-            this.lblPendingSowing.TabIndex = 5;
-            this.lblPendingSowing.Text = "1000";
-            this.lblPendingSowing.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.groupBox5);
-            this.groupBox4.Controls.Add(this.groupBox6);
-            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(230, 72);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(180, 140);
-            this.groupBox4.TabIndex = 9;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Harvesting";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.label20);
-            this.groupBox5.Controls.Add(this.lblPendingHarvest);
-            this.groupBox5.Location = new System.Drawing.Point(93, 25);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(80, 110);
-            this.groupBox5.TabIndex = 8;
-            this.groupBox5.TabStop = false;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(6, 29);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(67, 20);
-            this.label20.TabIndex = 6;
-            this.label20.Text = "Pending";
-            // 
-            // lblPendingHarvest
-            // 
-            this.lblPendingHarvest.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPendingHarvest.Location = new System.Drawing.Point(6, 66);
-            this.lblPendingHarvest.Name = "lblPendingHarvest";
-            this.lblPendingHarvest.Size = new System.Drawing.Size(65, 29);
-            this.lblPendingHarvest.TabIndex = 5;
-            this.lblPendingHarvest.Text = "1000";
-            this.lblPendingHarvest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.label22);
-            this.groupBox6.Controls.Add(this.lblTodayHarvest);
-            this.groupBox6.Location = new System.Drawing.Point(6, 25);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(80, 110);
-            this.groupBox6.TabIndex = 7;
-            this.groupBox6.TabStop = false;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(6, 27);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(72, 25);
-            this.label22.TabIndex = 6;
-            this.label22.Text = "Today";
-            // 
-            // lblTodayHarvest
-            // 
-            this.lblTodayHarvest.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTodayHarvest.Location = new System.Drawing.Point(6, 66);
-            this.lblTodayHarvest.Name = "lblTodayHarvest";
-            this.lblTodayHarvest.Size = new System.Drawing.Size(65, 29);
-            this.lblTodayHarvest.TabIndex = 5;
-            this.lblTodayHarvest.Text = "1000";
-            this.lblTodayHarvest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.groupBox8);
-            this.groupBox7.Controls.Add(this.groupBox9);
-            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox7.Location = new System.Drawing.Point(440, 72);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(180, 140);
-            this.groupBox7.TabIndex = 9;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Storing";
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.label24);
-            this.groupBox8.Controls.Add(this.lblPendingStore);
-            this.groupBox8.Location = new System.Drawing.Point(93, 25);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(80, 110);
-            this.groupBox8.TabIndex = 8;
-            this.groupBox8.TabStop = false;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(6, 29);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(67, 20);
-            this.label24.TabIndex = 6;
-            this.label24.Text = "Pending";
-            // 
-            // lblPendingStore
-            // 
-            this.lblPendingStore.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPendingStore.Location = new System.Drawing.Point(6, 66);
-            this.lblPendingStore.Name = "lblPendingStore";
-            this.lblPendingStore.Size = new System.Drawing.Size(65, 29);
-            this.lblPendingStore.TabIndex = 5;
-            this.lblPendingStore.Text = "1000";
-            this.lblPendingStore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // groupBox9
-            // 
-            this.groupBox9.Controls.Add(this.label26);
-            this.groupBox9.Controls.Add(this.lblTodayStore);
-            this.groupBox9.Location = new System.Drawing.Point(6, 25);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(80, 110);
-            this.groupBox9.TabIndex = 7;
-            this.groupBox9.TabStop = false;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(6, 27);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(72, 25);
-            this.label26.TabIndex = 6;
-            this.label26.Text = "Today";
-            // 
-            // lblTodayStore
-            // 
-            this.lblTodayStore.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTodayStore.Location = new System.Drawing.Point(6, 66);
-            this.lblTodayStore.Name = "lblTodayStore";
-            this.lblTodayStore.Size = new System.Drawing.Size(65, 29);
-            this.lblTodayStore.TabIndex = 5;
-            this.lblTodayStore.Text = "1000";
-            this.lblTodayStore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Controls.Add(this.groupBox11);
-            this.groupBox10.Controls.Add(this.groupBox12);
-            this.groupBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox10.Location = new System.Drawing.Point(127, 230);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(180, 140);
-            this.groupBox10.TabIndex = 9;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Fertillising";
-            // 
-            // groupBox11
-            // 
-            this.groupBox11.Controls.Add(this.label28);
-            this.groupBox11.Controls.Add(this.lblPendingFertilising);
-            this.groupBox11.Location = new System.Drawing.Point(93, 25);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(80, 110);
-            this.groupBox11.TabIndex = 8;
-            this.groupBox11.TabStop = false;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(6, 29);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(67, 20);
-            this.label28.TabIndex = 6;
-            this.label28.Text = "Pending";
-            // 
-            // lblPendingFertilising
-            // 
-            this.lblPendingFertilising.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPendingFertilising.Location = new System.Drawing.Point(6, 66);
-            this.lblPendingFertilising.Name = "lblPendingFertilising";
-            this.lblPendingFertilising.Size = new System.Drawing.Size(65, 29);
-            this.lblPendingFertilising.TabIndex = 5;
-            this.lblPendingFertilising.Text = "1";
-            this.lblPendingFertilising.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // groupBox12
-            // 
-            this.groupBox12.Controls.Add(this.label30);
-            this.groupBox12.Controls.Add(this.lblTodayFertilising);
-            this.groupBox12.Location = new System.Drawing.Point(6, 25);
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(80, 110);
-            this.groupBox12.TabIndex = 7;
-            this.groupBox12.TabStop = false;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(6, 27);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(72, 25);
-            this.label30.TabIndex = 6;
-            this.label30.Text = "Today";
-            // 
-            // lblTodayFertilising
-            // 
-            this.lblTodayFertilising.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTodayFertilising.Location = new System.Drawing.Point(6, 66);
-            this.lblTodayFertilising.Name = "lblTodayFertilising";
-            this.lblTodayFertilising.Size = new System.Drawing.Size(65, 29);
-            this.lblTodayFertilising.TabIndex = 5;
-            this.lblTodayFertilising.Text = "1000";
-            this.lblTodayFertilising.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // groupBox13
-            // 
-            this.groupBox13.Controls.Add(this.groupBox14);
-            this.groupBox13.Controls.Add(this.groupBox15);
-            this.groupBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox13.Location = new System.Drawing.Point(337, 233);
-            this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(180, 140);
-            this.groupBox13.TabIndex = 9;
-            this.groupBox13.TabStop = false;
-            this.groupBox13.Text = "Pest Control";
-            // 
-            // groupBox14
-            // 
-            this.groupBox14.Controls.Add(this.label32);
-            this.groupBox14.Controls.Add(this.lblPendingPest);
-            this.groupBox14.Location = new System.Drawing.Point(93, 25);
-            this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(80, 110);
-            this.groupBox14.TabIndex = 8;
-            this.groupBox14.TabStop = false;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(6, 29);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(67, 20);
-            this.label32.TabIndex = 6;
-            this.label32.Text = "Pending";
-            // 
-            // lblPendingPest
-            // 
-            this.lblPendingPest.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPendingPest.Location = new System.Drawing.Point(6, 66);
-            this.lblPendingPest.Name = "lblPendingPest";
-            this.lblPendingPest.Size = new System.Drawing.Size(65, 29);
-            this.lblPendingPest.TabIndex = 5;
-            this.lblPendingPest.Text = "1000";
-            this.lblPendingPest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // groupBox15
-            // 
-            this.groupBox15.Controls.Add(this.label34);
-            this.groupBox15.Controls.Add(this.lblTodayPest);
-            this.groupBox15.Location = new System.Drawing.Point(6, 25);
-            this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(80, 110);
-            this.groupBox15.TabIndex = 7;
-            this.groupBox15.TabStop = false;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(6, 27);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(72, 25);
-            this.label34.TabIndex = 6;
-            this.label34.Text = "Today";
-            // 
-            // lblTodayPest
-            // 
-            this.lblTodayPest.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTodayPest.Location = new System.Drawing.Point(6, 66);
-            this.lblTodayPest.Name = "lblTodayPest";
-            this.lblTodayPest.Size = new System.Drawing.Size(65, 29);
-            this.lblTodayPest.TabIndex = 5;
-            this.lblTodayPest.Text = "1000";
-            this.lblTodayPest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1059,6 +1058,31 @@
             this.panelHome.PerformLayout();
             this.panelOperation.ResumeLayout(false);
             this.panelOperation.PerformLayout();
+            this.groupBox13.ResumeLayout(false);
+            this.groupBox14.ResumeLayout(false);
+            this.groupBox14.PerformLayout();
+            this.groupBox15.ResumeLayout(false);
+            this.groupBox15.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.panelInventory.ResumeLayout(false);
             this.panelInventory.PerformLayout();
             this.panelCommon.ResumeLayout(false);
@@ -1068,31 +1092,6 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox11.ResumeLayout(false);
-            this.groupBox11.PerformLayout();
-            this.groupBox12.ResumeLayout(false);
-            this.groupBox12.PerformLayout();
-            this.groupBox13.ResumeLayout(false);
-            this.groupBox14.ResumeLayout(false);
-            this.groupBox14.PerformLayout();
-            this.groupBox15.ResumeLayout(false);
-            this.groupBox15.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -43,7 +43,7 @@
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(307, 373);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 28);
             this.btnCancel.TabIndex = 3;
@@ -54,7 +54,7 @@
             // btnDone
             // 
             this.btnDone.Location = new System.Drawing.Point(176, 373);
-            this.btnDone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDone.Margin = new System.Windows.Forms.Padding(4);
             this.btnDone.Name = "btnDone";
             this.btnDone.Size = new System.Drawing.Size(100, 28);
             this.btnDone.TabIndex = 2;
@@ -141,9 +141,10 @@
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnDone);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormCustomer";
             this.Text = "FormCustomer";
+            this.Load += new System.EventHandler(this.FormCustomer_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
