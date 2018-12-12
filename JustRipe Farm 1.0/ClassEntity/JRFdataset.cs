@@ -152,5 +152,53 @@ namespace JustRipeFarm
 
             return ord;
         }
+
+        public DataSet getAllEmployee()
+        {
+            try
+            {
+                string table = JRF.dbName + ".employee";
+                string selectQuery = "SELECT * from " + table + "; ";
+
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, MysqlDbc.Instance.getConn());
+
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+
+                return ds;
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("MySQL Error: {0}", ex.ToString());
+            }
+
+
+            return new DataSet();
+        }
+
+        public DataSet getAllProduct()
+        {
+            try
+            {
+                string table = JRF.dbName + ".product";
+                string selectQuery = "SELECT * from " + table + "; ";
+
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, MysqlDbc.Instance.getConn());
+
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+
+                return ds;
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("MySQL Error: {0}", ex.ToString());
+            }
+
+
+            return new DataSet();
+        }
     }
 }

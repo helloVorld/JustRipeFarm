@@ -387,6 +387,17 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[1].BtnNew;
                     btnEditItem.Text = pnItems[1].BtnEdit;
                     btnUpdateField.Text = pnItems[1].BtnUpdate;
+
+                    try
+                    {
+                        currentDataSet = JRFdataset.Table.getAllProduct().Tables[0];
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("No Data");
+                    }
+                    dgvDbTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
                     break;
                 case "Sowing"   :
                     lblPanelTitle.Text = pnItems[2].PnTitle;
