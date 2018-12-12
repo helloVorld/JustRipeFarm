@@ -23,6 +23,9 @@ namespace JustRipeFarm
         public string currentPanel = "panelHome";
         public bool isAdmin = true;
         public DataTable currentDataSet = new DataTable();
+        public bool datagridDidPress = false;
+        public int currentID;
+        List<string> currentUpdateOption = new List<string>();
 
         public AdminDashboard()
         {
@@ -124,6 +127,7 @@ namespace JustRipeFarm
                 // load created panel 
                 panelDisplay(panelName);
             }
+            datagridDidPress = false;
 
 
             // control menu button visibility
@@ -278,11 +282,41 @@ namespace JustRipeFarm
 
         private void btnUpdateField_Click(object sender, EventArgs e)
         {
+            // testing purposes 
             foreach(DataRow dr in currentDataSet.Rows)
             {
                 string t1 = dr[1].ToString();
                 Console.WriteLine("data table row => " + t1);
             }
+            
+            if (datagridDidPress)
+            {
+                try
+                {
+                    string cbText = cbUpdateField.SelectedItem.ToString();
+                    Console.WriteLine("CB update => " + cbText);
+
+                    if (JRF.GotInListStr(currentUpdateOption, cbText))
+                    {
+                        // proceed MySql operation
+
+                    }
+                    else
+                    {
+                        ErrorMsg.UpdateOptionInvalid();
+                    }
+                }
+                catch(Exception ex)
+                {
+                    ErrorMsg.UpdateOptionNoSelect();
+                }
+                                
+            }
+            else
+            {
+                ErrorMsg.PlsSelectRow();
+            }
+
         }
 
         public void displayForAdmin(bool isAdmin)
@@ -304,7 +338,15 @@ namespace JustRipeFarm
 
         public void switchPanelItem(string btnName)
         {
-            currentPanel = btnName; 
+            currentPanel = btnName;
+            
+            cbUpdateField.Items.Clear();
+
+            // hide combobox filter
+            cbFilter2.Hide();
+            cbFilter3.Hide();
+            cbFilter4.Hide();
+
             switch (btnName)
             {
                 case "Order"   :
@@ -314,10 +356,21 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[0].BtnNew;
                     btnEditItem.Text = pnItems[0].BtnEdit;
                     btnUpdateField.Text = pnItems[0].BtnUpdate;
-                    //currentDataSet = MysqlDbc.Instance.getAllLabourer().Tables[0];
-                    currentDataSet = JRFdataset.Table.getAllLabourer().Tables[0];
-
-
+                    currentUpdateOption = JRF.OrderStatusOption();
+                    foreach ( string str in currentUpdateOption)
+                    {
+                        cbUpdateField.Items.Add(str);
+                    }
+                    
+                    try
+                    {
+                        currentDataSet = JRFdataset.Table.getAllOrders().Tables[0];
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show("No Data");
+                    }
+                    dgvDbTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                     break;
                 case "Product" :
                     lblPanelTitle.Text = pnItems[1].PnTitle;
@@ -445,6 +498,8 @@ namespace JustRipeFarm
             default: break;
             }
             dgvDbTable.DataSource = currentDataSet;
+            dgvDbTable.ScrollBars = ScrollBars.Both;
+
         }
 
         public void goToForm(string btnName,string newOrEdit)
@@ -454,6 +509,11 @@ namespace JustRipeFarm
                 case "Order":
                     FormOrder fo = new FormOrder();
                     fo.state = newOrEdit;
+                    if (newOrEdit == "Edit")
+                    {
+                        // MySQL Need Check 
+                        fo.ord = JRFdataset.Table.GetOrderFromID(currentID);
+                    }
                     fo.Show();
                     
                     break;
@@ -521,11 +581,24 @@ namespace JustRipeFarm
         private void dgvDbTable_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             dgvDbTable.Select();
-            int currentRowIndex = dgvDbTable.CurrentRow.Index;
-            dgvDbTable.Rows[currentRowIndex].Selected = true;
-            string id = dgvDbTable.CurrentRow.Cells[0].Value.ToString();
-            Console.WriteLine("DGV : selected row id: " + id);
-            tbId.Text = id;
+
+            int currentRowIndex;
+            try
+            {
+                currentRowIndex = dgvDbTable.CurrentRow.Index;
+                dgvDbTable.Rows[currentRowIndex].Selected = true;
+                string id = dgvDbTable.CurrentRow.Cells[0].Value.ToString();
+                Console.WriteLine("DGV : selected row id: " + id);
+                tbId.Text = id;
+                currentID = Int32.Parse(id);
+                datagridDidPress = true;
+            }
+            catch(Exception ex)
+            {
+                currentRowIndex = 0;
+            }
+
+            
         }
     }
 }
