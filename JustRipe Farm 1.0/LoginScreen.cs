@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using JustRipeFarm.ClassEntity;
 namespace JustRipeFarm
 {
     public partial class LoginScreen : Form
     {
-        
+
+
         public LoginScreen()
         {
             InitializeComponent();
@@ -34,9 +35,40 @@ namespace JustRipeFarm
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            Mainscreen mainscreen = new Mainscreen();
-            mainscreen.Show();
-            this.Close();
+            //define local variables from the user inputs 
+            string user = textBox1.Text;
+            string pass = textBox2.Text;
+
+            Login login = new Login(user, pass);
+
+
+            //check if eligible to be logged in 
+            if (login.IsLoggedIn(user, pass))
+            {
+                int loginCode = login.checkUserLogin();
+
+                if (loginCode == 1)
+                {
+                    goToDashBoard(true);
+                }
+                else if(loginCode == 0)
+                {
+                    goToDashBoard(false);
+                }
+                else
+                {
+                    MessageBox.Show("No User in my system!!");
+                }
+            }
+            else
+            {
+                //show default login error message 
+                MessageBox.Show("Login Error!");
+            }
+
+            //Mainscreen mainscreen = new Mainscreen();
+            //mainscreen.Show();
+            //this.Close();
         }
 
         private void labDashBtn_Click(object sender, EventArgs e)
@@ -67,5 +99,28 @@ namespace JustRipeFarm
             dashboard.Show();
             this.Close();
         }
+
+        //Login login = new Login("admin", "1234");
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            textBox2.PasswordChar = '*';
+        }
+
+        private void LoginScreen_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+

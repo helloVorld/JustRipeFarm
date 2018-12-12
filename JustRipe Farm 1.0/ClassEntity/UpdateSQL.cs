@@ -28,6 +28,23 @@ namespace JustRipeFarm.ClassEntity
 
             return sqlComm.ExecuteNonQuery();
         }
+
+        public int UpdateEmployee(Employee employee)
+        {
+            MySqlCommand sqlComm = new MySqlCommand("UPDATE" + " employee SET first_name=@first_name,last_name=@last_name,username=@username,password=@password,dob=@dob,mobile=@mobile,email=@email,admin=@admin,status=@status,remark=@remark " +
+                                           "WHERE id = 1" /*+ employee.Id*/, MysqlDbc.Instance.getConn());
+            sqlComm.Parameters.Add("@first_name", MySqlDbType.Text).Value = employee.First_name;
+            sqlComm.Parameters.Add("@last_name", MySqlDbType.Text).Value = employee.Last_name;
+            sqlComm.Parameters.Add("@username", MySqlDbType.Text).Value = employee.Username;
+            sqlComm.Parameters.Add("@password", MySqlDbType.Text).Value = employee.Password;
+            sqlComm.Parameters.Add("@dob", MySqlDbType.Text).Value = employee.Dob;
+            sqlComm.Parameters.Add("@mobile", MySqlDbType.Text).Value = employee.Mobile;
+            sqlComm.Parameters.Add("@email", MySqlDbType.Text).Value = employee.Email;
+            sqlComm.Parameters.Add("@admin", MySqlDbType.Text).Value = employee.Admin;
+            sqlComm.Parameters.Add("@status", MySqlDbType.Text).Value = employee.Status;
+            sqlComm.Parameters.Add("@remark", MySqlDbType.Text).Value = employee.Remark;
+            return sqlComm.ExecuteNonQuery();
+        }
     }
 
     /*public class UpdateOrder
