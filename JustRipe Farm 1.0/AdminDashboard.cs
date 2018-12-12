@@ -619,6 +619,28 @@ namespace JustRipeFarm
 
             
         }
+
+        private void panelOperation_Paint(object sender, PaintEventArgs e)
+        {
+            Console.WriteLine("panel operation loaded");
+            
+            lblTodaySowing.Text = JobOp.GetJobCountFor(true,"sowingjob").ToString();
+            lblPendingSowing.Text = JobOp.GetJobCountFor(false, "sowingjob").ToString();
+
+            lblTodayHarvest.Text = JobOp.GetJobCountFor(true, "harvestingjob").ToString();
+            lblPendingHarvest.Text = JobOp.GetJobCountFor(false, "harvestingjob").ToString();
+
+            lblTodayStore.Text = JobOp.GetJobCountFor(true, "storingjob").ToString();
+            lblPendingStore.Text = JobOp.GetJobCountFor(false, "storingjob").ToString();
+
+            lblTodayFertilising.Text = JobOp.GetJobCountFor(true, "fertilisingjob").ToString();
+            lblPendingFertilising.Text = JobOp.GetJobCountFor(false, "fertilisingjob").ToString();
+
+            lblTodayPest.Text = JobOp.GetJobCountFor(true, "pesticidejob").ToString();
+            lblPendingPest.Text = JobOp.GetJobCountFor(false, "pesticidejob").ToString();
+
+
+        }
     }
     
 }

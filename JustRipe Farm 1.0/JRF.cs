@@ -208,5 +208,17 @@ namespace JustRipeFarm
 
         }
 
+        public static List<string> JobStatusOption()
+        {
+            List<string> statusOp = new List<string>();
+
+            statusOp.Add("Pending");
+            statusOp.Add("Postponed");
+            statusOp.Add("Complete");
+            statusOp.Add("Canceled");
+
+            return statusOp;
+        }
+
     }
 }
