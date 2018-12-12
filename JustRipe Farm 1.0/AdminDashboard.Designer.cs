@@ -222,7 +222,7 @@
             this.panelHome.Controls.Add(this.button2);
             this.panelHome.Controls.Add(this.button1);
             this.panelHome.Controls.Add(this.label4);
-            this.panelHome.Location = new System.Drawing.Point(181, 50);
+            this.panelHome.Location = new System.Drawing.Point(379, 46);
             this.panelHome.Margin = new System.Windows.Forms.Padding(4);
             this.panelHome.Name = "panelHome";
             this.panelHome.Size = new System.Drawing.Size(650, 400);
@@ -716,7 +716,7 @@
             // tbId
             // 
             this.tbId.Enabled = false;
-            this.tbId.Location = new System.Drawing.Point(92, 439);
+            this.tbId.Location = new System.Drawing.Point(55, 357);
             this.tbId.Margin = new System.Windows.Forms.Padding(4);
             this.tbId.Name = "tbId";
             this.tbId.Size = new System.Drawing.Size(27, 20);
@@ -757,11 +757,14 @@
             // 
             // cbFilter1
             // 
+            this.cbFilter1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbFilter1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbFilter1.FormattingEnabled = true;
             this.cbFilter1.Location = new System.Drawing.Point(95, 40);
             this.cbFilter1.Name = "cbFilter1";
             this.cbFilter1.Size = new System.Drawing.Size(121, 21);
             this.cbFilter1.TabIndex = 5;
+            this.cbFilter1.SelectedIndexChanged += new System.EventHandler(this.cbFilter1_SelectedIndexChanged);
             // 
             // lblSearch
             // 

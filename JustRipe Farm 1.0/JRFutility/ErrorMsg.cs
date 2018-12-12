@@ -23,5 +23,10 @@ namespace JustRipeFarm
         {
             MessageBox.Show("Invalid option.");
         }
+
+        public static void WrongIntInput()
+        {
+            MessageBox.Show("Invalid number input.");
+        }
     }
 }

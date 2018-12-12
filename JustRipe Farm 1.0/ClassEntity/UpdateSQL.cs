@@ -98,11 +98,12 @@ namespace JustRipeFarm.ClassEntity
 
         public int updateFarm(Farm farm)
         {
-            MySqlCommand sqlComm = new MySqlCommand("UPDATE" + " farm SET description=@description,area=@area,utilize_area=@utilize_area)" +
-                                          "WHERE id = 1", MysqlDbc.Instance.getConn());
+            string query = "UPDATE" + " farm SET description=@description, area=@area, utilize_area=@utilize_area" +
+                                          " WHERE id = " + farm.Id;
+            MySqlCommand sqlComm = new MySqlCommand(query, MysqlDbc.Instance.getConn());
             sqlComm.Parameters.Add("@description", MySqlDbType.Text).Value = farm.Description;
-            sqlComm.Parameters.Add("@area", MySqlDbType.Text).Value = farm.Area;
-            sqlComm.Parameters.Add("@utilize_area", MySqlDbType.Text).Value = farm.Utilize_area;
+            sqlComm.Parameters.Add("@area", MySqlDbType.Int32).Value = farm.Area;
+            sqlComm.Parameters.Add("@utilize_area", MySqlDbType.Int32).Value = farm.Utilize_area;
 
             return sqlComm.ExecuteNonQuery();
         }

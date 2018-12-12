@@ -26,6 +26,7 @@ namespace JustRipeFarm
         public bool datagridDidPress = false;
         public int currentID;
         List<string> currentUpdateOption = new List<string>();
+        List<string> currentSearchOption = new List<string>();
 
         public AdminDashboard()
         {
@@ -119,6 +120,10 @@ namespace JustRipeFarm
             if (useCommonPanel)
             {
                 // load common panel
+                lblUpdateField.Show();
+                cbUpdateField.Show();
+                btnUpdateField.Show();
+                btnReset.Show();
                 switchPanelItem(btn.Name);
                 panelDisplay("panelCommon");
             }
@@ -151,6 +156,10 @@ namespace JustRipeFarm
         {
             this.Width = 800;
             this.Height = 500;
+            label1.Hide();
+            label2.Hide();
+            formWidthLbl.Hide();
+            formHeightLbl.Hide();
             
             loadMenuBtn();
             panelsControl.Add(panelHome);
@@ -180,7 +189,7 @@ namespace JustRipeFarm
                 }
 
             }
-
+            tbId.Text = "";
         }
 
         // Menu button display ====>>
@@ -491,6 +500,15 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[7].BtnNew;
                     btnEditItem.Text = pnItems[7].BtnEdit;
                     btnUpdateField.Text = pnItems[7].BtnUpdate;
+                    lblUpdateField.Hide();
+                    cbUpdateField.Hide();
+                    btnUpdateField.Hide();
+                    btnReset.Hide();
+                    currentSearchOption = JobOp.getFarmList();
+                    foreach (string str in currentSearchOption)
+                    {
+                        cbFilter1.Items.Add(str);
+                    }
                     try
                     {
                         currentDataSet = JRFdataset.Table.getAllFarm().Tables[0];
@@ -694,6 +712,12 @@ namespace JustRipeFarm
                     break;
                 case "Farm":
                     FormFarm ff = new FormFarm();
+                    ff.state = newOrEdit;
+                    if (newOrEdit == "Edit")
+                    {
+                        // MySQL Need Check 
+                        ff.farmfarm = JRFdataset.Table.GetFarmFromID(currentID);
+                    }
                     ff.Show();
 
                     break;
@@ -783,6 +807,31 @@ namespace JustRipeFarm
             lblPendingPest.Text = JobOp.GetJobCountFor(false, "pesticidejob").ToString();
 
 
+        }
+
+        private void cbFilter1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox cbx = sender as ComboBox;
+            //int indexx = cbx.SelectedIndex;
+            string selectstr = cbx.SelectedItem.ToString();
+            
+            foreach (DataGridViewRow rrr in dgvDbTable.Rows)
+            {
+                int index = rrr.Index;
+                string cellStr = dgvDbTable.Rows[index].Cells[1].Value.ToString();
+                Console.WriteLine("cbfilter => " + selectstr + "<=>" + cellStr);
+                if (selectstr == cellStr)
+                {
+                    dgvDbTable.CurrentCell = dgvDbTable.Rows[index].Cells[1];
+                    dgvDbTable.Rows[index].Selected = true;
+                }
+            }
+
+            //DataGridView dgv = sender as DataGridView;
+
+            //int column = dgv.CurrentRow.Index;
+            //string ind = dgv.CurrentRow.Cells[0].Value.ToString();
+            //Console.WriteLine("current row : " + column + " " + ind);
         }
     }
     

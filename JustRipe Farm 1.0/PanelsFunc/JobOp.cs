@@ -52,5 +52,42 @@ namespace JustRipeFarm
             return 0;
         }
 
+        public static List<string> getFarmList()
+        {
+            Farm farm = new Farm();
+            List<string> flist = new List<string>();
+            MySqlDataReader rdr = null;
+            try
+            {
+                string tableName = "farm";
+                string query = "SELECT * FROM " + tableName ;
+
+                MySqlCommand cmd = new MySqlCommand(query, MysqlDbc.Instance.getConn());
+                rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    farm.Description = rdr.GetString("description");
+                    flist.Add(farm.Description);
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+            }
+
+            return flist;
+        }
+
     }
 }
