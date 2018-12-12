@@ -63,6 +63,7 @@
     <Compile Include="ClassEntity\Fertiliser.cs" />
     <Compile Include="ClassEntity\FertiliserHandler.cs" />
     <Compile Include="ClassEntity\JRFdataset.cs" />
+    <Compile Include="Login.cs" />
     <Compile Include="ClassEntity\UpdateSQL.cs" />
     <Compile Include="FormSowingJob.cs">
       <SubType>Form</SubType>
@@ -209,6 +210,29 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\farm-landscape-background-vector-20768931.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ass.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Farm+Rio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c 1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b5.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
