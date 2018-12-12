@@ -692,11 +692,18 @@ namespace JustRipeFarm
                     break;
                 case "Customer":
                     FormCustomer fc = new FormCustomer();
+                    fc.state = newOrEdit;
+                    if (newOrEdit == "Edit")
+                    {
+                        // MySQL Need Check 
+                        fc.cust = JRFdataset.Table.GetCustoemrFromID(currentID);
+                    }
                     fc.Show();
 
                     break;
                 case "Storeroom":
                     FormStoreroom fstor = new FormStoreroom();
+
                     fstor.Show();
 
                     break;

@@ -22,6 +22,17 @@ namespace JustRipeFarm
             InitializeComponent();
         }
 
+        private void FormCustomer_Load(object sender, EventArgs e)
+        {
+            if (state == "Edit")
+            {
+                nameText.Text = cust.Name;
+                emailText.Text = cust.Email;
+                phoneText.Text = cust.Phone;
+                remarkText.Text = cust.Remark;
+            }
+        }
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
