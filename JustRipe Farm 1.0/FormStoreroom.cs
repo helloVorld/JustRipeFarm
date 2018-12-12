@@ -31,10 +31,9 @@ namespace JustRipeFarm
                 avail = true;
             }
             store.Availability = avail;
-            // Console.WriteLine(availability);
             InsertSQL storeHnd = new InsertSQL();
             int addrecord = storeHnd.addNewStore(store);
-            MessageBox.Show(addrecord + "Your record is added");
+            MessageBox.Show(addrecord + " Your record is added");
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

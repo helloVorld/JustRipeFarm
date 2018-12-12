@@ -11,25 +11,26 @@ namespace JustRipeFarm.ClassEntity
     {
         public int addNewCustomer(Customer customer)
         {
-            string sql = "INSERT INTO customer (name, email, phone, remark) "
-                        + " Values ('" + customer.Name + "', '" + customer.Email + "', '" + customer.Phone + "' , '"
-                        + customer.Remark + "')";
+            MySqlCommand sqlComm = new MySqlCommand("INSERT INTO" + " customer(name,email,phone,remark)" +
+                                           " VALUES" + " (@name,@email,@phone,@remark)", MysqlDbc.Instance.getConn());
+            sqlComm.Parameters.Add("@name", MySqlDbType.Text).Value = customer.Name;
+            sqlComm.Parameters.Add("@email", MySqlDbType.Text).Value = customer.Email;
+            sqlComm.Parameters.Add("@phone", MySqlDbType.Text).Value = customer.Phone;
+            sqlComm.Parameters.Add("@remark", MySqlDbType.Text).Value = customer.Remark;
 
-            MySqlCommand sqlComm = new MySqlCommand(sql, MysqlDbc.Instance.getConn());
             return sqlComm.ExecuteNonQuery();
         }
 
 
         public int addNewStore(Storeroom storeroom)
         {
-            int availability = storeroom.Availability ? 1 : 0;
-            Console.WriteLine("i want to see this => " + storeroom.Availability + " " + availability);
-            string sql = "INSERT INTO storeroom (description, storingQty, temperature, availability) "
-                        + " Values ('" + storeroom.Description + "', " + storeroom.StoringQty + ", " + storeroom.Temperature + " , '"
-                        + availability + "')"; 
+            MySqlCommand sqlComm = new MySqlCommand("INSERT INTO" + " storeroom(description,storingQty,temperature,availability)" +
+                                           " VALUES" + " (@description,@storingQty,@temperature,@availability)", MysqlDbc.Instance.getConn());
+            sqlComm.Parameters.Add("@description", MySqlDbType.Text).Value = storeroom.Description;
+            sqlComm.Parameters.Add("@storingQty", MySqlDbType.Text).Value = storeroom.StoringQty;
+            sqlComm.Parameters.Add("@temperature", MySqlDbType.Text).Value = storeroom.Temperature;
+            sqlComm.Parameters.Add("@availability", MySqlDbType.UInt64).Value = storeroom.Availability;
 
-
-            MySqlCommand sqlComm = new MySqlCommand(sql, MysqlDbc.Instance.getConn());
             return sqlComm.ExecuteNonQuery();
         }
 
