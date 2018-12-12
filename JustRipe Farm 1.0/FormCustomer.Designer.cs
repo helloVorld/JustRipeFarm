@@ -118,6 +118,7 @@
             this.phoneText.Name = "phoneText";
             this.phoneText.Size = new System.Drawing.Size(170, 22);
             this.phoneText.TabIndex = 10;
+            this.phoneText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.phoneText_KeyPress);
             // 
             // remarkText
             // 
@@ -144,7 +145,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormCustomer";
             this.Text = "FormCustomer";
-            this.Load += new System.EventHandler(this.FormCustomer_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

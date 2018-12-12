@@ -29,6 +29,24 @@ namespace JustRipeFarm.ClassEntity
         public DateTime Best_before { get => best_before; set => best_before = value; }
         public DateTime Out_date { get => out_date; set => out_date = value; }
         public int Order_id { get => order_id; set => order_id = value; }
-        
+
+
+        public BoxStorage()
+        {
+
+        }
+
+        public BoxStorage(int storingJob_id, int product_id, int box_id, double nettWeight, int storeroom_id, DateTime add_date, DateTime best_before, DateTime out_date, int order_id)
+        {
+            this.StoringJob_id = storingJob_id;
+            this.Product_id = product_id;
+            this.Box_id = box_id;
+            this.NettWeight = nettWeight;
+            this.Storeroom_id = storeroom_id;
+            this.Add_date = add_date;
+            this.Best_before = best_before;
+            this.Out_date = out_date;
+            this.Order_id = order_id;
+        }
     }
 }

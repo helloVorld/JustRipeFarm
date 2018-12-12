@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data;
+using JustRipeFarm.ClassEntity;
 
 
 namespace JustRipeFarm
@@ -829,9 +830,23 @@ namespace JustRipeFarm
 
             //DataGridView dgv = sender as DataGridView;
 
-            //int column = dgv.CurrentRow.Index;
-            //string ind = dgv.CurrentRow.Cells[0].Value.ToString();
-            //Console.WriteLine("current row : " + column + " " + ind);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormEditProfile editprofile = new FormEditProfile();
+            editprofile.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormEditPassword editpassword = new FormEditPassword();
+            editpassword.Show();
         }
     }
     

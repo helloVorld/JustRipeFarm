@@ -61,7 +61,7 @@ namespace JustRipeFarm.ClassEntity
 
         public int updateProduct(Product product)
         {
-            MySqlCommand sqlComm = new MySqlCommand("UPDATE" + " product SET name=@name,type=@type,quantity_box=@quantity_box,weight=@weight,box_id=@box_id)" +
+            MySqlCommand sqlComm = new MySqlCommand("UPDATE" + " product SET name=@name,type=@type,quantity_box=@quantity_box,weight=@weight,box_id=@box_id" +
                                           "WHERE id = 1", MysqlDbc.Instance.getConn());
             sqlComm.Parameters.Add("@name", MySqlDbType.Text).Value = product.Name;
             sqlComm.Parameters.Add("@type", MySqlDbType.Text).Value = product.Type;
@@ -73,7 +73,7 @@ namespace JustRipeFarm.ClassEntity
 
         public int updateStore(Storeroom storeroom)
         {
-            MySqlCommand sqlComm = new MySqlCommand("UPDATE" + " storeroom SET description=@description,storingQty=@storingQty,temperature=@temperature,availability=@availabitily)" +
+            MySqlCommand sqlComm = new MySqlCommand("UPDATE" + " storeroom SET description=@description,storingQty=@storingQty,temperature=@temperature,availability=@availabitily" +
                                            "WHERE id=1", MysqlDbc.Instance.getConn());
             sqlComm.Parameters.Add("@description", MySqlDbType.Text).Value = storeroom.Description;
             sqlComm.Parameters.Add("@storingQty", MySqlDbType.UInt32).Value = storeroom.StoringQty;
@@ -110,7 +110,7 @@ namespace JustRipeFarm.ClassEntity
 
         public int updateBox(Box box)
         {
-            MySqlCommand sqlComm = new MySqlCommand("UPDATE" + " box SET name=@name, width=@width, height=@height, length=@length, max_weight=@max_weight, quantity=@quantity, status=@status)" +
+            MySqlCommand sqlComm = new MySqlCommand("UPDATE" + " box SET name=@name, width=@width, height=@height, length=@length, max_weight=@max_weight, quantity=@quantity, status=@status" +
                                           "WHERE id = 1", MysqlDbc.Instance.getConn());
 
             sqlComm.Parameters.Add("@name", MySqlDbType.Text).Value = box.Name;
@@ -126,7 +126,7 @@ namespace JustRipeFarm.ClassEntity
 
         public int updateCrop(Crop crop)
         {
-            MySqlCommand sqlComm = new MySqlCommand("UPDATE" + " crop SET name=@name, type=@type, quantity_plot=@quantity_plot, remark=@remark)" +
+            MySqlCommand sqlComm = new MySqlCommand("UPDATE" + " crop SET name=@name, type=@type, quantity_plot=@quantity_plot, remark=@remark" +
                                           "WHERE id = 1", MysqlDbc.Instance.getConn());
 
             sqlComm.Parameters.Add("@name", MySqlDbType.Text).Value = crop.Name;
@@ -140,7 +140,7 @@ namespace JustRipeFarm.ClassEntity
         public int updateBoxStorage(BoxStorage boxstorage)
         {
             MySqlCommand sqlComm = new MySqlCommand("UPDATE" + " boxstorage SET storingJob_id=@storingJob_id, product_id=@product_id, box_id=@box_id, nettWeight=@nettWeight, " +
-                                                    " storeroom_id=@storeroom_id, add_date=@add_date, best_before=@best_before, out_date=@out_date, order_id=@order_id)" +
+                                                    " storeroom_id=@storeroom_id, add_date=@add_date, best_before=@best_before, out_date=@out_date, order_id=@order_id" +
                                                     "WHERE id = 1", MysqlDbc.Instance.getConn());
 
             sqlComm.Parameters.Add("@storingJob_id", MySqlDbType.Text).Value = boxstorage.StoringJob_id;
@@ -160,7 +160,7 @@ namespace JustRipeFarm.ClassEntity
         {
             MySqlCommand sqlComm = new MySqlCommand("UPDATE" + " sowingjob SET description=@description, crop_id=@crop_id, quantity_prop=@quantity_prop, farm_id=@farm_id," +
                                                     " used_area=@used_area, vehicle_id=@vehicle_id, employee_id=@employee_id, date=@date, " +
-                                                    "time_start=@time_start, time_end=@time_end)" +
+                                                    "time_start=@time_start, time_end=@time_end" +
                                                      "WHERE id = 1", MysqlDbc.Instance.getConn());
 
             sqlComm.Parameters.Add("@description", MySqlDbType.Text).Value = sowingjob.Description;
@@ -181,7 +181,7 @@ namespace JustRipeFarm.ClassEntity
         {
             MySqlCommand sqlComm = new MySqlCommand("UPDATE" + " harvestingjob SET description=@description, sowingJob_id=@sowingJob_id, farm_id=@Farm_id, crop_id=@crop_id," +
                                                     " vehicle_id=@vehicle_id, est_quantity=@est_quantity, harvested_quantity=@harvested_quantity, employee_id=@employee_id," +
-                                                    " date=@date, time_start=@time_start, time_end=@time_end)" +
+                                                    " date=@date, time_start=@time_start, time_end=@time_end" +
                                                      "WHERE id = 1", MysqlDbc.Instance.getConn());
 
             sqlComm.Parameters.Add("@description", MySqlDbType.Text).Value = harvestingjob.Description;
@@ -203,7 +203,7 @@ namespace JustRipeFarm.ClassEntity
         {
             MySqlCommand sqlComm = new MySqlCommand("UPDATE" + " storingjob SET description=@description, harvest_id=@harvest_id, crop_id=@crop_id," +
                                                     " box_id=@box_id, quantity=@quantity, vehicle_id=@vehicle_id, employee_id=@employee_id," +
-                                                    " date=@date, time_start=@time_start, time_end=@time_end)" +
+                                                    " date=@date, time_start=@time_start, time_end=@time_end" +
                                                      "WHERE id = 1", MysqlDbc.Instance.getConn());
 
             sqlComm.Parameters.Add("@description", MySqlDbType.Text).Value = storingjob.Description;
@@ -224,7 +224,7 @@ namespace JustRipeFarm.ClassEntity
         {
             MySqlCommand sqlComm = new MySqlCommand("UPDATE" + " fertilisingjob SET description=@description, fertiliser_id=@fertiliser_id, quantity_kg=@quantity_kg," +
                                                     " sowingJob_id=@sowing_id, farm_id=@farm_id, crop_id=@crop_id, vehicle_id=@vehicle_id" +
-                                                    " employee_id=@employee_id, date=@date, time_start=@time_start, time_end=@time_end)" +
+                                                    " employee_id=@employee_id, date=@date, time_start=@time_start, time_end=@time_end" +
                                                      "WHERE id = 1", MysqlDbc.Instance.getConn());
 
             sqlComm.Parameters.Add("@description", MySqlDbType.Text).Value = fertilisingjob.Description;
@@ -246,7 +246,7 @@ namespace JustRipeFarm.ClassEntity
         {
             MySqlCommand sqlComm = new MySqlCommand("UPDATE" + " pesticejob SET description=@description,  pesticide_id_id=@pesticide_id, quantity_kg=@quantity_kg," +
                                                     " sowingJob_id=@sowing_id, farm_id=@farm_id, crop_id=@crop_id, vehicle_id=@vehicle_id" +
-                                                    " employee_id=@employee_id, date=@date, time_start=@time_start, time_end=@time_end)" +
+                                                    " employee_id=@employee_id, date=@date, time_start=@time_start, time_end=@time_end" +
                                                      "WHERE id = 1", MysqlDbc.Instance.getConn());
 
             sqlComm.Parameters.Add("@description", MySqlDbType.Text).Value = pesticidejob.Description;
@@ -266,7 +266,7 @@ namespace JustRipeFarm.ClassEntity
 
         public int updateFertiliser(Fertiliser fertiliser)
         {
-            MySqlCommand sqlComm = new MySqlCommand("UPDATE" + " fertiliser SET name=@name, quantity_kg=@quantity_kg, remark=@remark)" +
+            MySqlCommand sqlComm = new MySqlCommand("UPDATE" + " fertiliser SET name=@name, quantity_kg=@quantity_kg, remark=@remark" +
                                                      "WHERE id = 1", MysqlDbc.Instance.getConn());
 
             sqlComm.Parameters.Add("@name", MySqlDbType.Text).Value = fertiliser.Name;
@@ -278,12 +278,35 @@ namespace JustRipeFarm.ClassEntity
 
         public int updatePesticide(Pesticide pesticide)
         {
-            MySqlCommand sqlComm = new MySqlCommand("UPDATE" + " pesticide SET name=@name, quantity_kg=@quantity_kg, remark=@remark)" +
+            MySqlCommand sqlComm = new MySqlCommand("UPDATE" + " pesticide SET name=@name, quantity_kg=@quantity_kg, remark=@remark" +
                                                      "WHERE id = 1", MysqlDbc.Instance.getConn());
 
             sqlComm.Parameters.Add("@name", MySqlDbType.Text).Value = pesticide.Name;
             sqlComm.Parameters.Add("@quantity_kg", MySqlDbType.UInt32).Value = pesticide.Quantity_kg;
             sqlComm.Parameters.Add("@remark", MySqlDbType.Text).Value = pesticide.Remark;
+
+            return sqlComm.ExecuteNonQuery();
+        }
+
+        public int editEmployee(Employee employee)
+        {
+            MySqlCommand sqlComm = new MySqlCommand("UPDATE" + " employee SET first_name=@first_name, last_name=@last_name, dob=@dob, mobile=@mobile, email=@email " +
+                                           "WHERE id = 1" /*+ employee.Id*/, MysqlDbc.Instance.getConn());
+            sqlComm.Parameters.Add("@first_name", MySqlDbType.Text).Value = employee.First_name;
+            sqlComm.Parameters.Add("@last_name", MySqlDbType.Text).Value = employee.Last_name;
+            sqlComm.Parameters.Add("@dob", MySqlDbType.Date).Value = employee.Dob;
+            sqlComm.Parameters.Add("@mobile", MySqlDbType.Text).Value = employee.Mobile;
+            sqlComm.Parameters.Add("@email", MySqlDbType.Text).Value = employee.Email;
+
+            return sqlComm.ExecuteNonQuery();
+        }
+
+        public int editPassword(Employee employee)
+        {
+            MySqlCommand sqlComm = new MySqlCommand("UPDATE" + " employee SET  password=@password" +
+                                           "WHERE id = 1" /*+ employee.Id*/, MysqlDbc.Instance.getConn());
+
+            sqlComm.Parameters.Add("@password", MySqlDbType.Text).Value = employee.Password;
 
             return sqlComm.ExecuteNonQuery();
         }

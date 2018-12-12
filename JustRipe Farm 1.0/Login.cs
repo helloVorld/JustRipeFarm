@@ -32,13 +32,13 @@ namespace JustRipeFarm.ClassEntity
             pass = String.Empty;
         }
 
+
         internal bool IsLoggedIn(string user, string pass)
         {
             if (string.IsNullOrEmpty(user))
             {
-                MessageBox.Show("Enter the user name!");
-                return false;
-
+                    MessageBox.Show("Enter the user name!");
+                    return false;
             }
             else
             {
