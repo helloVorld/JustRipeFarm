@@ -81,6 +81,42 @@
     <Compile Include="FormCropcs.Designer.cs">
       <DependentUpon>FormCropcs.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormFertiliser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFertiliser.Designer.cs">
+      <DependentUpon>FormFertiliser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFertilisingJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFertilisingJob.Designer.cs">
+      <DependentUpon>FormFertilisingJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHarvestingJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHarvestingJob.Designer.cs">
+      <DependentUpon>FormHarvestingJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPesticide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPesticide.Designer.cs">
+      <DependentUpon>FormPesticide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPesticideJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPesticideJob.Designer.cs">
+      <DependentUpon>FormPesticideJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStoringJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStoringJob.Designer.cs">
+      <DependentUpon>FormStoringJob.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs" />
     <Compile Include="ClassEntity\UpdateSQL.cs" />
     <Compile Include="JRFutility\ErrorMsg.cs" />
@@ -193,8 +229,23 @@
     <EmbeddedResource Include="FormFarm.resx">
       <DependentUpon>FormFarm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormFertiliser.resx">
+      <DependentUpon>FormFertiliser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFertilisingJob.resx">
+      <DependentUpon>FormFertilisingJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHarvestingJob.resx">
+      <DependentUpon>FormHarvestingJob.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormOrder.resx">
       <DependentUpon>FormOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPesticide.resx">
+      <DependentUpon>FormPesticide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPesticideJob.resx">
+      <DependentUpon>FormPesticideJob.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormProduct.resx">
       <DependentUpon>FormProduct.cs</DependentUpon>
@@ -204,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormStoreroom.resx">
       <DependentUpon>FormStoreroom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStoringJob.resx">
+      <DependentUpon>FormStoringJob.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormVehicle.resx">
       <DependentUpon>FormVehicle.cs</DependentUpon>

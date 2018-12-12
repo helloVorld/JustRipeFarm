@@ -391,54 +391,6 @@ namespace JustRipeFarm
             return new DataSet();
         }
 
-        public Order GetOrderFromID(int itemId)
-        {
-            Order ord = new Order();
-
-            MySqlDataReader rdr = null;
-            try
-            {
-                string tableName = "orders";
-                string query = "SELECT * FROM "+tableName+" WHERE id = "+ itemId;
-                
-                MySqlCommand cmd = new MySqlCommand(query, MysqlDbc.Instance.getConn());
-                rdr = cmd.ExecuteReader();
-                
-                while (rdr.Read())
-                {
-                    ord.Id = itemId;
-                    ord.Description = rdr.GetString("description");
-                    ord.Product_id = rdr.GetInt32("product_id");
-                    ord.Quantity_box = rdr.GetInt32("quantity_box");
-                    ord.Weight = rdr.GetDouble("weight");
-                    ord.PalletAllocation = rdr.GetInt32("palletAllocation");
-                    ord.Customer_id = rdr.GetInt32("customer_id");
-                    ord.Order_date = rdr.GetDateTime("order_date");
-                    ord.Collection_date = rdr.GetDateTime("collection");
-                    ord.Price = rdr.GetDouble("price");
-                    ord.Status = rdr.GetString("status");
-                    ord.Remark = rdr.GetString("remark");
-
-                }
-                
-            }
-            catch (MySqlException ex)
-            {
-                Console.WriteLine("Error: {0}", ex.ToString());
-
-            }
-            finally
-            {
-                if (rdr != null)
-                {
-                    rdr.Close();
-                }
-
-            }
-
-            return ord;
-        }
-
         public DataSet getAllEmployee()
         {
             try
@@ -485,6 +437,99 @@ namespace JustRipeFarm
 
 
             return new DataSet();
+        }
+        /// 
+        /// 
+        /// 
+        /// Select item from ID
+        /// 
+        public Order GetOrderFromID(int itemId)
+        {
+            Order ord = new Order();
+
+            MySqlDataReader rdr = null;
+            try
+            {
+                string tableName = "orders";
+                string query = "SELECT * FROM " + tableName + " WHERE id = " + itemId;
+
+                MySqlCommand cmd = new MySqlCommand(query, MysqlDbc.Instance.getConn());
+                rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    ord.Id = itemId;
+                    ord.Description = rdr.GetString("description");
+                    ord.Product_id = rdr.GetInt32("product_id");
+                    ord.Quantity_box = rdr.GetInt32("quantity_box");
+                    ord.Weight = rdr.GetDouble("weight");
+                    ord.PalletAllocation = rdr.GetInt32("palletAllocation");
+                    ord.Customer_id = rdr.GetInt32("customer_id");
+                    ord.Order_date = rdr.GetDateTime("order_date");
+                    ord.Collection_date = rdr.GetDateTime("collection");
+                    ord.Price = rdr.GetDouble("price");
+                    ord.Status = rdr.GetString("status");
+                    ord.Remark = rdr.GetString("remark");
+
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+            }
+
+            return ord;
+        }
+
+        public Customer GetCustoemrFromID(int itemId)
+        {
+            Customer cus = new Customer();
+
+            MySqlDataReader rdr = null;
+            try
+            {
+                string tableName = "customer";
+                string query = "SELECT * FROM " + tableName + " WHERE id = " + itemId;
+
+                MySqlCommand cmd = new MySqlCommand(query, MysqlDbc.Instance.getConn());
+                rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    cus.Id = itemId;
+                    cus.Name = rdr.GetString("name");
+                    cus.Email = rdr.GetString("email");
+                    cus.Phone = rdr.GetString("phone");
+                    cus.Remark = rdr.GetString("remark");
+
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+            }
+
+            return cus;
         }
     }
 }
