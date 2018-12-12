@@ -13,6 +13,8 @@ namespace JustRipeFarm
 {
     public partial class FormProduct : Form
     {
+        public string state = "";
+        public Product prod;
         public FormProduct()
         {
             InitializeComponent();

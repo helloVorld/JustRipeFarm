@@ -25,5 +25,21 @@ namespace JustRipeFarm.ClassEntity
         public double Max_weight { get => max_weight; set => max_weight = value; }
         public int Quantity { get => quantity; set => quantity = value; }
         public string Status { get => status; set => status = value; }
+
+        public Box()
+        {
+
+        }
+
+        public Box(string name, double width, double height, double length, double max_weight, int quantity, string status)
+        {
+            this.Name = name;
+            this.Width = width;
+            this.Height = height;
+            this.Length = length;
+            this.Max_weight = max_weight;
+            this.Quantity = quantity;
+            this.Status = status;
+        }
     }
 }
