@@ -21,5 +21,6 @@ namespace JustRipeFarm.ClassEntity
         public DateTime Buy_date { get => buy_date; set => buy_date = value; }
         public DateTime Last_service_date { get => last_service_date; set => last_service_date = value; }
         public string Remark { get => remark; set => remark = value; }
+
     }
 }

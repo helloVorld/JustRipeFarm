@@ -63,6 +63,24 @@
     <Compile Include="ClassEntity\Fertiliser.cs" />
     <Compile Include="ClassEntity\FertiliserHandler.cs" />
     <Compile Include="ClassEntity\JRFdataset.cs" />
+    <Compile Include="FormBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBox.Designer.cs">
+      <DependentUpon>FormBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBoxStorage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBoxStorage.Designer.cs">
+      <DependentUpon>FormBoxStorage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCropcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCropcs.Designer.cs">
+      <DependentUpon>FormCropcs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs" />
     <Compile Include="ClassEntity\UpdateSQL.cs" />
     <Compile Include="JRFutility\ErrorMsg.cs" />
@@ -154,6 +172,15 @@
     <Compile Include="ClassEntity\StockHandler.cs" />
     <EmbeddedResource Include="AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBox.resx">
+      <DependentUpon>FormBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBoxStorage.resx">
+      <DependentUpon>FormBoxStorage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCropcs.resx">
+      <DependentUpon>FormCropcs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCustomer.resx">
       <DependentUpon>FormCustomer.cs</DependentUpon>

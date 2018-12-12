@@ -41,7 +41,7 @@
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(214, 255);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 28);
             this.btnCancel.TabIndex = 3;
@@ -52,7 +52,7 @@
             // btnDone
             // 
             this.btnDone.Location = new System.Drawing.Point(62, 255);
-            this.btnDone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDone.Margin = new System.Windows.Forms.Padding(4);
             this.btnDone.Name = "btnDone";
             this.btnDone.Size = new System.Drawing.Size(100, 28);
             this.btnDone.TabIndex = 2;
@@ -86,7 +86,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(58, 161);
+            this.label3.Location = new System.Drawing.Point(58, 156);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 17);
             this.label3.TabIndex = 15;
@@ -121,7 +121,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnDone);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormFarm";
             this.Text = "Farm Details";
             this.ResumeLayout(false);
