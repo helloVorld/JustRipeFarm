@@ -387,6 +387,17 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[1].BtnNew;
                     btnEditItem.Text = pnItems[1].BtnEdit;
                     btnUpdateField.Text = pnItems[1].BtnUpdate;
+
+                    try
+                    {
+                        currentDataSet = JRFdataset.Table.getAllProduct().Tables[0];
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("No Data");
+                    }
+                    dgvDbTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
                     break;
                 case "Sowing"   :
                     lblPanelTitle.Text = pnItems[2].PnTitle;
@@ -395,6 +406,15 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[2].BtnNew;
                     btnEditItem.Text = pnItems[2].BtnEdit;
                     btnUpdateField.Text = pnItems[2].BtnUpdate;
+                    try
+                    {
+                        currentDataSet = JRFdataset.Table.getAllSowing().Tables[0];
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("No Data");
+                    }
+                    dgvDbTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                     break;
                 case "Harvesting":
                     lblPanelTitle.Text = pnItems[3].PnTitle;
@@ -403,6 +423,15 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[3].BtnNew;
                     btnEditItem.Text = pnItems[3].BtnEdit;
                     btnUpdateField.Text = pnItems[3].BtnUpdate;
+                    try
+                    {
+                        currentDataSet = JRFdataset.Table.getAllHarvesting().Tables[0];
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("No Data");
+                    }
+                    dgvDbTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                     break;
                 case "Storage" :
                     lblPanelTitle.Text = pnItems[4].PnTitle;
@@ -411,6 +440,15 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[4].BtnNew;
                     btnEditItem.Text = pnItems[4].BtnEdit;
                     btnUpdateField.Text = pnItems[4].BtnUpdate;
+                    try
+                    {
+                        currentDataSet = JRFdataset.Table.getAllStorage().Tables[0];
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("No Data");
+                    }
+                    dgvDbTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                     break;
                 case "Fertilising" :
                     lblPanelTitle.Text = pnItems[5].PnTitle;
@@ -419,6 +457,15 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[5].BtnNew;
                     btnEditItem.Text = pnItems[5].BtnEdit;
                     btnUpdateField.Text = pnItems[5].BtnUpdate;
+                    try
+                    {
+                        currentDataSet = JRFdataset.Table.getAllFertilising().Tables[0];
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("No Data");
+                    }
+                    dgvDbTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                     break;
                 case "Pest Control" :
                     lblPanelTitle.Text = pnItems[6].PnTitle;
@@ -427,6 +474,15 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[6].BtnNew;
                     btnEditItem.Text = pnItems[6].BtnEdit;
                     btnUpdateField.Text = pnItems[6].BtnUpdate;
+                    try
+                    {
+                        currentDataSet = JRFdataset.Table.getAllPests().Tables[0];
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("No Data");
+                    }
+                    dgvDbTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                     break;
                 case "Farm"    :
                     lblPanelTitle.Text = pnItems[7].PnTitle;
@@ -435,7 +491,16 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[7].BtnNew;
                     btnEditItem.Text = pnItems[7].BtnEdit;
                     btnUpdateField.Text = pnItems[7].BtnUpdate;
-                    ; break;
+                    try
+                    {
+                        currentDataSet = JRFdataset.Table.getAllFarm().Tables[0];
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("No Data");
+                    }
+                    dgvDbTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    break;
                 case "Employee":
                     lblPanelTitle.Text = pnItems[8].PnTitle;
                     lblId.Text = pnItems[8].Id;
@@ -443,6 +508,15 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[8].BtnNew;
                     btnEditItem.Text = pnItems[8].BtnEdit;
                     btnUpdateField.Text = pnItems[8].BtnUpdate;
+                    try
+                    {
+                        currentDataSet = JRFdataset.Table.getAllEmployee().Tables[0];
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("No Data");
+                    }
+                    dgvDbTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                     break;
                 case "Customer":
                     lblPanelTitle.Text = pnItems[9].PnTitle;
@@ -451,6 +525,15 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[9].BtnNew;
                     btnEditItem.Text = pnItems[9].BtnEdit;
                     btnUpdateField.Text = pnItems[9].BtnUpdate;
+                    try
+                    {
+                        currentDataSet = JRFdataset.Table.getAllCustomer().Tables[0];
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("No Data");
+                    }
+                    dgvDbTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     break;
                 case "Storeroom"   :
                     lblPanelTitle.Text = pnItems[10].PnTitle;
@@ -459,6 +542,15 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[10].BtnNew;
                     btnEditItem.Text = pnItems[10].BtnEdit;
                     btnUpdateField.Text = pnItems[10].BtnUpdate;
+                    try
+                    {
+                        currentDataSet = JRFdataset.Table.getAllStoreroom().Tables[0];
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("No Data");
+                    }
+                    dgvDbTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     break;
                 case "Vehicle":
                     lblPanelTitle.Text = pnItems[11].PnTitle;
@@ -467,6 +559,15 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[11].BtnNew;
                     btnEditItem.Text = pnItems[11].BtnEdit;
                     btnUpdateField.Text = pnItems[11].BtnUpdate;
+                    try
+                    {
+                        currentDataSet = JRFdataset.Table.getAllVehicle().Tables[0];
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("No Data");
+                    }
+                    dgvDbTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     break;
                 case "Crop" :
                     lblPanelTitle.Text = pnItems[12].PnTitle;
@@ -476,7 +577,15 @@ namespace JustRipeFarm
                     btnEditItem.Text = pnItems[12].BtnEdit;
                     btnUpdateField.Text = pnItems[12].BtnUpdate;
                     currentDataSet = JRFdataset.Table.getAllCrop().Tables[0];
-
+                    try
+                    {
+                        currentDataSet = JRFdataset.Table.getAllCrop().Tables[0];
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("No Data");
+                    }
+                    dgvDbTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     break;
                 case "Fertiliser":
                     lblPanelTitle.Text = pnItems[13].PnTitle;
@@ -485,6 +594,15 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[13].BtnNew;
                     btnEditItem.Text = pnItems[13].BtnEdit;
                     btnUpdateField.Text = pnItems[13].BtnUpdate;
+                    try
+                    {
+                        currentDataSet = JRFdataset.Table.getAllFertiliser().Tables[0];
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("No Data");
+                    }
+                    dgvDbTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     break;
                 case "Pesticide" :
                     lblPanelTitle.Text = pnItems[14].PnTitle;
@@ -493,6 +611,15 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[14].BtnNew;
                     btnEditItem.Text = pnItems[14].BtnEdit;
                     btnUpdateField.Text = pnItems[14].BtnUpdate;
+                    try
+                    {
+                        currentDataSet = JRFdataset.Table.getAllPesticide().Tables[0];
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("No Data");
+                    }
+                    dgvDbTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     break;
                 case "Box"  :
                     lblPanelTitle.Text = pnItems[15].PnTitle;
@@ -501,7 +628,15 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[15].BtnNew;
                     btnEditItem.Text = pnItems[15].BtnEdit;
                     btnUpdateField.Text = pnItems[15].BtnUpdate;
-                    
+                    try
+                    {
+                        currentDataSet = JRFdataset.Table.getAllBox().Tables[0];
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("No Data");
+                    }
+                    dgvDbTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     break;
             default: break;
             }
@@ -607,6 +742,28 @@ namespace JustRipeFarm
             }
 
             
+        }
+
+        private void panelOperation_Paint(object sender, PaintEventArgs e)
+        {
+            Console.WriteLine("panel operation loaded");
+            
+            lblTodaySowing.Text = JobOp.GetJobCountFor(true,"sowingjob").ToString();
+            lblPendingSowing.Text = JobOp.GetJobCountFor(false, "sowingjob").ToString();
+
+            lblTodayHarvest.Text = JobOp.GetJobCountFor(true, "harvestingjob").ToString();
+            lblPendingHarvest.Text = JobOp.GetJobCountFor(false, "harvestingjob").ToString();
+
+            lblTodayStore.Text = JobOp.GetJobCountFor(true, "storingjob").ToString();
+            lblPendingStore.Text = JobOp.GetJobCountFor(false, "storingjob").ToString();
+
+            lblTodayFertilising.Text = JobOp.GetJobCountFor(true, "fertilisingjob").ToString();
+            lblPendingFertilising.Text = JobOp.GetJobCountFor(false, "fertilisingjob").ToString();
+
+            lblTodayPest.Text = JobOp.GetJobCountFor(true, "pesticidejob").ToString();
+            lblPendingPest.Text = JobOp.GetJobCountFor(false, "pesticidejob").ToString();
+
+
         }
     }
     
