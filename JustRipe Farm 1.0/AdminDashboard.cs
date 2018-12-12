@@ -396,7 +396,7 @@ namespace JustRipeFarm
                     {
                         MessageBox.Show("No Data");
                     }
-                    dgvDbTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dgvDbTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
                     break;
                 case "Sowing"   :
@@ -499,7 +499,7 @@ namespace JustRipeFarm
                     {
                         MessageBox.Show("No Data");
                     }
-                    dgvDbTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dgvDbTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     break;
                 case "Employee":
                     lblPanelTitle.Text = pnItems[8].PnTitle;
@@ -533,7 +533,7 @@ namespace JustRipeFarm
                     {
                         MessageBox.Show("No Data");
                     }
-                    dgvDbTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dgvDbTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     break;
                 case "Storeroom"   :
                     lblPanelTitle.Text = pnItems[10].PnTitle;
@@ -550,7 +550,7 @@ namespace JustRipeFarm
                     {
                         MessageBox.Show("No Data");
                     }
-                    dgvDbTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dgvDbTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     break;
                 case "Vehicle":
                     lblPanelTitle.Text = pnItems[11].PnTitle;
@@ -567,7 +567,7 @@ namespace JustRipeFarm
                     {
                         MessageBox.Show("No Data");
                     }
-                    dgvDbTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dgvDbTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     break;
                 case "Crop" :
                     lblPanelTitle.Text = pnItems[12].PnTitle;
@@ -585,7 +585,7 @@ namespace JustRipeFarm
                     {
                         MessageBox.Show("No Data");
                     }
-                    dgvDbTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dgvDbTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     break;
                 case "Fertiliser":
                     lblPanelTitle.Text = pnItems[13].PnTitle;
@@ -602,7 +602,7 @@ namespace JustRipeFarm
                     {
                         MessageBox.Show("No Data");
                     }
-                    dgvDbTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dgvDbTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     break;
                 case "Pesticide" :
                     lblPanelTitle.Text = pnItems[14].PnTitle;
@@ -619,7 +619,7 @@ namespace JustRipeFarm
                     {
                         MessageBox.Show("No Data");
                     }
-                    dgvDbTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dgvDbTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     break;
                 case "Box"  :
                     lblPanelTitle.Text = pnItems[15].PnTitle;
@@ -636,7 +636,7 @@ namespace JustRipeFarm
                     {
                         MessageBox.Show("No Data");
                     }
-                    dgvDbTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dgvDbTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     break;
             default: break;
             }
