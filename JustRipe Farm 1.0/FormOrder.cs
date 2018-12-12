@@ -14,6 +14,7 @@ namespace JustRipeFarm
     public partial class FormOrder : Form
     {
         public string state = "";
+        public Order ord;
         public FormOrder()
         {
             InitializeComponent();
@@ -68,17 +69,42 @@ namespace JustRipeFarm
             ord.Product_id = Int32.Parse(productIdText.Text);
             ord.Quantity_box = Int32.Parse(quantityBoxText.Text);
             ord.Weight = Int32.Parse(weightText.Text);
-            ord.PalletAllocation = palletAllocationText.Text;
-            ord.Customer_id = customerIdText.Text;
+            ord.PalletAllocation = int.Parse(palletAllocationText.Text);
+            ord.Customer_id = int.Parse(customerIdText.Text);
             ord.Order_date = this.orderDatedateTimePicker.Value;
             ord.Collection_date = this.collectionDateTimePicker.Value;
-            ord.Price = decimal.Parse(priceText.Text);
+            ord.Price = double.Parse(priceText.Text);
             ord.Status = statusText.Text;
             ord.Remark = remarkText.Text;
 
             InsertSQL ordHnd = new InsertSQL();
             int addrecord = ordHnd.addNewOrder(ord);
             MessageBox.Show(addrecord + "Your record is added");
+        }
+
+        private void FormOrder_Load(object sender, EventArgs e)
+        {
+            //if (state != "")
+            //{
+            //    lblState.Text = state;
+            //}
+            testDataPassedtoHere();
+        }
+
+        public void testDataPassedtoHere()
+        {
+            // can delete later
+            if (state == "Edit")
+            {
+                Console.WriteLine("Order Details =>");
+                Console.WriteLine(ord.Customer_id);
+                Console.WriteLine(ord.Description);
+                Console.WriteLine(ord.PalletAllocation);
+                Console.WriteLine(ord.Order_date);
+                Console.WriteLine(ord.Collection_date);
+                Console.WriteLine("order details end");
+            }
+            
         }
     }
 }
