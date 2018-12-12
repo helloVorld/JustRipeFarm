@@ -19,5 +19,20 @@ namespace JustRipeFarm.ClassEntity
         public string Email { get => email; set => email = value; }
         public string Phone { get => phone; set => phone = value; }
         public string Remark { get => remark; set => remark = value; }
+
+        public Customer()
+        {
+
+        }
+
+        public Customer(string name, string email, string phone, string remark)
+        {
+            this.Name = name;
+            this.Email = email;
+            this.Phone = phone;
+            this.Remark = remark;
+        }
     }
+
+
 }

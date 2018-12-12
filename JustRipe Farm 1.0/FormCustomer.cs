@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -25,6 +26,7 @@ namespace JustRipeFarm
 
         private void btnDone_Click(object sender, EventArgs e)
         {
+            CheckCustomer(nameText.Text, emailText.Text, phoneText.Text, emailText.Text);
             Customer cust = new Customer();
             cust.Name = nameText.Text;
             cust.Email = emailText.Text;
@@ -35,23 +37,23 @@ namespace JustRipeFarm
             MessageBox.Show(addrecord + " Your record is added");
         }
 
-        //private bool CheckCustomer(emailText.Text)
-        //{
-        //    bool check = false;
-        //    check = (String.IsNullOrEmpty(nameText.Text) ? true : false;
-        //    if (String.IsNullOrEmpty(nameText.Text))
-        //    {
-        //        MessageBox.Show("Please check again");
-        //    }
-            
-        //    if (string.IsNullOrEmpty(emailText.Text))
-        //    {
-        //        MessageBox.Show("Please check again");
-        //    }
-            
-            
-                
-            
-        //}
+        private void CheckCustomer(string name,string email,string phone,string remark)
+        {
+            if (String.IsNullOrEmpty(name))
+            {
+                MessageBox.Show("Please check again");
+            }
+            //try
+            //{
+            //    var test = new MailAddress(emailText.Text);
+            //}
+            //catch (FormatException ex)
+            //{
+            //    MessageBox.Show("Wrong Email Format");
+            //}
+
+
+
+        }
     }
 }
