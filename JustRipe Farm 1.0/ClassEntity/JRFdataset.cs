@@ -81,6 +81,292 @@ namespace JustRipeFarm
             return new DataSet();
         }
 
+        public DataSet getAllFertiliser()
+        {
+            try
+            {
+                string table = JRF.dbName + ".fertiliser";
+                string selectQuery = "SELECT * from " + table + "; ";
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, MysqlDbc.Instance.getConn());
+
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+
+                return ds;
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("MySQL Error: {0}", ex.ToString());
+            }
+
+
+            return new DataSet();
+        }
+
+        public DataSet getAllPesticide()
+        {
+            try
+            {
+                string table = JRF.dbName + ".pesticide";
+                string selectQuery = "SELECT * from " + table + "; ";
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, MysqlDbc.Instance.getConn());
+
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+
+                return ds;
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("MySQL Error: {0}", ex.ToString());
+            }
+
+
+            return new DataSet();
+        }
+
+        public DataSet getAllBox()
+        {
+            try
+            {
+                string table = JRF.dbName + ".box";
+                string selectQuery = "SELECT * from " + table + "; ";
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, MysqlDbc.Instance.getConn());
+
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+
+                return ds;
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("MySQL Error: {0}", ex.ToString());
+            }
+
+
+            return new DataSet();
+        }
+
+        public DataSet getAllSowing()
+        {
+            try
+            {
+                string table = JRF.dbName + ".sowingjob";
+                string selectQuery = "SELECT * from " + table + "; ";
+
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, MysqlDbc.Instance.getConn());
+
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+
+                return ds;
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("MySQL Error: {0}", ex.ToString());
+            }
+
+
+            return new DataSet();
+        }
+
+        public DataSet getAllHarvesting()
+        {
+            try
+            {
+                string table = JRF.dbName + ".harvestingjob";
+                string selectQuery = "SELECT * from " + table + "; ";
+
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, MysqlDbc.Instance.getConn());
+
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+
+                return ds;
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("MySQL Error: {0}", ex.ToString());
+            }
+
+
+            return new DataSet();
+        }
+
+        public DataSet getAllStorage()
+        {
+            try
+            {
+                string table = JRF.dbName + ".storingjob";
+                string selectQuery = "SELECT * from " + table + "; ";
+
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, MysqlDbc.Instance.getConn());
+
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+
+                return ds;
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("MySQL Error: {0}", ex.ToString());
+            }
+
+
+            return new DataSet();
+        }
+
+        public DataSet getAllFertilising()
+        {
+            try
+            {
+                string table = JRF.dbName + ".fertilisingjob";
+                string selectQuery = "SELECT * from " + table + "; ";
+
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, MysqlDbc.Instance.getConn());
+
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+
+                return ds;
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("MySQL Error: {0}", ex.ToString());
+            }
+
+
+            return new DataSet();
+        }
+
+
+        public DataSet getAllPests()
+        {
+            try
+            {
+                string table = JRF.dbName + ".pesticidejob";
+                string selectQuery = "SELECT * from " + table + "; ";
+
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, MysqlDbc.Instance.getConn());
+
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+
+                return ds;
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("MySQL Error: {0}", ex.ToString());
+            }
+
+
+            return new DataSet();
+        }
+
+        public DataSet getAllFarm()
+        {
+            try
+            {
+                string table = JRF.dbName + ".farm";
+                string selectQuery = "SELECT * from " + table + "; ";
+
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, MysqlDbc.Instance.getConn());
+
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+
+                return ds;
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("MySQL Error: {0}", ex.ToString());
+            }
+
+
+            return new DataSet();
+        }
+
+        public DataSet getAllCustomer()
+        {
+            try
+            {
+                string table = JRF.dbName + ".customer";
+                string selectQuery = "SELECT * from " + table + "; ";
+
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, MysqlDbc.Instance.getConn());
+
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+
+                return ds;
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("MySQL Error: {0}", ex.ToString());
+            }
+
+
+            return new DataSet();
+        }
+
+        public DataSet getAllStoreroom()
+        {
+            try
+            {
+                string table = JRF.dbName + ".storeroom";
+                string selectQuery = "SELECT * from " + table + "; ";
+
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, MysqlDbc.Instance.getConn());
+
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+
+                return ds;
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("MySQL Error: {0}", ex.ToString());
+            }
+
+
+            return new DataSet();
+        }
+
+        public DataSet getAllVehicle()
+        {
+            try
+            {
+                string table = JRF.dbName + ".vehicle";
+                string selectQuery = "SELECT * from " + table + "; ";
+
+                Console.WriteLine("Hello gg");
+                MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, MysqlDbc.Instance.getConn());
+
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+
+                return ds;
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("MySQL Error: {0}", ex.ToString());
+            }
+            Console.WriteLine("Hello gg2");
+
+            return new DataSet();
+        }
+
         public DataSet getAllOrders()
         {
             try
