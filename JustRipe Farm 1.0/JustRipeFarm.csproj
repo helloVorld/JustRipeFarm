@@ -65,6 +65,7 @@
     <Compile Include="ClassEntity\JRFdataset.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="ClassEntity\UpdateSQL.cs" />
+    <Compile Include="JRFutility\ErrorMsg.cs" />
     <Compile Include="FormSowingJob.cs">
       <SubType>Form</SubType>
     </Compile>

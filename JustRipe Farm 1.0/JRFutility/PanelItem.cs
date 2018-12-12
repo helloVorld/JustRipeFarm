@@ -28,7 +28,7 @@ namespace JustRipeFarm
         public PanelItem(string btnName)
         {
             PnTitle = btnName;
-            Id = btnName + " ID: ";
+            Id = "ID: ";
             BtnNew = "New " + btnName;
             BtnEdit = "Edit " + btnName;
 

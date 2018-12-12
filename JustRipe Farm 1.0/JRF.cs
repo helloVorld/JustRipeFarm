@@ -181,5 +181,32 @@ namespace JustRipeFarm
             return panelItems;
         }
 
+        public static List<string> OrderStatusOption()
+        {
+            List<string> statusOp = new List<string>();
+            
+            statusOp.Add("Pending");
+            statusOp.Add("In Progress");
+            statusOp.Add("Complete");
+            statusOp.Add("Canceled");
+
+            return statusOp;
+        }
+
+        public static bool GotInListStr(List<string> lists, string searchText)
+        {
+
+            foreach(string str in lists)
+            {
+                if (searchText == str)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+
+        }
+
     }
 }

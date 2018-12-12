@@ -9,9 +9,28 @@ namespace JustRipeFarm.ClassEntity
 {
     public class UpdateSQL
     {
+        public int UpdateOrder(Order order)
+        {
+            string query = "UPDATE orders SET description = @description ,product_id = @product_id,quantity_box = @quantity_box,weight = @weight,palletAllocation = @palletAllocation,customer_id = @customer_id, order_date = @order_date, collection = @collection, price = @price, status = @status, remark = @remark " +
+                                   "WHERE id = " + order.Id;
+            MySqlCommand sqlComm = new MySqlCommand(query, MysqlDbc.Instance.getConn());
+            sqlComm.Parameters.Add("@description", MySqlDbType.Text).Value = order.Description;
+            sqlComm.Parameters.Add("@product_id", MySqlDbType.Text).Value = order.Product_id;
+            sqlComm.Parameters.Add("@quantity_box", MySqlDbType.Text).Value = order.Quantity_box;
+            sqlComm.Parameters.Add("@weight", MySqlDbType.Text).Value = order.Weight;
+            sqlComm.Parameters.Add("@palletAllocation", MySqlDbType.Text).Value = order.PalletAllocation;
+            sqlComm.Parameters.Add("@customer_id", MySqlDbType.Text).Value = order.Customer_id;
+            sqlComm.Parameters.Add("@order_date", MySqlDbType.Date).Value = order.Order_date;
+            sqlComm.Parameters.Add("@collection", MySqlDbType.Date).Value = order.Collection_date;
+            sqlComm.Parameters.Add("@price", MySqlDbType.Decimal).Value = order.Price;
+            sqlComm.Parameters.Add("@status", MySqlDbType.Text).Value = order.Status;
+            sqlComm.Parameters.Add("@remark", MySqlDbType.Text).Value = order.Remark;
+
+            return sqlComm.ExecuteNonQuery();
+        }
     }
 
-    public class UpdateOrder
+    /*public class UpdateOrder
     {
         public class BoxHandler
         {
@@ -261,5 +280,5 @@ namespace JustRipeFarm.ClassEntity
                 return sqlComm.ExecuteNonQuery();
             }
         }
-    }
+    }*/
 }
