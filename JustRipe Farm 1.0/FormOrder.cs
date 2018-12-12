@@ -34,30 +34,40 @@ namespace JustRipeFarm
 
         private void FormOrder_Load(object sender, EventArgs e)
         {
-            //if (state != "")
-            //{
-            //    lblState.Text = state;
-            //}
+            if (state == "Edit")
+            {
+                descriptionText.Text = ord.Description;
+                productIdText.Text = ord.Product_id.ToString();
+                quantityBoxText.Text = ord.Quantity_box.ToString();
+                weightText.Text = ord.Weight.ToString();
+                palletAllocationText.Text = ord.PalletAllocation.ToString();
+                customerIdText.Text = ord.Customer_id.ToString();
+                orderDatedateTimePicker.Value = ord.Order_date;
+                collectionDateTimePicker.Value = ord.Collection_date;
+                priceText.Text = ord.Price.ToString();
+                statusText.Text = ord.Status;
+            }
+            testDataPassedtoHere();
         }
 
         public void UpdateOrder()
         {
-            Order ord = new Order();
-            ord.Id = 1;
-            ord.Description = descriptionText.Text;
-            ord.Product_id = Int32.Parse(productIdText.Text);
-            ord.Quantity_box = Int32.Parse(quantityBoxText.Text);
-            ord.Weight = Int32.Parse(weightText.Text);
-            ord.PalletAllocation = palletAllocationText.Text;
-            ord.Customer_id = customerIdText.Text;
-            ord.Order_date = this.orderDatedateTimePicker.Value;
-            ord.Collection_date = this.collectionDateTimePicker.Value;
-            ord.Price = decimal.Parse(priceText.Text);
-            ord.Status = statusText.Text;
-            ord.Remark = remarkText.Text;
+            Order ordi = new Order();
+            ordi.Id = ord.Id;
+            ordi.Description = descriptionText.Text;
+            ordi.Product_id = Int32.Parse(productIdText.Text);
+            ordi.Quantity_box = Int32.Parse(quantityBoxText.Text);
+            ordi.Weight = Int32.Parse(weightText.Text);
+            ordi.PalletAllocation = int.Parse(palletAllocationText.Text);
+            ordi.Customer_id = int.Parse(customerIdText.Text);
+            ordi.Order_date = this.orderDatedateTimePicker.Value;
+            ordi.Collection_date = this.collectionDateTimePicker.Value;
+            ordi.Price = double.Parse(priceText.Text);
+            ordi.Status = statusText.Text;
+            ordi.Remark = remarkText.Text;
 
             UpdateSQL ordHnd = new UpdateSQL();
-            int changerecord = ordHnd.UpdateOrder(ord);
+            int changerecord = ordHnd.UpdateOrder(ordi);
             MessageBox.Show(changerecord + " Your record is added");
         }
 
@@ -81,16 +91,7 @@ namespace JustRipeFarm
             int addrecord = ordHnd.addNewOrder(ord);
             MessageBox.Show(addrecord + "Your record is added");
         }
-
-        private void FormOrder_Load(object sender, EventArgs e)
-        {
-            //if (state != "")
-            //{
-            //    lblState.Text = state;
-            //}
-            testDataPassedtoHere();
-        }
-
+        
         public void testDataPassedtoHere()
         {
             // can delete later
