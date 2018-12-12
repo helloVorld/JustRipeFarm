@@ -68,8 +68,9 @@ namespace JustRipeFarm.ClassEntity
             }
         }
 
-        public int checkUserLogin()
+        public Employee checkUserLogin()
         {
+            Employee em = new Employee();
             MySqlDataReader rdr = null;
             try
             {
@@ -79,16 +80,19 @@ namespace JustRipeFarm.ClassEntity
 
                 while (rdr.Read())
                 {
-
-                    //cr.Id = rdr.GetInt32("id");
-                    //cr.Name = rdr.GetString("name");
-                    //cr.Type = rdr.GetString("type");
-                    //cr.Quantity_plot = rdr.GetInt32("quantity_plot");
-                    //cr.Remark = rdr.GetString("remark");
-                    Console.WriteLine("login => " );
-                    //Console.WriteLine("login => " + rdr.GetInt32("admin"));
-                    //cropLists.Add(cr);
-                    return rdr.GetInt32("admin");
+                    em.Id = rdr.GetInt32("id");
+                    em.First_name = rdr.GetString("first_name");
+                    em.Last_name = rdr.GetString("last_name");
+                    em.Username = rdr.GetString("username");
+                    em.Password = rdr.GetString("password");
+                    em.Dob = rdr.GetDateTime("dob");
+                    em.Mobile = rdr.GetString("mobile");
+                    em.Email = rdr.GetString("email");
+                    em.Admin = rdr.GetInt32("admin");
+                    em.Status = rdr.GetString("status");
+                    em.Remark = rdr.GetString("remark");
+                    
+                    
                 }
 
             }
@@ -105,7 +109,7 @@ namespace JustRipeFarm.ClassEntity
                 }
 
             }
-            return 99;
+            return em;
         }
 
     }

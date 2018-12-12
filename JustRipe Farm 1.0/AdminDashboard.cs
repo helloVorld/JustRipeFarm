@@ -28,6 +28,7 @@ namespace JustRipeFarm
         public int currentID;
         List<string> currentUpdateOption = new List<string>();
         List<string> currentSearchOption = new List<string>();
+        public Employee currentEmployee;
 
         public AdminDashboard()
         {
@@ -170,6 +171,8 @@ namespace JustRipeFarm
             
             panelDisplay("panelHome");
             displayForAdmin(isAdmin);
+
+            lblUsername.Text = currentEmployee.First_name + " " + currentEmployee.Last_name;
         }
 
         public void panelDisplay(string panelName)
@@ -358,7 +361,9 @@ namespace JustRipeFarm
         {
             currentPanel = btnName;
             
+            // reset combo box items
             cbUpdateField.Items.Clear();
+            cbFilter1.Items.Clear();
 
             // hide combobox filter
             cbFilter2.Hide();
