@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginScreen));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -36,10 +35,10 @@
             this.cancelBtn = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.labDashBtn = new System.Windows.Forms.Button();
-            this.adminDashBtn = new System.Windows.Forms.Button();
             this.dbStatusLbl = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,39 +46,37 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(50, 37);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(151, 68);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(337, 37);
+            this.label1.Size = new System.Drawing.Size(420, 46);
             this.label1.TabIndex = 0;
             this.label1.Text = "JUSTRIPE FARM 1.0";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(53, 107);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(200, 184);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.Size = new System.Drawing.Size(53, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Name: ";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(53, 149);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(200, 239);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 13);
+            this.label3.Size = new System.Drawing.Size(77, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Password: ";
             // 
             // loginBtn
             // 
-            this.loginBtn.Location = new System.Drawing.Point(81, 252);
-            this.loginBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.loginBtn.Location = new System.Drawing.Point(203, 297);
+            this.loginBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.loginBtn.Name = "loginBtn";
-            this.loginBtn.Size = new System.Drawing.Size(57, 26);
+            this.loginBtn.Size = new System.Drawing.Size(76, 32);
             this.loginBtn.TabIndex = 3;
             this.loginBtn.Text = "Login";
             this.loginBtn.UseVisualStyleBackColor = true;
@@ -87,10 +84,10 @@
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(200, 252);
-            this.cancelBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.cancelBtn.Location = new System.Drawing.Point(337, 296);
+            this.cancelBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(60, 27);
+            this.cancelBtn.Size = new System.Drawing.Size(80, 33);
             this.cancelBtn.TabIndex = 4;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
@@ -98,69 +95,64 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(153, 107);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Location = new System.Drawing.Point(286, 184);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(108, 20);
+            this.textBox1.Size = new System.Drawing.Size(143, 22);
             this.textBox1.TabIndex = 5;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(153, 149);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox2.Location = new System.Drawing.Point(286, 234);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(108, 20);
+            this.textBox2.Size = new System.Drawing.Size(143, 22);
             this.textBox2.TabIndex = 6;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(360, 84);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(131, 150);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
-            // labDashBtn
-            // 
-            this.labDashBtn.Location = new System.Drawing.Point(81, 186);
-            this.labDashBtn.Name = "labDashBtn";
-            this.labDashBtn.Size = new System.Drawing.Size(194, 23);
-            this.labDashBtn.TabIndex = 8;
-            this.labDashBtn.Text = "temp to Labourer Dashboard";
-            this.labDashBtn.UseVisualStyleBackColor = true;
-            this.labDashBtn.Click += new System.EventHandler(this.labDashBtn_Click);
-            // 
-            // adminDashBtn
-            // 
-            this.adminDashBtn.Location = new System.Drawing.Point(81, 215);
-            this.adminDashBtn.Name = "adminDashBtn";
-            this.adminDashBtn.Size = new System.Drawing.Size(194, 23);
-            this.adminDashBtn.TabIndex = 9;
-            this.adminDashBtn.Text = "temp to Admin Dashboard";
-            this.adminDashBtn.UseVisualStyleBackColor = true;
-            this.adminDashBtn.Click += new System.EventHandler(this.adminDashBtn_Click);
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // dbStatusLbl
             // 
             this.dbStatusLbl.AutoSize = true;
-            this.dbStatusLbl.Location = new System.Drawing.Point(435, 13);
+            this.dbStatusLbl.Location = new System.Drawing.Point(606, 9);
+            this.dbStatusLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dbStatusLbl.Name = "dbStatusLbl";
-            this.dbStatusLbl.Size = new System.Drawing.Size(50, 13);
+            this.dbStatusLbl.Size = new System.Drawing.Size(66, 17);
             this.dbStatusLbl.TabIndex = 10;
             this.dbStatusLbl.Text = "db status";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.SkyBlue;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Image = global::JustRipeFarm.Properties.Resources.c_1;
+            this.pictureBox2.Location = new System.Drawing.Point(605, 39);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(115, 122);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Image = global::JustRipeFarm.Properties.Resources.c2;
+            this.pictureBox1.Location = new System.Drawing.Point(30, 39);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(115, 122);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
             // LoginScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 304);
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.ClientSize = new System.Drawing.Size(732, 353);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.dbStatusLbl);
-            this.Controls.Add(this.adminDashBtn);
-            this.Controls.Add(this.labDashBtn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -169,9 +161,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "LoginScreen";
             this.Text = "JustRipe Farm 1.0";
+            this.Load += new System.EventHandler(this.LoginScreen_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -187,10 +181,9 @@
         private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button labDashBtn;
-        private System.Windows.Forms.Button adminDashBtn;
         private System.Windows.Forms.Label dbStatusLbl;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 
