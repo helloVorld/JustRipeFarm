@@ -53,10 +53,11 @@ namespace JustRipeFarm
 
         private void CheckCustomer(string name,string email,string phone,string remark)
         {
-            if (String.IsNullOrEmpty(name))
-            {
-                MessageBox.Show("Please check again");
-            }
+            
+                if (String.IsNullOrEmpty(name))
+                {
+                    MessageBox.Show("Please check again");
+                }
             //try
             //{
             //    var test = new MailAddress(emailText.Text);

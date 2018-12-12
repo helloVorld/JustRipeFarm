@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data;
+using JustRipeFarm.ClassEntity;
 
 
 namespace JustRipeFarm
@@ -771,6 +772,23 @@ namespace JustRipeFarm
             lblPendingPest.Text = JobOp.GetJobCountFor(false, "pesticidejob").ToString();
 
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormEditProfile editprofile = new FormEditProfile();
+            editprofile.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormEditPassword editpassword = new FormEditPassword();
+            editpassword.Show();
         }
     }
     

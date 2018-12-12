@@ -34,7 +34,7 @@ namespace JustRipeFarm
             emp.Last_name = lastNameText.Text;
             emp.Username = usernameText.Text;
             emp.Password = passwordText.Text;
-            emp.Dob = Int32.Parse(dobText.Text);
+            emp.Dob = DateTime.Parse(dobText.Text);
             emp.Mobile = mobileText.Text;
             emp.Email = emailText.Text;
             emp.Admin = Int32.Parse(adminText.Text);
@@ -56,7 +56,7 @@ namespace JustRipeFarm
             empi.Last_name = lastNameText.Text;
             empi.Username = usernameText.Text;
             empi.Password = passwordText.Text;
-            empi.Dob = Int32.Parse(dobText.Text);
+            empi.Dob = DateTime.Parse(dobText.Text);
             empi.Mobile = mobileText.Text;
             empi.Email = emailText.Text;
             empi.Admin = Int32.Parse(adminText.Text);
