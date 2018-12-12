@@ -263,7 +263,7 @@
             this.panelOperation.Controls.Add(this.groupBox4);
             this.panelOperation.Controls.Add(this.groupBox1);
             this.panelOperation.Controls.Add(this.label3);
-            this.panelOperation.Location = new System.Drawing.Point(110, 86);
+            this.panelOperation.Location = new System.Drawing.Point(21, 689);
             this.panelOperation.Name = "panelOperation";
             this.panelOperation.Size = new System.Drawing.Size(650, 400);
             this.panelOperation.TabIndex = 18;

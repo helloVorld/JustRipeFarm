@@ -16,7 +16,8 @@ namespace JustRipeFarm
         // prepare variable for storing list<class>
         List<Crop> cropLists;
         List<Vehicle> vehicleList;
-
+        public string state = "";
+        public SowingJob sowj;
 
         public FormSowingJob()
         {

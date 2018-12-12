@@ -438,11 +438,11 @@ namespace JustRipeFarm
 
             return new DataSet();
         }
-        /// 
-        /// 
+        
         /// 
         /// Select item from ID
         /// 
+
         public Order GetOrderFromID(int itemId)
         {
             Order ord = new Order();
@@ -499,6 +499,47 @@ namespace JustRipeFarm
             try
             {
                 string tableName = "customer";
+                string query = "SELECT * FROM " + tableName + " WHERE id = " + itemId;
+
+                MySqlCommand cmd = new MySqlCommand(query, MysqlDbc.Instance.getConn());
+                rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    cus.Id = itemId;
+                    cus.Name = rdr.GetString("name");
+                    cus.Email = rdr.GetString("email");
+                    cus.Phone = rdr.GetString("phone");
+                    cus.Remark = rdr.GetString("remark");
+
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+            }
+
+            return cus;
+        }
+
+        public Customer GetProductFromID(int itemId)
+        {
+            Customer cus = new Customer();
+
+            MySqlDataReader rdr = null;
+            try
+            {
+                string tableName = "product";
                 string query = "SELECT * FROM " + tableName + " WHERE id = " + itemId;
 
                 MySqlCommand cmd = new MySqlCommand(query, MysqlDbc.Instance.getConn());
