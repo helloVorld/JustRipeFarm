@@ -39,7 +39,7 @@ namespace JustRipeFarm
         {
             try
             {
-                string table = JRF.dbName + ".labourer";
+                string table = JRF.dbName + ".employee";
                 string selectQuery = "SELECT * from " + table + "; ";
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, MysqlDbc.Instance.getConn());

@@ -27,7 +27,43 @@ namespace JustRipeFarm
 
         private void btnDone_Click(object sender, EventArgs e)
         {
+            //AddOrder();
+            UpdateOrder();
+        }
+
+        private void FormOrder_Load(object sender, EventArgs e)
+        {
+            //if (state != "")
+            //{
+            //    lblState.Text = state;
+            //}
+        }
+
+        public void UpdateOrder()
+        {
             Order ord = new Order();
+            ord.Id = 1;
+            ord.Description = descriptionText.Text;
+            ord.Product_id = Int32.Parse(productIdText.Text);
+            ord.Quantity_box = Int32.Parse(quantityBoxText.Text);
+            ord.Weight = Int32.Parse(weightText.Text);
+            ord.PalletAllocation = palletAllocationText.Text;
+            ord.Customer_id = customerIdText.Text;
+            ord.Order_date = this.orderDatedateTimePicker.Value;
+            ord.Collection_date = this.collectionDateTimePicker.Value;
+            ord.Price = decimal.Parse(priceText.Text);
+            ord.Status = statusText.Text;
+            ord.Remark = remarkText.Text;
+
+            UpdateSQL ordHnd = new UpdateSQL();
+            int changerecord = ordHnd.UpdateOrder(ord);
+            MessageBox.Show(changerecord + " Your record is added");
+        }
+
+        public void AddOrder()
+        {
+            Order ord = new Order();
+            
             ord.Description = descriptionText.Text;
             ord.Product_id = Int32.Parse(productIdText.Text);
             ord.Quantity_box = Int32.Parse(quantityBoxText.Text);
@@ -43,14 +79,6 @@ namespace JustRipeFarm
             InsertSQL ordHnd = new InsertSQL();
             int addrecord = ordHnd.addNewOrder(ord);
             MessageBox.Show(addrecord + "Your record is added");
-        }
-
-        private void FormOrder_Load(object sender, EventArgs e)
-        {
-            //if (state != "")
-            //{
-            //    lblState.Text = state;
-            //}
         }
     }
 }
