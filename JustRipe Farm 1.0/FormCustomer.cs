@@ -40,6 +40,48 @@ namespace JustRipeFarm
             MessageBox.Show(addrecord + " Your record is added");
         }
 
+        public void updateCustomer()
+        {
+            Customer custU = new Customer();
+            custU.Name = nameText.Text;
+            custU.Email = emailText.Text;
+            custU.Phone = phoneText.Text;
+            custU.Remark = remarkText.Text;
+
+            UpdateSQL custHnd = new UpdateSQL();
+            int updateRecord = custHnd.updateCustomer(custU);
+            MessageBox.Show(updateRecord + " Your record is updated");
+        }
+
+        private void FormCustomer_Load(object sender, EventArgs e)
+        {
+            if (state == "Edit")
+            {
+                nameText.Text = cust.Name;
+                emailText.Text = cust.Email;
+                phoneText.Text = cust.Phone;
+                remarkText.Text = cust.Remark;
+            }
+        }
+
+        //private bool CheckCustomer(emailText.Text)
+        //{
+        //    bool check = false;
+        //    check = (String.IsNullOrEmpty(nameText.Text) ? true : false;
+        //    if (String.IsNullOrEmpty(nameText.Text))
+        //    {
+        //        MessageBox.Show("Please check again");
+        //    }
+            
+        //    if (string.IsNullOrEmpty(emailText.Text))
+        //    {
+        //        MessageBox.Show("Please check again");
+        //    }
+            
+            
+                
+            
+        //}
         private void CheckCustomer(string name,string email,string phone,string remark)
         {
             if (String.IsNullOrEmpty(name))
