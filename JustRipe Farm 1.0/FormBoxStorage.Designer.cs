@@ -28,48 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.statusText = new System.Windows.Forms.TextBox();
-            this.adminText = new System.Windows.Forms.TextBox();
-            this.emailText = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.mobileText = new System.Windows.Forms.TextBox();
-            this.dobText = new System.Windows.Forms.TextBox();
-            this.passwordText = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.usernameText = new System.Windows.Forms.TextBox();
-            this.lastNameText = new System.Windows.Forms.TextBox();
-            this.firstNameText = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnDone = new System.Windows.Forms.Button();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
-            // 
-            // statusText
-            // 
-            this.statusText.Location = new System.Drawing.Point(171, 283);
-            this.statusText.Name = "statusText";
-            this.statusText.Size = new System.Drawing.Size(100, 22);
-            this.statusText.TabIndex = 61;
-            // 
-            // adminText
-            // 
-            this.adminText.Location = new System.Drawing.Point(171, 252);
-            this.adminText.Name = "adminText";
-            this.adminText.Size = new System.Drawing.Size(100, 22);
-            this.adminText.TabIndex = 60;
-            // 
-            // emailText
-            // 
-            this.emailText.Location = new System.Drawing.Point(171, 214);
-            this.emailText.Name = "emailText";
-            this.emailText.Size = new System.Drawing.Size(100, 22);
-            this.emailText.TabIndex = 59;
             // 
             // label7
             // 
@@ -98,27 +77,6 @@
             this.label9.TabIndex = 56;
             this.label9.Text = "Best Before";
             // 
-            // mobileText
-            // 
-            this.mobileText.Location = new System.Drawing.Point(171, 176);
-            this.mobileText.Name = "mobileText";
-            this.mobileText.Size = new System.Drawing.Size(100, 22);
-            this.mobileText.TabIndex = 55;
-            // 
-            // dobText
-            // 
-            this.dobText.Location = new System.Drawing.Point(171, 142);
-            this.dobText.Name = "dobText";
-            this.dobText.Size = new System.Drawing.Size(100, 22);
-            this.dobText.TabIndex = 54;
-            // 
-            // passwordText
-            // 
-            this.passwordText.Location = new System.Drawing.Point(171, 107);
-            this.passwordText.Name = "passwordText";
-            this.passwordText.Size = new System.Drawing.Size(100, 22);
-            this.passwordText.TabIndex = 53;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -145,27 +103,6 @@
             this.label6.Size = new System.Drawing.Size(82, 17);
             this.label6.TabIndex = 50;
             this.label6.Text = "Net Weight:";
-            // 
-            // usernameText
-            // 
-            this.usernameText.Location = new System.Drawing.Point(171, 75);
-            this.usernameText.Name = "usernameText";
-            this.usernameText.Size = new System.Drawing.Size(100, 22);
-            this.usernameText.TabIndex = 49;
-            // 
-            // lastNameText
-            // 
-            this.lastNameText.Location = new System.Drawing.Point(171, 41);
-            this.lastNameText.Name = "lastNameText";
-            this.lastNameText.Size = new System.Drawing.Size(100, 22);
-            this.lastNameText.TabIndex = 48;
-            // 
-            // firstNameText
-            // 
-            this.firstNameText.Location = new System.Drawing.Point(171, 6);
-            this.firstNameText.Name = "firstNameText";
-            this.firstNameText.Size = new System.Drawing.Size(100, 22);
-            this.firstNameText.TabIndex = 47;
             // 
             // label4
             // 
@@ -214,26 +151,89 @@
             this.btnDone.Text = "Done";
             this.btnDone.UseVisualStyleBackColor = true;
             // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(173, 9);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(100, 22);
+            this.textBox8.TabIndex = 127;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(173, 44);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 128;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(173, 78);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 22);
+            this.textBox2.TabIndex = 129;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(173, 112);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 22);
+            this.textBox3.TabIndex = 130;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(173, 147);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 22);
+            this.textBox4.TabIndex = 131;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(173, 288);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(100, 22);
+            this.textBox9.TabIndex = 135;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(173, 181);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker1.TabIndex = 136;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(173, 219);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker2.TabIndex = 137;
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Location = new System.Drawing.Point(173, 257);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker3.TabIndex = 138;
+            // 
             // FormBoxStorage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.statusText);
-            this.Controls.Add(this.adminText);
-            this.Controls.Add(this.emailText);
+            this.Controls.Add(this.dateTimePicker3);
+            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBox8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.mobileText);
-            this.Controls.Add(this.dobText);
-            this.Controls.Add(this.passwordText);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.usernameText);
-            this.Controls.Add(this.lastNameText);
-            this.Controls.Add(this.firstNameText);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -247,25 +247,25 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox statusText;
-        private System.Windows.Forms.TextBox adminText;
-        private System.Windows.Forms.TextBox emailText;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox mobileText;
-        private System.Windows.Forms.TextBox dobText;
-        private System.Windows.Forms.TextBox passwordText;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox usernameText;
-        private System.Windows.Forms.TextBox lastNameText;
-        private System.Windows.Forms.TextBox firstNameText;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnDone;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker3;
     }
 }

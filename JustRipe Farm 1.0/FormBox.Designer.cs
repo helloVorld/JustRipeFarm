@@ -28,30 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.emailText = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.mobileText = new System.Windows.Forms.TextBox();
-            this.dobText = new System.Windows.Forms.TextBox();
-            this.passwordText = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.usernameText = new System.Windows.Forms.TextBox();
-            this.lastNameText = new System.Windows.Forms.TextBox();
-            this.firstNameText = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnDone = new System.Windows.Forms.Button();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // emailText
-            // 
-            this.emailText.Location = new System.Drawing.Point(210, 227);
-            this.emailText.Name = "emailText";
-            this.emailText.Size = new System.Drawing.Size(100, 22);
-            this.emailText.TabIndex = 59;
             // 
             // label9
             // 
@@ -61,27 +54,6 @@
             this.label9.Size = new System.Drawing.Size(52, 17);
             this.label9.TabIndex = 56;
             this.label9.Text = "Status:";
-            // 
-            // mobileText
-            // 
-            this.mobileText.Location = new System.Drawing.Point(210, 189);
-            this.mobileText.Name = "mobileText";
-            this.mobileText.Size = new System.Drawing.Size(100, 22);
-            this.mobileText.TabIndex = 55;
-            // 
-            // dobText
-            // 
-            this.dobText.Location = new System.Drawing.Point(210, 155);
-            this.dobText.Name = "dobText";
-            this.dobText.Size = new System.Drawing.Size(100, 22);
-            this.dobText.TabIndex = 54;
-            // 
-            // passwordText
-            // 
-            this.passwordText.Location = new System.Drawing.Point(210, 120);
-            this.passwordText.Name = "passwordText";
-            this.passwordText.Size = new System.Drawing.Size(100, 22);
-            this.passwordText.TabIndex = 53;
             // 
             // label2
             // 
@@ -109,27 +81,6 @@
             this.label6.Size = new System.Drawing.Size(56, 17);
             this.label6.TabIndex = 50;
             this.label6.Text = "Length:";
-            // 
-            // usernameText
-            // 
-            this.usernameText.Location = new System.Drawing.Point(210, 88);
-            this.usernameText.Name = "usernameText";
-            this.usernameText.Size = new System.Drawing.Size(100, 22);
-            this.usernameText.TabIndex = 49;
-            // 
-            // lastNameText
-            // 
-            this.lastNameText.Location = new System.Drawing.Point(210, 54);
-            this.lastNameText.Name = "lastNameText";
-            this.lastNameText.Size = new System.Drawing.Size(100, 22);
-            this.lastNameText.TabIndex = 48;
-            // 
-            // firstNameText
-            // 
-            this.firstNameText.Location = new System.Drawing.Point(210, 19);
-            this.firstNameText.Name = "firstNameText";
-            this.firstNameText.Size = new System.Drawing.Size(100, 22);
-            this.firstNameText.TabIndex = 47;
             // 
             // label4
             // 
@@ -178,22 +129,71 @@
             this.btnDone.Text = "Done";
             this.btnDone.UseVisualStyleBackColor = true;
             // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(204, 22);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(100, 22);
+            this.textBox8.TabIndex = 127;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(204, 57);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 128;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(204, 91);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 22);
+            this.textBox2.TabIndex = 129;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(204, 125);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 22);
+            this.textBox3.TabIndex = 130;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(204, 160);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 22);
+            this.textBox4.TabIndex = 131;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(204, 194);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(100, 22);
+            this.textBox5.TabIndex = 132;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(204, 232);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(100, 22);
+            this.textBox6.TabIndex = 133;
+            // 
             // FormBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.emailText);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBox8);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.mobileText);
-            this.Controls.Add(this.dobText);
-            this.Controls.Add(this.passwordText);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.usernameText);
-            this.Controls.Add(this.lastNameText);
-            this.Controls.Add(this.firstNameText);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -207,21 +207,21 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox emailText;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox mobileText;
-        private System.Windows.Forms.TextBox dobText;
-        private System.Windows.Forms.TextBox passwordText;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox usernameText;
-        private System.Windows.Forms.TextBox lastNameText;
-        private System.Windows.Forms.TextBox firstNameText;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnDone;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox6;
     }
 }
