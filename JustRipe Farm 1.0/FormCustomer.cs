@@ -30,10 +30,28 @@ namespace JustRipeFarm
             cust.Email = emailText.Text;
             cust.Phone = phoneText.Text;
             cust.Remark = remarkText.Text;
-
             InsertSQL custHnd = new InsertSQL();
             int addrecord = custHnd.addNewCustomer(cust);
-            MessageBox.Show(addrecord + "Your record is added");
+            MessageBox.Show(addrecord + " Your record is added");
         }
+
+        //private bool CheckCustomer(emailText.Text)
+        //{
+        //    bool check = false;
+        //    check = (String.IsNullOrEmpty(nameText.Text) ? true : false;
+        //    if (String.IsNullOrEmpty(nameText.Text))
+        //    {
+        //        MessageBox.Show("Please check again");
+        //    }
+            
+        //    if (string.IsNullOrEmpty(emailText.Text))
+        //    {
+        //        MessageBox.Show("Please check again");
+        //    }
+            
+            
+                
+            
+        //}
     }
 }
