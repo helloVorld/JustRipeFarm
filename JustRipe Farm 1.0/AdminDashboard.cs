@@ -662,10 +662,22 @@ namespace JustRipeFarm
                     break;
                 case "Product":
                     FormProduct fp = new FormProduct();
+                    fp.state = newOrEdit;
+                    if (newOrEdit == "Edit")
+                    {
+                        // MySQL Need Check 
+                        //fp.prod = 
+                    }
                     fp.Show();
                     break;
                 case "Sowing":
                     FormSowingJob fsj = new FormSowingJob();
+                    fsj.state = newOrEdit;
+                    if (newOrEdit == "Edit")
+                    {
+                        // MySQL Need Check 
+                        // fsj.sowj = 
+                    }
                     fsj.Show();
                     break;
                 case "Harvesting":
