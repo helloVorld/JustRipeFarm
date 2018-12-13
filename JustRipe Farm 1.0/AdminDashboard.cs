@@ -320,7 +320,27 @@ namespace JustRipeFarm
                     if (JRF.GotInListStr(currentUpdateOption, cbText))
                     {
                         // proceed MySql operation
+                        Console.WriteLine("update panel => " + currentPanel+ "=> "+currentID);
+                        switch (currentPanel)
+                        {
+                            case "Order":
+                                int haha = JobOp.UpdateOrder(currentID, cbText);
+                                try
+                                {
+                                    currentDataSet = JRFdataset.Table.getAllOrders().Tables[0];
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show("No Data");
+                                }
 
+                                MessageBox.Show("Update Done");
+                                dgvDbTable.DataSource = currentDataSet;
+                                dgvDbTable.Refresh();
+                                break;
+                            default:break;
+                        }
+                        
                     }
                     else
                     {
@@ -852,6 +872,37 @@ namespace JustRipeFarm
         {
             FormEditPassword editpassword = new FormEditPassword();
             editpassword.Show();
+        }
+
+        private void panelHome_Paint(object sender, PaintEventArgs e)
+        {
+            userLbl.Hide();
+            if (isAdmin)
+            {
+                gbOrders.Show();
+                lblTodayAllJob.Text = JobOp.GetAllJobCountFor(true).ToString();
+
+                lblPendingAllJob.Text = JobOp.GetAllJobCountFor(false).ToString();
+
+                lblTodayAllOrder.Text = JobOp.GetOrderCountFor("orders").ToString();
+                //lblTodayAllOrder.Text = "";
+                lblPendingAllOrder.Text = "";
+            }
+            else
+            {
+                gbOrders.Hide();
+                lblTodayAllJob.Text = JobOp.GetAllJobCountFor(true, currentEmployee.Id).ToString();
+
+                lblPendingAllJob.Text = JobOp.GetAllJobCountFor(false, currentEmployee.Id).ToString();
+
+                
+            }
+            
+        }
+
+        public void updateFieldStr(String tableName,int rowId, string field, string updateItem)
+        {
+
         }
     }
     

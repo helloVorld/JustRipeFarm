@@ -37,6 +37,7 @@
             this.formWidthLbl = new System.Windows.Forms.Label();
             this.formHeightLbl = new System.Windows.Forms.Label();
             this.panelHome = new System.Windows.Forms.Panel();
+            this.lblUsername = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -119,7 +120,20 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblUsername = new System.Windows.Forms.Label();
+            this.groupBox16 = new System.Windows.Forms.GroupBox();
+            this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.lblPendingAllJob = new System.Windows.Forms.Label();
+            this.groupBox18 = new System.Windows.Forms.GroupBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.lblTodayAllJob = new System.Windows.Forms.Label();
+            this.gbOrders = new System.Windows.Forms.GroupBox();
+            this.groupBox20 = new System.Windows.Forms.GroupBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.lblPendingAllOrder = new System.Windows.Forms.Label();
+            this.groupBox21 = new System.Windows.Forms.GroupBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.lblTodayAllOrder = new System.Windows.Forms.Label();
             this.panelHome.SuspendLayout();
             this.panelOperation.SuspendLayout();
             this.groupBox13.SuspendLayout();
@@ -142,6 +156,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDbTable)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.groupBox16.SuspendLayout();
+            this.groupBox17.SuspendLayout();
+            this.groupBox18.SuspendLayout();
+            this.gbOrders.SuspendLayout();
+            this.groupBox20.SuspendLayout();
+            this.groupBox21.SuspendLayout();
             this.SuspendLayout();
             // 
             // logoutBtn
@@ -219,16 +239,28 @@
             // 
             // panelHome
             // 
-            this.panelHome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelHome.Controls.Add(this.gbOrders);
+            this.panelHome.Controls.Add(this.groupBox16);
             this.panelHome.Controls.Add(this.lblUsername);
             this.panelHome.Controls.Add(this.button2);
             this.panelHome.Controls.Add(this.button1);
             this.panelHome.Controls.Add(this.label4);
             this.panelHome.Location = new System.Drawing.Point(181, 50);
-            this.panelHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelHome.Margin = new System.Windows.Forms.Padding(4);
             this.panelHome.Name = "panelHome";
             this.panelHome.Size = new System.Drawing.Size(650, 400);
             this.panelHome.TabIndex = 17;
+            this.panelHome.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHome_Paint);
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Location = new System.Drawing.Point(135, 28);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(58, 24);
+            this.lblUsername.TabIndex = 22;
+            this.lblUsername.Text = "name";
             // 
             // button2
             // 
@@ -269,7 +301,7 @@
             this.panelOperation.Controls.Add(this.groupBox1);
             this.panelOperation.Controls.Add(this.panelInventory);
             this.panelOperation.Controls.Add(this.label3);
-            this.panelOperation.Location = new System.Drawing.Point(25, 555);
+            this.panelOperation.Location = new System.Drawing.Point(21, 483);
             this.panelOperation.Name = "panelOperation";
             this.panelOperation.Size = new System.Drawing.Size(650, 400);
             this.panelOperation.TabIndex = 18;
@@ -1041,15 +1073,147 @@
             this.panel1.Size = new System.Drawing.Size(356, 459);
             this.panel1.TabIndex = 22;
             // 
-            // lblUsername
+            // groupBox16
             // 
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(135, 28);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(58, 24);
-            this.lblUsername.TabIndex = 22;
-            this.lblUsername.Text = "name";
+            this.groupBox16.Controls.Add(this.groupBox17);
+            this.groupBox16.Controls.Add(this.groupBox18);
+            this.groupBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox16.Location = new System.Drawing.Point(107, 178);
+            this.groupBox16.Name = "groupBox16";
+            this.groupBox16.Size = new System.Drawing.Size(180, 140);
+            this.groupBox16.TabIndex = 9;
+            this.groupBox16.TabStop = false;
+            this.groupBox16.Text = "Jobs";
+            // 
+            // groupBox17
+            // 
+            this.groupBox17.Controls.Add(this.label17);
+            this.groupBox17.Controls.Add(this.lblPendingAllJob);
+            this.groupBox17.Location = new System.Drawing.Point(93, 25);
+            this.groupBox17.Name = "groupBox17";
+            this.groupBox17.Size = new System.Drawing.Size(80, 110);
+            this.groupBox17.TabIndex = 8;
+            this.groupBox17.TabStop = false;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(6, 29);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(67, 20);
+            this.label17.TabIndex = 6;
+            this.label17.Text = "Pending";
+            // 
+            // lblPendingAllJob
+            // 
+            this.lblPendingAllJob.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPendingAllJob.Location = new System.Drawing.Point(6, 66);
+            this.lblPendingAllJob.Name = "lblPendingAllJob";
+            this.lblPendingAllJob.Size = new System.Drawing.Size(65, 29);
+            this.lblPendingAllJob.TabIndex = 5;
+            this.lblPendingAllJob.Text = "1000";
+            this.lblPendingAllJob.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // groupBox18
+            // 
+            this.groupBox18.Controls.Add(this.label21);
+            this.groupBox18.Controls.Add(this.lblTodayAllJob);
+            this.groupBox18.Location = new System.Drawing.Point(6, 25);
+            this.groupBox18.Name = "groupBox18";
+            this.groupBox18.Size = new System.Drawing.Size(80, 110);
+            this.groupBox18.TabIndex = 7;
+            this.groupBox18.TabStop = false;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(6, 27);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(72, 25);
+            this.label21.TabIndex = 6;
+            this.label21.Text = "Today";
+            // 
+            // lblTodayAllJob
+            // 
+            this.lblTodayAllJob.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTodayAllJob.Location = new System.Drawing.Point(6, 66);
+            this.lblTodayAllJob.Name = "lblTodayAllJob";
+            this.lblTodayAllJob.Size = new System.Drawing.Size(65, 29);
+            this.lblTodayAllJob.TabIndex = 5;
+            this.lblTodayAllJob.Text = "1000";
+            this.lblTodayAllJob.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // gbOrders
+            // 
+            this.gbOrders.Controls.Add(this.groupBox20);
+            this.gbOrders.Controls.Add(this.groupBox21);
+            this.gbOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbOrders.Location = new System.Drawing.Point(373, 178);
+            this.gbOrders.Name = "gbOrders";
+            this.gbOrders.Size = new System.Drawing.Size(180, 140);
+            this.gbOrders.TabIndex = 10;
+            this.gbOrders.TabStop = false;
+            this.gbOrders.Text = "Orders";
+            // 
+            // groupBox20
+            // 
+            this.groupBox20.Controls.Add(this.label19);
+            this.groupBox20.Controls.Add(this.lblPendingAllOrder);
+            this.groupBox20.Location = new System.Drawing.Point(93, 25);
+            this.groupBox20.Name = "groupBox20";
+            this.groupBox20.Size = new System.Drawing.Size(80, 110);
+            this.groupBox20.TabIndex = 8;
+            this.groupBox20.TabStop = false;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(6, 29);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(67, 20);
+            this.label19.TabIndex = 6;
+            this.label19.Text = "Pending";
+            // 
+            // lblPendingAllOrder
+            // 
+            this.lblPendingAllOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPendingAllOrder.Location = new System.Drawing.Point(6, 66);
+            this.lblPendingAllOrder.Name = "lblPendingAllOrder";
+            this.lblPendingAllOrder.Size = new System.Drawing.Size(65, 29);
+            this.lblPendingAllOrder.TabIndex = 5;
+            this.lblPendingAllOrder.Text = "1000";
+            this.lblPendingAllOrder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // groupBox21
+            // 
+            this.groupBox21.Controls.Add(this.label25);
+            this.groupBox21.Controls.Add(this.lblTodayAllOrder);
+            this.groupBox21.Location = new System.Drawing.Point(6, 25);
+            this.groupBox21.Name = "groupBox21";
+            this.groupBox21.Size = new System.Drawing.Size(80, 110);
+            this.groupBox21.TabIndex = 7;
+            this.groupBox21.TabStop = false;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(6, 27);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(72, 25);
+            this.label25.TabIndex = 6;
+            this.label25.Text = "Today";
+            // 
+            // lblTodayAllOrder
+            // 
+            this.lblTodayAllOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTodayAllOrder.Location = new System.Drawing.Point(6, 66);
+            this.lblTodayAllOrder.Name = "lblTodayAllOrder";
+            this.lblTodayAllOrder.Size = new System.Drawing.Size(65, 29);
+            this.lblTodayAllOrder.TabIndex = 5;
+            this.lblTodayAllOrder.Text = "1000";
+            this.lblTodayAllOrder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AdminDashboard
             // 
@@ -1110,6 +1274,16 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBox16.ResumeLayout(false);
+            this.groupBox17.ResumeLayout(false);
+            this.groupBox17.PerformLayout();
+            this.groupBox18.ResumeLayout(false);
+            this.groupBox18.PerformLayout();
+            this.gbOrders.ResumeLayout(false);
+            this.groupBox20.ResumeLayout(false);
+            this.groupBox20.PerformLayout();
+            this.groupBox21.ResumeLayout(false);
+            this.groupBox21.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1209,5 +1383,19 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.GroupBox gbOrders;
+        private System.Windows.Forms.GroupBox groupBox20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label lblPendingAllOrder;
+        private System.Windows.Forms.GroupBox groupBox21;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label lblTodayAllOrder;
+        private System.Windows.Forms.GroupBox groupBox16;
+        private System.Windows.Forms.GroupBox groupBox17;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblPendingAllJob;
+        private System.Windows.Forms.GroupBox groupBox18;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label lblTodayAllJob;
     }
 }
