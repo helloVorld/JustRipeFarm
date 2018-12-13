@@ -22,47 +22,70 @@ namespace JustRipeFarm
 
         private void btnDone_Click(object sender, EventArgs e)
         {
-            if (checkInput())
+            AddFarm(descriptionText.Text, Convert.ToInt32(areaText.Text), Convert.ToInt32(utiliseAreaText.Text));
+
+            //if (checkInput())
+            //{
+            //    if (state == "Edit")
+            //    {
+            //        EditFarm();
+            //    }
+            //    else
+            //    {
+            //        AddFarm();
+            //    }
+            //}
+            //else
+            //{
+            //    ErrorMsg.WrongIntInput();
+            //}
+
+        }
+
+        //public void EditFarm()
+        //{
+        //    //Farm farm = new Farm();
+        //    //farm.Id = farmfarm.Id;
+        //    //farm.Description = descriptionText.Text;
+        //    //farm.Area = Int32.Parse(areaText.Text);
+        //    //farm.Utilize_area = Int32.Parse(utiliseAreaText.Text);
+
+        //    //UpdateSQL farmHnd = new UpdateSQL();
+        //    //int addrecord = farmHnd.updateFarm(farm);
+        //    //MessageBox.Show(addrecord + "Your record is added");
+        //}
+
+        public void AddFarm(string description, int area, int utilize_area)
+        {
+            if (String.IsNullOrEmpty(description))
             {
-                if(state == "Edit")
+                if (String.IsNullOrEmpty(Convert.ToString(area)))
                 {
-                    EditFarm();
+                    if (String.IsNullOrEmpty(Convert.ToString(utilize_area)))
+                    {
+                        MessageBox.Show("Please fill up all the value");
+                    }
+                    MessageBox.Show("Please fill up all the value");
                 }
-                else
-                {
-                    AddFarm();
-                }
+                MessageBox.Show("Please fill up all the value");
             }
             else
             {
-                ErrorMsg.WrongIntInput();
+                Farm f1 = new Farm();
+                f1.Description = descriptionText.Text;
+                f1.Area = Convert.ToInt32(areaText.Text);
+                f1.Utilize_area = Convert.ToInt32(utiliseAreaText.Text);
+
+                InsertSQL add = new InsertSQL();
+                int editrecord = add.addNewFarm(f1);
+                MessageBox.Show(" Your seccusful");
+                this.Close();
             }
-           
-        }
+    
 
-        public void EditFarm()
-        {
-            Farm farm = new Farm();
-            farm.Id = farmfarm.Id;
-            farm.Description = descriptionText.Text;
-            farm.Area = Int32.Parse(areaText.Text);
-            farm.Utilize_area = Int32.Parse(utiliseAreaText.Text);
-
-            UpdateSQL farmHnd = new UpdateSQL();
-            int addrecord = farmHnd.updateFarm(farm);
-            MessageBox.Show(addrecord + "Your record is added");
-        }
-
-        public void AddFarm()
-        {
-            Farm farm = new Farm();
-            farm.Description = descriptionText.Text;
-            farm.Area = Int32.Parse(areaText.Text);
-            farm.Utilize_area = Int32.Parse(utiliseAreaText.Text);
-
-            InsertSQL farmHnd = new InsertSQL();
-            int addrecord = farmHnd.addNewFarm(farm);
-            MessageBox.Show(addrecord + "Your record is added");
+            //InsertSQL farmHnd = new InsertSQL();
+            //int addrecord = farmHnd.addNewFarm(farm);
+            //MessageBox.Show(addrecord + "Your record is added");
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -70,33 +93,33 @@ namespace JustRipeFarm
             this.Close();
         }
 
-        private bool checkInput()
-        {
-            int checkint;
-            if (!int.TryParse(areaText.Text, out checkint))
-            {
-                return false;
-            }
-            if (!int.TryParse(utiliseAreaText.Text, out checkint))
-            {
-                return false;
-            }
-            return true;
-        }
+        //private bool checkInput()
+        //{
+            //int checkint;
+            //if (!int.TryParse(areaText.Text, out checkint))
+            //{
+            //    return false;
+            //}
+            //if (!int.TryParse(utiliseAreaText.Text, out checkint))
+            //{
+            //    return false;
+            //}
+            //return true;
+        //}
 
         private void FormFarm_Load(object sender, EventArgs e)
         {
-            if (state == "Edit")
-            {
-                descriptionText.Text = farmfarm.Description;
-                areaText.Text = farmfarm.Area.ToString();
-                utiliseAreaText.Text = farmfarm.Utilize_area.ToString();
-                lblEditing.Show();
-            }
-            else
-            {
-                lblEditing.Hide();
-            }
+        //    if (state == "Edit")
+        //    {
+        //        descriptionText.Text = farmfarm.Description;
+        //        areaText.Text = farmfarm.Area.ToString();
+        //        utiliseAreaText.Text = farmfarm.Utilize_area.ToString();
+        //        lblEditing.Show();
+        //    }
+        //    else
+        //    {
+        //        lblEditing.Hide();
+        //    }
         }
     }
 }

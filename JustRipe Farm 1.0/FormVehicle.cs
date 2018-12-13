@@ -20,6 +20,8 @@ namespace JustRipeFarm
 
         private void btnDone_Click(object sender, EventArgs e)
         {
+
+
             Vehicle vech = new Vehicle();
             vech.Name = nameText.Text;
             vech.Serial_number = Int32.Parse(serialNumText.Text);
@@ -35,6 +37,11 @@ namespace JustRipeFarm
         private void buyDateTimePicker_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

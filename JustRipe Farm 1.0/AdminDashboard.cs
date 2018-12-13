@@ -705,15 +705,23 @@ namespace JustRipeFarm
                     fsj.Show();
                     break;
                 case "Harvesting":
-                    
+                    FormHarvestingJob hj = new FormHarvestingJob();
+                    hj.Show();
+
                     break;
                 case "Storage":
-                    
+                    FormStoreroom sj1 = new FormStoreroom();
+                    sj1.Show();
+
                     break;
                 case "Fertilising":
+                    FormFertilisingJob fj1 = new FormFertilisingJob();
+                    fj1.Show();
                     
                     break;
                 case "Pest Control":
+                    FormPesticide fp1 = new FormPesticide();
+                    fp1.Show();
                     
                     break;
                 case "Farm":
@@ -755,15 +763,28 @@ namespace JustRipeFarm
                     
                     break;
                 case "Crop":
+                    FormCropcs c1 = new FormCropcs();
+                    c1.Show();
                     break;
                 case "Fertiliser":
+                    FormFertiliser f1 = new FormFertiliser();
+                    f1.Show();
                     
                     break;
                 case "Pesticide":
-                    
+                    FormPesticide p1 = new FormPesticide();
+                    p1.state = newOrEdit;
+                    if (newOrEdit == "Edit")
+                    {
+                        // MySQL Need Check 
+                        //p1.ps = JRFdataset.Table.GetCustoemrFromID(currentID);
+                    }
+                    p1.Show();
                     break;
                 case "Box":
-                    
+                    FormBox b1 = new FormBox();
+                    b1.Show();
+
 
                     break;
                 default: break;

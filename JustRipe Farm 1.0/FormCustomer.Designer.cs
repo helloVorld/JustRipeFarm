@@ -34,10 +34,10 @@
             this.emailLabel = new System.Windows.Forms.Label();
             this.phoneLabel = new System.Windows.Forms.Label();
             this.remarkLabel = new System.Windows.Forms.Label();
-            this.nameText = new System.Windows.Forms.TextBox();
-            this.emailText = new System.Windows.Forms.TextBox();
-            this.phoneText = new System.Windows.Forms.TextBox();
-            this.remarkText = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -98,44 +98,44 @@
             this.remarkLabel.TabIndex = 7;
             this.remarkLabel.Text = "Remark:";
             // 
-            // nameText
+            // textBox1
             // 
-            this.nameText.Location = new System.Drawing.Point(176, 95);
-            this.nameText.Name = "nameText";
-            this.nameText.Size = new System.Drawing.Size(170, 22);
-            this.nameText.TabIndex = 8;
+            this.textBox1.Location = new System.Drawing.Point(176, 95);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(170, 22);
+            this.textBox1.TabIndex = 8;
             // 
-            // emailText
+            // textBox2
             // 
-            this.emailText.Location = new System.Drawing.Point(176, 136);
-            this.emailText.Name = "emailText";
-            this.emailText.Size = new System.Drawing.Size(170, 22);
-            this.emailText.TabIndex = 9;
+            this.textBox2.Location = new System.Drawing.Point(176, 136);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(170, 22);
+            this.textBox2.TabIndex = 9;
             // 
-            // phoneText
+            // textBox3
             // 
-            this.phoneText.Location = new System.Drawing.Point(176, 179);
-            this.phoneText.Name = "phoneText";
-            this.phoneText.Size = new System.Drawing.Size(170, 22);
-            this.phoneText.TabIndex = 10;
-            this.phoneText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.phoneText_KeyPress);
+            this.textBox3.Location = new System.Drawing.Point(176, 179);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(170, 22);
+            this.textBox3.TabIndex = 10;
+            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.phoneText_KeyPress);
             // 
-            // remarkText
+            // textBox4
             // 
-            this.remarkText.Location = new System.Drawing.Point(176, 230);
-            this.remarkText.Name = "remarkText";
-            this.remarkText.Size = new System.Drawing.Size(170, 22);
-            this.remarkText.TabIndex = 11;
+            this.textBox4.Location = new System.Drawing.Point(176, 230);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(170, 22);
+            this.textBox4.TabIndex = 11;
             // 
             // FormCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(476, 542);
-            this.Controls.Add(this.remarkText);
-            this.Controls.Add(this.phoneText);
-            this.Controls.Add(this.emailText);
-            this.Controls.Add(this.nameText);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.remarkLabel);
             this.Controls.Add(this.phoneLabel);
             this.Controls.Add(this.emailLabel);
@@ -158,9 +158,9 @@
         private System.Windows.Forms.Label emailLabel;
         private System.Windows.Forms.Label phoneLabel;
         private System.Windows.Forms.Label remarkLabel;
-        private System.Windows.Forms.TextBox nameText;
-        private System.Windows.Forms.TextBox emailText;
-        private System.Windows.Forms.TextBox phoneText;
-        private System.Windows.Forms.TextBox remarkText;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
     }
 }

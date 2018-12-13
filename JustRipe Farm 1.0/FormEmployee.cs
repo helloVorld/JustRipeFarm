@@ -23,27 +23,88 @@ namespace JustRipeFarm
 
         private void btnDone_Click(object sender, EventArgs e)
         {
-            //AddEmployee();
-            UpdateEmployee();
+            AddEmployee(firstNameText.Text, lastNameText.Text, usernameText.Text, passwordText.Text,
+                    Convert.ToDateTime(dobText.Text), mobileText.Text, emailText.Text, Convert.ToInt32(adminText.Text), statusText.Text, remarkText.Text);
+            //UpdateEmployee();
         }
 
-        public void AddEmployee()
+        public void AddEmployee(string first_name, string last_name, string username, string password,
+                                DateTime dob, string mobile, string email, int admin, string status, string remark)
         {
-            Employee emp = new Employee();
-            emp.First_name = firstNameText.Text;
-            emp.Last_name = lastNameText.Text;
-            emp.Username = usernameText.Text;
-            emp.Password = passwordText.Text;
-            emp.Dob = DateTime.Parse(dobText.Text);
-            emp.Mobile = mobileText.Text;
-            emp.Email = emailText.Text;
-            emp.Admin = Int32.Parse(adminText.Text);
-            emp.Status = statusText.Text;
-            emp.Remark = remarkText.Text;
+            if (String.IsNullOrEmpty(first_name))
+            {
+                if (String.IsNullOrEmpty(last_name))
+                {
+                    if (String.IsNullOrEmpty(username))
+                    {
+                        if (String.IsNullOrEmpty(password))
+                        {
+                            if (String.IsNullOrEmpty(Convert.ToString(dob)))
+                            {
+                                if (String.IsNullOrEmpty(mobile))
+                                {
+                                    if (String.IsNullOrEmpty(email))
+                                    {
+                                        if (String.IsNullOrEmpty(Convert.ToString(admin)))
+                                        {
+                                            if (String.IsNullOrEmpty(status))
+                                            {
+                                                if (String.IsNullOrEmpty(remark))
+                                                {
+                                                    MessageBox.Show("Please fill in all the data!!");
+                                                }
+                                                MessageBox.Show("Please fill in all the data!!");
+                                            }
+                                            MessageBox.Show("Please fill in all the data!!");
+                                        }
+                                        MessageBox.Show("Please fill in all the data!!");
+                                    }
+                                    MessageBox.Show("Please fill in all the data!!");
+                                }
+                                MessageBox.Show("Please fill in all the data!!");
+                            }
+                            MessageBox.Show("Please fill in all the data!!");
+                        }
+                        MessageBox.Show("Please check phone again");
+                    }
+                    MessageBox.Show("Please check email again");
+                }
+                MessageBox.Show("Please check name again");
+            }
+            else
+            {
+                Employee emp = new Employee();
+                emp.First_name = firstNameText.Text;
+                emp.Last_name = lastNameText.Text;
+                emp.Username = usernameText.Text;
+                emp.Password = passwordText.Text;
+                emp.Dob = Convert.ToDateTime(dobText.Text);
+                emp.Mobile = mobileText.Text;
+                emp.Email = emailText.Text;
+                emp.Admin = Convert.ToInt32(adminText.Text);
+                emp.Status = statusText.Text;
+                emp.Remark = remarkText.Text;
 
-            InsertSQL empHnd = new InsertSQL();
-            int addrecord = empHnd.addNewEmployee(emp);
-            MessageBox.Show(addrecord + " Your record is added");
+                InsertSQL add = new InsertSQL();
+                int editrecord = add.addNewEmployee(emp);
+                MessageBox.Show(" Your seccusful");
+                this.Close();
+            }
+            //Employee emp = new Employee();
+            //emp.First_name = firstNameText.Text;
+            //emp.Last_name = lastNameText.Text;
+            //emp.Username = usernameText.Text;
+            //emp.Password = passwordText.Text;
+            //emp.Dob = DateTime.Parse(dobText.Text);
+            //emp.Mobile = mobileText.Text;
+            //emp.Email = emailText.Text;
+            //emp.Admin = Int32.Parse(adminText.Text);
+            //emp.Status = statusText.Text;
+            //emp.Remark = remarkText.Text;
+
+            //InsertSQL empHnd = new InsertSQL();
+            //int addrecord = empHnd.addNewEmployee(emp);
+            //MessageBox.Show(addrecord + " Your record is added");
         }
 
 

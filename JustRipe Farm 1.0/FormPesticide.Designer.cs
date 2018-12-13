@@ -84,6 +84,7 @@
             this.btnDone.TabIndex = 89;
             this.btnDone.Text = "Done";
             this.btnDone.UseVisualStyleBackColor = true;
+            this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
             // textBox1
             // 
@@ -121,6 +122,7 @@
             this.Controls.Add(this.btnDone);
             this.Name = "FormPesticide";
             this.Text = "FormPesticide";
+            this.Load += new System.EventHandler(this.FormPesticide_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

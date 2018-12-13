@@ -42,5 +42,10 @@ namespace JustRipeFarm
                 ErrorMsg.UpdateOptionNoSelect();
             }
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

@@ -28,8 +28,16 @@ namespace JustRipeFarm
 
         private void btnDone_Click(object sender, EventArgs e)
         {
-            //AddOrder();
-            UpdateOrder();
+            
+            
+            if (state == "Edit")
+            {
+                UpdateOrder();
+            }
+            else
+            {
+                AddOrder();
+            }
         }
 
         private void FormOrder_Load(object sender, EventArgs e)

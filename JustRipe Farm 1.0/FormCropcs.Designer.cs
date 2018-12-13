@@ -76,6 +76,7 @@
             this.btnCancel.TabIndex = 21;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnDone
             // 
@@ -86,6 +87,7 @@
             this.btnDone.TabIndex = 20;
             this.btnDone.Text = "Done";
             this.btnDone.UseVisualStyleBackColor = true;
+            this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
             // label2
             // 

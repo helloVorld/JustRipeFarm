@@ -135,6 +135,7 @@ namespace JustRipeFarm
             this.btnCancel.TabIndex = 63;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnDone
             // 
@@ -303,5 +304,10 @@ namespace JustRipeFarm
         private TextBox textBox1;
         private DateTimePicker dtpTimeEnd;
         private DateTimePicker dtpTimeStart;
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
