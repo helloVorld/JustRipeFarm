@@ -64,5 +64,10 @@ namespace JustRipeFarm
             }
 
         }
+
+        private void nUDQty_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

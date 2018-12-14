@@ -30,34 +30,34 @@
         {
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnDone = new System.Windows.Forms.Button();
-            this.palletAllocationText = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.descriptionText = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.orderDatedateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
-            this.collectionDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
-            this.priceText = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.statusText = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.remarkText = new System.Windows.Forms.TextBox();
-            this.productIdText = new System.Windows.Forms.TextBox();
-            this.quantityBoxText = new System.Windows.Forms.TextBox();
-            this.weightText = new System.Windows.Forms.TextBox();
-            this.customerIdText = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(234, 468);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 28);
             this.btnCancel.TabIndex = 3;
@@ -68,20 +68,13 @@
             // btnDone
             // 
             this.btnDone.Location = new System.Drawing.Point(73, 468);
-            this.btnDone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDone.Margin = new System.Windows.Forms.Padding(4);
             this.btnDone.Name = "btnDone";
             this.btnDone.Size = new System.Drawing.Size(100, 28);
             this.btnDone.TabIndex = 2;
             this.btnDone.Text = "Done";
             this.btnDone.UseVisualStyleBackColor = true;
             this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
-            // 
-            // palletAllocationText
-            // 
-            this.palletAllocationText.Location = new System.Drawing.Point(193, 195);
-            this.palletAllocationText.Name = "palletAllocationText";
-            this.palletAllocationText.Size = new System.Drawing.Size(100, 22);
-            this.palletAllocationText.TabIndex = 36;
             // 
             // label5
             // 
@@ -91,13 +84,6 @@
             this.label5.Size = new System.Drawing.Size(112, 17);
             this.label5.TabIndex = 35;
             this.label5.Text = "Pallet Allocation:";
-            // 
-            // descriptionText
-            // 
-            this.descriptionText.Location = new System.Drawing.Point(193, 62);
-            this.descriptionText.Name = "descriptionText";
-            this.descriptionText.Size = new System.Drawing.Size(100, 22);
-            this.descriptionText.TabIndex = 31;
             // 
             // label4
             // 
@@ -153,13 +139,6 @@
             this.label7.TabIndex = 43;
             this.label7.Text = "Order_date:";
             // 
-            // orderDatedateTimePicker
-            // 
-            this.orderDatedateTimePicker.Location = new System.Drawing.Point(193, 271);
-            this.orderDatedateTimePicker.Name = "orderDatedateTimePicker";
-            this.orderDatedateTimePicker.Size = new System.Drawing.Size(200, 22);
-            this.orderDatedateTimePicker.TabIndex = 44;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -168,13 +147,6 @@
             this.label8.Size = new System.Drawing.Size(73, 17);
             this.label8.TabIndex = 45;
             this.label8.Text = "Collection:";
-            // 
-            // collectionDateTimePicker
-            // 
-            this.collectionDateTimePicker.Location = new System.Drawing.Point(193, 307);
-            this.collectionDateTimePicker.Name = "collectionDateTimePicker";
-            this.collectionDateTimePicker.Size = new System.Drawing.Size(200, 22);
-            this.collectionDateTimePicker.TabIndex = 46;
             // 
             // label9
             // 
@@ -185,13 +157,6 @@
             this.label9.TabIndex = 47;
             this.label9.Text = "Price:";
             // 
-            // priceText
-            // 
-            this.priceText.Location = new System.Drawing.Point(193, 338);
-            this.priceText.Name = "priceText";
-            this.priceText.Size = new System.Drawing.Size(100, 22);
-            this.priceText.TabIndex = 48;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -200,13 +165,6 @@
             this.label10.Size = new System.Drawing.Size(52, 17);
             this.label10.TabIndex = 49;
             this.label10.Text = "Status:";
-            // 
-            // statusText
-            // 
-            this.statusText.Location = new System.Drawing.Point(193, 371);
-            this.statusText.Name = "statusText";
-            this.statusText.Size = new System.Drawing.Size(100, 22);
-            this.statusText.TabIndex = 50;
             // 
             // label11
             // 
@@ -217,71 +175,115 @@
             this.label11.TabIndex = 51;
             this.label11.Text = "Remark:";
             // 
-            // remarkText
+            // textBox2
             // 
-            this.remarkText.Location = new System.Drawing.Point(193, 401);
-            this.remarkText.Name = "remarkText";
-            this.remarkText.Size = new System.Drawing.Size(100, 22);
-            this.remarkText.TabIndex = 52;
+            this.textBox2.Location = new System.Drawing.Point(179, 131);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 22);
+            this.textBox2.TabIndex = 54;
             // 
-            // productIdText
+            // textBox1
             // 
-            this.productIdText.Location = new System.Drawing.Point(193, 92);
-            this.productIdText.Name = "productIdText";
-            this.productIdText.Size = new System.Drawing.Size(100, 22);
-            this.productIdText.TabIndex = 53;
+            this.textBox1.Location = new System.Drawing.Point(179, 57);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 55;
             // 
-            // quantityBoxText
+            // textBox3
             // 
-            this.quantityBoxText.Location = new System.Drawing.Point(193, 126);
-            this.quantityBoxText.Name = "quantityBoxText";
-            this.quantityBoxText.Size = new System.Drawing.Size(100, 22);
-            this.quantityBoxText.TabIndex = 54;
+            this.textBox3.Location = new System.Drawing.Point(179, 164);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 22);
+            this.textBox3.TabIndex = 56;
             // 
-            // weightText
+            // textBox4
             // 
-            this.weightText.Location = new System.Drawing.Point(193, 157);
-            this.weightText.Name = "weightText";
-            this.weightText.Size = new System.Drawing.Size(100, 22);
-            this.weightText.TabIndex = 55;
+            this.textBox4.Location = new System.Drawing.Point(179, 192);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 22);
+            this.textBox4.TabIndex = 57;
             // 
-            // customerIdText
+            // dateTimePicker1
             // 
-            this.customerIdText.Location = new System.Drawing.Point(193, 231);
-            this.customerIdText.Name = "customerIdText";
-            this.customerIdText.Size = new System.Drawing.Size(100, 22);
-            this.customerIdText.TabIndex = 56;
+            this.dateTimePicker1.Location = new System.Drawing.Point(179, 271);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker1.TabIndex = 58;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(179, 302);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker2.TabIndex = 59;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(179, 338);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(100, 22);
+            this.textBox5.TabIndex = 60;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(179, 371);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(100, 22);
+            this.textBox6.TabIndex = 61;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(179, 399);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(100, 22);
+            this.textBox7.TabIndex = 62;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(179, 92);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 64;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(179, 231);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 24);
+            this.comboBox2.TabIndex = 65;
             // 
             // FormOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(479, 554);
-            this.Controls.Add(this.customerIdText);
-            this.Controls.Add(this.weightText);
-            this.Controls.Add(this.quantityBoxText);
-            this.Controls.Add(this.productIdText);
-            this.Controls.Add(this.remarkText);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.statusText);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.priceText);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.collectionDateTimePicker);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.orderDatedateTimePicker);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.palletAllocationText);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.descriptionText);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnDone);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormOrder";
             this.Text = "FormOrder";
             this.Load += new System.EventHandler(this.FormOrder_Load);
@@ -294,27 +296,27 @@
 
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnDone;
-        private System.Windows.Forms.TextBox palletAllocationText;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox descriptionText;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker orderDatedateTimePicker;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DateTimePicker collectionDateTimePicker;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox priceText;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox statusText;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox remarkText;
-        private System.Windows.Forms.TextBox productIdText;
-        private System.Windows.Forms.TextBox quantityBoxText;
-        private System.Windows.Forms.TextBox weightText;
-        private System.Windows.Forms.TextBox customerIdText;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }
