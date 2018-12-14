@@ -20,6 +20,12 @@ namespace JustRipeFarm
 
         private void btnDone_Click(object sender, EventArgs e)
         {
+            addStock();
+            //editStock();
+        }
+
+        public void addStock()
+        {
             Storeroom store = new Storeroom();
             store.Description = descriptionText.Text;
             store.StoringQty = Convert.ToInt32(storeNumericUpDown.Value);
@@ -34,6 +40,24 @@ namespace JustRipeFarm
             InsertSQL storeHnd = new InsertSQL();
             int addrecord = storeHnd.addNewStore(store);
             MessageBox.Show(addrecord + " Your record is added");
+        }
+
+        public void editStock()
+        {
+            Storeroom store = new Storeroom();
+            store.Description = descriptionText.Text;
+            store.StoringQty = Convert.ToInt32(storeNumericUpDown.Value);
+            store.Temperature = Int32.Parse(tempText.Text);
+            bool avail = false;
+            int availability = availabilityBox.SelectedIndex;
+            if (availability == 1)
+            {
+                avail = true;
+            }
+            store.Availability = avail;
+            UpdateSQL storeHnd = new UpdateSQL();
+            storeHnd.updateStore(store);
+            MessageBox.Show(" Your record is added");
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

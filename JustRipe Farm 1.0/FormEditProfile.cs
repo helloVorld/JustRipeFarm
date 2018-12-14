@@ -34,35 +34,10 @@ namespace JustRipeFarm
             this.Close();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            CheckProfile(textBox1.Text, textBox2.Text, Convert.ToDateTime(dateTimePicker1.Text), textBox3.Text, textBox4.Text);
-        }
 
         private void CheckProfile(string first_name, string last_name, DateTime dob, string mobile, string email)
         {
-            if (String.IsNullOrEmpty(first_name))
-            {
-                if (String.IsNullOrEmpty(last_name))
-                {
-                    if (String.IsNullOrEmpty(Convert.ToString(dob)))
-                    {
-                        if (String.IsNullOrEmpty(mobile))
-                        {
-                            if (String.IsNullOrEmpty(email))
-                            {
-                                MessageBox.Show("Please check email again");
-                            }
-                                MessageBox.Show("Please check mobile again");
-                        }
-                        MessageBox.Show("Please check dob again");
-                    }
-                    MessageBox.Show("Please check last name again");
-                }
-                MessageBox.Show("Please check first name again");
-            }
-            else
-            {
+            
                 Employee employee = new Employee();
                 employee.First_name = textBox1.Text;
                 employee.Last_name = textBox2.Text;
@@ -73,6 +48,33 @@ namespace JustRipeFarm
                 int editrecord = update.editEmployee(employee);
                 MessageBox.Show(" Your seccusful");
                 this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(textBox1.Text))
+            {
+                if (String.IsNullOrEmpty(textBox2.Text))
+                {
+                    if (String.IsNullOrEmpty(dateTimePicker1.Text))
+                    {
+                        if (String.IsNullOrEmpty(textBox3.Text))
+                        {
+                            if (String.IsNullOrEmpty(textBox4.Text))
+                            {
+                                MessageBox.Show("Please fill up the box");
+                            }
+                            MessageBox.Show("Please fill up the box");
+                        }
+                        MessageBox.Show("Please fill up the box");
+                    }
+                    MessageBox.Show("Please fill up the box");
+                }
+                MessageBox.Show("Please fill up the box");
+            }
+            else
+            {
+                CheckProfile(textBox1.Text, textBox2.Text, Convert.ToDateTime(dateTimePicker1.Text), textBox3.Text, textBox4.Text);
             }
         }
     }

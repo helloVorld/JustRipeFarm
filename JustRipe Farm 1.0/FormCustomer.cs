@@ -41,12 +41,45 @@ namespace JustRipeFarm
 
         private void btnDone_Click(object sender, EventArgs e)
         {
-            CheckCustomer(textBox1.Text, textBox2.Text, textBox3.Text, textBox2.Text);
+            if (String.IsNullOrEmpty(textBox1.Text))
+            {
+                if (String.IsNullOrEmpty(textBox2.Text))
+                {
+                    if (String.IsNullOrEmpty(textBox3.Text))
+                    {
+                        if (String.IsNullOrEmpty(textBox4.Text))
+                        {
+                            MessageBox.Show("Please check remark again");
+                        }
+                        MessageBox.Show("Please check phone again");
+                    }
+                    MessageBox.Show("Please check email again");
+                }
+                MessageBox.Show("Please check name again");
+            }
+            else
+            {
+                addCustomer();
+            }
+        }
+
+        private void addCustomer()
+        {
+            Customer c1 = new Customer();
+            c1.Name = textBox1.Text;
+            c1.Email = textBox2.Text;
+            c1.Phone = textBox3.Text;
+            c1.Remark = textBox4.Text;
+
+            InsertSQL add = new InsertSQL();
+            int editrecord = add.addNewCustomer(c1);
+            MessageBox.Show(" Your seccusful");
+            this.Close();
         }
 
         public void updateCustomer()
         {
-            CheckCustomer(textBox1.Text, textBox2.Text, textBox3.Text, textBox2.Text);
+            //CheckCustomer(textBox1.Text, textBox2.Text, textBox3.Text, textBox2.Text);
             Customer custU = new Customer();
             custU.Name = textBox1.Text;
             custU.Email = textBox2.Text;
@@ -87,38 +120,7 @@ namespace JustRipeFarm
 
 
         //}
-        private void CheckCustomer(string name, string email, string phone, string remark)
-        {
-            if (String.IsNullOrEmpty(name))
-            {
-                if (String.IsNullOrEmpty(email))
-                {
-                    if (String.IsNullOrEmpty(phone))
-                    {
-                        if (String.IsNullOrEmpty(remark))
-                        {
-                            MessageBox.Show("Please check remark again");
-                        }
-                        MessageBox.Show("Please check phone again");
-                    }
-                    MessageBox.Show("Please check email again");
-                }
-                MessageBox.Show("Please check name again");
-            }
-            else
-            {
-                Customer c1 = new Customer();
-                c1.Name = textBox1.Text;
-                c1.Email = textBox2.Text;
-                c1.Phone = textBox3.Text;
-                c1.Remark = textBox4.Text;
-
-                InsertSQL add = new InsertSQL();
-                int editrecord = add.addNewCustomer(c1);
-                MessageBox.Show(" Your seccusful");
-                this.Close();
-            }
-        }
+        
 
         private void phoneText_KeyPress(object sender, KeyPressEventArgs e)
         {

@@ -18,39 +18,8 @@ namespace JustRipeFarm
             InitializeComponent();
         }
 
-        private void CheckBox(string name, double width, double height, double length, double max_weight, int quantity, string status)
+        private void addBox()
         {
-
-            if (String.IsNullOrEmpty(name))
-            {
-                if (String.IsNullOrEmpty(Convert.ToString(width)))
-                {
-                    if (String.IsNullOrEmpty(Convert.ToString(height)))
-                    {
-                        if (String.IsNullOrEmpty(Convert.ToString(length)))
-                        {
-                            if (String.IsNullOrEmpty(Convert.ToString(max_weight)))
-                            {
-                                if (String.IsNullOrEmpty(Convert.ToString(quantity)))
-                                {
-                                    if (String.IsNullOrEmpty(status))
-                                    {
-                                        MessageBox.Show("Please check status again");
-                                    }
-                                    MessageBox.Show("Please check quantity again");
-                                }
-                                MessageBox.Show("Please check max wight again");
-                            }
-                            MessageBox.Show("Please check length again");
-                        }
-                        MessageBox.Show("Please check height again");
-                    }
-                    MessageBox.Show("Please check width again");
-                }
-                MessageBox.Show("Please check name again");
-            }
-            else
-            {
                 Box box = new Box();
                 box.Name = textBox1.Text;
                 box.Width = Convert.ToDouble(textBox2.Text);
@@ -63,7 +32,23 @@ namespace JustRipeFarm
                 InsertSQL addHnd = new InsertSQL();
                 int addrecord = addHnd.addNewBox(box);
                 MessageBox.Show("Success!!");
-            }
+
+        }
+
+        private void updateBox()
+        {
+            Box box = new Box();
+            box.Name = textBox1.Text;
+            box.Width = Convert.ToDouble(textBox2.Text);
+            box.Height = Convert.ToDouble(textBox3.Text);
+            box.Length = Convert.ToDouble(textBox4.Text);
+            box.Max_weight = Convert.ToDouble(textBox5.Text);
+            box.Quantity = Convert.ToInt32(textBox6.Text);
+            box.Status = textBox7.Text;
+
+            UpdateSQL addHnd = new UpdateSQL();
+            int addrecord = addHnd.updateBox(box);
+            MessageBox.Show("Success!!");
 
         }
         private void btnCancel_Click(object sender, EventArgs e)
@@ -73,7 +58,36 @@ namespace JustRipeFarm
 
         private void btnDone_Click(object sender, EventArgs e)
         {
-            CheckBox(textBox1.Text, Convert.ToDouble(textBox2.Text), Convert.ToDouble(textBox3.Text), Convert.ToDouble(textBox4.Text), Convert.ToDouble(textBox5.Text), Convert.ToInt32(textBox6.Text), textBox7.Text);
+            if (String.IsNullOrEmpty(textBox1.Text))
+            {
+                if (String.IsNullOrEmpty(Convert.ToString(textBox2.Text)))
+                {
+                    if (String.IsNullOrEmpty(Convert.ToString(textBox3.Text)))
+                    {
+                        if (String.IsNullOrEmpty(Convert.ToString(textBox4.Text)))
+                        {
+                            if (String.IsNullOrEmpty(Convert.ToString(textBox5.Text)))
+                            {
+                                if (String.IsNullOrEmpty(Convert.ToString(textBox6.Text)))
+                                {
+                                    if (String.IsNullOrEmpty(textBox7.Text))
+                                    {
+                                        MessageBox.Show("please fill up all the box");
+                                    }
+                                    MessageBox.Show("please fill up all the box");
+                                }
+                                MessageBox.Show("please fill up all the box");
+                            }
+                            MessageBox.Show("Please fill up all the box");
+                        }
+                        MessageBox.Show("please fill up all the box");
+                    }
+                    MessageBox.Show("please fill up all the box");
+                }
+                MessageBox.Show("please fill up all the box");
+            }
+            else
+            addBox();
         }
     }
 

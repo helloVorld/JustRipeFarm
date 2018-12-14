@@ -22,23 +22,23 @@ namespace JustRipeFarm
 
         private void btnDone_Click(object sender, EventArgs e)
         {
-            AddFarm(descriptionText.Text, Convert.ToInt32(areaText.Text), Convert.ToInt32(utiliseAreaText.Text));
-
-            //if (checkInput())
-            //{
-            //    if (state == "Edit")
-            //    {
-            //        EditFarm();
-            //    }
-            //    else
-            //    {
-            //        AddFarm();
-            //    }
-            //}
-            //else
-            //{
-            //    ErrorMsg.WrongIntInput();
-            //}
+            if (String.IsNullOrEmpty(descriptionText.Text))
+            {
+                if (String.IsNullOrEmpty(Convert.ToString(areaText.Text)))
+                {
+                    if (String.IsNullOrEmpty(Convert.ToString(utiliseAreaText.Text)))
+                    {
+                        MessageBox.Show("Please fill up all the value");
+                    }
+                    MessageBox.Show("Please fill up all the value");
+                }
+                MessageBox.Show("Please fill up all the value");
+            }
+            else
+            {
+                addFarm();
+                //updateFarm();
+            }
 
         }
 
@@ -55,37 +55,30 @@ namespace JustRipeFarm
         //    //MessageBox.Show(addrecord + "Your record is added");
         //}
 
-        public void AddFarm(string description, int area, int utilize_area)
+        public void addFarm()
         {
-            if (String.IsNullOrEmpty(description))
-            {
-                if (String.IsNullOrEmpty(Convert.ToString(area)))
-                {
-                    if (String.IsNullOrEmpty(Convert.ToString(utilize_area)))
-                    {
-                        MessageBox.Show("Please fill up all the value");
-                    }
-                    MessageBox.Show("Please fill up all the value");
-                }
-                MessageBox.Show("Please fill up all the value");
-            }
-            else
-            {
-                Farm f1 = new Farm();
-                f1.Description = descriptionText.Text;
-                f1.Area = Convert.ToInt32(areaText.Text);
-                f1.Utilize_area = Convert.ToInt32(utiliseAreaText.Text);
+            Farm f1 = new Farm();
+            f1.Description = descriptionText.Text;
+            f1.Area = Convert.ToInt32(areaText.Text);
+            f1.Utilize_area = Convert.ToInt32(utiliseAreaText.Text);
 
-                InsertSQL add = new InsertSQL();
-                int editrecord = add.addNewFarm(f1);
-                MessageBox.Show(" Your seccusful");
-                this.Close();
-            }
-    
+            InsertSQL add = new InsertSQL();
+            int addrecord = add.addNewFarm(f1);
+            MessageBox.Show("Successful");
+            this.Close();
+        }
 
-            //InsertSQL farmHnd = new InsertSQL();
-            //int addrecord = farmHnd.addNewFarm(farm);
-            //MessageBox.Show(addrecord + "Your record is added");
+        public void updateFarm()
+        {
+            Farm f1 = new Farm();
+            f1.Description = descriptionText.Text;
+            f1.Area = Convert.ToInt32(areaText.Text);
+            f1.Utilize_area = Convert.ToInt32(utiliseAreaText.Text);
+
+            UpdateSQL add = new UpdateSQL();
+            int editrecord = add.updateFarm(f1);
+            MessageBox.Show("Successful");
+            this.Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

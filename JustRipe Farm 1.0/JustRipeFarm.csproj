@@ -63,6 +63,12 @@
     <Compile Include="ClassEntity\Fertiliser.cs" />
     <Compile Include="ClassEntity\FertiliserHandler.cs" />
     <Compile Include="ClassEntity\JRFdataset.cs" />
+    <Compile Include="FormFertilisingJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFertilisingJob.Designer.cs">
+      <DependentUpon>FormFertilisingJob.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,12 +104,6 @@
     </Compile>
     <Compile Include="FormFertiliser.Designer.cs">
       <DependentUpon>FormFertiliser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormFertilisingJob.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormFertilisingJob.Designer.cs">
-      <DependentUpon>FormFertilisingJob.cs</DependentUpon>
     </Compile>
     <Compile Include="FormHarvestingJob.cs">
       <SubType>Form</SubType>
@@ -223,6 +223,9 @@
     <EmbeddedResource Include="AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormFertilisingJob.resx">
+      <DependentUpon>FormFertilisingJob.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBox.resx">
       <DependentUpon>FormBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -249,9 +252,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormFertiliser.resx">
       <DependentUpon>FormFertiliser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormFertilisingJob.resx">
-      <DependentUpon>FormFertilisingJob.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormHarvestingJob.resx">
       <DependentUpon>FormHarvestingJob.cs</DependentUpon>

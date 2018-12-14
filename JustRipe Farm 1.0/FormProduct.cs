@@ -22,16 +22,36 @@ namespace JustRipeFarm
 
         private void btnDone_Click(object sender, EventArgs e)
         {
+            add();
+            //update();
+        }
+
+        private void add()
+        {
             Product prod = new Product();
             prod.Name = nameText.Text;
             prod.Type = typeText.Text;
             prod.Quantity_box = Convert.ToInt32(quantityNumericUpDown.Value);
             prod.Weight = decimal.Parse(weightText.Text);
             prod.Box_id = Int32.Parse(boxIdText.Text);
-            InsertSQL prodHnd = new InsertSQL();
 
+            InsertSQL prodHnd = new InsertSQL();
             int addrecord = prodHnd.addNewProduct(prod);
-            MessageBox.Show(addrecord + "Your record is added");
+            MessageBox.Show("Your record is added");
+        }
+
+        private void update()
+        {
+            Product prod = new Product();
+            prod.Name = nameText.Text;
+            prod.Type = typeText.Text;
+            prod.Quantity_box = Convert.ToInt32(quantityNumericUpDown.Value);
+            prod.Weight = decimal.Parse(weightText.Text);
+            prod.Box_id = Int32.Parse(boxIdText.Text);
+
+            UpdateSQL prodHnd = new UpdateSQL();
+            int addrecord = prodHnd.updateProduct(prod);
+            MessageBox.Show("Your record is added");
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

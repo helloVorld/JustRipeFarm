@@ -27,7 +27,45 @@ namespace JustRipeFarm
         private void btnDone_Click(object sender, EventArgs e)
         {
             //get all fields data
+        }
+        public void add()
+        {
+            SowingJob s1 = new SowingJob();
+            s1.Description = tbDescription.Text;
+            s1.Crop_id = Convert.ToInt32(cbCrop.Text);
+            s1.Quantity_prop = int.Parse(nUDQty.Text);
+            s1.Farm_id = int.Parse(cbFarm.Text);
+            s1.Used_area = nUDArea.Text;
+            s1.Vehicle_id = int.Parse(cbVehicle.Text);
+            s1.Employee_id = int.Parse(cbEmployee.Text);
+            s1.Date = Convert.ToDateTime(dtpDate.Text);
+            s1.Time_start = Convert.ToDateTime(dtpTimeStart.Text);
+            s1.Time_end = Convert.ToDateTime(dtpTimeEnd.Text);
 
+            InsertSQL add = new InsertSQL();
+            int addrecord = add.addNewSowingJob(s1);
+            MessageBox.Show("Seccuess!!");
+            this.Close();
+        }
+
+        public void update()
+        {
+            SowingJob s1 = new SowingJob();
+            s1.Description = tbDescription.Text;
+            s1.Crop_id = Convert.ToInt32(cbCrop.Text);
+            s1.Quantity_prop = int.Parse(nUDQty.Text);
+            s1.Farm_id = int.Parse(cbFarm.Text);
+            s1.Used_area = nUDArea.Text;
+            s1.Vehicle_id = int.Parse(cbVehicle.Text);
+            s1.Employee_id = int.Parse(cbEmployee.Text);
+            s1.Date = Convert.ToDateTime(dtpDate.Text);
+            s1.Time_start = Convert.ToDateTime(dtpTimeStart.Text);
+            s1.Time_end = Convert.ToDateTime(dtpTimeEnd.Text);
+
+            UpdateSQL add = new UpdateSQL();
+            int addrecord = add.UpdateSowingJob(s1);
+            MessageBox.Show("Seccuess!!");
+            this.Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

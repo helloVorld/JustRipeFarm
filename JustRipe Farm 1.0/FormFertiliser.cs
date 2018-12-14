@@ -18,13 +18,20 @@ namespace JustRipeFarm
             InitializeComponent();
         }
 
-        private void CheckFertiliser(string name, int quantity_kg, string remark)
+        
+
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(name))
+            this.Close();
+        }
+
+        private void btnDone_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(textBox1.Text))
             {
-                if (String.IsNullOrEmpty(Convert.ToString(quantity_kg)))
+                if (String.IsNullOrEmpty(textBox2.Text))
                 {
-                    if (String.IsNullOrEmpty(remark))
+                    if (String.IsNullOrEmpty(textBox3.Text))
                     {
                         MessageBox.Show("Please check last name again");
                     }
@@ -34,30 +41,40 @@ namespace JustRipeFarm
             }
             else
             {
-                Fertiliser f1 = new Fertiliser();
-                f1.Name = textBox1.Text;
-                f1.Quantity_kg = Convert.ToInt32(textBox2.Text);
-                f1.Remark = textBox3.Text;
-
-                InsertSQL add = new InsertSQL();
-                int addrecord = add.addNewFertiliser(f1);
-                MessageBox.Show("Seccuess!!");
-                this.Close();
+                addFertiliser();
             }
+            //updateFertiliser();
         }
-        private void btnCancel_Click(object sender, EventArgs e)
+
+        private void addFertiliser()
         {
+            Fertiliser f1 = new Fertiliser();
+            f1.Name = textBox1.Text;
+            f1.Quantity_kg = Convert.ToInt32(textBox2.Text);
+            f1.Remark = textBox3.Text;
+
+            InsertSQL add = new InsertSQL();
+            int addrecord = add.addNewFertiliser(f1);
+            MessageBox.Show("Seccuess!!");
             this.Close();
         }
 
-        private void btnDone_Click(object sender, EventArgs e)
+        private void updateFertiliser()
         {
-            CheckFertiliser(textBox1.Text, Convert.ToInt32(textBox2.Text), textBox3.Text);
+            Fertiliser f1 = new Fertiliser();
+            f1.Name = textBox1.Text;
+            f1.Quantity_kg = Convert.ToInt32(textBox2.Text);
+            f1.Remark = textBox3.Text;
+
+            UpdateSQL add = new UpdateSQL();
+            int editrecord = add.updateFertiliser(f1);
+            MessageBox.Show("Seccuess!!");
+            this.Close();
         }
     }
 }
 
-//    bool ck1 = String.IsNullOrEmpty(name);
+//            bool ck1 = String.IsNullOrEmpty(name);
 //            bool ck2 = String.IsNullOrEmpty(quantity_kg.ToString());
 //            bool ck3 = String.IsNullOrEmpty(remark);
 

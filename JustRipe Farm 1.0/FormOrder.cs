@@ -38,7 +38,54 @@ namespace JustRipeFarm
             }
             else
             {
-                AddOrder();
+                if (String.IsNullOrEmpty(textBox1.Text))
+                {
+                    if (String.IsNullOrEmpty(Convert.ToString(comboBox1.Text)))
+                    {
+                        if (String.IsNullOrEmpty(Convert.ToString(textBox2.Text)))
+                        {
+                            if (String.IsNullOrEmpty(Convert.ToString(textBox3.Text)))
+                            {
+                                if (String.IsNullOrEmpty(Convert.ToString(textBox4.Text)))
+                                {
+                                    if (String.IsNullOrEmpty(Convert.ToString(comboBox2.Text)))
+                                    {
+                                        if (String.IsNullOrEmpty(Convert.ToString(dateTimePicker1.Text)))
+                                        {
+                                            if (String.IsNullOrEmpty(Convert.ToString(dateTimePicker2.Text)))
+                                            {
+                                                if (String.IsNullOrEmpty(Convert.ToString(textBox5.Text)))
+                                                {
+                                                    if (String.IsNullOrEmpty(Convert.ToString(textBox6.Text)))
+                                                    {
+                                                        if (String.IsNullOrEmpty(Convert.ToString(textBox7.Text)))
+                                                        {
+                                                            MessageBox.Show("Please check again");
+                                                        }
+                                                        MessageBox.Show("Please check status again");
+                                                    }
+                                                    MessageBox.Show("Please check status again");
+                                                }
+                                                MessageBox.Show("Please check status again");
+                                            }
+                                            MessageBox.Show("Please check status again");
+                                        }
+                                        MessageBox.Show("Please check status again");
+                                    }
+                                    MessageBox.Show("Please check status again");
+                                }
+                                MessageBox.Show("Please check status again");
+                            }
+                            MessageBox.Show("Please check status again");
+                        }
+                        MessageBox.Show("Please check status again");
+                    }
+                    MessageBox.Show("Please fill up all the box");
+                }
+                else
+                {
+                    AddOrder();
+                }
             }
         }
 
@@ -80,30 +127,40 @@ namespace JustRipeFarm
             ordi.Status = textBox6.Text;
             ordi.Remark = textBox7.Text;
 
-            UpdateSQL ordHnd = new UpdateSQL();
-            int changerecord = ordHnd.UpdateOrder(ordi);
-            MessageBox.Show(changerecord + " Your record is added");
+            if (String.IsNullOrEmpty(textBox1.Text))
+            {
+                MessageBox.Show("Please check again");
+            }
+            else
+            {
+                UpdateSQL ordHnd = new UpdateSQL();
+                int changerecord = ordHnd.UpdateOrder(ordi);
+                MessageBox.Show(changerecord + " Your record is added");
+            }
         }
 
         public void AddOrder()
         {
             Order ord = new Order();
-            
+
+
             ord.Description = textBox1.Text;
             ord.Product_id = Int32.Parse(comboBox1.Text);
-            ord.Quantity_box = Int32.Parse(textBox1.Text);
-            ord.Weight = Int32.Parse(textBox1.Text);
-            ord.PalletAllocation = int.Parse(textBox1.Text);
+            ord.Quantity_box = Int32.Parse(textBox2.Text);
+            ord.Weight = Int32.Parse(textBox3.Text);
+            ord.PalletAllocation = int.Parse(textBox4.Text);
             ord.Customer_id = int.Parse(comboBox2.Text);
             ord.Order_date = this.dateTimePicker1.Value;
             ord.Collection_date = this.dateTimePicker2.Value;
-            ord.Price = double.Parse(textBox1.Text);
-            ord.Status = textBox1.Text;
-            ord.Remark = textBox1.Text;
+            ord.Price = double.Parse(textBox5.Text);
+            ord.Status = textBox6.Text;
+            ord.Remark = textBox7.Text;
+
 
             InsertSQL ordHnd = new InsertSQL();
             int addrecord = ordHnd.addNewOrder(ord);
             MessageBox.Show(addrecord + "Your record is added");
+
         }
 
         public List<Crop> GetCropList()

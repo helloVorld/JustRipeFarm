@@ -23,33 +23,25 @@ namespace JustRipeFarm
 
         private void btnDone_Click(object sender, EventArgs e)
         {
-            AddEmployee(firstNameText.Text, lastNameText.Text, usernameText.Text, passwordText.Text,
-                    Convert.ToDateTime(dobText.Text), mobileText.Text, emailText.Text, Convert.ToInt32(adminText.Text), statusText.Text, remarkText.Text);
-            //UpdateEmployee();
-        }
-
-        public void AddEmployee(string first_name, string last_name, string username, string password,
-                                DateTime dob, string mobile, string email, int admin, string status, string remark)
-        {
-            if (String.IsNullOrEmpty(first_name))
+            if (String.IsNullOrEmpty(firstNameText.Text))
             {
-                if (String.IsNullOrEmpty(last_name))
+                if (String.IsNullOrEmpty(lastNameText.Text))
                 {
-                    if (String.IsNullOrEmpty(username))
+                    if (String.IsNullOrEmpty(usernameText.Text))
                     {
-                        if (String.IsNullOrEmpty(password))
+                        if (String.IsNullOrEmpty(passwordText.Text))
                         {
-                            if (String.IsNullOrEmpty(Convert.ToString(dob)))
+                            if (String.IsNullOrEmpty(dobText.Text))
                             {
-                                if (String.IsNullOrEmpty(mobile))
+                                if (String.IsNullOrEmpty(mobileText.Text))
                                 {
-                                    if (String.IsNullOrEmpty(email))
+                                    if (String.IsNullOrEmpty(emailText.Text))
                                     {
-                                        if (String.IsNullOrEmpty(Convert.ToString(admin)))
+                                        if (String.IsNullOrEmpty(adminText.Text))
                                         {
-                                            if (String.IsNullOrEmpty(status))
+                                            if (String.IsNullOrEmpty(statusText.Text))
                                             {
-                                                if (String.IsNullOrEmpty(remark))
+                                                if (String.IsNullOrEmpty(remarkText.Text))
                                                 {
                                                     MessageBox.Show("Please fill in all the data!!");
                                                 }
@@ -73,38 +65,29 @@ namespace JustRipeFarm
             }
             else
             {
-                Employee emp = new Employee();
-                emp.First_name = firstNameText.Text;
-                emp.Last_name = lastNameText.Text;
-                emp.Username = usernameText.Text;
-                emp.Password = passwordText.Text;
-                emp.Dob = Convert.ToDateTime(dobText.Text);
-                emp.Mobile = mobileText.Text;
-                emp.Email = emailText.Text;
-                emp.Admin = Convert.ToInt32(adminText.Text);
-                emp.Status = statusText.Text;
-                emp.Remark = remarkText.Text;
-
-                InsertSQL add = new InsertSQL();
-                int editrecord = add.addNewEmployee(emp);
-                MessageBox.Show(" Your seccusful");
-                this.Close();
+                addEmployee();
             }
-            //Employee emp = new Employee();
-            //emp.First_name = firstNameText.Text;
-            //emp.Last_name = lastNameText.Text;
-            //emp.Username = usernameText.Text;
-            //emp.Password = passwordText.Text;
-            //emp.Dob = DateTime.Parse(dobText.Text);
-            //emp.Mobile = mobileText.Text;
-            //emp.Email = emailText.Text;
-            //emp.Admin = Int32.Parse(adminText.Text);
-            //emp.Status = statusText.Text;
-            //emp.Remark = remarkText.Text;
+            //UpdateEmployee();
+        }
 
-            //InsertSQL empHnd = new InsertSQL();
-            //int addrecord = empHnd.addNewEmployee(emp);
-            //MessageBox.Show(addrecord + " Your record is added");
+        public void addEmployee()
+        {
+            Employee emp = new Employee();
+            emp.First_name = firstNameText.Text;
+            emp.Last_name = lastNameText.Text;
+            emp.Username = usernameText.Text;
+            emp.Password = passwordText.Text;
+            emp.Dob = Convert.ToDateTime(dobText.Text);
+            emp.Mobile = mobileText.Text;
+            emp.Email = emailText.Text;
+            emp.Admin = Convert.ToInt32(adminText.Text);
+            emp.Status = statusText.Text;
+            emp.Remark = remarkText.Text;
+
+            InsertSQL add = new InsertSQL();
+            int editrecord = add.addNewEmployee(emp);
+            MessageBox.Show(" Your seccusful");
+            this.Close();
         }
 
 
