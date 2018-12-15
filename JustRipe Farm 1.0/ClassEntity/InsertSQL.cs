@@ -156,8 +156,8 @@ namespace JustRipeFarm.ClassEntity
 
         public int addNewSowingJob(SowingJob sowingjob)
         {
-            MySqlCommand sqlComm = new MySqlCommand("INSERT INTO" + "swoingjob(description, crop_id, quantity_prop, farm_id, used_area, vehicle_id, employee_id, date, time_start, time_end)" +
-                                            "VALUES" + "(@description, @crop_id, @quantity_prop, @farm_id, @used_area, @vehicle_id, @employee_id, @date, @time_start, @time_end)", MysqlDbc.Instance.getConn());
+            MySqlCommand sqlComm = new MySqlCommand("INSERT INTO" + "swoingjob(description, crop_id, quantity_prop, farm_id, used_area, vehicle_id, employee_id, date_start, date_end, time_start, time_end)" +
+                                            "VALUES" + "(@description, @crop_id, @quantity_prop, @farm_id, @used_area, @vehicle_id, @employee_id, @date_start, @date_end, @time_start, @time_end)", MysqlDbc.Instance.getConn());
 
             sqlComm.Parameters.Add("@description", MySqlDbType.Text).Value = sowingjob.Description;
             sqlComm.Parameters.Add("@crop_id", MySqlDbType.UInt32).Value = sowingjob.Crop_id;
@@ -166,7 +166,8 @@ namespace JustRipeFarm.ClassEntity
             sqlComm.Parameters.Add("@used_area", MySqlDbType.Text).Value = sowingjob.Used_area;
             sqlComm.Parameters.Add("@vehicle_id", MySqlDbType.UInt32).Value = sowingjob.Vehicle_id;
             sqlComm.Parameters.Add("@employee_id", MySqlDbType.UInt32).Value = sowingjob.Employee_id;
-            sqlComm.Parameters.Add("@date", MySqlDbType.Date).Value = sowingjob.Date;
+            sqlComm.Parameters.Add("@date_start", MySqlDbType.Date).Value = sowingjob.Date_start;
+            sqlComm.Parameters.Add("@date_end", MySqlDbType.Date).Value = sowingjob.Date_end;
             sqlComm.Parameters.Add("@time_start", MySqlDbType.Time).Value = sowingjob.Time_start;
             sqlComm.Parameters.Add("@time_end", MySqlDbType.Time).Value = sowingjob.Time_end;
 
@@ -618,48 +619,142 @@ namespace JustRipeFarm.ClassEntity
             return cropLists;
         }
 
-        //public List<Crop> GetEmployeeList()
-        //{
-        //    List<Employee> cropLists = new List<Employee>();
-        //    MySqlDataReader rdr = null;
-        //    try
-        //    {
+        public List<Employee> GetEmployeeList()
+        {
+            List<Employee> employeeLists = new List<Employee>();
+            MySqlDataReader rdr = null;
+            try
+            {
 
 
-        //        string stm = "SELECT * FROM employee";
-        //        MySqlCommand cmd = new MySqlCommand(stm, MysqlDbc.Instance.getConn());
-        //        rdr = cmd.ExecuteReader();
+                string stm = "SELECT * FROM employee";
+                MySqlCommand cmd = new MySqlCommand(stm, MysqlDbc.Instance.getConn());
+                rdr = cmd.ExecuteReader();
 
-        //        while (rdr.Read())
-        //        {
-        //            Employee emp = new Employee();
-        //            emp.Id = rdr.GetInt32("id");
-        //            emp.First_name = rdr.GetString("name");
-        //            emp.Last_name = rdr.GetString("type");
-        //            emp.Username = rdr.GetInt32("quantity_plot");
-        //            emp.Password = rdr.GetString("remark");
+                while (rdr.Read())
+                {
+                    Employee emp = new Employee();
+                    emp.Id = rdr.GetInt32("id");
+                    emp.First_name = rdr.GetString("first_name");
+                    emp.Last_name = rdr.GetString("last_name");
+                    emp.Username = rdr.GetString("username");
+                    emp.Password = rdr.GetString("password");
+                    emp.Dob = rdr.GetDateTime("dob");
+                    emp.Mobile = rdr.GetString("mobile");
+                    emp.Email = rdr.GetString("email");
+                    emp.Admin = rdr.GetBoolean("admin");
+                    emp.Status = rdr.GetString("status");
+                    emp.Remark = rdr.GetString("remark");
 
-        //            Console.WriteLine("crop => " + cr);
-        //            cropLists.Add(cr);
+                    //Console.WriteLine("crop => " + cr);
+                    employeeLists.Add(emp);
 
-        //        }
+                }
 
-        //    }
-        //    catch (MySqlException ex)
-        //    {
-        //        Console.WriteLine("Error: {0}", ex.ToString());
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
 
-        //    }
-        //    finally
-        //    {
-        //        if (rdr != null)
-        //        {
-        //            rdr.Close();
-        //        }
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
 
-        //    }
+            }
 
-        //    return cropLists;
-        //}
+            return employeeLists;
+        }
+
+        public List<Farm> GetFarmList()
+        {
+            List<Farm> farmLists = new List<Farm>();
+            MySqlDataReader rdr = null;
+            try
+            {
+
+
+                string stm = "SELECT * FROM farm";
+                MySqlCommand cmd = new MySqlCommand(stm, MysqlDbc.Instance.getConn());
+                rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    Farm far = new Farm();
+                    far.Id = rdr.GetInt32("id");
+                    far.Description = rdr.GetString("description");
+                    far.Area = rdr.GetInt32("area");
+                    far.Utilize_area = rdr.GetInt32("utilize_area");
+
+                    //Console.WriteLine("crop => " + cr);
+                    farmLists.Add(far);
+
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+            }
+
+            return farmLists;
+        }
+
+        public List<Vehicle> GetVehicleList()
+        {
+            List<Vehicle> vehicleLists = new List<Vehicle>();
+            MySqlDataReader rdr = null;
+            try
+            {
+
+
+                string stm = "SELECT * FROM vehicle";
+                MySqlCommand cmd = new MySqlCommand(stm, MysqlDbc.Instance.getConn());
+                rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    Vehicle vehc = new Vehicle();
+                    vehc.Id = rdr.GetInt32("id");
+                    vehc.Name = rdr.GetString("name");
+                    vehc.Serial_number = rdr.GetInt32("serial_number");
+                    vehc.Buy_date = rdr.GetDateTime("buy_date");
+                    vehc.Last_service_date = rdr.GetDateTime("last_service_date");
+                    vehc.Remark = rdr.GetString("remark");
+
+                    //Console.WriteLine("crop => " + cr);
+                    vehicleLists.Add(vehc);
+
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+            }
+
+            return vehicleLists;
+        }
     }
 }

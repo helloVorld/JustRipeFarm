@@ -80,7 +80,7 @@ namespace JustRipeFarm
             emp.Dob = Convert.ToDateTime(dobText.Text);
             emp.Mobile = mobileText.Text;
             emp.Email = emailText.Text;
-            emp.Admin = Convert.ToInt32(adminText.Text);
+            emp.Admin = Convert.ToBoolean(adminText.Text);
             emp.Status = statusText.Text;
             emp.Remark = remarkText.Text;
 
@@ -103,7 +103,7 @@ namespace JustRipeFarm
             empi.Dob = DateTime.Parse(dobText.Text);
             empi.Mobile = mobileText.Text;
             empi.Email = emailText.Text;
-            empi.Admin = Int32.Parse(adminText.Text);
+            empi.Admin = Boolean.Parse(adminText.Text);
             empi.Status = statusText.Text;
             empi.Remark = remarkText.Text;
 

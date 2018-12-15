@@ -47,11 +47,11 @@ namespace JustRipeFarm
             {
                 em = login.checkUserLogin();
 
-                if (em.Admin == 1)
+                if (em.Admin == true)
                 {
                     goToDashBoard(true);
                 }
-                else if(em.Admin == 0)
+                else if(em.Admin == false)
                 {
                     goToDashBoard(false);
                 }

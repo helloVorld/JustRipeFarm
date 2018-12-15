@@ -16,7 +16,7 @@ namespace JustRipeFarm.ClassEntity
         private DateTime dob;
         private string mobile;
         private string email;
-        private int admin;
+        private Boolean admin;
         private string status;
         private string remark;
 
@@ -28,7 +28,7 @@ namespace JustRipeFarm.ClassEntity
         public DateTime Dob { get => dob; set => dob = value; }
         public string Mobile { get => mobile; set => mobile = value; }
         public string Email { get => email; set => email = value; }
-        public int Admin { get => admin; set => admin = value; }
+        public bool Admin { get => admin; set => admin = value; }
         public string Status { get => status; set => status = value; }
         public string Remark { get => remark; set => remark = value; }
 

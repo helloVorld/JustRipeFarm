@@ -159,7 +159,7 @@ namespace JustRipeFarm.ClassEntity
         public int UpdateSowingJob(SowingJob sowingjob)
         {
             MySqlCommand sqlComm = new MySqlCommand("UPDATE" + " sowingjob SET description=@description, crop_id=@crop_id, quantity_prop=@quantity_prop, farm_id=@farm_id," +
-                                                    " used_area=@used_area, vehicle_id=@vehicle_id, employee_id=@employee_id, date=@date, " +
+                                                    " used_area=@used_area, vehicle_id=@vehicle_id, employee_id=@employee_id, date_start=@date_start, date_end=@date_end, " +
                                                     "time_start=@time_start, time_end=@time_end" +
                                                      "WHERE id = 1", MysqlDbc.Instance.getConn());
 
@@ -170,7 +170,8 @@ namespace JustRipeFarm.ClassEntity
             sqlComm.Parameters.Add("@used_area", MySqlDbType.Text).Value = sowingjob.Used_area;
             sqlComm.Parameters.Add("@vehicle_id", MySqlDbType.UInt32).Value = sowingjob.Vehicle_id;
             sqlComm.Parameters.Add("@employee_id", MySqlDbType.UInt32).Value = sowingjob.Employee_id;
-            sqlComm.Parameters.Add("@date", MySqlDbType.Date).Value = sowingjob.Date;
+            sqlComm.Parameters.Add("@date_start", MySqlDbType.Date).Value = sowingjob.Date_start;
+            sqlComm.Parameters.Add("@date_end", MySqlDbType.Date).Value = sowingjob.Date_end;
             sqlComm.Parameters.Add("@time_start", MySqlDbType.Time).Value = sowingjob.Time_start;
             sqlComm.Parameters.Add("@time_end", MySqlDbType.Time).Value = sowingjob.Time_end;
 

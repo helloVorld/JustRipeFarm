@@ -52,14 +52,16 @@
             this.dtpTimeEnd = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.dtpDate2 = new System.Windows.Forms.DateTimePicker();
+            this.label12 = new System.Windows.Forms.Label();
+            this.dtpDateEnd = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.nUDQty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDArea)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(193, 453);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancel.Location = new System.Drawing.Point(198, 508);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 28);
             this.btnCancel.TabIndex = 5;
@@ -69,8 +71,8 @@
             // 
             // btnDone
             // 
-            this.btnDone.Location = new System.Drawing.Point(51, 453);
-            this.btnDone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDone.Location = new System.Drawing.Point(46, 508);
+            this.btnDone.Margin = new System.Windows.Forms.Padding(4);
             this.btnDone.Name = "btnDone";
             this.btnDone.Size = new System.Drawing.Size(100, 28);
             this.btnDone.TabIndex = 4;
@@ -154,14 +156,14 @@
             this.label8.Location = new System.Drawing.Point(59, 321);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(50, 17);
+            this.label8.Size = new System.Drawing.Size(80, 17);
             this.label8.TabIndex = 13;
             this.label8.Text = "Date Start: ";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(59, 364);
+            this.label9.Location = new System.Drawing.Point(59, 418);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(81, 17);
@@ -171,7 +173,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(59, 415);
+            this.label10.Location = new System.Drawing.Point(59, 455);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(80, 17);
@@ -181,7 +183,7 @@
             // tbDescription
             // 
             this.tbDescription.Location = new System.Drawing.Point(177, 46);
-            this.tbDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbDescription.Margin = new System.Windows.Forms.Padding(4);
             this.tbDescription.Name = "tbDescription";
             this.tbDescription.Size = new System.Drawing.Size(132, 22);
             this.tbDescription.TabIndex = 16;
@@ -190,16 +192,17 @@
             // 
             this.cbCrop.FormattingEnabled = true;
             this.cbCrop.Location = new System.Drawing.Point(177, 80);
-            this.cbCrop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbCrop.Margin = new System.Windows.Forms.Padding(4);
             this.cbCrop.Name = "cbCrop";
             this.cbCrop.Size = new System.Drawing.Size(160, 24);
             this.cbCrop.TabIndex = 17;
+            this.cbCrop.SelectedIndexChanged += new System.EventHandler(this.cbCrop_SelectedIndexChanged);
             // 
             // cbFarm
             // 
             this.cbFarm.FormattingEnabled = true;
             this.cbFarm.Location = new System.Drawing.Point(177, 149);
-            this.cbFarm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbFarm.Margin = new System.Windows.Forms.Padding(4);
             this.cbFarm.Name = "cbFarm";
             this.cbFarm.Size = new System.Drawing.Size(160, 24);
             this.cbFarm.TabIndex = 18;
@@ -207,7 +210,7 @@
             // nUDQty
             // 
             this.nUDQty.Location = new System.Drawing.Point(177, 119);
-            this.nUDQty.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nUDQty.Margin = new System.Windows.Forms.Padding(4);
             this.nUDQty.Name = "nUDQty";
             this.nUDQty.Size = new System.Drawing.Size(160, 22);
             this.nUDQty.TabIndex = 19;
@@ -216,7 +219,7 @@
             // nUDArea
             // 
             this.nUDArea.Location = new System.Drawing.Point(177, 192);
-            this.nUDArea.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nUDArea.Margin = new System.Windows.Forms.Padding(4);
             this.nUDArea.Name = "nUDArea";
             this.nUDArea.Size = new System.Drawing.Size(160, 22);
             this.nUDArea.TabIndex = 20;
@@ -225,7 +228,7 @@
             // 
             this.cbVehicle.FormattingEnabled = true;
             this.cbVehicle.Location = new System.Drawing.Point(177, 242);
-            this.cbVehicle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbVehicle.Margin = new System.Windows.Forms.Padding(4);
             this.cbVehicle.Name = "cbVehicle";
             this.cbVehicle.Size = new System.Drawing.Size(160, 24);
             this.cbVehicle.TabIndex = 21;
@@ -234,7 +237,7 @@
             // 
             this.cbEmployee.FormattingEnabled = true;
             this.cbEmployee.Location = new System.Drawing.Point(177, 277);
-            this.cbEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.cbEmployee.Name = "cbEmployee";
             this.cbEmployee.Size = new System.Drawing.Size(160, 24);
             this.cbEmployee.TabIndex = 22;
@@ -242,7 +245,7 @@
             // dtpDate
             // 
             this.dtpDate.Location = new System.Drawing.Point(177, 321);
-            this.dtpDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(265, 22);
             this.dtpDate.TabIndex = 23;
@@ -250,8 +253,8 @@
             // dtpTimeStart
             // 
             this.dtpTimeStart.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpTimeStart.Location = new System.Drawing.Point(177, 364);
-            this.dtpTimeStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpTimeStart.Location = new System.Drawing.Point(177, 413);
+            this.dtpTimeStart.Margin = new System.Windows.Forms.Padding(4);
             this.dtpTimeStart.Name = "dtpTimeStart";
             this.dtpTimeStart.ShowUpDown = true;
             this.dtpTimeStart.Size = new System.Drawing.Size(160, 22);
@@ -260,8 +263,8 @@
             // dtpTimeEnd
             // 
             this.dtpTimeEnd.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpTimeEnd.Location = new System.Drawing.Point(177, 415);
-            this.dtpTimeEnd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpTimeEnd.Location = new System.Drawing.Point(177, 450);
+            this.dtpTimeEnd.Margin = new System.Windows.Forms.Padding(4);
             this.dtpTimeEnd.Name = "dtpTimeEnd";
             this.dtpTimeEnd.ShowUpDown = true;
             this.dtpTimeEnd.Size = new System.Drawing.Size(160, 22);
@@ -285,11 +288,30 @@
             this.dtpDate2.Size = new System.Drawing.Size(265, 22);
             this.dtpDate2.TabIndex = 27;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(59, 371);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(75, 17);
+            this.label12.TabIndex = 26;
+            this.label12.Text = "Date End: ";
+            // 
+            // dtpDateEnd
+            // 
+            this.dtpDateEnd.Location = new System.Drawing.Point(177, 366);
+            this.dtpDateEnd.Name = "dtpDateEnd";
+            this.dtpDateEnd.Size = new System.Drawing.Size(265, 22);
+            this.dtpDateEnd.TabIndex = 27;
+            // 
             // FormSowingJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(497, 549);
+            this.Controls.Add(this.dtpDateEnd);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.dtpTimeEnd);
             this.Controls.Add(this.dtpTimeStart);
             this.Controls.Add(this.dtpDate);
@@ -312,7 +334,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnDone);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormSowingJob";
             this.Text = "Sowing Job";
             this.Load += new System.EventHandler(this.FormSowingJob_Load);
@@ -349,5 +371,7 @@
         private System.Windows.Forms.DateTimePicker dtpTimeEnd;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker dtpDate2;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DateTimePicker dtpDateEnd;
     }
 }

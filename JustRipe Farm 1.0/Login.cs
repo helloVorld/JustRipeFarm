@@ -88,7 +88,7 @@ namespace JustRipeFarm.ClassEntity
                     em.Dob = rdr.GetDateTime("dob");
                     em.Mobile = rdr.GetString("mobile");
                     em.Email = rdr.GetString("email");
-                    em.Admin = rdr.GetInt32("admin");
+                    em.Admin = rdr.GetBoolean("admin");
                     em.Status = rdr.GetString("status");
                     em.Remark = rdr.GetString("remark");
                     
