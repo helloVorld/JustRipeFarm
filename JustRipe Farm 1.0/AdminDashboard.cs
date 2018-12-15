@@ -477,7 +477,7 @@ namespace JustRipeFarm
                     btnUpdateField.Text = pnItems[4].BtnUpdate;
                     try
                     {
-                        currentDataSet = JRFdataset.Table.getAllStorage().Tables[0];
+                        currentDataSet = JRFdataset.Table.getAllStoringJobStorage().Tables[0];
                     }
                     catch (Exception ex)
                     {
@@ -709,8 +709,7 @@ namespace JustRipeFarm
                     fp.state = newOrEdit;
                     if (newOrEdit == "Edit")
                     {
-                        // MySQL Need Check 
-                        //fp.prod = 
+                        fp.prod = JRFdataset.Table.GetProductFromID(currentID);
                     }
                     fp.Show();
                     break;
@@ -719,13 +718,18 @@ namespace JustRipeFarm
                     fsj.state = newOrEdit;
                     if (newOrEdit == "Edit")
                     {
-                        // MySQL Need Check 
-                        // fsj.sowj = 
+                        fsj.sowj = JRFdataset.Table.GetSowingJobFromID(currentID);
                     }
                     fsj.Show();
                     break;
                 case "Harvesting":
                     FormHarvestingJob hj = new FormHarvestingJob();
+                    hj.state = newOrEdit;
+                    if (newOrEdit == "Edit")
+                    {
+                        // MySQL Need Check 
+                        hj.hj1 = JRFdataset.Table.GetHarvestingJobFromID(currentID);
+                    }
                     hj.Show();
 
                     break;
@@ -736,12 +740,25 @@ namespace JustRipeFarm
                     break;
                 case "Fertilising":
                     FormFertilisingJob fj1 = new FormFertilisingJob();
+                    fj1.state = newOrEdit;
+                    if (newOrEdit == "Edit")
+                    {
+                        // MySQL Need Check 
+                        fj1.jb1 = JRFdataset.Table.GetFertilisingJobFromID(currentID);
+                    }
                     fj1.Show();
                     
                     break;
                 case "Pest Control":
-                    FormPesticide fp1 = new FormPesticide();
+                    FormPesticideJob fp1 = new FormPesticideJob();
+                    fp1.state = newOrEdit;
+                    if (newOrEdit == "Edit")
+                    {
+                        // MySQL Need Check 
+                        fp1.pjj1 = JRFdataset.Table.GetPesticideJobFromID(currentID);
+                    }
                     fp1.Show();
+
                     
                     break;
                 case "Farm":
@@ -757,6 +774,11 @@ namespace JustRipeFarm
                     break;
                 case "Employee":
                     FormEmployee fe = new FormEmployee();
+                    if (newOrEdit == "Edit")
+                    {
+                        // MySQL Need Check 
+                        fe.emp = JRFdataset.Table.GetEmployeeFromID(currentID);
+                    }
                     fe.Show();
 
                     break;
@@ -773,21 +795,43 @@ namespace JustRipeFarm
                     break;
                 case "Storeroom":
                     FormStoreroom fstor = new FormStoreroom();
-
+                    fstor.state = newOrEdit;
+                    if (newOrEdit == "Edit")
+                    {
+                        // MySQL Need Check 
+                        fstor.sr1 = JRFdataset.Table.GetStoreroomFromID(currentID);
+                    }
                     fstor.Show();
 
                     break;
                 case "Vehicle":
                     FormVehicle fv = new FormVehicle();
+                    fv.state = newOrEdit;
+                    if (newOrEdit == "Edit")
+                    {
+                        // MySQL Need Check 
+                        fv.v1 = JRFdataset.Table.GetVehicleFromID(currentID);
+                    }
                     fv.Show();
                     
                     break;
                 case "Crop":
                     FormCropcs c1 = new FormCropcs();
+                    c1.state = newOrEdit;
+                    if (newOrEdit == "Edit")
+                    {
+                        // MySQL Need Check 
+                        c1.cr = JRFdataset.Table.GetCropFromID(currentID);
+                    }
                     c1.Show();
                     break;
                 case "Fertiliser":
                     FormFertiliser f1 = new FormFertiliser();
+                    f1.state = newOrEdit;
+                    if (newOrEdit == "Edit")
+                    {
+                        f1.f1 = JRFdataset.Table.GetFertiliserFromID(currentID);
+                    }
                     f1.Show();
                     
                     break;
@@ -796,13 +840,17 @@ namespace JustRipeFarm
                     p1.state = newOrEdit;
                     if (newOrEdit == "Edit")
                     {
-                        // MySQL Need Check 
-                        //p1.ps = JRFdataset.Table.GetCustoemrFromID(currentID);
+                        p1.p1 = JRFdataset.Table.GetPesticideFromID(currentID);
                     }
                     p1.Show();
                     break;
                 case "Box":
                     FormBox b1 = new FormBox();
+                    b1.state = newOrEdit;
+                    if (newOrEdit == "Edit")
+                    {
+                        b1.bb1 = JRFdataset.Table.GetBoxFromID(currentID);
+                    }
                     b1.Show();
 
 

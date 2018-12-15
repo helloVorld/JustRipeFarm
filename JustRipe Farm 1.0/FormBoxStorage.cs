@@ -8,11 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using JustRipeFarm.ClassEntity;
+using MySql.Data.MySqlClient;
 
 namespace JustRipeFarm
 {
     public partial class FormBoxStorage : Form
     {
+
+        public string state = "";
+        public BoxStorage bs1;
+
         public FormBoxStorage()
         {
             InitializeComponent();
@@ -37,9 +42,54 @@ namespace JustRipeFarm
             this.Close();
         }
 
+        private void updateBoxStorage()
+        {
+            BoxStorage bs1 = new BoxStorage();
+            bs1.StoringJob_id = int.Parse(textBox1.Text);
+            bs1.Product_id = int.Parse(textBox2.Text);
+            bs1.Box_id = int.Parse(textBox3.Text);
+            bs1.NettWeight = double.Parse(textBox4.Text);
+            bs1.Storeroom_id = int.Parse(textBox5.Text);
+            bs1.Add_date = Convert.ToDateTime(dateTimePicker1.Text);
+            bs1.Best_before = Convert.ToDateTime(dateTimePicker2.Text);
+            bs1.Out_date = Convert.ToDateTime(dateTimePicker3.Text);
+            bs1.Order_id = int.Parse(textBox6.Text);
+
+            UpdateSQL add = new UpdateSQL();
+            int editrecord = add.updateBoxStorage(bs1);
+            MessageBox.Show(" Your seccusful");
+            this.Close();
+        }
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void FormBoxStorage_Load(object sender, EventArgs e)
+        {
+            InsertSQL bs = new InsertSQL();
+            //productLists = order1.GetPorductList();
+
+            if (state == "Edit")
+            {
+                InsertSQL boxStorage = new InsertSQL();
+                //productLists = order1.GetPorductList();
+
+                if (state == "Edit")
+                {
+                    textBox1.Text = bs1.StoringJob_id.ToString();
+                    textBox2.Text = bs1.Product_id.ToString();
+                    textBox3.Text = bs1.Box_id.ToString();
+                    textBox4.Text = bs1.NettWeight.ToString();
+                    textBox5.Text = bs1.Storeroom_id.ToString();
+                    textBox6.Text = bs1.Add_date.ToString();
+                    dateTimePicker1.Text = bs1.Best_before.ToString();
+                    dateTimePicker2.Text = bs1.Out_date.ToString();
+                    dateTimePicker3.Text = bs1.Order_id.ToString();
+
+                }
+            }
         }
     }
 }

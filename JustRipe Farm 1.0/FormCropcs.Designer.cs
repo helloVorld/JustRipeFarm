@@ -143,6 +143,7 @@
             this.Controls.Add(this.btnDone);
             this.Name = "FormCropcs";
             this.Text = "FormCropcs";
+            this.Load += new System.EventHandler(this.FormCropcs_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

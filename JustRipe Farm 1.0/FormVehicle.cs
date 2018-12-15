@@ -13,6 +13,8 @@ namespace JustRipeFarm
 {
     public partial class FormVehicle : Form
     {
+        public string state = "";
+        public Vehicle v1;
         public FormVehicle()
         {
             InitializeComponent();
@@ -27,7 +29,7 @@ namespace JustRipeFarm
         {
             Vehicle vech = new Vehicle();
             vech.Name = nameText.Text;
-            vech.Serial_number = Int32.Parse(serialNumText.Text);
+            vech.Serial_number = serialNumText.Text;
             vech.Buy_date = this.buyDateTimePicker.Value;
             vech.Last_service_date = this.serviceDateTimePicker.Value;
             vech.Remark = remarkText.Text;
@@ -41,7 +43,7 @@ namespace JustRipeFarm
         {
             Vehicle vech = new Vehicle();
             vech.Name = nameText.Text;
-            vech.Serial_number = Int32.Parse(serialNumText.Text);
+            vech.Serial_number = serialNumText.Text;
             vech.Buy_date = this.buyDateTimePicker.Value;
             vech.Last_service_date = this.serviceDateTimePicker.Value;
             vech.Remark = remarkText.Text;

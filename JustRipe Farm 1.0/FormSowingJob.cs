@@ -38,7 +38,7 @@ namespace JustRipeFarm
             s1.Used_area = nUDArea.Text;
             s1.Vehicle_id = int.Parse(cbVehicle.Text);
             s1.Employee_id = int.Parse(cbEmployee.Text);
-            s1.Date = Convert.ToDateTime(dtpDate.Text);
+            s1.Date_start = Convert.ToDateTime(dtpDate.Text);
             s1.Time_start = Convert.ToDateTime(dtpTimeStart.Text);
             s1.Time_end = Convert.ToDateTime(dtpTimeEnd.Text);
 
@@ -58,7 +58,7 @@ namespace JustRipeFarm
             s1.Used_area = nUDArea.Text;
             s1.Vehicle_id = int.Parse(cbVehicle.Text);
             s1.Employee_id = int.Parse(cbEmployee.Text);
-            s1.Date = Convert.ToDateTime(dtpDate.Text);
+            s1.Date_start = Convert.ToDateTime(dtpDate.Text);
             s1.Time_start = Convert.ToDateTime(dtpTimeStart.Text);
             s1.Time_end = Convert.ToDateTime(dtpTimeEnd.Text);
 

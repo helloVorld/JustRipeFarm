@@ -13,6 +13,8 @@ namespace JustRipeFarm
 {
     public partial class FormStoreroom : Form
     {
+        public string state = "";
+        public Storeroom sr1;
         public FormStoreroom()
         {
             InitializeComponent();

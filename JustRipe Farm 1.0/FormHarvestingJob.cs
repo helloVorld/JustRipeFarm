@@ -13,6 +13,8 @@ namespace JustRipeFarm
 {
     public partial class FormHarvestingJob : Form
     {
+        public string state = "";
+        public HarvestingJob hj1;
         public FormHarvestingJob()
         {
             InitializeComponent();

@@ -166,7 +166,7 @@ namespace JustRipeFarm.ClassEntity
             sqlComm.Parameters.Add("@used_area", MySqlDbType.Text).Value = sowingjob.Used_area;
             sqlComm.Parameters.Add("@vehicle_id", MySqlDbType.UInt32).Value = sowingjob.Vehicle_id;
             sqlComm.Parameters.Add("@employee_id", MySqlDbType.UInt32).Value = sowingjob.Employee_id;
-            sqlComm.Parameters.Add("@date", MySqlDbType.Date).Value = sowingjob.Date;
+            sqlComm.Parameters.Add("@date", MySqlDbType.Date).Value = sowingjob.Date_start;
             sqlComm.Parameters.Add("@time_start", MySqlDbType.Time).Value = sowingjob.Time_start;
             sqlComm.Parameters.Add("@time_end", MySqlDbType.Time).Value = sowingjob.Time_end;
 

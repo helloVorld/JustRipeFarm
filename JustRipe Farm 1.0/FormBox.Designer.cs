@@ -203,6 +203,7 @@
             this.Controls.Add(this.btnDone);
             this.Name = "FormBox";
             this.Text = "FormBox";
+            this.Load += new System.EventHandler(this.FormBox_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -10,11 +10,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using JustRipeFarm.ClassEntity;
 using System.Text.RegularExpressions;
+using MySql.Data.MySqlClient;
 
 namespace JustRipeFarm
 {
     public partial class FormCustomer : Form
     {
+        List<Customer> CustomerList;
+
         public string state = "";
         public Customer cust;
         public FormCustomer()
@@ -23,16 +26,18 @@ namespace JustRipeFarm
             InitializeComponent();
         }
 
-        //private void FormCustomer_Load(object sender, EventArgs e)
-        //{
-        //    if (state == "Edit")
-        //    {
-        //        nameText.Text = cust.Name;
-        //        emailText.Text = cust.Email;
-        //        phoneText.Text = cust.Phone;
-        //        remarkText.Text = cust.Remark;
-        //    }
-        //}
+        private void FormCustomer_Load(object sender, EventArgs e)
+        {
+            InsertSQL customer = new InsertSQL();
+
+            if (state == "Edit")
+            {
+                textBox1.Text = cust.Name;
+                textBox2.Text = cust.Email;
+                textBox3.Text = cust.Phone;
+                textBox4.Text = cust.Remark;
+            }
+        }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -41,25 +46,32 @@ namespace JustRipeFarm
 
         private void btnDone_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(textBox1.Text))
+            if (state == "Edit")
             {
-                if (String.IsNullOrEmpty(textBox2.Text))
-                {
-                    if (String.IsNullOrEmpty(textBox3.Text))
-                    {
-                        if (String.IsNullOrEmpty(textBox4.Text))
-                        {
-                            MessageBox.Show("Please check remark again");
-                        }
-                        MessageBox.Show("Please check phone again");
-                    }
-                    MessageBox.Show("Please check email again");
-                }
-                MessageBox.Show("Please check name again");
+                updateCustomer();
             }
             else
             {
-                addCustomer();
+                if (String.IsNullOrEmpty(textBox1.Text))
+                {
+                    if (String.IsNullOrEmpty(textBox2.Text))
+                    {
+                        if (String.IsNullOrEmpty(textBox3.Text))
+                        {
+                            if (String.IsNullOrEmpty(textBox4.Text))
+                            {
+                                MessageBox.Show("Please check remark again");
+                            }
+                            MessageBox.Show("Please check phone again");
+                        }
+                        MessageBox.Show("Please check email again");
+                    }
+                    MessageBox.Show("Please check name again");
+                }
+                else
+                {
+                    addCustomer();
+                }
             }
         }
 
@@ -91,35 +103,6 @@ namespace JustRipeFarm
             MessageBox.Show(updateRecord + " Your record is updated");
         }
 
-        //private void FormCustomer_Load(object sender, EventArgs e)
-        //{
-        //    if (state == "Edit")
-        //    {
-        //        nameText.Text = cust.Name;
-        //        emailText.Text = cust.Email;
-        //        phoneText.Text = cust.Phone;
-        //        remarkText.Text = cust.Remark;
-        //    }
-        //}
-
-        //private bool CheckCustomer(emailText.Text)
-        //{
-        //    bool check = false;
-        //    check = (String.IsNullOrEmpty(nameText.Text) ? true : false;
-        //    if (String.IsNullOrEmpty(nameText.Text))
-        //    {
-        //        MessageBox.Show("Please check again");
-        //    }
-
-        //    if (string.IsNullOrEmpty(emailText.Text))
-        //    {
-        //        MessageBox.Show("Please check again");
-        //    }
-
-
-
-
-        //}
         
 
         private void phoneText_KeyPress(object sender, KeyPressEventArgs e)

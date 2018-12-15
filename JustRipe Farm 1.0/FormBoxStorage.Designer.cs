@@ -242,6 +242,7 @@
             this.Controls.Add(this.btnDone);
             this.Name = "FormBoxStorage";
             this.Text = "FormBoxStorage";
+            this.Load += new System.EventHandler(this.FormBoxStorage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

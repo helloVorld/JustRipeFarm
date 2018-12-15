@@ -13,6 +13,8 @@ namespace JustRipeFarm
 {
     public partial class FormPesticideJob : Form
     {
+        public string state = "";
+        public PesticideJob pjj1;
         public FormPesticideJob()
         {
             InitializeComponent();

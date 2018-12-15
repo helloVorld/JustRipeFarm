@@ -60,25 +60,25 @@ namespace JustRipeFarm
                                                     {
                                                         if (String.IsNullOrEmpty(Convert.ToString(textBox7.Text)))
                                                         {
-                                                            MessageBox.Show("Please check again");
+                                                            MessageBox.Show("Please fill up all the box");
                                                         }
-                                                        MessageBox.Show("Please check status again");
+                                                        MessageBox.Show("Please fill up all the box");
                                                     }
-                                                    MessageBox.Show("Please check status again");
+                                                    MessageBox.Show("Please fill up all the box");
                                                 }
-                                                MessageBox.Show("Please check status again");
+                                               MessageBox.Show("Please fill up all the box");
                                             }
-                                            MessageBox.Show("Please check status again");
+                                            MessageBox.Show("Please fill up all the box");
                                         }
-                                        MessageBox.Show("Please check status again");
+                                        MessageBox.Show("Please fill up all the box");
                                     }
-                                    MessageBox.Show("Please check status again");
+                                    MessageBox.Show("Please fill up all the box");
                                 }
-                                MessageBox.Show("Please check status again");
+                                MessageBox.Show("Please fill up all the box");
                             }
-                            MessageBox.Show("Please check status again");
+                            MessageBox.Show("Please fill up all the box");
                         }
-                        MessageBox.Show("Please check status again");
+                        MessageBox.Show("Please fill up all the box");
                     }
                     MessageBox.Show("Please fill up all the box");
                 }
@@ -163,49 +163,46 @@ namespace JustRipeFarm
 
         }
 
-        public List<Crop> GetCropList()
-        {
-            List<Crop> cropLists = new List<Crop>();
-            MySqlDataReader rdr = null;
-            try
-            {
+        //public List<Crop> GetCropList()
+        //{
+        //    List<Crop> cropLists = new List<Crop>();
+        //    MySqlDataReader rdr = null;
+        //    try
+        //    {
+        //        string stm = "SELECT * FROM crop";
+        //        MySqlCommand cmd = new MySqlCommand(stm, MysqlDbc.Instance.getConn());
+        //        rdr = cmd.ExecuteReader();
 
+        //        while (rdr.Read())
+        //        {
+        //            Crop cr = new Crop();
+        //            cr.Id = rdr.GetInt32("id");
+        //            cr.Name = rdr.GetString("name");
+        //            cr.Type = rdr.GetString("type");
+        //            cr.Quantity_plot = rdr.GetInt32("quantity_plot");
+        //            cr.Remark = rdr.GetString("remark");
 
-                string stm = "SELECT * FROM crop";
-                MySqlCommand cmd = new MySqlCommand(stm, MysqlDbc.Instance.getConn());
-                rdr = cmd.ExecuteReader();
+        //            Console.WriteLine("crop => " + cr);
+        //            cropLists.Add(cr);
+        //        }
 
-                while (rdr.Read())
-                {
-                    Crop cr = new Crop();
-                    cr.Id = rdr.GetInt32("id");
-                    cr.Name = rdr.GetString("name");
-                    cr.Type = rdr.GetString("type");
-                    cr.Quantity_plot = rdr.GetInt32("quantity_plot");
-                    cr.Remark = rdr.GetString("remark");
+        //    }
+        //    catch (MySqlException ex)
+        //    {
+        //        Console.WriteLine("Error: {0}", ex.ToString());
 
-                    Console.WriteLine("crop => " + cr);
-                    cropLists.Add(cr);
+        //    }
+        //    finally
+        //    {
+        //        if (rdr != null)
+        //        {
+        //            rdr.Close();
+        //        }
 
-                }
+        //    }
 
-            }
-            catch (MySqlException ex)
-            {
-                Console.WriteLine("Error: {0}", ex.ToString());
-
-            }
-            finally
-            {
-                if (rdr != null)
-                {
-                    rdr.Close();
-                }
-
-            }
-
-            return cropLists;
-        }
+        //    return cropLists;
+        //}
 
         public void testDataPassedtoHere()
         {
