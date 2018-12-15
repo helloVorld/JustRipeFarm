@@ -123,6 +123,7 @@
             this.Controls.Add(this.btnDone);
             this.Name = "FormFertiliser";
             this.Text = "FormFertiliser";
+            this.Load += new System.EventHandler(this.FormFertiliser_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

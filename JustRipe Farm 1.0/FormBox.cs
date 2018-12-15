@@ -8,11 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using JustRipeFarm.ClassEntity;
+using MySql.Data.MySqlClient;
 
 namespace JustRipeFarm
 {
     public partial class FormBox : Form
     {
+        public Box bb1;
+        public string state = "";
+
         public FormBox()
         {
             InitializeComponent();
@@ -20,18 +24,18 @@ namespace JustRipeFarm
 
         private void addBox()
         {
-                Box box = new Box();
-                box.Name = textBox1.Text;
-                box.Width = Convert.ToDouble(textBox2.Text);
-                box.Height = Convert.ToDouble(textBox3.Text);
-                box.Length = Convert.ToDouble(textBox4.Text);
-                box.Max_weight = Convert.ToDouble(textBox5.Text);
-                box.Quantity = Convert.ToInt32(textBox6.Text);
-                box.Status = textBox7.Text;
+            Box box = new Box();
+            box.Name = textBox1.Text;
+            box.Width = Convert.ToDouble(textBox2.Text);
+            box.Height = Convert.ToDouble(textBox3.Text);
+            box.Length = Convert.ToDouble(textBox4.Text);
+            box.Max_weight = Convert.ToDouble(textBox5.Text);
+            box.Quantity = Convert.ToInt32(textBox6.Text);
+            box.Status = textBox7.Text;
 
-                InsertSQL addHnd = new InsertSQL();
-                int addrecord = addHnd.addNewBox(box);
-                MessageBox.Show("Success!!");
+            InsertSQL addHnd = new InsertSQL();
+            int addrecord = addHnd.addNewBox(box);
+            MessageBox.Show("Success!!");
 
         }
 
@@ -49,8 +53,24 @@ namespace JustRipeFarm
             UpdateSQL addHnd = new UpdateSQL();
             int addrecord = addHnd.updateBox(box);
             MessageBox.Show("Success!!");
-
         }
+
+        private void FormBox_Load(object sender, EventArgs e)
+        {
+            InsertSQL box = new InsertSQL();
+
+            if (state == "Edit")
+            {
+                textBox1.Text = bb1.Name;
+                textBox2.Text = bb1.Width.ToString();
+                textBox3.Text = bb1.Height.ToString();
+                textBox4.Text = bb1.Length.ToString();
+                textBox5.Text = bb1.Max_weight.ToString();
+                textBox6.Text = bb1.Quantity.ToString();
+                textBox7.Text = bb1.Status;
+            }
+        }
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -58,76 +78,46 @@ namespace JustRipeFarm
 
         private void btnDone_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(textBox1.Text))
+            if (state == "Edit")
             {
-                if (String.IsNullOrEmpty(Convert.ToString(textBox2.Text)))
+                //updateBox();
+            }
+            else
+            {
+                if (String.IsNullOrEmpty(textBox1.Text))
                 {
-                    if (String.IsNullOrEmpty(Convert.ToString(textBox3.Text)))
+                    if (String.IsNullOrEmpty(Convert.ToString(textBox2.Text)))
                     {
-                        if (String.IsNullOrEmpty(Convert.ToString(textBox4.Text)))
+                        if (String.IsNullOrEmpty(Convert.ToString(textBox3.Text)))
                         {
-                            if (String.IsNullOrEmpty(Convert.ToString(textBox5.Text)))
+                            if (String.IsNullOrEmpty(Convert.ToString(textBox4.Text)))
                             {
-                                if (String.IsNullOrEmpty(Convert.ToString(textBox6.Text)))
+                                if (String.IsNullOrEmpty(Convert.ToString(textBox5.Text)))
                                 {
-                                    if (String.IsNullOrEmpty(textBox7.Text))
+                                    if (String.IsNullOrEmpty(Convert.ToString(textBox6.Text)))
                                     {
+                                        if (String.IsNullOrEmpty(textBox7.Text))
+                                        {
+                                            MessageBox.Show("please fill up all the box");
+                                        }
                                         MessageBox.Show("please fill up all the box");
                                     }
                                     MessageBox.Show("please fill up all the box");
                                 }
-                                MessageBox.Show("please fill up all the box");
+                                MessageBox.Show("Please fill up all the box");
                             }
-                            MessageBox.Show("Please fill up all the box");
+                            MessageBox.Show("please fill up all the box");
                         }
                         MessageBox.Show("please fill up all the box");
                     }
                     MessageBox.Show("please fill up all the box");
                 }
-                MessageBox.Show("please fill up all the box");
+                else
+                {
+                    //addBox();
+                    updateBox();
+                }
             }
-            else
-            addBox();
         }
     }
-
-    //    bool ck1 = String.IsNullOrEmpty(name);
-    //    bool ck2 = String.IsNullOrEmpty(width.ToString());
-    //    bool ck3 = String.IsNullOrEmpty(height.ToString());
-    //    bool ck4 = String.IsNullOrEmpty(length.ToString());
-    //    bool ck5 = String.IsNullOrEmpty(max_weight.ToString());
-    //    bool ck6 = String.IsNullOrEmpty(quantity.ToString());
-    //    bool ck7 = String.IsNullOrEmpty(status);
-
-    //    if (ck1 == true && ck2 == true && ck3 == ck1 && ck4 == true && ck5 == true && ck6 == true && ck7 == true)
-    //    {
-    //        Box box = new Box();
-    //        box.Name = textBox1.Text;
-    //        box.Width = Convert.ToDouble(textBox2.Text);
-    //        box.Height = Convert.ToDouble(textBox3.Text);
-    //        box.Length = Convert.ToDouble(textBox4.Text);
-    //        box.Max_weight = Convert.ToDouble(textBox5.Text);
-    //        box.Quantity = Convert.ToInt32(textBox6.Text);
-    //        box.Status = textBox7.Text;
-
-    //        InsertSQL addHnd = new InsertSQL();
-    //        int addrecord = addHnd.addNewBox(box);
-    //        MessageBox.Show(addrecord + " Your record is added");
-    //    }
-    //    else
-    //    {
-    //        ErrorMsg.UpdateOptionNoSelect();
-    //    }
 }
-
-//        private void btnCancel_Click(object sender, EventArgs e)
-//        {
-
-//        }
-
-//        private void btnDone_Click(object sender, EventArgs e)
-//        {
-//            CheckBox(textBox1.Text, Convert.ToDouble(textBox2.Text), Convert.ToDouble(textBox3.Text), Convert.ToDouble(textBox4.Text), Convert.ToDouble(textBox5.Text), Convert.ToInt32(textBox6.Text), textBox7.Text);
-//        }
-//    }
-//}

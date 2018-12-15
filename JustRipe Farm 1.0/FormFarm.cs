@@ -36,24 +36,11 @@ namespace JustRipeFarm
             }
             else
             {
-                addFarm();
-                //updateFarm();
+                //addFarm();
+                updateFarm();
             }
 
         }
-
-        //public void EditFarm()
-        //{
-        //    //Farm farm = new Farm();
-        //    //farm.Id = farmfarm.Id;
-        //    //farm.Description = descriptionText.Text;
-        //    //farm.Area = Int32.Parse(areaText.Text);
-        //    //farm.Utilize_area = Int32.Parse(utiliseAreaText.Text);
-
-        //    //UpdateSQL farmHnd = new UpdateSQL();
-        //    //int addrecord = farmHnd.updateFarm(farm);
-        //    //MessageBox.Show(addrecord + "Your record is added");
-        //}
 
         public void addFarm()
         {
@@ -102,17 +89,14 @@ namespace JustRipeFarm
 
         private void FormFarm_Load(object sender, EventArgs e)
         {
-        //    if (state == "Edit")
-        //    {
-        //        descriptionText.Text = farmfarm.Description;
-        //        areaText.Text = farmfarm.Area.ToString();
-        //        utiliseAreaText.Text = farmfarm.Utilize_area.ToString();
-        //        lblEditing.Show();
-        //    }
-        //    else
-        //    {
-        //        lblEditing.Hide();
-        //    }
+            InsertSQL farm = new InsertSQL();
+
+            if (state == "Edit")
+            {
+                descriptionText.Text = farmfarm.Description;
+                areaText.Text = farmfarm.Area.ToString();
+                utiliseAreaText.Text = farmfarm.Utilize_area.ToString();
+            }
         }
     }
 }

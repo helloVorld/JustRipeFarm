@@ -8,11 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using JustRipeFarm.ClassEntity;
+using MySql.Data.MySqlClient;
 
 namespace JustRipeFarm
 {
     public partial class FormFertiliser : Form
     {
+        List<Fertiliser> FertiliserList;
+
+        public string state = "";
+        public Fertiliser f1;
+
+
         public FormFertiliser()
         {
             InitializeComponent();
@@ -27,23 +34,30 @@ namespace JustRipeFarm
 
         private void btnDone_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(textBox1.Text))
+            if (state == "Edit")
             {
-                if (String.IsNullOrEmpty(textBox2.Text))
-                {
-                    if (String.IsNullOrEmpty(textBox3.Text))
-                    {
-                        MessageBox.Show("Please check last name again");
-                    }
-                    MessageBox.Show("Please check last name again");
-                }
-                MessageBox.Show("Please check first name again");
+                updateFertiliser();
             }
             else
             {
-                addFertiliser();
+                if (String.IsNullOrEmpty(textBox1.Text))
+                {
+                    if (String.IsNullOrEmpty(textBox2.Text))
+                    {
+                        if (String.IsNullOrEmpty(textBox3.Text))
+                        {
+                            MessageBox.Show("Please check last name again");
+                        }
+                        MessageBox.Show("Please check last name again");
+                    }
+                    MessageBox.Show("Please check first name again");
+                }
+                else
+                {
+                    addFertiliser();
+                }
             }
-            //updateFertiliser();
+
         }
 
         private void addFertiliser()
@@ -71,38 +85,17 @@ namespace JustRipeFarm
             MessageBox.Show("Seccuess!!");
             this.Close();
         }
+
+        private void FormFertiliser_Load(object sender, EventArgs e)
+        {
+            InsertSQL crop = new InsertSQL();
+
+            if (state == "Edit")
+            {
+                textBox1.Text = f1.Name;
+                textBox2.Text = f1.Quantity_kg.ToString();
+                textBox3.Text = f1.Remark;
+            }
+        }
     }
 }
-
-//            bool ck1 = String.IsNullOrEmpty(name);
-//            bool ck2 = String.IsNullOrEmpty(quantity_kg.ToString());
-//            bool ck3 = String.IsNullOrEmpty(remark);
-
-//            if (ck1 == true && ck2==true && ck3 == true)
-//            {
-//                Fertiliser f1 = new Fertiliser();
-//                f1.Name = textBox1.Text;
-//                f1.Quantity_kg = Convert.ToInt32(textBox2.Text);
-//                f1.Remark = textBox3.Text;
-
-//                InsertSQL add = new InsertSQL();
-//                int addrecord = add.addNewFertiliser(f1);
-//                MessageBox.Show(addrecord + " Your record is added");
-//            }
-//            else
-//            {
-//                MessageBox.Show("Unvalid, Check Again");
-//            }
-//        }
-
-//private void btnCancel_Click(object sender, EventArgs e)
-//{
-//    this.Close();
-//}
-
-//private void btnDone_Click(object sender, EventArgs e)
-//{
-//    CheckFertiliser(textBox1.Text, Convert.ToInt32(textBox2.Text), textBox3.Text);
-//}
-//    }
-//}

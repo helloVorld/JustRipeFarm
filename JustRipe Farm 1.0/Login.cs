@@ -35,6 +35,15 @@ namespace JustRipeFarm.ClassEntity
 
         internal bool IsLoggedIn(string user, string pass)
         {
+            Employee e1 = new Employee();
+            string tableName = "employee";
+            //string query = "SELECT * FROM employee";
+            //MySqlDataReader rdr = null;
+            //MySqlCommand cmd = new MySqlCommand(query, MysqlDbc.Instance.getConn());
+            //rdr = cmd.ExecuteReader();
+            //e1.Username = rdr.GetString("username"); ;
+            //e1.Password = rdr.GetString("password");
+
             if (string.IsNullOrEmpty(user))
             {
                     MessageBox.Show("Enter the user name!");
@@ -42,7 +51,8 @@ namespace JustRipeFarm.ClassEntity
             }
             else
             {
-                if (Username != user)
+                //if (e1.Username != user)
+                if(Username != user)
                 {
                     MessageBox.Show("User name is incorrect!");
                     ClearTexts(user, pass);
