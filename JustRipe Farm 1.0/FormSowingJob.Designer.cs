@@ -50,6 +50,8 @@
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.dtpTimeStart = new System.Windows.Forms.DateTimePicker();
             this.dtpTimeEnd = new System.Windows.Forms.DateTimePicker();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dtpDate2 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.nUDQty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDArea)).BeginInit();
             this.SuspendLayout();
@@ -154,7 +156,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(50, 17);
             this.label8.TabIndex = 13;
-            this.label8.Text = "Date : ";
+            this.label8.Text = "Date Start: ";
             // 
             // label9
             // 
@@ -265,6 +267,24 @@
             this.dtpTimeEnd.Size = new System.Drawing.Size(160, 22);
             this.dtpTimeEnd.TabIndex = 25;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(59, 408);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(75, 17);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "Date End: ";
+            // 
+            // dtpDate2
+            // 
+            this.dtpDate2.Location = new System.Drawing.Point(177, 408);
+            this.dtpDate2.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpDate2.Name = "dtpDate2";
+            this.dtpDate2.Size = new System.Drawing.Size(265, 22);
+            this.dtpDate2.TabIndex = 27;
+            // 
             // FormSowingJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -327,5 +347,7 @@
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.DateTimePicker dtpTimeStart;
         private System.Windows.Forms.DateTimePicker dtpTimeEnd;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DateTimePicker dtpDate2;
     }
 }

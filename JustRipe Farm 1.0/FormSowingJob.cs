@@ -16,6 +16,8 @@ namespace JustRipeFarm
         // prepare variable for storing list<class>
         List<Crop> cropLists;
         List<Vehicle> vehicleList;
+        List<Farm> farmLists;
+        List<Employee> employeeList;
         public string state = "";
         public SowingJob sowj;
 
@@ -94,6 +96,7 @@ namespace JustRipeFarm
             // 1. 
             TestSQL ts = new TestSQL();
             cropLists = ts.GetCropList();
+            vehicleList = ts.GetVehicleList();
 
             // 5.
             foreach (Crop crop in cropLists)

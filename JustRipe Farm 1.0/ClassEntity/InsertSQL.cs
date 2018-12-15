@@ -617,5 +617,49 @@ namespace JustRipeFarm.ClassEntity
 
             return cropLists;
         }
+
+        //public List<Crop> GetEmployeeList()
+        //{
+        //    List<Employee> cropLists = new List<Employee>();
+        //    MySqlDataReader rdr = null;
+        //    try
+        //    {
+
+
+        //        string stm = "SELECT * FROM employee";
+        //        MySqlCommand cmd = new MySqlCommand(stm, MysqlDbc.Instance.getConn());
+        //        rdr = cmd.ExecuteReader();
+
+        //        while (rdr.Read())
+        //        {
+        //            Employee emp = new Employee();
+        //            emp.Id = rdr.GetInt32("id");
+        //            emp.First_name = rdr.GetString("name");
+        //            emp.Last_name = rdr.GetString("type");
+        //            emp.Username = rdr.GetInt32("quantity_plot");
+        //            emp.Password = rdr.GetString("remark");
+
+        //            Console.WriteLine("crop => " + cr);
+        //            cropLists.Add(cr);
+
+        //        }
+
+        //    }
+        //    catch (MySqlException ex)
+        //    {
+        //        Console.WriteLine("Error: {0}", ex.ToString());
+
+        //    }
+        //    finally
+        //    {
+        //        if (rdr != null)
+        //        {
+        //            rdr.Close();
+        //        }
+
+        //    }
+
+        //    return cropLists;
+        //}
     }
 }
