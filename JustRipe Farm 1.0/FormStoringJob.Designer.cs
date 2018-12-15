@@ -47,7 +47,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnDone = new System.Windows.Forms.Button();
-            this.dtpTimeEnd = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
@@ -210,16 +210,17 @@
             this.btnDone.TabIndex = 91;
             this.btnDone.Text = "Done";
             this.btnDone.UseVisualStyleBackColor = true;
+            this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
-            // dtpTimeEnd
+            // dateTimePicker3
             // 
-            this.dtpTimeEnd.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpTimeEnd.Location = new System.Drawing.Point(207, 316);
-            this.dtpTimeEnd.Margin = new System.Windows.Forms.Padding(4);
-            this.dtpTimeEnd.Name = "dtpTimeEnd";
-            this.dtpTimeEnd.ShowUpDown = true;
-            this.dtpTimeEnd.Size = new System.Drawing.Size(160, 22);
-            this.dtpTimeEnd.TabIndex = 116;
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker3.Location = new System.Drawing.Point(207, 316);
+            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.ShowUpDown = true;
+            this.dateTimePicker3.Size = new System.Drawing.Size(160, 22);
+            this.dateTimePicker3.TabIndex = 116;
             // 
             // dateTimePicker2
             // 
@@ -244,7 +245,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.dtpTimeEnd);
+            this.Controls.Add(this.dateTimePicker3);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox6);
@@ -292,7 +293,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnDone;
-        private System.Windows.Forms.DateTimePicker dtpTimeEnd;
+        private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }

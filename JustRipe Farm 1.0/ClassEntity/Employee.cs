@@ -13,7 +13,7 @@ namespace JustRipeFarm.ClassEntity
         private string last_name;
         private string username;
         private string password;
-        private int dob;
+        private DateTime dob;
         private string mobile;
         private string email;
         private int admin;
@@ -25,11 +25,27 @@ namespace JustRipeFarm.ClassEntity
         public string Last_name { get => last_name; set => last_name = value; }
         public string Username { get => username; set => username = value; }
         public string Password { get => password; set => password = value; }
-        public int Dob { get => dob; set => dob = value; }
+        public DateTime Dob { get => dob; set => dob = value; }
         public string Mobile { get => mobile; set => mobile = value; }
         public string Email { get => email; set => email = value; }
         public int Admin { get => admin; set => admin = value; }
         public string Status { get => status; set => status = value; }
         public string Remark { get => remark; set => remark = value; }
+
+        public Employee()
+        {
+
+        }
+
+        public Employee(string first_name, string last_name, DateTime dob, string mobile, string email, string username, string password)
+        {
+            this.First_name = first_name;
+            this.Last_name = email;
+            this.Dob = dob;
+            this.Mobile = mobile;
+            this.Email = email;
+            this.Username = username;
+            this.Password = password;
+        }
     }
 }

@@ -572,5 +572,46 @@ namespace JustRipeFarm
 
             return cus;
         }
+
+        public Farm GetFarmFromID(int itemId)
+        {
+            Farm far = new Farm();
+
+            MySqlDataReader rdr = null;
+            try
+            {
+                string tableName = "farm";
+                string query = "SELECT * FROM " + tableName + " WHERE id = " + itemId;
+
+                MySqlCommand cmd = new MySqlCommand(query, MysqlDbc.Instance.getConn());
+                rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    far.Id = itemId;
+                    far.Description = rdr.GetString("description");
+                    far.Area = rdr.GetInt32("area");
+                    far.Utilize_area = rdr.GetInt32("utilize_area");
+                    
+
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+            }
+
+            return far;
+        }
     }
 }

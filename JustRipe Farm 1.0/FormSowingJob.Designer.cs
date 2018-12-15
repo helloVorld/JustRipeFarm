@@ -58,7 +58,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(193, 492);
+            this.btnCancel.Location = new System.Drawing.Point(193, 453);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 28);
@@ -69,7 +69,7 @@
             // 
             // btnDone
             // 
-            this.btnDone.Location = new System.Drawing.Point(62, 492);
+            this.btnDone.Location = new System.Drawing.Point(51, 453);
             this.btnDone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDone.Name = "btnDone";
             this.btnDone.Size = new System.Drawing.Size(100, 28);
@@ -154,7 +154,7 @@
             this.label8.Location = new System.Drawing.Point(59, 321);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(80, 17);
+            this.label8.Size = new System.Drawing.Size(50, 17);
             this.label8.TabIndex = 13;
             this.label8.Text = "Date Start: ";
             // 
@@ -171,7 +171,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(60, 447);
+            this.label10.Location = new System.Drawing.Point(59, 415);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(80, 17);
@@ -211,6 +211,7 @@
             this.nUDQty.Name = "nUDQty";
             this.nUDQty.Size = new System.Drawing.Size(160, 22);
             this.nUDQty.TabIndex = 19;
+            this.nUDQty.ValueChanged += new System.EventHandler(this.nUDQty_ValueChanged);
             // 
             // nUDArea
             // 
@@ -259,7 +260,7 @@
             // dtpTimeEnd
             // 
             this.dtpTimeEnd.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpTimeEnd.Location = new System.Drawing.Point(177, 447);
+            this.dtpTimeEnd.Location = new System.Drawing.Point(177, 415);
             this.dtpTimeEnd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpTimeEnd.Name = "dtpTimeEnd";
             this.dtpTimeEnd.ShowUpDown = true;
@@ -288,9 +289,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 549);
-            this.Controls.Add(this.dtpDate2);
-            this.Controls.Add(this.label11);
+            this.ClientSize = new System.Drawing.Size(497, 549);
             this.Controls.Add(this.dtpTimeEnd);
             this.Controls.Add(this.dtpTimeStart);
             this.Controls.Add(this.dtpDate);

@@ -20,6 +20,11 @@ namespace JustRipeFarm
 
         private void btnDone_Click(object sender, EventArgs e)
         {
+            addVehicle();
+        }
+
+        public void addVehicle()
+        {
             Vehicle vech = new Vehicle();
             vech.Name = nameText.Text;
             vech.Serial_number = Int32.Parse(serialNumText.Text);
@@ -32,9 +37,28 @@ namespace JustRipeFarm
             MessageBox.Show(addrecord + "Your record is added");
         }
 
+        public void updateVehicle()
+        {
+            Vehicle vech = new Vehicle();
+            vech.Name = nameText.Text;
+            vech.Serial_number = Int32.Parse(serialNumText.Text);
+            vech.Buy_date = this.buyDateTimePicker.Value;
+            vech.Last_service_date = this.serviceDateTimePicker.Value;
+            vech.Remark = remarkText.Text;
+
+            UpdateSQL vechHnd = new UpdateSQL();
+            int addrecord = vechHnd.updateVehicle(vech);
+            MessageBox.Show(addrecord + "Your record is added");
+        }
+
         private void buyDateTimePicker_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

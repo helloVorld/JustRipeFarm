@@ -85,8 +85,8 @@ namespace JustRipeFarm.ClassEntity
             MySqlCommand sqlComm = new MySqlCommand("INSERT INTO" + " farm(description,area,utilize_area)" +
                                           " VALUES" + " (@description,@area,@utilize_area)", MysqlDbc.Instance.getConn());
             sqlComm.Parameters.Add("@description", MySqlDbType.Text).Value = farm.Description;
-            sqlComm.Parameters.Add("@area", MySqlDbType.Text).Value = farm.Area;
-            sqlComm.Parameters.Add("@utilize_area", MySqlDbType.Text).Value = farm.Utilize_area;
+            sqlComm.Parameters.Add("@area", MySqlDbType.Int32).Value = farm.Area;
+            sqlComm.Parameters.Add("@utilize_area", MySqlDbType.Int32).Value = farm.Utilize_area;
             return sqlComm.ExecuteNonQuery();
         }
 

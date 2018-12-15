@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data;
+using JustRipeFarm.ClassEntity;
 
 
 namespace JustRipeFarm
@@ -26,6 +27,8 @@ namespace JustRipeFarm
         public bool datagridDidPress = false;
         public int currentID;
         List<string> currentUpdateOption = new List<string>();
+        List<string> currentSearchOption = new List<string>();
+        public Employee currentEmployee;
 
         public AdminDashboard()
         {
@@ -119,6 +122,10 @@ namespace JustRipeFarm
             if (useCommonPanel)
             {
                 // load common panel
+                lblUpdateField.Show();
+                cbUpdateField.Show();
+                btnUpdateField.Show();
+                btnReset.Show();
                 switchPanelItem(btn.Name);
                 panelDisplay("panelCommon");
             }
@@ -151,6 +158,10 @@ namespace JustRipeFarm
         {
             this.Width = 800;
             this.Height = 500;
+            label1.Hide();
+            label2.Hide();
+            formWidthLbl.Hide();
+            formHeightLbl.Hide();
             
             loadMenuBtn();
             panelsControl.Add(panelHome);
@@ -160,6 +171,8 @@ namespace JustRipeFarm
             
             panelDisplay("panelHome");
             displayForAdmin(isAdmin);
+
+            lblUsername.Text = currentEmployee.First_name + " " + currentEmployee.Last_name;
         }
 
         public void panelDisplay(string panelName)
@@ -180,7 +193,7 @@ namespace JustRipeFarm
                 }
 
             }
-
+            tbId.Text = "";
         }
 
         // Menu button display ====>>
@@ -307,7 +320,27 @@ namespace JustRipeFarm
                     if (JRF.GotInListStr(currentUpdateOption, cbText))
                     {
                         // proceed MySql operation
+                        Console.WriteLine("update panel => " + currentPanel+ "=> "+currentID);
+                        switch (currentPanel)
+                        {
+                            case "Order":
+                                int haha = JobOp.UpdateOrder(currentID, cbText);
+                                try
+                                {
+                                    currentDataSet = JRFdataset.Table.getAllOrders().Tables[0];
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show("No Data");
+                                }
 
+                                MessageBox.Show("Update Done");
+                                dgvDbTable.DataSource = currentDataSet;
+                                dgvDbTable.Refresh();
+                                break;
+                            default:break;
+                        }
+                        
                     }
                     else
                     {
@@ -348,7 +381,9 @@ namespace JustRipeFarm
         {
             currentPanel = btnName;
             
+            // reset combo box items
             cbUpdateField.Items.Clear();
+            cbFilter1.Items.Clear();
 
             // hide combobox filter
             cbFilter2.Hide();
@@ -491,6 +526,15 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[7].BtnNew;
                     btnEditItem.Text = pnItems[7].BtnEdit;
                     btnUpdateField.Text = pnItems[7].BtnUpdate;
+                    lblUpdateField.Hide();
+                    cbUpdateField.Hide();
+                    btnUpdateField.Hide();
+                    btnReset.Hide();
+                    currentSearchOption = JobOp.getFarmList();
+                    foreach (string str in currentSearchOption)
+                    {
+                        cbFilter1.Items.Add(str);
+                    }
                     try
                     {
                         currentDataSet = JRFdataset.Table.getAllFarm().Tables[0];
@@ -681,19 +725,33 @@ namespace JustRipeFarm
                     fsj.Show();
                     break;
                 case "Harvesting":
-                    
+                    FormHarvestingJob hj = new FormHarvestingJob();
+                    hj.Show();
+
                     break;
                 case "Storage":
-                    
+                    FormStoreroom sj1 = new FormStoreroom();
+                    sj1.Show();
+
                     break;
                 case "Fertilising":
+                    FormFertilisingJob fj1 = new FormFertilisingJob();
+                    fj1.Show();
                     
                     break;
                 case "Pest Control":
+                    FormPesticide fp1 = new FormPesticide();
+                    fp1.Show();
                     
                     break;
                 case "Farm":
                     FormFarm ff = new FormFarm();
+                    ff.state = newOrEdit;
+                    if (newOrEdit == "Edit")
+                    {
+                        // MySQL Need Check 
+                        ff.farmfarm = JRFdataset.Table.GetFarmFromID(currentID);
+                    }
                     ff.Show();
 
                     break;
@@ -725,15 +783,28 @@ namespace JustRipeFarm
                     
                     break;
                 case "Crop":
+                    FormCropcs c1 = new FormCropcs();
+                    c1.Show();
                     break;
                 case "Fertiliser":
+                    FormFertiliser f1 = new FormFertiliser();
+                    f1.Show();
                     
                     break;
                 case "Pesticide":
-                    
+                    FormPesticide p1 = new FormPesticide();
+                    p1.state = newOrEdit;
+                    if (newOrEdit == "Edit")
+                    {
+                        // MySQL Need Check 
+                        //p1.ps = JRFdataset.Table.GetCustoemrFromID(currentID);
+                    }
+                    p1.Show();
                     break;
                 case "Box":
-                    
+                    FormBox b1 = new FormBox();
+                    b1.Show();
+
 
                     break;
                 default: break;
@@ -782,6 +853,76 @@ namespace JustRipeFarm
             lblTodayPest.Text = JobOp.GetJobCountFor(true, "pesticidejob").ToString();
             lblPendingPest.Text = JobOp.GetJobCountFor(false, "pesticidejob").ToString();
 
+
+        }
+
+        private void cbFilter1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox cbx = sender as ComboBox;
+            //int indexx = cbx.SelectedIndex;
+            string selectstr = cbx.SelectedItem.ToString();
+            
+            foreach (DataGridViewRow rrr in dgvDbTable.Rows)
+            {
+                int index = rrr.Index;
+                string cellStr = dgvDbTable.Rows[index].Cells[1].Value.ToString();
+                Console.WriteLine("cbfilter => " + selectstr + "<=>" + cellStr);
+                if (selectstr == cellStr)
+                {
+                    dgvDbTable.CurrentCell = dgvDbTable.Rows[index].Cells[1];
+                    dgvDbTable.Rows[index].Selected = true;
+                }
+            }
+
+            //DataGridView dgv = sender as DataGridView;
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormEditProfile editprofile = new FormEditProfile();
+            editprofile.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormEditPassword editpassword = new FormEditPassword();
+            editpassword.Show();
+        }
+
+        private void panelHome_Paint(object sender, PaintEventArgs e)
+        {
+            userLbl.Hide();
+            if (isAdmin)
+            {
+                gbOrders.Show();
+                lblTodayAllJob.Text = JobOp.GetAllJobCountFor(true).ToString();
+
+                lblPendingAllJob.Text = JobOp.GetAllJobCountFor(false).ToString();
+
+                lblTodayAllOrder.Text = JobOp.GetOrderCountFor("orders").ToString();
+                //lblTodayAllOrder.Text = "";
+                lblPendingAllOrder.Text = "";
+            }
+            else
+            {
+                gbOrders.Hide();
+                lblTodayAllJob.Text = JobOp.GetAllJobCountFor(true, currentEmployee.Id).ToString();
+
+                lblPendingAllJob.Text = JobOp.GetAllJobCountFor(false, currentEmployee.Id).ToString();
+
+                
+            }
+            
+        }
+
+        public void updateFieldStr(String tableName,int rowId, string field, string updateItem)
+        {
 
         }
     }

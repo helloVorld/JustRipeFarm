@@ -12,7 +12,7 @@ namespace JustRipeFarm
 {
     public partial class LoginScreen : Form
     {
-
+        Employee em = new Employee();
 
         public LoginScreen()
         {
@@ -45,13 +45,13 @@ namespace JustRipeFarm
             //check if eligible to be logged in 
             if (login.IsLoggedIn(user, pass))
             {
-                int loginCode = login.checkUserLogin();
+                em = login.checkUserLogin();
 
-                if (loginCode == 1)
+                if (em.Admin == 1)
                 {
                     goToDashBoard(true);
                 }
-                else if(loginCode == 0)
+                else if(em.Admin == 0)
                 {
                     goToDashBoard(false);
                 }
@@ -96,6 +96,7 @@ namespace JustRipeFarm
         {
             AdminDashboard dashboard = new AdminDashboard();
             dashboard.isAdmin = isAdmin;
+            dashboard.currentEmployee = em;
             dashboard.Show();
             this.Close();
         }

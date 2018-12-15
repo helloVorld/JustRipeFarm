@@ -18,29 +18,28 @@ namespace JustRipeFarm
             InitializeComponent();
         }
 
-        private void CheckBoxStorage(int storingJob_id, int product_id, int box_id, double nettWeight, int storeroom_id, DateTime add_date, DateTime best_before, DateTime out_date, int order_id)
+        private void addBoxStorage()
         {
+            BoxStorage bs1 = new BoxStorage();
+            bs1.StoringJob_id = int.Parse(textBox1.Text);
+            bs1.Product_id = int.Parse(textBox2.Text);
+            bs1.Box_id = int.Parse(textBox3.Text);
+            bs1.NettWeight = double.Parse(textBox4.Text);
+            bs1.Storeroom_id = int.Parse(textBox5.Text);
+            bs1.Add_date = Convert.ToDateTime(dateTimePicker1.Text);
+            bs1.Best_before = Convert.ToDateTime(dateTimePicker2.Text);
+            bs1.Out_date = Convert.ToDateTime(dateTimePicker3.Text);
+            bs1.Order_id = int.Parse(textBox6.Text);
 
-            bool ck1 = String.IsNullOrEmpty(storingJob_id.ToString());
-            bool ck2 = String.IsNullOrEmpty(product_id.ToString());
-            bool ck3 = String.IsNullOrEmpty(box_id.ToString());
-            bool ck4 = String.IsNullOrEmpty(nettWeight.ToString());
-            bool ck5 = String.IsNullOrEmpty(storeroom_id.ToString());
-            bool ck6 = String.IsNullOrEmpty(add_date.ToString());
-            bool ck7 = String.IsNullOrEmpty(best_before.ToString());
-            bool ck8 = String.IsNullOrEmpty(out_date.ToString());
-            bool ck9 = String.IsNullOrEmpty(order_id.ToString());
+            InsertSQL add = new InsertSQL();
+            int editrecord = add.addNewBoxStorage(bs1);
+            MessageBox.Show(" Your seccusful");
+            this.Close();
+        }
 
-            if (ck1 == true && ck2 == true && ck3 == ck1 && ck4 == true && ck5 == true && ck6 == true && ck7 == true && ck8 == true && ck9 == true)
-            {
-                //InsertSQL boxStoreHnd = new InsertSQL();
-                //int addrecord = boxStoreHnd.addNewCustomer(box);
-                //MessageBox.Show(addrecord + " Your record is added");
-            }
-            else
-            {
-                ErrorMsg.UpdateOptionNoSelect();
-            }
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
