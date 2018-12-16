@@ -51,12 +51,8 @@ namespace JustRipeFarm
                                             {
                                                 if (String.IsNullOrEmpty(dateTimePicker1.Text))
                                                 {
-                                                    if (String.IsNullOrEmpty(dtpTimeStart.Text))
+                                                    if (String.IsNullOrEmpty(dateTimePicker2.Text))
                                                     {
-                                                        if (String.IsNullOrEmpty(dtpTimeEnd.Text))
-                                                        {
-                                                            MessageBox.Show("Please fill up the box");
-                                                        }
                                                         MessageBox.Show("Please fill up the box");
                                                     }
                                                     MessageBox.Show("Please fill up the box");
@@ -95,9 +91,8 @@ namespace JustRipeFarm
             hj.Est_quantity = int.Parse(numericUpDown1.Text);
             hj.Harvested_quantity = int.Parse(numericUpDown2.Text);
             hj.Employee_id = int.Parse(textBox6.Text);
-            hj.Date = Convert.ToDateTime(dateTimePicker1.Text);
-            hj.Time_start = Convert.ToDateTime(dtpTimeStart.Text);
-            hj.Time_end = Convert.ToDateTime(dtpTimeEnd.Text);
+            hj.Date_start = this.dateTimePicker1.Value;
+            hj.Date_end = this.dateTimePicker2.Value;
 
             InsertSQL hdl = new InsertSQL();
             hdl.addNewHarvestingJob(hj);
@@ -116,9 +111,8 @@ namespace JustRipeFarm
             hj.Est_quantity = int.Parse(numericUpDown1.Text);
             hj.Harvested_quantity = int.Parse(numericUpDown2.Text);
             hj.Employee_id = int.Parse(textBox6.Text);
-            hj.Date = this.dateTimePicker1.Value;
-            hj.Time_start = this.dtpTimeStart.Value;
-            hj.Time_end = this.dtpTimeEnd.Value;
+            hj.Date_start = this.dateTimePicker1.Value;
+            hj.Date_end = this.dateTimePicker2.Value;
 
             UpdateSQL hdl = new UpdateSQL();
             hdl.updateHarvestingJob(hj);
@@ -140,9 +134,8 @@ namespace JustRipeFarm
                 numericUpDown1.Text = hj1.Est_quantity.ToString();
                 numericUpDown2.Text = hj1.Harvested_quantity.ToString();
                 textBox6.Text = hj1.Employee_id.ToString();
-                dateTimePicker1.Text = hj1.Date.ToString();
-                dtpTimeStart.Text = hj1.Time_start.ToString();
-                dtpTimeEnd.Text = hj1.Time_end.ToString();
+                dateTimePicker1.Value = hj1.Date_start;
+                dateTimePicker2.Value = hj1.Date_end;
             }
         }
     }

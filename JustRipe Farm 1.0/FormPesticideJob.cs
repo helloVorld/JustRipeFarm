@@ -36,9 +36,8 @@ namespace JustRipeFarm
             pj.Crop_id = int.Parse(textBox6.Text);
             pj.Vehicle_id = int.Parse(textBox7.Text);
             pj.Employee_id = int.Parse(textBox8.Text);
-            pj.Date = Convert.ToDateTime(dateTimePicker1.Text);
-            pj.Time_start = Convert.ToDateTime(dtpTimeStart.Text);
-            pj.Time_end = Convert.ToDateTime(dtpTimeEnd.Text);
+            pj.Date_start = Convert.ToDateTime(dateTimePicker1.Text);
+            pj.Date_end = Convert.ToDateTime(dateTimePicker2.Text);
 
             InsertSQL add = new InsertSQL();
             int addrecord = add.addNewPesticideJob(pj);
@@ -57,9 +56,8 @@ namespace JustRipeFarm
             pj.Crop_id = int.Parse(textBox6.Text);
             pj.Vehicle_id = int.Parse(textBox7.Text);
             pj.Employee_id = int.Parse(textBox8.Text);
-            pj.Date = Convert.ToDateTime(dateTimePicker1.Text);
-            pj.Time_start = Convert.ToDateTime(dtpTimeStart.Text);
-            pj.Time_end = Convert.ToDateTime(dtpTimeEnd.Text);
+            pj.Date_start = Convert.ToDateTime(dateTimePicker1.Text);
+            pj.Date_end = Convert.ToDateTime(dateTimePicker2.Text);
 
             UpdateSQL hdl = new UpdateSQL();
             hdl.updatePesticideJob(pj);
@@ -93,12 +91,8 @@ namespace JustRipeFarm
                                             {
                                                 if (String.IsNullOrEmpty(dateTimePicker1.Text))
                                                 {
-                                                    if (String.IsNullOrEmpty(dtpTimeStart.Text))
+                                                    if (String.IsNullOrEmpty(dateTimePicker1.Text))
                                                     {
-                                                        if (String.IsNullOrEmpty(dtpTimeEnd.Text))
-                                                        {
-                                                            MessageBox.Show("Please fill up the box");
-                                                        }
                                                         MessageBox.Show("Please fill up the box");
                                                     }
                                                     MessageBox.Show("Please fill up the box");
@@ -141,9 +135,8 @@ namespace JustRipeFarm
                 textBox6.Text = pjj1.Crop_id.ToString();
                 textBox7.Text = pjj1.Vehicle_id.ToString();
                 textBox8.Text = pjj1.Employee_id.ToString();
-                dateTimePicker1.Text = pjj1.Date.ToString();
-                dtpTimeStart.Text = pjj1.Time_start.ToString();
-                dtpTimeEnd.Text = pjj1.Time_end.ToString();
+                dateTimePicker1.Value = pjj1.Date_start;
+                dateTimePicker2.Value = pjj1.Date_end;
             }
         }
     }

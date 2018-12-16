@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -47,11 +45,11 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.dtpTimeEnd = new System.Windows.Forms.DateTimePicker();
-            this.dtpTimeStart = new System.Windows.Forms.DateTimePicker();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
@@ -63,32 +61,14 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(230, 22);
             this.dateTimePicker1.TabIndex = 110;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(46, 346);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(71, 17);
-            this.label11.TabIndex = 109;
-            this.label11.Text = "Date End:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(46, 318);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(77, 17);
-            this.label10.TabIndex = 108;
-            this.label10.Text = "Time Start:";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(46, 288);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(42, 17);
+            this.label7.Size = new System.Drawing.Size(74, 17);
             this.label7.TabIndex = 105;
-            this.label7.Text = "Date:";
+            this.label7.Text = "Date start:";
             // 
             // label8
             // 
@@ -219,26 +199,6 @@
             this.textBox5.Size = new System.Drawing.Size(100, 22);
             this.textBox5.TabIndex = 115;
             // 
-            // dtpTimeEnd
-            // 
-            this.dtpTimeEnd.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpTimeEnd.Location = new System.Drawing.Point(158, 355);
-            this.dtpTimeEnd.Margin = new System.Windows.Forms.Padding(4);
-            this.dtpTimeEnd.Name = "dtpTimeEnd";
-            this.dtpTimeEnd.ShowUpDown = true;
-            this.dtpTimeEnd.Size = new System.Drawing.Size(160, 22);
-            this.dtpTimeEnd.TabIndex = 120;
-            // 
-            // dtpTimeStart
-            // 
-            this.dtpTimeStart.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpTimeStart.Location = new System.Drawing.Point(158, 320);
-            this.dtpTimeStart.Margin = new System.Windows.Forms.Padding(4);
-            this.dtpTimeStart.Name = "dtpTimeStart";
-            this.dtpTimeStart.ShowUpDown = true;
-            this.dtpTimeStart.Size = new System.Drawing.Size(160, 22);
-            this.dtpTimeStart.TabIndex = 119;
-            // 
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(158, 257);
@@ -260,15 +220,31 @@
             this.numericUpDown2.Size = new System.Drawing.Size(120, 22);
             this.numericUpDown2.TabIndex = 122;
             // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(155, 329);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(230, 22);
+            this.dateTimePicker2.TabIndex = 154;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(43, 329);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(70, 17);
+            this.label10.TabIndex = 153;
+            this.label10.Text = "Date end:";
+            // 
             // FormHarvestingJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.numericUpDown2);
             this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.dtpTimeEnd);
-            this.Controls.Add(this.dtpTimeStart);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
@@ -276,8 +252,6 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
@@ -301,8 +275,6 @@
 
         #endregion
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -319,10 +291,10 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.DateTimePicker dtpTimeEnd;
-        private System.Windows.Forms.DateTimePicker dtpTimeStart;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Label label10;
     }
 }

@@ -584,10 +584,10 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[7].BtnNew;
                     btnEditItem.Text = pnItems[7].BtnEdit;
                     btnUpdateField.Text = pnItems[7].BtnUpdate;
-                    lblUpdateField.Hide();
-                    cbUpdateField.Hide();
-                    btnUpdateField.Hide();
-                    btnReset.Hide();
+                    //lblUpdateField.Hide();
+                    //cbUpdateField.Hide();
+                    //btnUpdateField.Hide();
+                    //btnReset.Hide();
                     currentSearchOption = JobOp.getFarmList();
                     foreach (string str in currentSearchOption)
                     {

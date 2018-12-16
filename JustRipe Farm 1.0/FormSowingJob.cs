@@ -14,7 +14,7 @@ namespace JustRipeFarm
 {
     public partial class FormSowingJob : Form
     {
-        CheckingSQL csql = new CheckingSQL();
+        //CheckingSQL csql = new CheckingSQL();
         // prepare variable for storing list<class>
         List<Crop> cropLists;
         List<Vehicle> vehicleList;
@@ -214,32 +214,32 @@ namespace JustRipeFarm
             //string query = "SELECT * FROM " + tableName;
             //MySqlCommand cmd = new MySqlCommand(query, MysqlDbc.Instance.getConn());
 
-            TestSQL ts = new TestSQL();
-            cropLists = ts.GetCropList();
-            employeeList = ts.GetEmployeeList();
-            farmLists = ts.GetFarmList();
-            vehicleList = ts.GetVehicleList();
+            //TestSQL ts = new TestSQL();
+            //cropLists = ts.GetCropList();
+            //employeeList = ts.GetEmployeeList();
+            //farmLists = ts.GetFarmList();
+            //vehicleList = ts.GetVehicleList();
 
-            DateTime start_date = Convert.ToDateTime("12/12/2018");
-            DateTime end_date = Convert.ToDateTime("12/12/2018");
-            DateTime currentDate = Convert.ToDateTime(DateTime.Now.ToString("MMM/dd/yyyy"));
-            int duration = 0; int todayduration = 0;
-            foreach (Employee employee in employeeList)
-            {
-                MySqlDataReader drrr = csql.getsowinginfo(employee.Id.ToString());
-                if (drrr.Read())
-                {
-                    start_date = Convert.ToDateTime(drrr[8].ToString());
-                    end_date = Convert.ToDateTime(drrr[7].ToString());
-                    duration = Convert.ToInt32((end_date - start_date).TotalDays);
-                    todayduration = Convert.ToInt32((currentDate - start_date).TotalDays);
-                    if (duration < todayduration)
-                    {
-                        cbEmployee.Items.Add(employee.Id.ToString());
-                        add();
-                    }
-                }
-            }
+            //DateTime start_date = Convert.ToDateTime("12/12/2018");
+            //DateTime end_date = Convert.ToDateTime("12/12/2018");
+            //DateTime currentDate = Convert.ToDateTime(DateTime.Now.ToString("MMM/dd/yyyy"));
+            //int duration = 0; int todayduration = 0;
+            //foreach (Employee employee in employeeList)
+            //{
+            //    MySqlDataReader drrr = csql.getsowinginfo(employee.Id.ToString());
+            //    if (drrr.Read())
+            //    {
+            //        start_date = Convert.ToDateTime(drrr[8].ToString());
+            //        end_date = Convert.ToDateTime(drrr[7].ToString());
+            //        duration = Convert.ToInt32((end_date - start_date).TotalDays);
+            //        todayduration = Convert.ToInt32((currentDate - start_date).TotalDays);
+            //        if (duration < todayduration)
+            //        {
+            //            cbEmployee.Items.Add(employee.Id.ToString());
+            //            add();
+            //        }
+            //    }
+            //}
         }
 
         private void nUDQty_ValueChanged(object sender, EventArgs e)

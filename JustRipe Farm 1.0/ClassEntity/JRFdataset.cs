@@ -871,9 +871,8 @@ namespace JustRipeFarm
                     fer.Crop_id = rdr.GetInt32("farm_id");
                     fer.Vehicle_id = rdr.GetInt32("vehicle_id");
                     fer.Employee_id = rdr.GetInt32("employee_id");
-                    fer.Date = rdr.GetDateTime("date");
-                    fer.Time_start = rdr.GetDateTime("time_start");
-                    fer.Time_end = rdr.GetDateTime("time_end");
+                    fer.Date_start = rdr.GetDateTime("date_start");
+                    fer.Date_end = rdr.GetDateTime("date_end");
                 }
             }
             catch (MySqlException ex)
@@ -917,9 +916,8 @@ namespace JustRipeFarm
                     hj.Est_quantity = rdr.GetInt32("est_quantity");
                     hj.Harvested_quantity = rdr.GetInt32("harvested_quantity");
                     hj.Employee_id = rdr.GetInt32("employee_id");
-                    hj.Time_start = rdr.GetDateTime("date");
-                    hj.Time_start = rdr.GetDateTime("time_start");
-                    hj.Time_end = rdr.GetDateTime("time_end");
+                    hj.Date_start = rdr.GetDateTime("date_start");
+                    hj.Date_end = rdr.GetDateTime("date_end");
                 }
             }
             catch (MySqlException ex)
@@ -1001,9 +999,8 @@ namespace JustRipeFarm
                     p1.Crop_id = rdr.GetInt32("crop_id");
                     p1.Vehicle_id = rdr.GetInt32("vehicle_id");
                     p1.Employee_id = rdr.GetInt32("employee_id");
-                    p1.Date = rdr.GetDateTime("date");
-                    p1.Time_start = rdr.GetDateTime("time_start");
-                    p1.Time_end = rdr.GetDateTime("time_end");
+                    p1.Date_start = rdr.GetDateTime("date_start");
+                    p1.Date_end = rdr.GetDateTime("date_end");
                 }
             }
             catch (MySqlException ex)
@@ -1131,9 +1128,8 @@ namespace JustRipeFarm
                     ss1.Quantity = rdr.GetInt32("quantity");
                     ss1.Vehicle_id = rdr.GetInt32("vehicle_id");
                     ss1.Employee_id = rdr.GetInt32("employee_id");
-                    ss1.Date = rdr.GetDateTime("date");
-                    ss1.Time_start = rdr.GetDateTime("time_start");
-                    ss1.Time_end = rdr.GetDateTime("time_end");
+                    ss1.Date_start = rdr.GetDateTime("date_start");
+                    ss1.Date_end = rdr.GetDateTime("date_end");
                 }
             }
             catch (MySqlException ex)

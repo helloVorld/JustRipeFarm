@@ -116,15 +116,15 @@ namespace JustRipeFarm
             //DbConnector dbConn = new DbConnector();
             //dbConn.connect();
             
-            Labourer labr = new Labourer();
-            labr.Name = "Adam";
-            labr.Age = 30;
-            labr.Gender = "male";
+            //Labourer labr = new Labourer();
+            //labr.Name = "Adam";
+            //labr.Age = 30;
+            //labr.Gender = "male";
 
-            LabourerHandler labHnd = new LabourerHandler();
-            //int recordCnt = labHnd.addNewLabourer(dbConn.getConn(), labr);
-            int recordCnt = labHnd.addNewLabourer(MysqlDbc.Instance.getConn(), labr);
-            MessageBox.Show(recordCnt + " record has been inserted !! ");
+            //LabourerHandler labHnd = new LabourerHandler();
+            ////int recordCnt = labHnd.addNewLabourer(dbConn.getConn(), labr);
+            //int recordCnt = labHnd.addNewLabourer(MysqlDbc.Instance.getConn(), labr);
+            //MessageBox.Show(recordCnt + " record has been inserted !! ");
         }
 
         private void button20_Click(object sender, EventArgs e)
@@ -132,15 +132,15 @@ namespace JustRipeFarm
             //DbConnector dbConn = new DbConnector();
             //dbConn.connect();
             
-            Labourer labr = new Labourer();
-            labr.Name = textBox2.Text;
-            labr.Age = Convert.ToInt32(numericUpDown1.Value);
-            labr.Gender = comboBox4.Text;
+            //Labourer labr = new Labourer();
+            //labr.Name = textBox2.Text;
+            //labr.Age = Convert.ToInt32(numericUpDown1.Value);
+            //labr.Gender = comboBox4.Text;
 
-            LabourerHandler labHnd = new LabourerHandler();
-            //int recordCnt = labHnd.addNewLabourer(dbConn.getConn(), labr);
-            int recordCnt = labHnd.addNewLabourer(MysqlDbc.Instance.getConn(), labr);
-            MessageBox.Show(recordCnt + " record has been inserted !! ");
+            //LabourerHandler labHnd = new LabourerHandler();
+            ////int recordCnt = labHnd.addNewLabourer(dbConn.getConn(), labr);
+            //int recordCnt = labHnd.addNewLabourer(MysqlDbc.Instance.getConn(), labr);
+            //MessageBox.Show(recordCnt + " record has been inserted !! ");
         }
 
         private void button21_Click(object sender, EventArgs e)
@@ -187,7 +187,7 @@ namespace JustRipeFarm
             //DbConnector dbConn = new DbConnector();
             //dbConn.connect();
 
-            LabourerHandler labHnd = new LabourerHandler();
+            //LabourerHandler labHnd = new LabourerHandler();
 
             // method 1
             dataGridView1.DataSource = MysqlDbc.Instance.getAllLabourer().Tables[0];       

@@ -46,12 +46,8 @@ namespace JustRipeFarm
                                             {
                                                 if (String.IsNullOrEmpty(dateTimePicker1.Text))
                                                 {
-                                                    if (String.IsNullOrEmpty(dtpTimeStart.Text))
+                                                    if (String.IsNullOrEmpty(dateTimePicker2.Text))
                                                     {
-                                                        if (String.IsNullOrEmpty(dtpTimeEnd.Text))
-                                                        {
-                                                            MessageBox.Show("please fill up all the box");
-                                                        }
                                                         MessageBox.Show("please fill up all the box");
                                                     }
                                                     MessageBox.Show("please fill up all the box");
@@ -95,9 +91,8 @@ namespace JustRipeFarm
             fj.Crop_id = int.Parse(textBox6.Text);
             fj.Vehicle_id = int.Parse(textBox7.Text);
             fj.Employee_id = int.Parse(textBox8.Text);
-            fj.Date = Convert.ToDateTime(dateTimePicker1.Text);
-            fj.Time_start = Convert.ToDateTime(dtpTimeStart.Text);
-            fj.Time_end = Convert.ToDateTime(dtpTimeEnd.Text);
+            fj.Date_start = this.dateTimePicker1.Value;
+            fj.Date_end = this.dateTimePicker2.Value;
 
             InsertSQL add = new InsertSQL();
             int addrecord = add.addNewFertilisingJob(fj);
@@ -116,9 +111,8 @@ namespace JustRipeFarm
             fj.Crop_id = int.Parse(textBox6.Text);
             fj.Vehicle_id = int.Parse(textBox7.Text);
             fj.Employee_id = int.Parse(textBox8.Text);
-            fj.Date = Convert.ToDateTime(dateTimePicker1.Text);
-            fj.Time_start = Convert.ToDateTime(dtpTimeStart.Text);
-            fj.Time_end = Convert.ToDateTime(dtpTimeEnd.Text);
+            fj.Date_start = this.dateTimePicker1.Value;
+            fj.Date_end = this.dateTimePicker2.Value;
 
             UpdateSQL edit = new UpdateSQL();
             int editrecord = edit.updateFertilisingJob(fj);
@@ -140,11 +134,8 @@ namespace JustRipeFarm
                 textBox6.Text = jb1.Crop_id.ToString();
                 textBox7.Text = jb1.Vehicle_id.ToString();
                 textBox8.Text = jb1.Employee_id.ToString();
-                textBox8.Text = jb1.Date.ToString();
-                textBox8.Text = jb1.Employee_id.ToString();
-                dateTimePicker1.Text = jb1.Date.ToString();
-                dtpTimeStart.Text = jb1.Time_start.ToString();
-                dtpTimeEnd.Text = jb1.Time_end.ToString();
+                dateTimePicker1.Text = jb1.Date_start.ToString();
+                dateTimePicker2.Text = jb1.Date_end.ToString();
             }
         }
     }
