@@ -811,7 +811,8 @@
             this.panelCommon.Controls.Add(this.btnNewItem);
             this.panelCommon.Controls.Add(this.dgvDbTable);
             this.panelCommon.Controls.Add(this.lblPanelTitle);
-            this.panelCommon.Location = new System.Drawing.Point(821, 60);
+            this.panelCommon.Location = new System.Drawing.Point(1055, 61);
+            this.panelCommon.Margin = new System.Windows.Forms.Padding(4);
             this.panelCommon.Name = "panelCommon";
             this.panelCommon.Size = new System.Drawing.Size(650, 400);
             this.panelCommon.TabIndex = 21;
@@ -962,7 +963,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 510);
+            this.ClientSize = new System.Drawing.Size(1868, 750);
             this.Controls.Add(this.panelCommon);
             this.Controls.Add(this.panelHome);
             this.Controls.Add(this.panelOperation);
