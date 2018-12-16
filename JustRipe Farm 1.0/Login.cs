@@ -18,7 +18,7 @@ namespace JustRipeFarm.ClassEntity
         public string Username { get; set; }
         public string Password { get; set; }
 
-      
+        CheckingSQL cs = new CheckingSQL();
 
         public Login(string user, string pass)
         {
@@ -35,47 +35,71 @@ namespace JustRipeFarm.ClassEntity
 
         internal bool IsLoggedIn(string user, string pass)
         {
-            Employee e1 = new Employee();
-            string tableName = "employee";
-            //string query = "SELECT * FROM employee";
-            //MySqlDataReader rdr = null;
-            //MySqlCommand cmd = new MySqlCommand(query, MysqlDbc.Instance.getConn());
-            //rdr = cmd.ExecuteReader();
-            //e1.Username = rdr.GetString("username"); ;
-            //e1.Password = rdr.GetString("password");
-
-            if (string.IsNullOrEmpty(user))
-            {
-                    MessageBox.Show("Enter the user name!");
-                    return false;
-            }
-            else
-            {
-                //if (e1.Username != user)
-                if(Username != user)
+            //MySqlDataReader dr= cs.getemployeeinfo(user, pass);
+            //while(dr.Read())
+            //{
+                if ((user == "") || (pass == " "))
                 {
-                    MessageBox.Show("User name is incorrect!");
-                    ClearTexts(user, pass);
+                    MessageBox.Show("Enter the username and password!");
                     return false;
                 }
                 else
                 {
-                    if (string.IsNullOrEmpty(pass))
+                    if ((user != Username || pass != Password))
                     {
-                        MessageBox.Show("Enter the passowrd!");
-                        return false;
-                    }
-                    else if (Password != pass)
-                    {
-                        MessageBox.Show("Password is incorrect");
+                        MessageBox.Show("User name is incorrect!");
+                        ClearTexts(user, pass);
                         return false;
                     }
                     else
                     {
+
                         return true;
                     }
-                }
+                //}
             }
+            //MySqlDataReader rdr = null;
+            //MySqlCommand cmd = new MySqlCommand(query, MysqlDbc.Instance.getConn());
+            //rdr = cmd.ExecuteReader();
+            //e1.Username = rdr.GetString("username"); ;
+            //string username = e1.Username;
+            //e1.Password = rdr.GetString("password");
+            //string password = e1.Password;
+
+           
+
+            //if (string.IsNullOrEmpty(user))
+            //{
+            //        MessageBox.Show("Enter the user name!");
+            //        return false;
+            //}
+            //else
+            //{
+            //    //if (e1.Username != user)
+            //    if(Username != user)
+            //    {
+            //        MessageBox.Show("User name is incorrect!");
+            //        ClearTexts(user, pass);
+            //        return false;
+            //    }
+            //    else
+            //    {
+            //        if (string.IsNullOrEmpty(pass))
+            //        {
+            //            MessageBox.Show("Enter the passowrd!");
+            //            return false;
+            //        }
+            //        else if (Password != pass)
+            //        {
+            //            MessageBox.Show("Password is incorrect");
+            //            return false;
+            //        }
+            //        else
+            //        {
+            //            return true;
+            //        }
+            //    }
+            //}
         }
 
         public Employee checkUserLogin()

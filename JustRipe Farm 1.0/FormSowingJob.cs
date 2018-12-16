@@ -14,6 +14,7 @@ namespace JustRipeFarm
 {
     public partial class FormSowingJob : Form
     {
+        CheckingSQL csql = new CheckingSQL();
         // prepare variable for storing list<class>
         List<Crop> cropLists;
         List<Vehicle> vehicleList;
@@ -142,6 +143,33 @@ namespace JustRipeFarm
                 dtpDate.Value = sowj.Date_start;
                 dtpDateEnd.Value = sowj.Date_end;
             }
+
+            MySqlDataReader dr = csql.getcropinfo();
+            while (dr.Read())
+            {
+                cbCrop.Items.Add(dr[0].ToString());// get type of crop                    
+            }
+
+            DateTime start_date = Convert.ToDateTime("12/12/2018");
+            DateTime end_date = Convert.ToDateTime("12/12/2018");
+            DateTime currentDate = Convert.ToDateTime(DateTime.Now.ToString("MMM/dd/yyyy"));
+            int duration = 0; int todayduration = 0;
+            MySqlDataReader dr2 = csql.getempname();
+            while (dr2.Read())
+            {
+                MySqlDataReader drrr = csql.getsowinginfo(dr2[7].ToString());
+                if (drrr.Read())
+                {
+                    start_date = Convert.ToDateTime(drrr[8].ToString());
+                    end_date = Convert.ToDateTime(drrr[7].ToString());
+                    duration = Convert.ToInt32((end_date - start_date).TotalDays);
+                    todayduration = Convert.ToInt32((currentDate - start_date).TotalDays);
+                    if (duration < todayduration)
+                    {
+                        cbEmployee.Items.Add(dr2[1].ToString());
+                    }
+                }
+            }
             // when form loads, get all fields data from mysql
             // then store to a bunch of list<class>
             // then all combo boxes gets data from the list<class>
@@ -205,38 +233,16 @@ namespace JustRipeFarm
 
             //    }
         }
+
+        //public MySqlDataReader getsowing(string ) 
+
         public void checkAsignJobandAdd()
         {
-            string tableName = "sowingJob";
-            string query = "SELECT * FROM " + tableName;
+            //string tableName = "sowingJob";
+            //string query = "SELECT * FROM " + tableName;
+            //MySqlCommand cmd = new MySqlCommand(query, MysqlDbc.Instance.getConn());
 
-            SowingJob sj2 = new SowingJob();
-            
-            bool active =Convert.ToBoolean(sj2.Employee_id);
-            dtpDate.Value = sj2.Date_start;
-            dtpDateEnd.Value = sj2.Date_end;
-            //DateTime currentTime = DateTime.Today;
            
-            
-
-            TimeSpan ts = dtpDateEnd.Value - dtpDate.Value;
-
-            int days = ts.Days;
-
-            if (days <= 0)
-            {
-                if (sj2.Employee_id == 1)
-                {
-                    MessageBox.Show("cannoot assign!!");
-                    active = true;
-                }
-                else
-                    add();
-            }
-            else
-            {
-                MessageBox.Show("You cannot assign Job anymore!!");
-            }
         }
 
         private void nUDQty_ValueChanged(object sender, EventArgs e)

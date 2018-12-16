@@ -52,7 +52,6 @@
             this.label21 = new System.Windows.Forms.Label();
             this.lblTodayAllJob = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panelOperation = new System.Windows.Forms.Panel();
@@ -163,7 +162,7 @@
             // menuFLP
             // 
             this.menuFLP.AutoScroll = true;
-            this.menuFLP.Location = new System.Drawing.Point(28, 27);
+            this.menuFLP.Location = new System.Drawing.Point(29, 61);
             this.menuFLP.Margin = new System.Windows.Forms.Padding(4);
             this.menuFLP.Name = "menuFLP";
             this.menuFLP.Size = new System.Drawing.Size(160, 468);
@@ -224,13 +223,12 @@
             this.panelHome.Controls.Add(this.gbOrders);
             this.panelHome.Controls.Add(this.groupBox16);
             this.panelHome.Controls.Add(this.lblUsername);
-            this.panelHome.Controls.Add(this.button2);
             this.panelHome.Controls.Add(this.button1);
             this.panelHome.Controls.Add(this.label4);
-            this.panelHome.Location = new System.Drawing.Point(336, -5);
+            this.panelHome.Location = new System.Drawing.Point(198, 61);
             this.panelHome.Margin = new System.Windows.Forms.Padding(5);
             this.panelHome.Name = "panelHome";
-            this.panelHome.Size = new System.Drawing.Size(867, 492);
+            this.panelHome.Size = new System.Drawing.Size(837, 478);
             this.panelHome.TabIndex = 17;
             this.panelHome.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHome_Paint);
             // 
@@ -239,7 +237,7 @@
             this.gbOrders.Controls.Add(this.groupBox20);
             this.gbOrders.Controls.Add(this.groupBox21);
             this.gbOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbOrders.Location = new System.Drawing.Point(497, 219);
+            this.gbOrders.Location = new System.Drawing.Point(457, 195);
             this.gbOrders.Margin = new System.Windows.Forms.Padding(4);
             this.gbOrders.Name = "gbOrders";
             this.gbOrders.Padding = new System.Windows.Forms.Padding(4);
@@ -320,7 +318,7 @@
             this.groupBox16.Controls.Add(this.groupBox17);
             this.groupBox16.Controls.Add(this.groupBox18);
             this.groupBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox16.Location = new System.Drawing.Point(143, 219);
+            this.groupBox16.Location = new System.Drawing.Point(92, 195);
             this.groupBox16.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox16.Name = "groupBox16";
             this.groupBox16.Padding = new System.Windows.Forms.Padding(4);
@@ -407,20 +405,9 @@
             this.lblUsername.TabIndex = 22;
             this.lblUsername.Text = "name";
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(661, 47);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(152, 58);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "Change Password";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(460, 46);
+            this.button1.Location = new System.Drawing.Point(590, 31);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(147, 58);
@@ -909,7 +896,7 @@
             this.panelCommon.Controls.Add(this.btnNewItem);
             this.panelCommon.Controls.Add(this.dgvDbTable);
             this.panelCommon.Controls.Add(this.lblPanelTitle);
-            this.panelCommon.Location = new System.Drawing.Point(173, 74);
+            this.panelCommon.Location = new System.Drawing.Point(1095, 74);
             this.panelCommon.Margin = new System.Windows.Forms.Padding(4);
             this.panelCommon.Name = "panelCommon";
             this.panelCommon.Size = new System.Drawing.Size(867, 492);
@@ -1076,7 +1063,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1503, 750);
+            this.ClientSize = new System.Drawing.Size(1132, 750);
             this.Controls.Add(this.panelCommon);
             this.Controls.Add(this.panelHome);
             this.Controls.Add(this.panelOperation);
@@ -1173,7 +1160,6 @@
         private System.Windows.Forms.Button btnNewItem;
         private System.Windows.Forms.DataGridView dgvDbTable;
         private System.Windows.Forms.Label lblPanelTitle;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblTodaySowing;
         private System.Windows.Forms.GroupBox groupBox13;
