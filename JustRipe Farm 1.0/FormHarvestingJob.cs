@@ -17,6 +17,7 @@ namespace JustRipeFarm
         List<Vehicle> vehicleList;
         List<Farm> farmLists;
         List<SowingJob> sowingLists;
+        List<HarvestingJob> harvestLists;
         List<Employee> employeeList;
         public string state = "";
         public HarvestingJob hj1;
@@ -101,8 +102,8 @@ namespace JustRipeFarm
             hj.Harvested_quantity = int.Parse(numericUpDown2.Text);
             string idStr3 = cbEmployee.Text.Split('.')[0];
             hj.Employee_id = int.Parse(idStr3);
-            hj.Date = Convert.ToDateTime(dtpStart.Value);
-            hj.Date = Convert.ToDateTime(dtpEnd.Value);
+            hj.Date_start = Convert.ToDateTime(dtpStart1.Value);
+            hj.Date_end = Convert.ToDateTime(dtpEnd.Value);
 
             InsertSQL hdl = new InsertSQL();
             hdl.addNewHarvestingJob(hj);
@@ -125,8 +126,8 @@ namespace JustRipeFarm
             hj.Harvested_quantity = int.Parse(numericUpDown2.Text);
             string idStr3 = cbEmployee.Text.Split('.')[0];
             hj.Employee_id = int.Parse(idStr3);
-            hj.Date = Convert.ToDateTime(dtpStart.Value);
-            hj.Date = Convert.ToDateTime(dtpEnd.Value);
+            hj.Date_start = Convert.ToDateTime(dtpStart1.Value);
+            hj.Date_end = Convert.ToDateTime(dtpEnd.Value);
 
             UpdateSQL hdl = new UpdateSQL();
             hdl.updateHarvestingJob(hj);
@@ -148,8 +149,8 @@ namespace JustRipeFarm
                 numericUpDown1.Text = hj1.Est_quantity.ToString();
                 numericUpDown2.Text = hj1.Harvested_quantity.ToString();
                 cbEmployee.Text = hj1.Employee_id.ToString();
-                dtpStart.Text = hj1.Date.ToString();
-                dtpEnd.Text = hj1.Date.ToString();
+                dtpStart1.Text = hj1.Date_start.ToString();
+                dtpEnd.Text = hj1.Date_end.ToString();
 
 
                 TestSQL ts = new TestSQL();
@@ -211,7 +212,7 @@ namespace JustRipeFarm
                 employeeList = ts.GetEmployeeList();
                 farmLists = ts.GetFarmList();
                 vehicleList = ts.GetVehicleList();
-                sowingLists = ts.GetSowingJobList();
+                harvestLists = ts.GetHarvestingJobList();
 
                 DateTime start_date = Convert.ToDateTime("12/12/2018");
                 DateTime end_date = Convert.ToDateTime("12/12/2018");
@@ -219,10 +220,10 @@ namespace JustRipeFarm
                 int duration = 0; int todayduration = 0;
                 foreach (Employee employee in employeeList)
                 {
-                    foreach (SowingJob sowing in sowingLists)
+                    foreach (HarvestingJob harvest in harvestLists)
                     {
-                        start_date = Convert.ToDateTime(sowing.Date_start.ToString());
-                        end_date = Convert.ToDateTime(sowing.Date_end.ToString());
+                        start_date = Convert.ToDateTime(harvest.Date_start.ToString());
+                        end_date = Convert.ToDateTime(harvest.Date_end.ToString());
                         duration = Convert.ToInt32((end_date - start_date).TotalDays);
                         todayduration = Convert.ToInt32((currentDate - start_date).TotalDays);
                         if (duration < todayduration)

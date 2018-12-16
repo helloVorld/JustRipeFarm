@@ -50,16 +50,17 @@
             this.cbEmployee = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
+            this.dtpStart1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
             // 
             // dtpStart
             // 
-            this.dtpStart.Location = new System.Drawing.Point(158, 288);
+            this.dtpStart.Location = new System.Drawing.Point(158, 326);
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(230, 22);
-            this.dtpStart.TabIndex = 110;
+            this.dtpStart.TabIndex = 124;
             // 
             // label7
             // 
@@ -228,11 +229,11 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(46, 331);
+            this.label10.Location = new System.Drawing.Point(43, 329);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(71, 17);
-            this.label10.TabIndex = 128;
-            this.label10.Text = "Date End:";
+            this.label10.Size = new System.Drawing.Size(70, 17);
+            this.label10.TabIndex = 153;
+            this.label10.Text = "Date end:";
             // 
             // dtpEnd
             // 
@@ -241,27 +242,19 @@
             this.dtpEnd.Size = new System.Drawing.Size(230, 22);
             this.dtpEnd.TabIndex = 129;
             // 
-            // dateTimePicker2
+            // dtpStart1
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(155, 329);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(230, 22);
-            this.dateTimePicker2.TabIndex = 154;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(43, 329);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(70, 17);
-            this.label10.TabIndex = 153;
-            this.label10.Text = "Date end:";
+            this.dtpStart1.Location = new System.Drawing.Point(158, 288);
+            this.dtpStart1.Name = "dtpStart1";
+            this.dtpStart1.Size = new System.Drawing.Size(230, 22);
+            this.dtpStart1.TabIndex = 154;
             // 
             // FormHarvestingJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(426, 450);
+            this.Controls.Add(this.dtpStart1);
             this.Controls.Add(this.dtpEnd);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.cbEmployee);
@@ -317,5 +310,6 @@
         private System.Windows.Forms.ComboBox cbEmployee;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker dtpEnd;
+        private System.Windows.Forms.DateTimePicker dtpStart1;
     }
 }

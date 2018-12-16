@@ -542,5 +542,54 @@ namespace JustRipeFarm.ClassEntity
             return sowingLists;
         }
 
+        public List<HarvestingJob> GetHarvestingJobList() //string employee_id
+        {
+            List<HarvestingJob> harvestLists = new List<HarvestingJob>();
+            MySqlDataReader rdr = null;
+            try
+            {
+
+
+                string stm = "SELECT * FROM harvestingjob";
+                MySqlCommand cmd = new MySqlCommand(stm, MysqlDbc.Instance.getConn());
+                rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    HarvestingJob sj1 = new HarvestingJob();
+                    sj1.Id = rdr.GetInt32("id"); ;
+                    sj1.Description = rdr.GetString("description");
+                    sj1.SowingJob_id = rdr.GetInt32("sowingJob_id");
+                    sj1.Farm_id = rdr.GetInt32("farm_id");
+                    sj1.Crop_id = rdr.GetInt32("crop_id");
+                    sj1.Vehicle_id = rdr.GetInt32("vehicle_id");
+                    sj1.Est_quantity = rdr.GetInt32("est_quantity");
+                    sj1.Harvested_quantity = rdr.GetInt32("harvested_quantity");
+                    sj1.Employee_id = rdr.GetInt32("employee_id");
+                    sj1.Date_start = rdr.GetDateTime("date_start");
+                    sj1.Date_end = rdr.GetDateTime("date_end");
+
+                    harvestLists.Add(sj1);
+
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+            }
+
+            return harvestLists;
+        }
+
     }
 }
