@@ -69,8 +69,82 @@ namespace JustRipeFarm
 
         private void btnDone_Click(object sender, EventArgs e)
         {
-            addPesticideJob();
-            //updatePesticideJob();
+            if (state == "Edit")
+            {
+                updatePesticideJob();
+            }
+            else
+            {
+                if (String.IsNullOrEmpty(textBox1.Text))
+                {
+                    if (String.IsNullOrEmpty(textBox2.Text))
+                    {
+                        if (String.IsNullOrEmpty(textBox3.Text))
+                        {
+                            if (String.IsNullOrEmpty(textBox4.Text))
+                            {
+                                if (String.IsNullOrEmpty(textBox5.Text))
+                                {
+                                    if (String.IsNullOrEmpty(textBox6.Text))
+                                    {
+                                        if (String.IsNullOrEmpty(textBox7.Text))
+                                        {
+                                            if (String.IsNullOrEmpty(textBox8.Text))
+                                            {
+                                                if (String.IsNullOrEmpty(dateTimePicker1.Text))
+                                                {
+                                                    if (String.IsNullOrEmpty(dtpTimeStart.Text))
+                                                    {
+                                                        if (String.IsNullOrEmpty(dtpTimeEnd.Text))
+                                                        {
+                                                            MessageBox.Show("Please fill up the box");
+                                                        }
+                                                        MessageBox.Show("Please fill up the box");
+                                                    }
+                                                    MessageBox.Show("Please fill up the box");
+                                                }
+                                                MessageBox.Show("Please fill up the box");
+                                            }
+                                            MessageBox.Show("Please fill up the box");
+                                        }
+                                        MessageBox.Show("Please fill up the box");
+                                    }
+                                    MessageBox.Show("Please fill up the box");
+                                }
+                                MessageBox.Show("Please fill up the box");
+                            }
+                            MessageBox.Show("Please fill up the box");
+                        }
+                        MessageBox.Show("Please fill up the box");
+                    }
+                    MessageBox.Show("Please fill up the box");
+                }
+                else
+                {
+                    addPesticideJob();
+                }
+            }
+            
+        }
+
+        private void FormPesticideJob_Load(object sender, EventArgs e)
+        {
+            InsertSQL pesticideJob = new InsertSQL();
+
+            if (state == "Edit")
+            {
+                textBox1.Text = pjj1.Description;
+                textBox2.Text = pjj1.Pesticide_id.ToString();
+                textBox3.Text = pjj1.Quantity_kg.ToString();
+                textBox4.Text = pjj1.SowingJob_id.ToString();
+                textBox5.Text = pjj1.Farm_id.ToString();
+                textBox6.Text = pjj1.Crop_id.ToString();
+                textBox7.Text = pjj1.Vehicle_id.ToString();
+                textBox8.Text = pjj1.Employee_id.ToString();
+                dateTimePicker1.Text = pjj1.Date.ToString();
+                dtpTimeStart.Text = pjj1.Time_start.ToString();
+                dtpTimeEnd.Text = pjj1.Time_end.ToString();
+            }
         }
     }
 }

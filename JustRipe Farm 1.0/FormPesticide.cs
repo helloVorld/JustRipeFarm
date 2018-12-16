@@ -32,7 +32,7 @@ namespace JustRipeFarm
             MessageBox.Show("Successful!");
         }
 
-        private void addPesticide(string name, int quantuty_kg, string remark)
+        private void addPesticide()
         {
             Pesticide p1 = new Pesticide();
             p1.Name = textBox1.Text;
@@ -46,12 +46,29 @@ namespace JustRipeFarm
 
         private void btnDone_Click(object sender, EventArgs e)
         {
-            //addPesticide(textBox1.Text, textBox2.Text, textBox3.Text);
-            //UpdateOrder();
 
             if (state == "Edit")
             {
                 UpdatePesticide();
+            }
+            else
+            {
+                if (String.IsNullOrEmpty(textBox1.Text))
+                {
+                    if (String.IsNullOrEmpty(textBox2.Text))
+                    {
+                        if (String.IsNullOrEmpty(textBox3.Text))
+                        {
+                            MessageBox.Show("Please fill up the box");
+                        }
+                        MessageBox.Show("Please fill up the box");
+                    }
+                    MessageBox.Show("Please fill up the box");
+                }
+                else
+                {
+                    addPesticide();
+                }
             }
         }
 

@@ -108,7 +108,6 @@ namespace JustRipeFarm
                 textBox6.Text = ord.Status;
                 textBox7.Text = ord.Remark;
             }
-            testDataPassedtoHere();
         }
 
         public void UpdateOrder()
@@ -127,22 +126,16 @@ namespace JustRipeFarm
             ordi.Status = textBox6.Text;
             ordi.Remark = textBox7.Text;
 
-            if (String.IsNullOrEmpty(textBox1.Text))
-            {
-                MessageBox.Show("Please check again");
-            }
-            else
-            {
-                UpdateSQL ordHnd = new UpdateSQL();
-                int changerecord = ordHnd.UpdateOrder(ordi);
-                MessageBox.Show(changerecord + " Your record is added");
-            }
+
+            UpdateSQL ordHnd = new UpdateSQL();
+            int changerecord = ordHnd.UpdateOrder(ordi);
+            MessageBox.Show(changerecord + " Your record is added");
+            this.Close();
         }
 
         public void AddOrder()
         {
             Order ord = new Order();
-
 
             ord.Description = textBox1.Text;
             ord.Product_id = Int32.Parse(comboBox1.Text);
@@ -160,7 +153,7 @@ namespace JustRipeFarm
             InsertSQL ordHnd = new InsertSQL();
             int addrecord = ordHnd.addNewOrder(ord);
             MessageBox.Show(addrecord + "Your record is added");
-
+            this.Close();
         }
 
         //public List<Crop> GetCropList()

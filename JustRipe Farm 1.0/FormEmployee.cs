@@ -23,26 +23,34 @@ namespace JustRipeFarm
 
         private void btnDone_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(firstNameText.Text))
+            if (state == "Edit")
             {
-                if (String.IsNullOrEmpty(lastNameText.Text))
+                UpdateEmployee();
+            }
+            else
+            {
+                if (String.IsNullOrEmpty(firstNameText.Text))
                 {
-                    if (String.IsNullOrEmpty(usernameText.Text))
+                    if (String.IsNullOrEmpty(lastNameText.Text))
                     {
-                        if (String.IsNullOrEmpty(passwordText.Text))
+                        if (String.IsNullOrEmpty(usernameText.Text))
                         {
-                            if (String.IsNullOrEmpty(dobText.Text))
+                            if (String.IsNullOrEmpty(passwordText.Text))
                             {
-                                if (String.IsNullOrEmpty(mobileText.Text))
+                                if (String.IsNullOrEmpty(dobText.Text))
                                 {
-                                    if (String.IsNullOrEmpty(emailText.Text))
+                                    if (String.IsNullOrEmpty(mobileText.Text))
                                     {
-                                        if (String.IsNullOrEmpty(adminText.Text))
+                                        if (String.IsNullOrEmpty(emailText.Text))
                                         {
-                                            if (String.IsNullOrEmpty(statusText.Text))
+                                            if (String.IsNullOrEmpty(adminText.Text))
                                             {
-                                                if (String.IsNullOrEmpty(remarkText.Text))
+                                                if (String.IsNullOrEmpty(statusText.Text))
                                                 {
+                                                    if (String.IsNullOrEmpty(remarkText.Text))
+                                                    {
+                                                        MessageBox.Show("Please fill in all the data!!");
+                                                    }
                                                     MessageBox.Show("Please fill in all the data!!");
                                                 }
                                                 MessageBox.Show("Please fill in all the data!!");
@@ -55,19 +63,17 @@ namespace JustRipeFarm
                                 }
                                 MessageBox.Show("Please fill in all the data!!");
                             }
-                            MessageBox.Show("Please fill in all the data!!");
+                            MessageBox.Show("Please check phone again");
                         }
-                        MessageBox.Show("Please check phone again");
+                        MessageBox.Show("Please check email again");
                     }
-                    MessageBox.Show("Please check email again");
+                    MessageBox.Show("Please check name again");
                 }
-                MessageBox.Show("Please check name again");
+                else
+                {
+                    addEmployee();
+                }
             }
-            else
-            {
-                addEmployee();
-            }
-            //UpdateEmployee();
         }
 
         public void addEmployee()
@@ -110,6 +116,7 @@ namespace JustRipeFarm
             UpdateSQL empHnd = new UpdateSQL();
             int Updaterecord = empHnd.UpdateEmployee(empi);
             MessageBox.Show(Updaterecord + " Your record is added");
+            this.Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

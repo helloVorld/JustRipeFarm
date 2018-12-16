@@ -22,7 +22,38 @@ namespace JustRipeFarm
 
         private void btnDone_Click(object sender, EventArgs e)
         {
-            addVehicle();
+
+            if (state == "Edit")
+            {
+                updateVehicle();
+            }
+            else
+            {
+                if (String.IsNullOrEmpty(nameText.Text))
+                {
+                    if (String.IsNullOrEmpty(serialNumText.Text))
+                    {
+                        if (String.IsNullOrEmpty(buyDateTimePicker.Text))
+                        {
+                            if (String.IsNullOrEmpty(serviceDateTimePicker.Text))
+                            {
+                                if (String.IsNullOrEmpty(remarkText.Text))
+                                {
+                                    MessageBox.Show("Please fill up the box");
+                                }
+                                MessageBox.Show("Please fill up the box");
+                            }
+                            MessageBox.Show("Please fill up the box");
+                        }
+                        MessageBox.Show("Please fill up the box");
+                    }
+                    MessageBox.Show("Please fill up the box");
+                }
+                else
+                {
+                    addVehicle();
+                }
+            }
         }
 
         public void addVehicle()
@@ -61,6 +92,20 @@ namespace JustRipeFarm
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FormVehicle_Load(object sender, EventArgs e)
+        {
+            InsertSQL vehicle = new InsertSQL();
+
+            if (state == "Edit")
+            {
+                nameText.Text = v1.Name;
+                serialNumText.Text = v1.Serial_number;
+                buyDateTimePicker.Text = v1.Buy_date.ToString();
+                serviceDateTimePicker.Text = v1.Last_service_date.ToString();
+                remarkText.Text = v1.Remark.ToString();
+            }
         }
     }
 }

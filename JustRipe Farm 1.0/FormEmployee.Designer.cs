@@ -37,19 +37,19 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.mobileText = new System.Windows.Forms.TextBox();
-            this.dobText = new System.Windows.Forms.TextBox();
             this.passwordText = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.statusText = new System.Windows.Forms.TextBox();
-            this.adminText = new System.Windows.Forms.TextBox();
             this.emailText = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.remarkText = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.dobText = new System.Windows.Forms.DateTimePicker();
+            this.adminText = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -129,13 +129,6 @@
             this.mobileText.Size = new System.Drawing.Size(100, 22);
             this.mobileText.TabIndex = 31;
             // 
-            // dobText
-            // 
-            this.dobText.Location = new System.Drawing.Point(165, 182);
-            this.dobText.Name = "dobText";
-            this.dobText.Size = new System.Drawing.Size(100, 22);
-            this.dobText.TabIndex = 30;
-            // 
             // passwordText
             // 
             this.passwordText.Location = new System.Drawing.Point(165, 147);
@@ -176,13 +169,6 @@
             this.statusText.Name = "statusText";
             this.statusText.Size = new System.Drawing.Size(100, 22);
             this.statusText.TabIndex = 37;
-            // 
-            // adminText
-            // 
-            this.adminText.Location = new System.Drawing.Point(165, 292);
-            this.adminText.Name = "adminText";
-            this.adminText.Size = new System.Drawing.Size(100, 22);
-            this.adminText.TabIndex = 36;
             // 
             // emailText
             // 
@@ -234,21 +220,39 @@
             this.label12.TabIndex = 38;
             this.label12.Text = "Remark:";
             // 
+            // dobText
+            // 
+            this.dobText.Location = new System.Drawing.Point(165, 181);
+            this.dobText.Name = "dobText";
+            this.dobText.Size = new System.Drawing.Size(200, 22);
+            this.dobText.TabIndex = 42;
+            // 
+            // adminText
+            // 
+            this.adminText.FormattingEnabled = true;
+            this.adminText.Items.AddRange(new object[] {
+            "true",
+            "false"});
+            this.adminText.Location = new System.Drawing.Point(165, 290);
+            this.adminText.Name = "adminText";
+            this.adminText.Size = new System.Drawing.Size(121, 24);
+            this.adminText.TabIndex = 43;
+            // 
             // FormEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(424, 539);
+            this.Controls.Add(this.adminText);
+            this.Controls.Add(this.dobText);
             this.Controls.Add(this.remarkText);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.statusText);
-            this.Controls.Add(this.adminText);
             this.Controls.Add(this.emailText);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.mobileText);
-            this.Controls.Add(this.dobText);
             this.Controls.Add(this.passwordText);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
@@ -281,18 +285,18 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox mobileText;
-        private System.Windows.Forms.TextBox dobText;
         private System.Windows.Forms.TextBox passwordText;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox statusText;
-        private System.Windows.Forms.TextBox adminText;
         private System.Windows.Forms.TextBox emailText;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox remarkText;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DateTimePicker dobText;
+        private System.Windows.Forms.ComboBox adminText;
     }
 }

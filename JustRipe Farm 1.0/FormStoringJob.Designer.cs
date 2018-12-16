@@ -268,6 +268,7 @@
             this.Controls.Add(this.btnDone);
             this.Name = "FormStoringJob";
             this.Text = "FormStoringJob";
+            this.Load += new System.EventHandler(this.FormStoringJob_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

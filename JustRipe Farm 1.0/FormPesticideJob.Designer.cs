@@ -288,6 +288,7 @@
             this.Controls.Add(this.btnDone);
             this.Name = "FormPesticideJob";
             this.Text = "FormPesticideJob";
+            this.Load += new System.EventHandler(this.FormPesticideJob_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

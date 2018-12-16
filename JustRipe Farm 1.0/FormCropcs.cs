@@ -68,6 +68,11 @@ namespace JustRipeFarm
             }
         }
 
+        public void checking()
+        {
+
+        }
+
         public void addCrop()
         {
             Crop crop = new Crop();

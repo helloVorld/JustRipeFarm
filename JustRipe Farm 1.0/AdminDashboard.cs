@@ -734,7 +734,13 @@ namespace JustRipeFarm
 
                     break;
                 case "Storage":
-                    FormStoreroom sj1 = new FormStoreroom();
+                    FormStoringJob sj1 = new FormStoringJob();
+                    sj1.state = newOrEdit;
+                    if (newOrEdit == "Edit")
+                    {
+                        // MySQL Need Check 
+                        sj1.sj = JRFdataset.Table.GetStoringJobFromID(currentID);
+                    }
                     sj1.Show();
 
                     break;
@@ -939,8 +945,6 @@ namespace JustRipeFarm
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FormEditPassword editpassword = new FormEditPassword();
-            editpassword.Show();
         }
 
         private void panelHome_Paint(object sender, PaintEventArgs e)

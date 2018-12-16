@@ -101,6 +101,7 @@ namespace JustRipeFarm
             UpdateSQL custHnd = new UpdateSQL();
             int updateRecord = custHnd.updateCustomer(custU);
             MessageBox.Show(updateRecord + " Your record is updated");
+            this.Close();
         }
 
         

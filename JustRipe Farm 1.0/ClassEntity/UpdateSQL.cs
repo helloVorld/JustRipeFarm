@@ -172,8 +172,8 @@ namespace JustRipeFarm.ClassEntity
             sqlComm.Parameters.Add("@employee_id", MySqlDbType.UInt32).Value = sowingjob.Employee_id;
             sqlComm.Parameters.Add("@date_start", MySqlDbType.Date).Value = sowingjob.Date_start;
             sqlComm.Parameters.Add("@date_end", MySqlDbType.Date).Value = sowingjob.Date_end;
-            sqlComm.Parameters.Add("@time_start", MySqlDbType.Time).Value = sowingjob.Time_start;
-            sqlComm.Parameters.Add("@time_end", MySqlDbType.Time).Value = sowingjob.Time_end;
+            //sqlComm.Parameters.Add("@time_start", MySqlDbType.Time).Value = sowingjob.Time_start;
+            //sqlComm.Parameters.Add("@time_end", MySqlDbType.Time).Value = sowingjob.Time_end;
 
             return sqlComm.ExecuteNonQuery();
         }

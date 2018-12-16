@@ -13,6 +13,9 @@ namespace JustRipeFarm
 {
     public partial class FormStoringJob : Form
     {
+        public string state = "";
+        public StoringJob sj;
+
         public FormStoringJob()
         {
             InitializeComponent();
@@ -22,44 +25,6 @@ namespace JustRipeFarm
         {
             this.Close();
         }
-
-        //private void CheckStoringJob(string description, int harvest_id, int crop_id, int box_id, int quantity, int vehicle_id, 
-        //                                int employee_id, DateTime date, DateTime time_start, DateTime time_end)
-        //{
-        //    bool ck1 = String.IsNullOrEmpty(description);
-        //    bool ck2 = String.IsNullOrEmpty(harvest_id.ToString());
-        //    bool ck3 = String.IsNullOrEmpty(crop_id.ToString());
-        //    bool ck4 = String.IsNullOrEmpty(box_id.ToString());
-        //    bool ck5 = String.IsNullOrEmpty(quantity.ToString());
-        //    bool ck6 = String.IsNullOrEmpty(vehicle_id.ToString());
-        //    bool ck7 = String.IsNullOrEmpty(employee_id.ToString());
-        //    bool ck8 = String.IsNullOrEmpty(date.ToString());
-        //    bool ck9 = String.IsNullOrEmpty(time_start.ToString());
-        //    bool ck10 = String.IsNullOrEmpty(time_end.ToString());
-
-        //    if (ck1 && ck2 && ck3 && ck4 && ck5 && ck6 && ck7 && ck8 && ck9 && ck10 == true)
-        //    {
-        //        StoringJob sj = new StoringJob();
-        //        sj.Description = textBox1.Text;
-        //        sj.Harvest_id = Convert.ToInt32(textBox2.Text);
-        //        sj.Crop_id = Convert.ToInt32(textBox3.Text);
-        //        sj.Box_id = Convert.ToInt32(textBox4.Text);
-        //        sj.Quantity = Convert.ToInt32(textBox5.Text);
-        //        sj.Vehicle_id = Convert.ToInt32(textBox6.Text);
-        //        sj.Employee_id = Convert.ToInt32(textBox7.Text);
-        //        sj.Date = Convert.ToDateTime(dateTimePicker1.Text);
-        //        sj.Time_start = Convert.ToDateTime(dateTimePicker2.Text);
-        //        sj.Time_end = Convert.ToDateTime(dateTimePicker3.Text);
-
-        //        InsertSQL addHnd = new InsertSQL();
-        //        int addrecord = addHnd.addNewStoringJob(sj);
-        //        MessageBox.Show(addrecord + " Your record is added");
-        //    }
-        //    else
-        //    {
-        //        ErrorMsg.UpdateOptionNoSelect();
-        //    }
-        //}
 
         private void addStoringJob()
         {
@@ -78,9 +43,10 @@ namespace JustRipeFarm
             InsertSQL addHnd = new InsertSQL();
             int addrecord = addHnd.addNewStoringJob(sj);
             MessageBox.Show(addrecord + " Your record is added");
+            this.Close();
         }
 
-        private void updateStoringJob1()
+        private void updateStoringJob()
         {
             StoringJob sj = new StoringJob();
             sj.Description = textBox1.Text;
@@ -97,13 +63,83 @@ namespace JustRipeFarm
             UpdateSQL update = new UpdateSQL();
             update.updateStoringJob(sj);
             MessageBox.Show(" Your record is added");
+            this.Close();
+        }
+
+        private void FormStoringJob_Load(object sender, EventArgs e)
+        {
+            InsertSQL StoringJob = new InsertSQL();
+
+            if (state == "Edit")
+            {
+                textBox1.Text = sj.Description;
+                textBox2.Text = sj.Harvest_id.ToString();
+                textBox3.Text = sj.Crop_id.ToString();
+                textBox4.Text = sj.Box_id.ToString();
+                textBox5.Text = sj.Quantity.ToString();
+                textBox6.Text = sj.Vehicle_id.ToString();
+                textBox7.Text = sj.Employee_id.ToString();
+                dateTimePicker1.Text = sj.Date.ToString();
+                dateTimePicker2.Text = sj.Time_start.ToString();
+                dateTimePicker3.Text = sj.Time_end.ToString();
+            }
         }
 
         private void btnDone_Click(object sender, EventArgs e)
         {
             addStoringJob();
-            //CheckStoringJob(textBox1.Text, Convert.ToInt32(textBox2.Text), Convert.ToInt32(textBox3.Text), Convert.ToInt32(textBox4.Text), Convert.ToInt32(textBox5.Text),
-            //            Convert.ToInt32(textBox6.Text), Convert.ToInt32(textBox7.Text), Convert.ToDateTime(dateTimePicker1.Text), Convert.ToDateTime(dateTimePicker2.Text), Convert.ToDateTime(dateTimePicker3.Text));
-        }
+
+            if (state == "Edit")
+            {
+                updateStoringJob();
+            }
+            else
+            {
+                if (String.IsNullOrEmpty(textBox1.Text))
+                {
+                    if (String.IsNullOrEmpty(textBox2.Text))
+                    {
+                        if (String.IsNullOrEmpty(textBox3.Text))
+                        {
+                            if (String.IsNullOrEmpty(textBox4.Text))
+                            {
+                                if (String.IsNullOrEmpty(textBox5.Text))
+                                {
+                                    if (String.IsNullOrEmpty(textBox6.Text))
+                                    {
+                                        if (String.IsNullOrEmpty(textBox7.Text))
+                                        {
+                                            if (String.IsNullOrEmpty(dateTimePicker1.Text))
+                                            {
+                                                if (String.IsNullOrEmpty(dateTimePicker2.Text))
+                                                {
+                                                    if (String.IsNullOrEmpty(dateTimePicker3.Text))
+                                                    {
+                                                        MessageBox.Show("Please fill up the box");
+                                                    }
+                                                    MessageBox.Show("Please fill up the box");
+                                                }
+                                                MessageBox.Show("Please fill up the box");
+                                            }
+                                            MessageBox.Show("Please fill up the box");
+                                        }
+                                        MessageBox.Show("Please fill up the box");
+                                    }
+                                    MessageBox.Show("Please fill up the box");
+                                }
+                                MessageBox.Show("Please fill up the box");
+                            }
+                            MessageBox.Show("Please fill up the box");
+                        }
+                        MessageBox.Show("Please fill up the box");
+                    }
+                    MessageBox.Show("Please fill up the box");
+                }
+                else
+                {
+                    addStoringJob();
+                }
+            }
+        }       
     }
 }

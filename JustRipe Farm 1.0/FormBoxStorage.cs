@@ -91,5 +91,56 @@ namespace JustRipeFarm
                 }
             }
         }
+
+        private void btnDone_Click(object sender, EventArgs e)
+        {
+            if (state == "Edit")
+            {
+                updateBoxStorage();
+            }
+            else
+            {
+                if (String.IsNullOrEmpty(textBox1.Text))
+                {
+                    if (String.IsNullOrEmpty(textBox2.Text))
+                    {
+                        if (String.IsNullOrEmpty(textBox3.Text))
+                        {
+                            if (String.IsNullOrEmpty(textBox4.Text))
+                            {
+                                if (String.IsNullOrEmpty(textBox5.Text))
+                                {
+                                    if (String.IsNullOrEmpty(textBox6.Text))
+                                    {
+                                        if (String.IsNullOrEmpty(dateTimePicker1.Text))
+                                        {
+                                            if (String.IsNullOrEmpty(dateTimePicker2.Text))
+                                            { 
+                                                if (String.IsNullOrEmpty(dateTimePicker3.Text))
+                                                {
+                                                    MessageBox.Show("please fill up all the box");
+                                                }
+                                            MessageBox.Show("please fill up all the box");
+                                            }
+                                            MessageBox.Show("please fill up all the box");
+                                        }
+                                        MessageBox.Show("please fill up all the box");
+                                    }
+                                    MessageBox.Show("please fill up all the box");
+                                }
+                                MessageBox.Show("please fill up all the box");
+                            }
+                            MessageBox.Show("please fill up all the box");
+                        }
+                        MessageBox.Show("please fill up all the box");
+                    }
+                    MessageBox.Show("please fill up all the box");
+                }
+                else
+                {
+                    addBoxStorage();
+                }
+            }
+        }
     }
 }

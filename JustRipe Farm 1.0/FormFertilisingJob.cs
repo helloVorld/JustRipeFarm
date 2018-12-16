@@ -22,28 +22,36 @@ namespace JustRipeFarm
 
         private void btnDone_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(textBox1.Text))
+            if (state == "Edit")
             {
-                if (String.IsNullOrEmpty(textBox2.Text))
+                updateFertiliser();
+            }
+            else
+            {
+                if (String.IsNullOrEmpty(textBox1.Text))
                 {
-                    if (String.IsNullOrEmpty(textBox3.Text))
+                    if (String.IsNullOrEmpty(textBox2.Text))
                     {
-                        if (String.IsNullOrEmpty(textBox4.Text))
+                        if (String.IsNullOrEmpty(textBox3.Text))
                         {
-                            if (String.IsNullOrEmpty(textBox5.Text))
+                            if (String.IsNullOrEmpty(textBox4.Text))
                             {
-                                if (String.IsNullOrEmpty(textBox6.Text))
+                                if (String.IsNullOrEmpty(textBox5.Text))
                                 {
-                                    if (String.IsNullOrEmpty(textBox7.Text))
+                                    if (String.IsNullOrEmpty(textBox6.Text))
                                     {
-                                        if (String.IsNullOrEmpty(textBox8.Text))
+                                        if (String.IsNullOrEmpty(textBox7.Text))
                                         {
-                                            if (String.IsNullOrEmpty(dateTimePicker1.Text))
+                                            if (String.IsNullOrEmpty(textBox8.Text))
                                             {
-                                                if (String.IsNullOrEmpty(dtpTimeStart.Text))
+                                                if (String.IsNullOrEmpty(dateTimePicker1.Text))
                                                 {
-                                                    if (String.IsNullOrEmpty(dtpTimeEnd.Text))
+                                                    if (String.IsNullOrEmpty(dtpTimeStart.Text))
                                                     {
+                                                        if (String.IsNullOrEmpty(dtpTimeEnd.Text))
+                                                        {
+                                                            MessageBox.Show("please fill up all the box");
+                                                        }
                                                         MessageBox.Show("please fill up all the box");
                                                     }
                                                     MessageBox.Show("please fill up all the box");
@@ -56,18 +64,19 @@ namespace JustRipeFarm
                                     }
                                     MessageBox.Show("please fill up all the box");
                                 }
-                                MessageBox.Show("please fill up all the box");
+                                MessageBox.Show("Please fill up all the box");
                             }
-                            MessageBox.Show("Please fill up all the box");
+                            MessageBox.Show("please fill up all the box");
                         }
                         MessageBox.Show("please fill up all the box");
                     }
                     MessageBox.Show("please fill up all the box");
                 }
-                MessageBox.Show("please fill up all the box");
+                else
+                {
+                    addFertiliser();
+                }
             }
-            else
-                addFertiliser();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -115,6 +124,28 @@ namespace JustRipeFarm
             int editrecord = edit.updateFertilisingJob(fj);
             MessageBox.Show("Seccuess!!");
             this.Close();
+        }
+
+        private void FormFertilisingJob_Load(object sender, EventArgs e)
+        {
+            InsertSQL FertilisingJob = new InsertSQL();
+
+            if (state == "Edit")
+            {
+                textBox1.Text = jb1.Description;
+                textBox2.Text = jb1.Fertiliser_id.ToString();
+                textBox3.Text = jb1.Quantity_kg.ToString();
+                textBox4.Text = jb1.SowingJob_id.ToString();
+                textBox5.Text = jb1.Farm_id.ToString();
+                textBox6.Text = jb1.Crop_id.ToString();
+                textBox7.Text = jb1.Vehicle_id.ToString();
+                textBox8.Text = jb1.Employee_id.ToString();
+                textBox8.Text = jb1.Date.ToString();
+                textBox8.Text = jb1.Employee_id.ToString();
+                dateTimePicker1.Text = jb1.Date.ToString();
+                dtpTimeStart.Text = jb1.Time_start.ToString();
+                dtpTimeEnd.Text = jb1.Time_end.ToString();
+            }
         }
     }
 }

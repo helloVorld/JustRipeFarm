@@ -1048,8 +1048,8 @@ namespace JustRipeFarm
                     sj1.Employee_id = rdr.GetInt32("employee_id");
                     sj1.Date_start = rdr.GetDateTime("date_start");
                     sj1.Date_end = rdr.GetDateTime("date_end");
-                    sj1.Time_start = rdr.GetDateTime("time_start");
-                    sj1.Time_end = rdr.GetDateTime("time_end");
+                    //sj1.Time_start = rdr.GetDateTime("time_start");
+                    //sj1.Time_end = rdr.GetDateTime("time_end");
                 }
             }
             catch (MySqlException ex)

@@ -291,6 +291,7 @@
             this.Controls.Add(this.btnDone);
             this.Name = "FormHarvestingJob";
             this.Text = "FormHarvestingJob";
+            this.Load += new System.EventHandler(this.FormHarvestingJob_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.ResumeLayout(false);

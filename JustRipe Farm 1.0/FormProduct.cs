@@ -22,8 +22,37 @@ namespace JustRipeFarm
 
         private void btnDone_Click(object sender, EventArgs e)
         {
-            add();
-            //update();
+            if (state == "Edit")
+            {
+                update();
+            }
+            else
+            {
+                if (String.IsNullOrEmpty(nameText.Text))
+                {
+                    if (String.IsNullOrEmpty(typeText.Text))
+                    {
+                        if (String.IsNullOrEmpty(quantityNumericUpDown.Text))
+                        {
+                            if (String.IsNullOrEmpty(weightText.Text))
+                            {
+                                if (String.IsNullOrEmpty(boxIdText.Text))
+                                {
+                                    MessageBox.Show("Please fill up the box");
+                                }
+                                MessageBox.Show("Please fill up the box");
+                            }
+                            MessageBox.Show("Please fill up the box");
+                        }
+                        MessageBox.Show("Please fill up the box");
+                    }
+                    MessageBox.Show("Please fill up the box");
+                }
+                else
+                {
+                    add();
+                }
+            }
         }
 
         private void add()
@@ -52,6 +81,20 @@ namespace JustRipeFarm
             UpdateSQL prodHnd = new UpdateSQL();
             int addrecord = prodHnd.updateProduct(prod);
             MessageBox.Show("Your record is added");
+        }
+
+        private void FormProduct_Load(object sender, EventArgs e)
+        {
+            InsertSQL product = new InsertSQL();
+
+            if (state == "Edit")
+            {
+                nameText.Text = prod.Name;
+                typeText.Text = prod.Type;
+                quantityNumericUpDown.Text = prod.Quantity_box.ToString();
+                weightText.Text = prod.Weight.ToString();
+                boxIdText.Text = prod.Box_id.ToString();
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

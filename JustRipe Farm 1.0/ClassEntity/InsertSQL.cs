@@ -156,8 +156,8 @@ namespace JustRipeFarm.ClassEntity
 
         public int addNewSowingJob(SowingJob sowingjob)
         {
-            MySqlCommand sqlComm = new MySqlCommand("INSERT INTO" + "swoingjob(description, crop_id, quantity_prop, farm_id, used_area, vehicle_id, employee_id, date_start, date_end, time_start, time_end)" +
-                                            "VALUES" + "(@description, @crop_id, @quantity_prop, @farm_id, @used_area, @vehicle_id, @employee_id, @date_start, @date_end, @time_start, @time_end)", MysqlDbc.Instance.getConn());
+            MySqlCommand sqlComm = new MySqlCommand("INSERT INTO" + " sowingjob(description, crop_id, quantity_prop, farm_id, used_area, vehicle_id, employee_id, date_start, date_end)" +      
+                                            "VALUES" + "(@description, @crop_id, @quantity_prop, @farm_id, @used_area, @vehicle_id, @employee_id, @date_start, @date_end)", MysqlDbc.Instance.getConn()); 
 
             sqlComm.Parameters.Add("@description", MySqlDbType.Text).Value = sowingjob.Description;
             sqlComm.Parameters.Add("@crop_id", MySqlDbType.UInt32).Value = sowingjob.Crop_id;
@@ -168,15 +168,15 @@ namespace JustRipeFarm.ClassEntity
             sqlComm.Parameters.Add("@employee_id", MySqlDbType.UInt32).Value = sowingjob.Employee_id;
             sqlComm.Parameters.Add("@date_start", MySqlDbType.Date).Value = sowingjob.Date_start;
             sqlComm.Parameters.Add("@date_end", MySqlDbType.Date).Value = sowingjob.Date_end;
-            sqlComm.Parameters.Add("@time_start", MySqlDbType.Time).Value = sowingjob.Time_start;
-            sqlComm.Parameters.Add("@time_end", MySqlDbType.Time).Value = sowingjob.Time_end;
+            //sqlComm.Parameters.Add("@time_start", MySqlDbType.Time).Value = sowingjob.Time_start;
+            //sqlComm.Parameters.Add("@time_end", MySqlDbType.Time).Value = sowingjob.Time_end;
 
             return sqlComm.ExecuteNonQuery();
         }
 
         public int addNewHarvestingJob(HarvestingJob harvestingjob)
         {
-            MySqlCommand sqlComm = new MySqlCommand("INSERT INTO" + "harvestingjob(description, sowingJob_id, farm_id, crop_id, vehicle_id, est_quantity, harvested_quantity, employee_id, date, time_start, time_end)" +
+            MySqlCommand sqlComm = new MySqlCommand("INSERT INTO" + " harvestingjob(description, sowingJob_id, farm_id, crop_id, vehicle_id, est_quantity, harvested_quantity, employee_id, date, time_start, time_end)" +
                                             "VALUES" + "(@description, @sowingJob_id, @farm_id, @crop_id, @vehicle_id, @est_quantity, @harvested_quantity, @employee_id, @date, @time_start, @time_end)", MysqlDbc.Instance.getConn());
 
             sqlComm.Parameters.Add("@description", MySqlDbType.Text).Value = harvestingjob.Description;
@@ -196,7 +196,7 @@ namespace JustRipeFarm.ClassEntity
 
         public int addNewStoringJob(StoringJob storingjob)
         {
-            MySqlCommand sqlComm = new MySqlCommand("INSERT INTO" + " stroingjob(description, harvest_id, crop_id, box_id, quantity, vehicle_id, employee_id, date, time_start, time_end)" +
+            MySqlCommand sqlComm = new MySqlCommand("INSERT INTO" + " storingjob(description, harvest_id, crop_id, box_id, quantity, vehicle_id, employee_id, date, time_start, time_end)" +
                                         "VALUES" + "(@description, @harvest_id, @crop_id, @box_id, @quantity, @vehicle_id, @employee_id, @date, @time_start, @time_end)", MysqlDbc.Instance.getConn());
 
             sqlComm.Parameters.Add("@description", MySqlDbType.Text).Value = storingjob.Description;
@@ -729,7 +729,7 @@ namespace JustRipeFarm.ClassEntity
                     Vehicle vehc = new Vehicle();
                     vehc.Id = rdr.GetInt32("id");
                     vehc.Name = rdr.GetString("name");
-                    vehc.Serial_number = rdr.GetInt32("serial_number");
+                    vehc.Serial_number = rdr.GetString("serial_number");
                     vehc.Buy_date = rdr.GetDateTime("buy_date");
                     vehc.Last_service_date = rdr.GetDateTime("last_service_date");
                     vehc.Remark = rdr.GetString("remark");
@@ -755,6 +755,57 @@ namespace JustRipeFarm.ClassEntity
             }
 
             return vehicleLists;
+        }
+
+        public List<SowingJob> GetSowingJobList()
+        {
+            List<SowingJob> sowingLists = new List<SowingJob>();
+            MySqlDataReader rdr = null;
+            try
+            {
+
+
+                string stm = "SELECT * FROM sowingjob";
+                MySqlCommand cmd = new MySqlCommand(stm, MysqlDbc.Instance.getConn());
+                rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    SowingJob sj1 = new SowingJob();
+                    sj1.Id = rdr.GetInt32("id"); ;
+                    sj1.Description = rdr.GetString("description");
+                    sj1.Crop_id = rdr.GetInt32("crop_id");
+                    sj1.Quantity_prop = rdr.GetInt32("quantity_prop");
+                    sj1.Farm_id = rdr.GetInt32("farm_id");
+                    sj1.Used_area = rdr.GetString("used_area");
+                    sj1.Vehicle_id = rdr.GetInt32("vehicle_id");
+                    sj1.Employee_id = rdr.GetInt32("employee_id");
+                    sj1.Date_start = rdr.GetDateTime("date_start");
+                    sj1.Date_end = rdr.GetDateTime("date_end");
+                    //sj1.Time_start = rdr.GetDateTime("time_start");
+                    //sj1.Time_end = rdr.GetDateTime("time_end");
+
+                    //Console.WriteLine("crop => " + cr);
+                    sowingLists.Add(sj1);
+
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+            }
+
+            return sowingLists;
         }
     }
 }

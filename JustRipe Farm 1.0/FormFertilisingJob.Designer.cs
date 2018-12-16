@@ -258,7 +258,7 @@
             this.btnDone.UseVisualStyleBackColor = true;
             this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
-            // FormFertiliserJob
+            // FormFertilisingJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -287,8 +287,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnDone);
-            this.Name = "FormFertiliserJob";
+            this.Name = "FormFertilisingJob";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.FormFertilisingJob_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

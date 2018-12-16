@@ -27,8 +27,61 @@ namespace JustRipeFarm
 
         private void btnDone_Click(object sender, EventArgs e)
         {
-            addHarvestingJob();
-            updateHarvestingJob();
+            if (state == "Edit")
+            {
+                updateHarvestingJob();
+            }
+            else
+            {
+                if (String.IsNullOrEmpty(textBox1.Text))
+                {
+                    if (String.IsNullOrEmpty(textBox2.Text))
+                    {
+                        if (String.IsNullOrEmpty(textBox3.Text))
+                        {
+                            if (String.IsNullOrEmpty(textBox4.Text))
+                            {
+                                if (String.IsNullOrEmpty(textBox5.Text))
+                                {
+                                    if (String.IsNullOrEmpty(numericUpDown1.Text))
+                                    {
+                                        if (String.IsNullOrEmpty(numericUpDown2.Text))
+                                        {
+                                            if (String.IsNullOrEmpty(textBox6.Text))
+                                            {
+                                                if (String.IsNullOrEmpty(dateTimePicker1.Text))
+                                                {
+                                                    if (String.IsNullOrEmpty(dtpTimeStart.Text))
+                                                    {
+                                                        if (String.IsNullOrEmpty(dtpTimeEnd.Text))
+                                                        {
+                                                            MessageBox.Show("Please fill up the box");
+                                                        }
+                                                        MessageBox.Show("Please fill up the box");
+                                                    }
+                                                    MessageBox.Show("Please fill up the box");
+                                                }
+                                                MessageBox.Show("Please fill up the box");
+                                            }
+                                            MessageBox.Show("Please fill up the box");
+                                        }
+                                        MessageBox.Show("Please fill up the box");
+                                    }
+                                    MessageBox.Show("Please fill up the box");
+                                }
+                                MessageBox.Show("Please fill up the box");
+                            }
+                            MessageBox.Show("Please fill up the box");
+                        }
+                        MessageBox.Show("Please fill up the box");
+                    }
+                    MessageBox.Show("Please fill up the box");
+                }
+                else
+                {
+                    addHarvestingJob();
+                }
+            }
         }
 
         private void addHarvestingJob()
@@ -63,14 +116,34 @@ namespace JustRipeFarm
             hj.Est_quantity = int.Parse(numericUpDown1.Text);
             hj.Harvested_quantity = int.Parse(numericUpDown2.Text);
             hj.Employee_id = int.Parse(textBox6.Text);
-            hj.Date = Convert.ToDateTime(dateTimePicker1.Text);
-            hj.Time_start = Convert.ToDateTime(dtpTimeStart.Text);
-            hj.Time_end = Convert.ToDateTime(dtpTimeEnd.Text);
+            hj.Date = this.dateTimePicker1.Value;
+            hj.Time_start = this.dtpTimeStart.Value;
+            hj.Time_end = this.dtpTimeEnd.Value;
 
             UpdateSQL hdl = new UpdateSQL();
             hdl.updateHarvestingJob(hj);
             MessageBox.Show("Seccuess!!");
             this.Close();
+        }
+
+        private void FormHarvestingJob_Load(object sender, EventArgs e)
+        {
+            InsertSQL crop = new InsertSQL();
+
+            if (state == "Edit")
+            {
+                textBox1.Text = hj1.Description;
+                textBox2.Text = hj1.SowingJob_id.ToString();
+                textBox3.Text = hj1.Farm_id.ToString();
+                textBox4.Text = hj1.Crop_id.ToString();
+                textBox5.Text = hj1.Vehicle_id.ToString();
+                numericUpDown1.Text = hj1.Est_quantity.ToString();
+                numericUpDown2.Text = hj1.Harvested_quantity.ToString();
+                textBox6.Text = hj1.Employee_id.ToString();
+                dateTimePicker1.Text = hj1.Date.ToString();
+                dtpTimeStart.Text = hj1.Time_start.ToString();
+                dtpTimeEnd.Text = hj1.Time_end.ToString();
+            }
         }
     }
 }

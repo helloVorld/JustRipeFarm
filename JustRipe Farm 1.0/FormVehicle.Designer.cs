@@ -165,6 +165,7 @@
             this.Controls.Add(this.btnDone);
             this.Name = "FormVehicle";
             this.Text = "FormVehicle";
+            this.Load += new System.EventHandler(this.FormVehicle_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

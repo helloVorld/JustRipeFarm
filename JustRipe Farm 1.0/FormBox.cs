@@ -36,7 +36,7 @@ namespace JustRipeFarm
             InsertSQL addHnd = new InsertSQL();
             int addrecord = addHnd.addNewBox(box);
             MessageBox.Show("Success!!");
-
+            this.Close();
         }
 
         private void updateBox()
@@ -53,6 +53,7 @@ namespace JustRipeFarm
             UpdateSQL addHnd = new UpdateSQL();
             int addrecord = addHnd.updateBox(box);
             MessageBox.Show("Success!!");
+            this.Close();
         }
 
         private void FormBox_Load(object sender, EventArgs e)
@@ -80,7 +81,7 @@ namespace JustRipeFarm
         {
             if (state == "Edit")
             {
-                //updateBox();
+                updateBox();
             }
             else
             {
@@ -114,8 +115,7 @@ namespace JustRipeFarm
                 }
                 else
                 {
-                    //addBox();
-                    updateBox();
+                    addBox();
                 }
             }
         }

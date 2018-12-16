@@ -87,12 +87,6 @@
     <Compile Include="FormCropcs.Designer.cs">
       <DependentUpon>FormCropcs.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormEditPassword.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormEditPassword.Designer.cs">
-      <DependentUpon>FormEditPassword.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormEditProfile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,9 +231,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCustomer.resx">
       <DependentUpon>FormCustomer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormEditPassword.resx">
-      <DependentUpon>FormEditPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditProfile.resx">
       <DependentUpon>FormEditProfile.cs</DependentUpon>

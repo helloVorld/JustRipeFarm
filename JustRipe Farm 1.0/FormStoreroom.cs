@@ -22,8 +22,29 @@ namespace JustRipeFarm
 
         private void btnDone_Click(object sender, EventArgs e)
         {
-            addStock();
-            //editStock();
+            if (state == "Edit")
+            {
+                updateStock();
+            }
+            else
+            {
+                if (String.IsNullOrEmpty(descriptionText.Text))
+                {
+                    if (String.IsNullOrEmpty(storeNumericUpDown.Text))
+                    {
+                        if (String.IsNullOrEmpty(tempText.Text))
+                        {
+                            MessageBox.Show("Please fill up the box");
+                        }
+                        MessageBox.Show("Please fill up the box");
+                    }
+                    MessageBox.Show("Please fill up the box");
+                }
+                else
+                {
+                    addStock();
+                }
+            }
         }
 
         public void addStock()
@@ -44,7 +65,7 @@ namespace JustRipeFarm
             MessageBox.Show(addrecord + " Your record is added");
         }
 
-        public void editStock()
+        public void updateStock()
         {
             Storeroom store = new Storeroom();
             store.Description = descriptionText.Text;
@@ -74,7 +95,14 @@ namespace JustRipeFarm
 
         private void FormStoreroom_Load(object sender, EventArgs e)
         {
+            InsertSQL storeroom = new InsertSQL();
 
+            if (state == "Edit")
+            {
+                descriptionText.Text = sr1.Description;
+                storeNumericUpDown.Text = sr1.StoringQty.ToString();
+                tempText.Text = sr1.Temperature.ToString();
+            }
         }
     }
 }

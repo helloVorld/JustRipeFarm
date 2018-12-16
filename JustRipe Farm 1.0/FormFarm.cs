@@ -22,24 +22,29 @@ namespace JustRipeFarm
 
         private void btnDone_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(descriptionText.Text))
+            if (state == "Edit")
             {
-                if (String.IsNullOrEmpty(Convert.ToString(areaText.Text)))
+                updateFarm();
+            }
+            else
+            {
+                if (String.IsNullOrEmpty(descriptionText.Text))
                 {
-                    if (String.IsNullOrEmpty(Convert.ToString(utiliseAreaText.Text)))
+                    if (String.IsNullOrEmpty(Convert.ToString(areaText.Text)))
                     {
+                        if (String.IsNullOrEmpty(Convert.ToString(utiliseAreaText.Text)))
+                        {
+                            MessageBox.Show("Please fill up all the value");
+                        }
                         MessageBox.Show("Please fill up all the value");
                     }
                     MessageBox.Show("Please fill up all the value");
                 }
-                MessageBox.Show("Please fill up all the value");
+                else
+                {
+                    addFarm();
+                }
             }
-            else
-            {
-                //addFarm();
-                updateFarm();
-            }
-
         }
 
         public void addFarm()
