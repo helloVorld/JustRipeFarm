@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using JustRipeFarm.ClassEntity;
+using MySql.Data.MySqlClient;
 namespace JustRipeFarm
 {
     public partial class LoginScreen : Form
@@ -33,6 +34,12 @@ namespace JustRipeFarm
             }
         }
 
+        private void ClearTexts(string user, string pass)
+        {
+            user = String.Empty;
+            pass = String.Empty;
+        }
+
         private void loginBtn_Click(object sender, EventArgs e)
         {
             //define local variables from the user inputs 
@@ -41,28 +48,41 @@ namespace JustRipeFarm
 
             Login login = new Login(user, pass);
 
-
             //check if eligible to be logged in 
-            if (login.IsLoggedIn(user, pass))
-            {
-                em = login.checkUserLogin();
+            em = login.checkUserLogin();
 
-                if (em.Admin == true)
+            if ((user == "") || (pass == " "))
+            {
+                MessageBox.Show("Enter the username and password!");
+            }
+            else
+            {
+                if ((user != em.Username) || (pass != em.Password))
                 {
-                    goToDashBoard(true);
+                    MessageBox.Show("Enter the correct username and password!");
+                    ClearTexts(user, pass);
                 }
                 else
-                    goToDashBoard(false);
-                //else
-                //{
-                //    MessageBox.Show("No User in my system!!");
-                }
-            //}
-            //else
-            //{
-            //    //show default login error message 
-            //    MessageBox.Show("Login Error!");
-            //}
+                {
+                    if ((user == em.Username) || (pass == em.Password))
+                    {
+                        if (em.Admin == true)
+                        {
+                            goToDashBoard(true);
+                        }
+                        else
+                        {
+                            goToDashBoard(false);
+                        }
+                    }
+                    else
+                    {
+                        //show default login error message 
+                        MessageBox.Show("Login Error!");
+                    }
+                }  
+            }
+            
 
             //Mainscreen mainscreen = new Mainscreen();
             //mainscreen.Show();
@@ -122,4 +142,3 @@ namespace JustRipeFarm
         }
     }
 }
-

@@ -14,46 +14,16 @@ namespace JustRipeFarm.ClassEntity
 {
     public class Login
     {
-
         public string Username { get; set; }
         public string Password { get; set; }
 
-        CheckingSQL cs = new CheckingSQL();
+        //CheckingSQL cs = new CheckingSQL();
         Employee e1 = new Employee();
 
         public Login(string user, string pass)
         {
             this.Username = user;
             this.Password = pass;  
-        }
-        
-        private void ClearTexts(string user, string pass)
-        {
-            user = String.Empty;
-            pass = String.Empty;
-        }
-
-
-        internal bool IsLoggedIn(string user, string pass)
-        {
-            if ((user == "") || (pass == " "))
-            {
-                MessageBox.Show("Enter the username and password!");
-                return false;
-            }
-            else
-            {
-                if ((user != Username) || (pass != Password))
-                {
-                    MessageBox.Show("Enter the correct username and password!");
-                    ClearTexts(user, pass);
-                    return false;
-                }
-                else
-                {
-                    return true;
-                }
-            }
         }
 
         public Employee checkUserLogin()
@@ -79,8 +49,6 @@ namespace JustRipeFarm.ClassEntity
                     em.Admin = rdr.GetBoolean("admin");
                     em.Status = rdr.GetString("status");
                     em.Remark = rdr.GetString("remark");
-                    
-                    
                 }
 
             }

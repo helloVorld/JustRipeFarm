@@ -78,15 +78,16 @@ namespace JustRipeFarm
 
                 if (state == "Edit")
                 {
+                    bs1.Add_date = Convert.ToDateTime(dateTimePicker1.Text);
                     textBox1.Text = bs1.StoringJob_id.ToString();
                     textBox2.Text = bs1.Product_id.ToString();
                     textBox3.Text = bs1.Box_id.ToString();
                     textBox4.Text = bs1.NettWeight.ToString();
                     textBox5.Text = bs1.Storeroom_id.ToString();
-                    textBox6.Text = bs1.Add_date.ToString();
-                    dateTimePicker1.Text = bs1.Best_before.ToString();
-                    dateTimePicker2.Text = bs1.Out_date.ToString();
-                    dateTimePicker3.Text = bs1.Order_id.ToString();
+                    dateTimePicker1.Value = bs1.Add_date;
+                    dateTimePicker2.Value = bs1.Best_before;
+                    dateTimePicker3.Value = bs1.Out_date;
+                    textBox6.Text = bs1.Order_id.ToString();
 
                 }
             }

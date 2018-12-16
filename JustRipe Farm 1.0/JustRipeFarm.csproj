@@ -64,7 +64,6 @@
     <Compile Include="ClassEntity\Employee.cs" />
     <Compile Include="ClassEntity\Farm.cs" />
     <Compile Include="ClassEntity\Fertiliser.cs" />
-    <Compile Include="ClassEntity\FertiliserHandler.cs" />
     <Compile Include="ClassEntity\JRFdataset.cs" />
     <Compile Include="FormFertilisingJob.cs">
       <SubType>Form</SubType>
@@ -197,8 +196,6 @@
     <Compile Include="LoginScreen.Designer.cs">
       <DependentUpon>LoginScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClassEntity\Labourer.cs" />
-    <Compile Include="ClassEntity\LabourerHandler.cs" />
     <Compile Include="LabourerDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,8 +211,6 @@
     <Compile Include="PanelsFunc\JobOp.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ClassEntity\Stock.cs" />
-    <Compile Include="ClassEntity\StockHandler.cs" />
     <Compile Include="ValidationClass.cs" />
     <EmbeddedResource Include="AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>

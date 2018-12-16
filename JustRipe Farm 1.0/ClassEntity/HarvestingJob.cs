@@ -17,9 +17,9 @@ namespace JustRipeFarm.ClassEntity
         private int est_quantity;
         private int harvested_quantity;
         private int employee_id;
-        private DateTime date;
-        private DateTime time_start;
-        private DateTime time_end;
+        private DateTime date_start;
+        private DateTime date_end;
+
 
         public int Id { get => id; set => id = value; }
         public string Description { get => description; set => description = value; }
@@ -30,8 +30,7 @@ namespace JustRipeFarm.ClassEntity
         public int Est_quantity { get => est_quantity; set => est_quantity = value; }
         public int Harvested_quantity { get => harvested_quantity; set => harvested_quantity = value; }
         public int Employee_id { get => employee_id; set => employee_id = value; }
-        public DateTime Date { get => date; set => date = value; }
-        public DateTime Time_start { get => time_start; set => time_start = value; }
-        public DateTime Time_end { get => time_end; set => time_end = value; }
+        public DateTime Date_start { get => date_start; set => date_start = value; }
+        public DateTime Date_end { get => date_end; set => date_end = value; }
     }
 }

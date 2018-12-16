@@ -182,7 +182,7 @@ namespace JustRipeFarm.ClassEntity
         {
             MySqlCommand sqlComm = new MySqlCommand("UPDATE" + " harvestingjob SET description=@description, sowingJob_id=@sowingJob_id, farm_id=@Farm_id, crop_id=@crop_id," +
                                                     " vehicle_id=@vehicle_id, est_quantity=@est_quantity, harvested_quantity=@harvested_quantity, employee_id=@employee_id," +
-                                                    " date=@date, time_start=@time_start, time_end=@time_end" +
+                                                    " date_start=@date_start, date_end=@date_end" +
                                                      "WHERE id = 1", MysqlDbc.Instance.getConn());
 
             sqlComm.Parameters.Add("@description", MySqlDbType.Text).Value = harvestingjob.Description;
@@ -193,9 +193,8 @@ namespace JustRipeFarm.ClassEntity
             sqlComm.Parameters.Add("@est_quantity", MySqlDbType.UInt32).Value = harvestingjob.Est_quantity;
             sqlComm.Parameters.Add("@harvested_quantity", MySqlDbType.UInt32).Value = harvestingjob.Harvested_quantity;
             sqlComm.Parameters.Add("@employee_id", MySqlDbType.UInt32).Value = harvestingjob.Employee_id;
-            sqlComm.Parameters.Add("@date", MySqlDbType.Date).Value = harvestingjob.Date;
-            sqlComm.Parameters.Add("@time_start", MySqlDbType.Time).Value = harvestingjob.Time_start;
-            sqlComm.Parameters.Add("@time_end", MySqlDbType.Time).Value = harvestingjob.Time_end;
+            sqlComm.Parameters.Add("@date_start", MySqlDbType.Time).Value = harvestingjob.Date_start;
+            sqlComm.Parameters.Add("@date_end", MySqlDbType.Time).Value = harvestingjob.Date_end;
 
             return sqlComm.ExecuteNonQuery();
         }
@@ -204,7 +203,7 @@ namespace JustRipeFarm.ClassEntity
         {
             MySqlCommand sqlComm = new MySqlCommand("UPDATE" + " storingjob SET description=@description, harvest_id=@harvest_id, crop_id=@crop_id," +
                                                     " box_id=@box_id, quantity=@quantity, vehicle_id=@vehicle_id, employee_id=@employee_id," +
-                                                    " date=@date, time_start=@time_start, time_end=@time_end" +
+                                                    " date_start=@date_start, date_end=@date_end" +
                                                      "WHERE id = 1", MysqlDbc.Instance.getConn());
 
             sqlComm.Parameters.Add("@description", MySqlDbType.Text).Value = storingjob.Description;
@@ -214,9 +213,8 @@ namespace JustRipeFarm.ClassEntity
             sqlComm.Parameters.Add("@quantity", MySqlDbType.UInt32).Value = storingjob.Quantity;
             sqlComm.Parameters.Add("@vehicle_id", MySqlDbType.UInt32).Value = storingjob.Vehicle_id;
             sqlComm.Parameters.Add("@employee_id", MySqlDbType.UInt32).Value = storingjob.Employee_id;
-            sqlComm.Parameters.Add("@date", MySqlDbType.Date).Value = storingjob.Date;
-            sqlComm.Parameters.Add("@time_start", MySqlDbType.Time).Value = storingjob.Time_start;
-            sqlComm.Parameters.Add("@time_end", MySqlDbType.Time).Value = storingjob.Time_end;
+            sqlComm.Parameters.Add("@date_start", MySqlDbType.Date).Value = storingjob.Date_start;
+            sqlComm.Parameters.Add("@date_start", MySqlDbType.Date).Value = storingjob.Date_end;
 
             return sqlComm.ExecuteNonQuery();
         }
@@ -225,7 +223,7 @@ namespace JustRipeFarm.ClassEntity
         {
             MySqlCommand sqlComm = new MySqlCommand("UPDATE" + " fertilisingjob SET description=@description, fertiliser_id=@fertiliser_id, quantity_kg=@quantity_kg," +
                                                     " sowingJob_id=@sowing_id, farm_id=@farm_id, crop_id=@crop_id, vehicle_id=@vehicle_id" +
-                                                    " employee_id=@employee_id, date=@date, time_start=@time_start, time_end=@time_end" +
+                                                    " employee_id=@employee_id, date_start=@date_start, date_end=@date_end" +
                                                      "WHERE id = 1", MysqlDbc.Instance.getConn());
 
             sqlComm.Parameters.Add("@description", MySqlDbType.Text).Value = fertilisingjob.Description;
@@ -236,9 +234,8 @@ namespace JustRipeFarm.ClassEntity
             sqlComm.Parameters.Add("@crop_id", MySqlDbType.UInt32).Value = fertilisingjob.Crop_id;
             sqlComm.Parameters.Add("@vehicle_id", MySqlDbType.UInt32).Value = fertilisingjob.Vehicle_id;
             sqlComm.Parameters.Add("@employee_id", MySqlDbType.UInt32).Value = fertilisingjob.Employee_id;
-            sqlComm.Parameters.Add("@date", MySqlDbType.Date).Value = fertilisingjob.Date;
-            sqlComm.Parameters.Add("@time_start", MySqlDbType.Time).Value = fertilisingjob.Time_start;
-            sqlComm.Parameters.Add("@time_end", MySqlDbType.Time).Value = fertilisingjob.Time_end;
+            sqlComm.Parameters.Add("@date_start", MySqlDbType.Time).Value = fertilisingjob.Date_start;
+            sqlComm.Parameters.Add("@date_end", MySqlDbType.Time).Value = fertilisingjob.Date_end;
 
             return sqlComm.ExecuteNonQuery();
         }
@@ -247,7 +244,7 @@ namespace JustRipeFarm.ClassEntity
         {
             MySqlCommand sqlComm = new MySqlCommand("UPDATE" + " pesticejob SET description=@description,  pesticide_id_id=@pesticide_id, quantity_kg=@quantity_kg," +
                                                     " sowingJob_id=@sowing_id, farm_id=@farm_id, crop_id=@crop_id, vehicle_id=@vehicle_id" +
-                                                    " employee_id=@employee_id, date=@date, time_start=@time_start, time_end=@time_end" +
+                                                    " employee_id=@employee_id, date_start=@date_start, date_start=@date_end" +
                                                      "WHERE id = 1", MysqlDbc.Instance.getConn());
 
             sqlComm.Parameters.Add("@description", MySqlDbType.Text).Value = pesticidejob.Description;
@@ -258,9 +255,8 @@ namespace JustRipeFarm.ClassEntity
             sqlComm.Parameters.Add("@crop_id", MySqlDbType.UInt32).Value = pesticidejob.Crop_id;
             sqlComm.Parameters.Add("@vehicle_id", MySqlDbType.UInt32).Value = pesticidejob.Vehicle_id;
             sqlComm.Parameters.Add("@employee_id", MySqlDbType.UInt32).Value = pesticidejob.Employee_id;
-            sqlComm.Parameters.Add("@date", MySqlDbType.Date).Value = pesticidejob.Date;
-            sqlComm.Parameters.Add("@time_start", MySqlDbType.Time).Value = pesticidejob.Time_start;
-            sqlComm.Parameters.Add("@time_end", MySqlDbType.Time).Value = pesticidejob.Time_end;
+            sqlComm.Parameters.Add("@date_start", MySqlDbType.Date).Value = pesticidejob.Date_start;
+            sqlComm.Parameters.Add("@date_end", MySqlDbType.Date).Value = pesticidejob.Date_end;
 
             return sqlComm.ExecuteNonQuery();
         }
@@ -312,256 +308,4 @@ namespace JustRipeFarm.ClassEntity
             return sqlComm.ExecuteNonQuery();
         }
     }
-
-    /*public class UpdateOrder
-    {
-        public class BoxHandler
-        {
-            public int addNewBox(MySqlConnection conn, Box box)
-            {
-                string sql = " UPDATE Box (name, width, height, length, max_weight, quantity, status) "
-                            + " Values ('" + box.Name + "', " + box.Width + ", "
-                            + box.Height + ", " + box.Length + ", " + box.Max_weight + ", "
-                            + box.Quantity + ", )";
-
-                MySqlCommand sqlComm = new MySqlCommand(sql, conn);
-                return sqlComm.ExecuteNonQuery();
-            }
-        }
-
-        public class OrderHandler
-        {
-            public int addNewOrder(MySqlConnection conn, Order order)
-            {
-                string sql = "UPDATE orders (description, product_id, quantity_box, weight, palletAllocation, " +
-                    "                               customer_id, order_date, collection_date, price, status, remark) "
-                            + " Values ('" + order.Description + "', " + order.Product_id + ", " + order.Quantity_box + ", "
-                            + order.Weight + " , '" + order.PalletAllocation + "', " + order.Customer_id + " , "
-                            + order.Order_date.ToString("yyyy-MM-dd") + " ," + order.Collection_date.ToString("yyyy-MM-dd") + " , "
-                            + order.Price + ", '" + order.Status + "' , '" + order.Remark + "' )";
-
-                MySqlCommand sqlComm = new MySqlCommand(sql, conn);
-                return sqlComm.ExecuteNonQuery();
-            }
-        }
-        public class ProductHandler
-        {
-            public int addNewProduct(MySqlConnection conn, Product product)
-            {
-                string sql = "UPDATE product (name, type, quantity_box, weight, box_id) "
-                            + " Values ('" + product.Name + "', '" + product.Type + "', " + product.Quantity_box + " , "
-                            + product.Weight + " , " + product.Box_id + "`)";
-
-                MySqlCommand sqlComm = new MySqlCommand(sql, conn);
-                return sqlComm.ExecuteNonQuery();
-            }
-        }
-
-        public class FarmHandler
-        {
-            public int addNewFarm(MySqlConnection conn, Farm farm)
-            {
-                string sql = "UPDATE farm (description, area, utilize_area) "
-                            + " Values ('" + farm.Description + "', '" + farm.Area + "', '" + farm.Utilize_area + "')";
-
-                MySqlCommand sqlComm = new MySqlCommand(sql, conn);
-                return sqlComm.ExecuteNonQuery();
-            }
-        }
-
-        public class EmployeeHandler
-        {
-            public int addNewEmployee(MySqlConnection conn, Employee employee)
-            {
-                string sql = "UPDATE employee (first_name, last_name, username, password, dob, " +
-                                                     "mobile, email, admin, status, remark) "
-                            + " Values ('" + employee.First_name + "', '" + employee.Last_name + "', '" + employee.Username + "' , '"
-                            + employee.Password + "' , " + employee.Dob + " , '" + employee.Mobile + "' , " + employee.Admin + " , '"
-                            + employee.Status + "' , '" + employee.Remark + "')";
-
-                MySqlCommand sqlComm = new MySqlCommand(sql, conn);
-                return sqlComm.ExecuteNonQuery();
-            }
-        }
-
-        public class CustomerHandler
-        {
-            public int addNewCustomer(MySqlConnection conn, Customer customer)
-            {
-                string sql = "UPDATE customer (name, email, phone, remark) "
-                            + " Values ('" + customer.Name + "', '" + customer.Email + "', '" + customer.Phone + "' , '"
-                            + customer.Remark + "')";
-
-                MySqlCommand sqlComm = new MySqlCommand(sql, conn);
-                return sqlComm.ExecuteNonQuery();
-            }
-        }
-
-        public class StoreroomHandler
-        {
-            public int addNewStore(MySqlConnection conn, Storeroom storeroom)
-            {
-                string sql = "UPDATE storeroom (description, storingQty, temperature, availability) "
-                            + " Values ('" + storeroom.Description + "', " + storeroom.StoringQty + ", " + storeroom.Temperature + " , '"
-                            + storeroom.Availability + "')";
-
-                MySqlCommand sqlComm = new MySqlCommand(sql, conn);
-                return sqlComm.ExecuteNonQuery();
-            }
-        }
-
-        public class CropHandler
-        {
-            public int addNewCrop(MySqlConnection conn, Crop crop)
-            {
-                string sql = "UPDATE crop (name, type, quantity_plot, remark) "
-                            + " Values ('" + crop.Name + "', '" + crop.Type + "', " + crop.Quantity_plot + " , '"
-                            + crop.Remark + "')";
-
-                MySqlCommand sqlComm = new MySqlCommand(sql, conn);
-                return sqlComm.ExecuteNonQuery();
-            }
-        }
-
-        public class VehicleHandler
-        {
-            public int addNewVehicle(MySqlConnection conn, Vehicle vehicle)
-            {
-                string sql = "UPDATE vehicle (name, serial_number, buy_date, last_service_date, remark) "
-                            + " Values ('" + vehicle.Name + "', " + vehicle.Serial_number + ", "
-                            + vehicle.Buy_date.ToString("yyyy-MM-dd") + " , "
-                            + vehicle.Last_service_date.ToString("yyyy-MM-dd") + " , '" + vehicle.Remark + "')";
-
-                MySqlCommand sqlComm = new MySqlCommand(sql, conn);
-                return sqlComm.ExecuteNonQuery();
-            }
-        }
-
-        public class BoxStorageHandler
-        {
-            public int addNewBoxStorage(MySqlConnection conn, BoxStorage boxstorage)
-            {
-                string sql = "UPDATE boxStorage (storingJob_id, product_id, box_id, nettWeight, storeroom_id" +
-                             " add_date, best_before, out_date, order_id) "
-                            + " Values (" + boxstorage.StoringJob_id + ", " + boxstorage.Product_id + ", " + boxstorage.Box_id + " , "
-                            + boxstorage.NettWeight + " , " + boxstorage.Storeroom_id + " , "
-                            + boxstorage.Add_date.ToString("yyyy-MM-dd") + " , " + boxstorage.Best_before.ToString("yyyy-MM-dd") + " , "
-                            + boxstorage.Out_date.ToString("yyyy-MM-dd") + " , " + boxstorage.Order_id + " )";
-
-                MySqlCommand sqlComm = new MySqlCommand(sql, conn);
-                return sqlComm.ExecuteNonQuery();
-            }
-        }
-
-        public class SowingJobHandler
-        {
-            public int addNewSowingJob(MySqlConnection conn, SowingJob sowingjob)
-            {
-                string sql = "UPDATE sowingJob (description, crop_id, quantity_prop, farm_id, used_area, " +
-                             " vehicle_id, employee_id, date, time_start, time_end) "
-                            + " Values ('" + sowingjob.Description + "', " + sowingjob.Crop_id + ", " + sowingjob.Quantity_prop + " , "
-                            + sowingjob.Farm_id + " , '" + sowingjob.Used_area + "' , " + sowingjob.Vehicle_id + " , "
-                            + sowingjob.Employee_id + " , " + sowingjob.Date.ToString("yyyy-MM-dd") + " , "
-                            + sowingjob.Time_start.ToString("yyyy-MM-dd") + "," + sowingjob.Time_end.ToString("yyyy-MM-dd") + ")";
-
-                MySqlCommand sqlComm = new MySqlCommand(sql, conn);
-                return sqlComm.ExecuteNonQuery();
-            }
-        }
-
-        public class HarvestingJobHandler
-        {
-            public int addNewHarvestingJob(MySqlConnection conn, HarvestingJob harvestingjob)
-            {
-                string sql = "UPDATE harvestingJob (description, sowingJob_id, farm_id, crop_id, vehicle_id " +
-                             "est_quantity, harvested_quantity, employee_id, date, time_start, time_end) "
-                            + " Values ('" + harvestingjob.Description + "', " + harvestingjob.SowingJob_id + ", " + harvestingjob.Farm_id + " , "
-                            + harvestingjob.Crop_id + " , " + harvestingjob.Vehicle_id + " , " + harvestingjob.Est_quantity + " , "
-                            + harvestingjob.Harvested_quantity + " , " + harvestingjob.Employee_id + " , "
-                            + harvestingjob.Date.ToString("yyyy-MM-dd") + ", "
-                            + harvestingjob.Time_start.ToString("yyyy-MM-dd") + " , "
-                            + harvestingjob.Time_end.ToString("yyyy-MM-dd") + ")";
-
-                MySqlCommand sqlComm = new MySqlCommand(sql, conn);
-                return sqlComm.ExecuteNonQuery();
-            }
-        }
-
-        public class StoringJobHandler
-        {
-            public int addNewStoringJob(MySqlConnection conn, StoringJob storingjob)
-            {
-                string sql = "UPDATE storingJob (description, harvest_id, crop_id, box_id, quantity " +
-                             "vehicle_id, employee_id, date, time_start, time_end) "
-                            + " Values ('" + storingjob.Description + "', " + storingjob.Harvest_id + ", " + storingjob.Crop_id + " , "
-                            + storingjob.Box_id + " , " + storingjob.Quantity + " , " + storingjob.Vehicle_id + " , "
-                            + storingjob.Employee_id + " , " + storingjob.Date.ToString("yyyy-MM-dd") + ", "
-                            + storingjob.Time_start.ToString("yyyy-MM-dd") + " ,"
-                            + storingjob.Time_end.ToString("yyyy-MM-dd") + ")";
-
-                MySqlCommand sqlComm = new MySqlCommand(sql, conn);
-                return sqlComm.ExecuteNonQuery();
-            }
-        }
-
-        public class FertilisingJobHandler
-        {
-            public int addNewFertilisingJob(MySqlConnection conn, FertilisingJob fertilisingjob)
-            {
-                string sql = "UPDATE fertilisingJob (description, fertiliser_id, quantity_kg, sowingJob_id, farm_id" +
-                             "crop_id, vehicle_id, employee_id, date, time_start, time_end) "
-                            + " Values ('" + fertilisingjob.Description + "', " + fertilisingjob.Fertiliser_id + ", " + fertilisingjob.Quantity_kg + " , "
-                            + fertilisingjob.SowingJob_id + " , " + fertilisingjob.Farm_id + " , " + fertilisingjob.Crop_id + " , "
-                            + fertilisingjob.Vehicle_id + " , " + fertilisingjob.Employee_id + " , "
-                            + fertilisingjob.Date.ToString("yyyy-MM-dd") + " , "
-                            + fertilisingjob.Time_start.ToString("yyyy-MM-dd") + " , "
-                            + fertilisingjob.Time_end.ToString("yyyy-MM-dd") + ")";
-
-                MySqlCommand sqlComm = new MySqlCommand(sql, conn);
-                return sqlComm.ExecuteNonQuery();
-            }
-        }
-
-        public class PesticideJobHandler
-        {
-            public int addNewPesticideJob(MySqlConnection conn, PesticideJob pesticidejob)
-            {
-                string sql = "UPDATE pesticideJob (description, pesticide_id, quantity_kg, sowingJob_id, farm_id" +
-                             "crop_id, vehicle_id, employee_id, date, time_start, time_end) "
-                            + " Values ('" + pesticidejob.Description + "', " + pesticidejob.Pesticide_id + ", " + pesticidejob.Quantity_kg + " , "
-                            + pesticidejob.SowingJob_id + " , " + pesticidejob.Farm_id + " , " + pesticidejob.Crop_id + " , "
-                            + pesticidejob.Vehicle_id + " , " + pesticidejob.Employee_id + " , "
-                            + pesticidejob.Date.ToString("yyyy-MM-dd") + " , "
-                            + pesticidejob.Time_start.ToString("yyyy-MM-dd") + " , "
-                            + pesticidejob.Time_end.ToString("yyyy-MM-dd") + ")";
-
-                MySqlCommand sqlComm = new MySqlCommand(sql, conn);
-                return sqlComm.ExecuteNonQuery();
-            }
-        }
-
-        public class FertiliserHandler
-        {
-            public int addNewFertiliser(MySqlConnection conn, Fertiliser fertiliser)
-            {
-                string sql = "UPDATE pesticideJob (name, quantity_kg, remark) "
-                            + " Values ('" + fertiliser.Name + "', " + fertiliser.Quantity_kg + ", '" + fertiliser.Remark + "' )";
-
-                MySqlCommand sqlComm = new MySqlCommand(sql, conn);
-                return sqlComm.ExecuteNonQuery();
-            }
-        }
-
-        public class PesticideHandler
-        {
-            public int addNewPesticide(MySqlConnection conn, Pesticide pesticide)
-            {
-                string sql = "UPDATE pesticideJob (name, quantity_kg, remark) "
-                            + " Values ('" + pesticide.Name + "', " + pesticide.Quantity_kg + ", '" + pesticide.Remark + "' )";
-
-                MySqlCommand sqlComm = new MySqlCommand(sql, conn);
-                return sqlComm.ExecuteNonQuery();
-            }
-        }
-    }*/
 }

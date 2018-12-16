@@ -36,9 +36,8 @@ namespace JustRipeFarm
             sj.Quantity = int.Parse(textBox5.Text);
             sj.Vehicle_id = int.Parse(textBox6.Text);
             sj.Employee_id = int.Parse(textBox7.Text);
-            sj.Date = Convert.ToDateTime(dateTimePicker1.Text);
-            sj.Time_start = Convert.ToDateTime(dateTimePicker2.Text);
-            sj.Time_end = Convert.ToDateTime(dateTimePicker3.Text);
+            sj.Date_start = Convert.ToDateTime(dateTimePicker1.Text);
+            sj.Date_end = Convert.ToDateTime(dateTimePicker2.Text);
 
             InsertSQL addHnd = new InsertSQL();
             int addrecord = addHnd.addNewStoringJob(sj);
@@ -56,9 +55,8 @@ namespace JustRipeFarm
             sj.Quantity = int.Parse(textBox5.Text);
             sj.Vehicle_id = int.Parse(textBox6.Text);
             sj.Employee_id = int.Parse(textBox7.Text);
-            sj.Date = Convert.ToDateTime(dateTimePicker1.Text);
-            sj.Time_start = Convert.ToDateTime(dateTimePicker2.Text);
-            sj.Time_end = Convert.ToDateTime(dateTimePicker3.Text);
+            sj.Date_start = Convert.ToDateTime(dateTimePicker1.Text);
+            sj.Date_end = Convert.ToDateTime(dateTimePicker2.Text);
 
             UpdateSQL update = new UpdateSQL();
             update.updateStoringJob(sj);
@@ -79,9 +77,8 @@ namespace JustRipeFarm
                 textBox5.Text = sj.Quantity.ToString();
                 textBox6.Text = sj.Vehicle_id.ToString();
                 textBox7.Text = sj.Employee_id.ToString();
-                dateTimePicker1.Text = sj.Date.ToString();
-                dateTimePicker2.Text = sj.Time_start.ToString();
-                dateTimePicker3.Text = sj.Time_end.ToString();
+                dateTimePicker1.Value = sj.Date_start;
+                dateTimePicker2.Value = sj.Date_end;
             }
         }
 
@@ -113,10 +110,6 @@ namespace JustRipeFarm
                                             {
                                                 if (String.IsNullOrEmpty(dateTimePicker2.Text))
                                                 {
-                                                    if (String.IsNullOrEmpty(dateTimePicker3.Text))
-                                                    {
-                                                        MessageBox.Show("Please fill up the box");
-                                                    }
                                                     MessageBox.Show("Please fill up the box");
                                                 }
                                                 MessageBox.Show("Please fill up the box");

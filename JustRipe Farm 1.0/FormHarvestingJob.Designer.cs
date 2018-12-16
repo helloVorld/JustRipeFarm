@@ -241,6 +241,22 @@
             this.dtpEnd.Size = new System.Drawing.Size(230, 22);
             this.dtpEnd.TabIndex = 129;
             // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(155, 329);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(230, 22);
+            this.dateTimePicker2.TabIndex = 154;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(43, 329);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(70, 17);
+            this.label10.TabIndex = 153;
+            this.label10.Text = "Date end:";
+            // 
             // FormHarvestingJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
