@@ -9,6 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data;
 using JustRipeFarm.ClassEntity;
+// itext stuff
+// Toolx > NuGet Packages Manager > package manager console
+// go down see package manager console
+// PM> Install-Package iTextSharp -Version 5.5.13
+// enter then done
+using iTextSharp.text.pdf;
+using iTextSharp.text;
+using System.IO;
+
 
 
 namespace JustRipeFarm
@@ -299,6 +308,54 @@ namespace JustRipeFarm
         private void btnReset_Click(object sender, EventArgs e)
         {
             //reset all combo box field
+            //Creating iTextSharp Table from the DataTable data
+            PdfPTable pdfTable = new PdfPTable(dgvDbTable.ColumnCount);
+            pdfTable.DefaultCell.Padding = 3;
+            pdfTable.WidthPercentage = 80;
+            pdfTable.HorizontalAlignment = Element.ALIGN_CENTER;
+            pdfTable.DefaultCell.BorderWidth = 1;
+            
+
+            //Adding Header row
+            foreach (DataGridViewColumn column in dgvDbTable.Columns)
+            {
+                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                //cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
+                cell.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);
+                //cell.BorderWidth = 
+                pdfTable.AddCell(cell);
+            }
+
+            //Adding DataRow
+            foreach (DataGridViewRow row in dgvDbTable.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    try
+                    {
+                        pdfTable.AddCell(cell.Value.ToString());
+                    }
+                    catch { }
+                }
+            }
+
+            //Exporting to PDF
+            string folderPath = "C:\\Reports\\";
+            
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+            using (FileStream stream = new FileStream(folderPath + "DataGridViewExport.pdf", FileMode.Create))
+            {
+                Document pdfDoc = new Document(PageSize.A2, 10f, 10f, 10f, 0f);
+                PdfWriter.GetInstance(pdfDoc, stream);
+                pdfDoc.Open();
+                pdfDoc.Add(pdfTable);
+                pdfDoc.Close();
+                stream.Close();
+            }
+            System.Diagnostics.Process.Start(folderPath + "DataGridViewExport.pdf");
         }
 
         private void btnUpdateField_Click(object sender, EventArgs e)
@@ -373,6 +430,7 @@ namespace JustRipeFarm
                 btnUpdateField.Hide();
                 lblUpdateField.Hide();
                 cbUpdateField.Hide();
+                btnReset.Hide();
             }
         }
 
