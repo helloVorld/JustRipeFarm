@@ -581,7 +581,7 @@ namespace JustRipeFarm.ClassEntity
             MySqlDataReader rdr = null;
             try
             {
-                
+
 
                 string stm = "SELECT * FROM crop";
                 MySqlCommand cmd = new MySqlCommand(stm, MysqlDbc.Instance.getConn());
@@ -596,9 +596,9 @@ namespace JustRipeFarm.ClassEntity
                     cr.Quantity_plot = rdr.GetInt32("quantity_plot");
                     cr.Remark = rdr.GetString("remark");
 
-                    Console.WriteLine("crop => "+cr);
+                    Console.WriteLine("crop => " + cr);
                     cropLists.Add(cr);
-                    
+
                 }
 
             }
@@ -619,55 +619,53 @@ namespace JustRipeFarm.ClassEntity
             return cropLists;
         }
 
-        //public List<Employee> GetEmployeeList()
-        //{
-        //    List<Employee> employeeLists = new List<Employee>();
-        //    MySqlDataReader rdr = null;
-        //    try
-        //    {
+        public List<Employee> GetEmployeeList()
+        {
+            List<Employee> employeeLists = new List<Employee>();
+            MySqlDataReader rdr = null;
+            try
+            {
 
 
-        //        string stm = "SELECT * FROM employee";
-        //        MySqlCommand cmd = new MySqlCommand(stm, MysqlDbc.Instance.getConn());
-        //        rdr = cmd.ExecuteReader();
+                string stm = "SELECT * FROM employee";
+                MySqlCommand cmd = new MySqlCommand(stm, MysqlDbc.Instance.getConn());
+                rdr = cmd.ExecuteReader();
 
-        //        while (rdr.Read())
-        //        {
-        //            Employee emp = new Employee();
-        //            emp.Id = rdr.GetInt32("id");
-        //            emp.First_name = rdr.GetString("first_name");
-        //            emp.Last_name = rdr.GetString("last_name");
-        //            emp.Username = rdr.GetString("username");
-        //            emp.Password = rdr.GetString("password");
-        //            emp.Dob = rdr.GetDateTime("dob");
-        //            emp.Mobile = rdr.GetString("mobile");
-        //            emp.Email = rdr.GetString("email");
-        //            emp.Admin = rdr.GetBoolean("admin");
-        //            emp.Status = rdr.GetString("status");
-        //            emp.Remark = rdr.GetString("remark");
+                while (rdr.Read())
+                {
+                    Employee emp = new Employee();
+                    emp.Id = rdr.GetInt32("id");
+                    emp.First_name = rdr.GetString("first_name");
+                    emp.Last_name = rdr.GetString("last_name");
+                    emp.Username = rdr.GetString("username");
+                    emp.Password = rdr.GetString("password");
+                    emp.Dob = rdr.GetDateTime("dob");
+                    emp.Mobile = rdr.GetString("mobile");
+                    emp.Email = rdr.GetString("email");
+                    emp.Admin = rdr.GetBoolean("admin");
+                    emp.Status = rdr.GetString("status");
+                    emp.Remark = rdr.GetString("remark");
+                    employeeLists.Add(emp);
 
-        //            //Console.WriteLine("crop => " + cr);
-        //            employeeLists.Add(emp);
+                }
 
-        //        }
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
 
-        //    }
-        //    catch (MySqlException ex)
-        //    {
-        //        Console.WriteLine("Error: {0}", ex.ToString());
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
 
-        //    }
-        //    finally
-        //    {
-        //        if (rdr != null)
-        //        {
-        //            rdr.Close();
-        //        }
+            }
 
-        //    }
-
-        //    return employeeLists;
-        //}
+            return employeeLists;
+        }
 
         public List<Farm> GetFarmList()
         {
@@ -782,10 +780,7 @@ namespace JustRipeFarm.ClassEntity
                     sj1.Employee_id = rdr.GetInt32("employee_id");
                     sj1.Date_start = rdr.GetDateTime("date_start");
                     sj1.Date_end = rdr.GetDateTime("date_end");
-                    //sj1.Time_start = rdr.GetDateTime("time_start");
-                    //sj1.Time_end = rdr.GetDateTime("time_end");
 
-                    //Console.WriteLine("crop => " + cr);
                     sowingLists.Add(sj1);
 
                 }
