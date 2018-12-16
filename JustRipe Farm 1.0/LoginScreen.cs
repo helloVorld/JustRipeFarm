@@ -51,20 +51,18 @@ namespace JustRipeFarm
                 {
                     goToDashBoard(true);
                 }
-                else if(em.Admin == false)
-                {
-                    goToDashBoard(false);
-                }
                 else
-                {
-                    MessageBox.Show("No User in my system!!");
+                    goToDashBoard(false);
+                //else
+                //{
+                //    MessageBox.Show("No User in my system!!");
                 }
-            }
-            else
-            {
-                //show default login error message 
-                MessageBox.Show("Login Error!");
-            }
+            //}
+            //else
+            //{
+            //    //show default login error message 
+            //    MessageBox.Show("Login Error!");
+            //}
 
             //Mainscreen mainscreen = new Mainscreen();
             //mainscreen.Show();
