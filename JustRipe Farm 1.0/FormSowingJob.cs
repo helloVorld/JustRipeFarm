@@ -14,12 +14,11 @@ namespace JustRipeFarm
 {
     public partial class FormSowingJob : Form
     {
-        CheckingSQL csql = new CheckingSQL();
         // prepare variable for storing list<class>
         List<Crop> cropLists;
         List<Vehicle> vehicleList;
         List<Farm> farmLists;
-        List<SowingJob> sowingJob;
+        List<SowingJob> sowingLists;
         List<Employee> employeeList;
         public string state = "";
         public SowingJob sowj;
@@ -75,27 +74,34 @@ namespace JustRipeFarm
                 }
                 else
                 {
+                    //add();
                     checkAsignJobandAdd();
+
                 }
             }
         }
         public void add()
         {
+            checkAsignJobandAdd();
             SowingJob s1 = new SowingJob();
             s1.Description = tbDescription.Text;
-            s1.Crop_id = Int32.Parse(cbCrop.Text);
+            string idStr = cbCrop.Text.Split('.')[0];
+            s1.Crop_id = int.Parse(idStr);
             s1.Quantity_prop = Int32.Parse(nUDQty.Text);
-            s1.Farm_id = Int32.Parse(cbFarm.Text);
+            string idStr1 = cbFarm.Text.Split('.')[0];
+            s1.Farm_id = int.Parse(idStr1);
             s1.Used_area = nUDArea.Text;
-            s1.Vehicle_id = Int32.Parse(cbVehicle.Text);
-            s1.Employee_id = Int32.Parse(cbEmployee.Text);
+            string idStr2 = cbVehicle.Text.Split('.')[0];
+            s1.Vehicle_id = int.Parse(idStr2);
+            string idStr3 = cbEmployee.Text.Split('.')[0];
+            s1.Employee_id = int.Parse(idStr3);
             s1.Date_start = this.dtpDate.Value;
             s1.Date_end = this.dtpDateEnd.Value;
-            
+            //s1.Employee_id = Int32.Parse(cbEmployee.Text);
 
             InsertSQL add = new InsertSQL();
             int addrecord = add.addNewSowingJob(s1);
-            MessageBox.Show("Seccuess!!");
+            MessageBox.Show("Success!!");
             this.Close();
         }
 
@@ -103,21 +109,23 @@ namespace JustRipeFarm
         {
             SowingJob s1 = new SowingJob();
             s1.Description = tbDescription.Text;
-            s1.Crop_id = int.Parse(cbCrop.Text);
+            string idStr = cbCrop.Text.Split('.')[0];
+            s1.Crop_id = int.Parse(idStr);
             s1.Quantity_prop = int.Parse(nUDQty.Text);
-            s1.Farm_id = int.Parse(cbFarm.Text);
+            string idStr1 = cbFarm.Text.Split('.')[0];
+            s1.Farm_id = int.Parse(idStr1);
             s1.Used_area = nUDArea.Text;
-            s1.Vehicle_id = int.Parse(cbVehicle.Text);
-            string idStr = cbEmployee.Text.Split('.')[0];
-            s1.Employee_id = int.Parse(idStr);
-            //s1.Employee_id = int.Parse(cbEmployee.Text);
+            string idStr2 = cbVehicle.Text.Split('.')[0];
+            s1.Vehicle_id = int.Parse(idStr2);
+            string idStr3 = cbEmployee.Text.Split('.')[0];
+            s1.Employee_id = int.Parse(idStr3);
             s1.Date_start = this.dtpDate.Value;
             s1.Date_end = this.dtpDateEnd.Value;
            
 
             UpdateSQL add = new UpdateSQL();
             int addrecord = add.UpdateSowingJob(s1);
-            MessageBox.Show("Seccuess!!");
+            MessageBox.Show("Success!!");
             this.Close();
         }
 
@@ -129,7 +137,6 @@ namespace JustRipeFarm
         private void FormSowingJob_Load(object sender, EventArgs e)
         {
             InsertSQL sowing = new InsertSQL();
-            //productLists = order1.GetPorductList();
 
             if (state == "Edit")
             {
@@ -167,22 +174,23 @@ namespace JustRipeFarm
             employeeList = ts.GetEmployeeList();
             farmLists = ts.GetFarmList();
             vehicleList = ts.GetVehicleList();
+            //sowingLists = ts.GetSowingJobList();
             SowingJob sj11 = new SowingJob();
 
             //    // 5.
             foreach (Crop crop in cropLists)
             {
 
-                cbCrop.Items.Add(crop.Id );
-                cbCrop.Items.Add(crop.Name);
+                string showText = crop.Id + ". " + crop.Name;
+                cbCrop.Items.Add(showText);
 
             }
 
             foreach (Vehicle vehicle in vehicleList)
             {
 
-                cbVehicle.Items.Add(vehicle.Id);
-                cbVehicle.Items.Add(vehicle.Name);
+                string showText = vehicle.Id + ". " + vehicle.Name;
+                cbVehicle.Items.Add(showText);
 
             }
 
@@ -192,18 +200,16 @@ namespace JustRipeFarm
                 {
                     string showText = employee.Id + ". " + employee.Username;
                     cbEmployee.Items.Add(showText);
-
-                    //cbEmployee.Items.Add(employee.Id);
-                    //cbEmployee.Items.Add(employee.Username);
                 }
 
             }
 
             foreach (Farm farm in farmLists)
             {
-
-                cbFarm.Items.Add(farm.Id);
-                cbFarm.Items.Add(farm.Description);
+                string showText = farm.Id + ". " + farm.Description;
+                cbFarm.Items.Add(showText);
+                //cbFarm.Items.Add(farm.Id);
+                //cbFarm.Items.Add(farm.Description);
             }
         }
 
@@ -213,30 +219,36 @@ namespace JustRipeFarm
             //string tableName = "sowingJob";
             //string query = "SELECT * FROM " + tableName;
             //MySqlCommand cmd = new MySqlCommand(query, MysqlDbc.Instance.getConn());
-
             TestSQL ts = new TestSQL();
             cropLists = ts.GetCropList();
             employeeList = ts.GetEmployeeList();
             farmLists = ts.GetFarmList();
             vehicleList = ts.GetVehicleList();
+            sowingLists = ts.GetSowingJobList();
 
             DateTime start_date = Convert.ToDateTime("12/12/2018");
             DateTime end_date = Convert.ToDateTime("12/12/2018");
-            DateTime currentDate = Convert.ToDateTime(DateTime.Now.ToString("MMM/dd/yyyy"));
+            DateTime currentDate = Convert.ToDateTime(DateTime.Now.ToString("MM/dd/yyyy"));
             int duration = 0; int todayduration = 0;
             foreach (Employee employee in employeeList)
             {
-                MySqlDataReader drrr = csql.getsowinginfo(employee.Id.ToString());
-                if (drrr.Read())
+                foreach(SowingJob sowing in sowingLists)
                 {
-                    start_date = Convert.ToDateTime(drrr[8].ToString());
-                    end_date = Convert.ToDateTime(drrr[7].ToString());
+                    start_date = Convert.ToDateTime(sowing.Date_start.ToString());
+                    //start_date = DateTime.ParseExact(, "MM/dd/yyyy", null);
+                    end_date = Convert.ToDateTime(sowing.Date_end.ToString());
+                    //end_date = DateTime.ParseExact(this.dtpDateEnd.ToString(), "MM/dd/yyyy", null);
                     duration = Convert.ToInt32((end_date - start_date).TotalDays);
                     todayduration = Convert.ToInt32((currentDate - start_date).TotalDays);
                     if (duration < todayduration)
                     {
                         cbEmployee.Items.Add(employee.Id.ToString());
-                        add();
+                        //add();
+                        MessageBox.Show("yes");
+                    }
+                    else
+                    {
+                        MessageBox.Show("no");
                     }
                 }
             }

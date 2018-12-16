@@ -755,7 +755,7 @@ namespace JustRipeFarm.ClassEntity
             return vehicleLists;
         }
 
-        public List<SowingJob> GetSowingJobList()
+        public List<SowingJob> GetSowingJobList() //string employee_id
         {
             List<SowingJob> sowingLists = new List<SowingJob>();
             MySqlDataReader rdr = null;

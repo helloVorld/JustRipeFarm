@@ -56,7 +56,6 @@
     <Compile Include="AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClassEntity\CheckingSQL.cs" />
     <Compile Include="ClassEntity\InsertSQL.cs" />
     <Compile Include="ClassEntity\Box.cs" />
     <Compile Include="ClassEntity\BoxStorage.cs" />

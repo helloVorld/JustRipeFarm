@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -43,52 +41,34 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnDone = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.dtpTimeEnd = new System.Windows.Forms.DateTimePicker();
-            this.dtpTimeStart = new System.Windows.Forms.DateTimePicker();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.cbSoj = new System.Windows.Forms.ComboBox();
+            this.cbFarm = new System.Windows.Forms.ComboBox();
+            this.cbCrop = new System.Windows.Forms.ComboBox();
+            this.cbVehicle = new System.Windows.Forms.ComboBox();
+            this.cbEmployee = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
             // 
-            // dateTimePicker1
+            // dtpStart
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(158, 288);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(230, 22);
-            this.dateTimePicker1.TabIndex = 110;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(46, 346);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(71, 17);
-            this.label11.TabIndex = 109;
-            this.label11.Text = "Date End:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(46, 318);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(77, 17);
-            this.label10.TabIndex = 108;
-            this.label10.Text = "Time Start:";
+            this.dtpStart.Location = new System.Drawing.Point(158, 288);
+            this.dtpStart.Name = "dtpStart";
+            this.dtpStart.Size = new System.Drawing.Size(230, 22);
+            this.dtpStart.TabIndex = 110;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(46, 288);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(42, 17);
+            this.label7.Size = new System.Drawing.Size(76, 17);
             this.label7.TabIndex = 105;
-            this.label7.Text = "Date:";
+            this.label7.Text = "Date Start:";
             // 
             // label8
             // 
@@ -191,61 +171,6 @@
             this.textBox1.Size = new System.Drawing.Size(100, 22);
             this.textBox1.TabIndex = 111;
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(158, 44);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 112;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(158, 78);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 113;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(158, 112);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 114;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(158, 144);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 22);
-            this.textBox5.TabIndex = 115;
-            // 
-            // dtpTimeEnd
-            // 
-            this.dtpTimeEnd.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpTimeEnd.Location = new System.Drawing.Point(158, 355);
-            this.dtpTimeEnd.Margin = new System.Windows.Forms.Padding(4);
-            this.dtpTimeEnd.Name = "dtpTimeEnd";
-            this.dtpTimeEnd.ShowUpDown = true;
-            this.dtpTimeEnd.Size = new System.Drawing.Size(160, 22);
-            this.dtpTimeEnd.TabIndex = 120;
-            // 
-            // dtpTimeStart
-            // 
-            this.dtpTimeStart.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpTimeStart.Location = new System.Drawing.Point(158, 320);
-            this.dtpTimeStart.Margin = new System.Windows.Forms.Padding(4);
-            this.dtpTimeStart.Name = "dtpTimeStart";
-            this.dtpTimeStart.ShowUpDown = true;
-            this.dtpTimeStart.Size = new System.Drawing.Size(160, 22);
-            this.dtpTimeStart.TabIndex = 119;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(158, 257);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 22);
-            this.textBox6.TabIndex = 116;
-            // 
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(158, 179);
@@ -260,24 +185,78 @@
             this.numericUpDown2.Size = new System.Drawing.Size(120, 22);
             this.numericUpDown2.TabIndex = 122;
             // 
+            // cbSoj
+            // 
+            this.cbSoj.FormattingEnabled = true;
+            this.cbSoj.Location = new System.Drawing.Point(158, 44);
+            this.cbSoj.Name = "cbSoj";
+            this.cbSoj.Size = new System.Drawing.Size(121, 24);
+            this.cbSoj.TabIndex = 123;
+            // 
+            // cbFarm
+            // 
+            this.cbFarm.FormattingEnabled = true;
+            this.cbFarm.Location = new System.Drawing.Point(158, 78);
+            this.cbFarm.Name = "cbFarm";
+            this.cbFarm.Size = new System.Drawing.Size(121, 24);
+            this.cbFarm.TabIndex = 124;
+            // 
+            // cbCrop
+            // 
+            this.cbCrop.FormattingEnabled = true;
+            this.cbCrop.Location = new System.Drawing.Point(158, 109);
+            this.cbCrop.Name = "cbCrop";
+            this.cbCrop.Size = new System.Drawing.Size(121, 24);
+            this.cbCrop.TabIndex = 125;
+            // 
+            // cbVehicle
+            // 
+            this.cbVehicle.FormattingEnabled = true;
+            this.cbVehicle.Location = new System.Drawing.Point(158, 144);
+            this.cbVehicle.Name = "cbVehicle";
+            this.cbVehicle.Size = new System.Drawing.Size(121, 24);
+            this.cbVehicle.TabIndex = 126;
+            // 
+            // cbEmployee
+            // 
+            this.cbEmployee.FormattingEnabled = true;
+            this.cbEmployee.Location = new System.Drawing.Point(158, 254);
+            this.cbEmployee.Name = "cbEmployee";
+            this.cbEmployee.Size = new System.Drawing.Size(121, 24);
+            this.cbEmployee.TabIndex = 127;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(46, 331);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(71, 17);
+            this.label10.TabIndex = 128;
+            this.label10.Text = "Date End:";
+            // 
+            // dtpEnd
+            // 
+            this.dtpEnd.Location = new System.Drawing.Point(158, 326);
+            this.dtpEnd.Name = "dtpEnd";
+            this.dtpEnd.Size = new System.Drawing.Size(230, 22);
+            this.dtpEnd.TabIndex = 129;
+            // 
             // FormHarvestingJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(426, 450);
+            this.Controls.Add(this.dtpEnd);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.cbEmployee);
+            this.Controls.Add(this.cbVehicle);
+            this.Controls.Add(this.cbCrop);
+            this.Controls.Add(this.cbFarm);
+            this.Controls.Add(this.cbSoj);
             this.Controls.Add(this.numericUpDown2);
             this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.dtpTimeEnd);
-            this.Controls.Add(this.dtpTimeStart);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.dtpStart);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
@@ -300,9 +279,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DateTimePicker dtpStart;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -315,14 +292,14 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnDone;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.DateTimePicker dtpTimeEnd;
-        private System.Windows.Forms.DateTimePicker dtpTimeStart;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.ComboBox cbSoj;
+        private System.Windows.Forms.ComboBox cbFarm;
+        private System.Windows.Forms.ComboBox cbCrop;
+        private System.Windows.Forms.ComboBox cbVehicle;
+        private System.Windows.Forms.ComboBox cbEmployee;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DateTimePicker dtpEnd;
     }
 }

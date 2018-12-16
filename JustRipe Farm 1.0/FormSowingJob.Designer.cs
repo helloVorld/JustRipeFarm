@@ -56,7 +56,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(198, 508);
+            this.btnCancel.Location = new System.Drawing.Point(192, 451);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 28);
@@ -67,7 +67,7 @@
             // 
             // btnDone
             // 
-            this.btnDone.Location = new System.Drawing.Point(46, 508);
+            this.btnDone.Location = new System.Drawing.Point(62, 451);
             this.btnDone.Margin = new System.Windows.Forms.Padding(4);
             this.btnDone.Name = "btnDone";
             this.btnDone.Size = new System.Drawing.Size(100, 28);
