@@ -91,8 +91,7 @@ namespace JustRipeFarm
             s1.Employee_id = Int32.Parse(cbEmployee.Text);
             s1.Date_start = this.dtpDate.Value;
             s1.Date_end = this.dtpDateEnd.Value;
-            //s1.Time_start = Convert.ToDateTime(dtpTimeStart.Text);
-            //s1.Time_end = Convert.ToDateTime(dtpTimeEnd.Text);
+            
 
             InsertSQL add = new InsertSQL();
             int addrecord = add.addNewSowingJob(s1);
@@ -112,8 +111,7 @@ namespace JustRipeFarm
             s1.Employee_id = int.Parse(cbEmployee.Text);
             s1.Date_start = this.dtpDate.Value;
             s1.Date_end = this.dtpDateEnd.Value;
-            //s1.Time_start = Convert.ToDateTime(dtpTimeStart.Text);
-            //.Time_end = Convert.ToDateTime(dtpTimeEnd.Text);
+           
 
             UpdateSQL add = new UpdateSQL();
             int addrecord = add.UpdateSowingJob(s1);
@@ -144,32 +142,7 @@ namespace JustRipeFarm
                 dtpDateEnd.Value = sowj.Date_end;
             }
 
-            MySqlDataReader dr = csql.getcropinfo();
-            while (dr.Read())
-            {
-                cbCrop.Items.Add(dr[0].ToString());// get type of crop                    
-            }
 
-            DateTime start_date = Convert.ToDateTime("12/12/2018");
-            DateTime end_date = Convert.ToDateTime("12/12/2018");
-            DateTime currentDate = Convert.ToDateTime(DateTime.Now.ToString("MMM/dd/yyyy"));
-            int duration = 0; int todayduration = 0;
-            MySqlDataReader dr2 = csql.getempname();
-            while (dr2.Read())
-            {
-                MySqlDataReader drrr = csql.getsowinginfo(dr2[7].ToString());
-                if (drrr.Read())
-                {
-                    start_date = Convert.ToDateTime(drrr[8].ToString());
-                    end_date = Convert.ToDateTime(drrr[7].ToString());
-                    duration = Convert.ToInt32((end_date - start_date).TotalDays);
-                    todayduration = Convert.ToInt32((currentDate - start_date).TotalDays);
-                    if (duration < todayduration)
-                    {
-                        cbEmployee.Items.Add(dr2[1].ToString());
-                    }
-                }
-            }
             // when form loads, get all fields data from mysql
             // then store to a bunch of list<class>
             // then all combo boxes gets data from the list<class>
@@ -187,54 +160,49 @@ namespace JustRipeFarm
             // 8. load employee list to combo box 
 
             // 1. 
-            //TestSQL ts = new TestSQL();
-            //cropLists = ts.GetCropList();
-            //employeeList = ts.GetEmployeeList();
-            //farmLists = ts.GetFarmList();
-            //vehicleList = ts.GetVehicleList();
-            //SowingJob sj11 = new SowingJob();
+            TestSQL ts = new TestSQL();
+            cropLists = ts.GetCropList();
+            employeeList = ts.GetEmployeeList();
+            farmLists = ts.GetFarmList();
+            vehicleList = ts.GetVehicleList();
+            SowingJob sj11 = new SowingJob();
 
-            // 5.
-            //    foreach (Crop crop in cropLists)
-            //    {
-            //        //cbCrop.Items.Add(crop.Name);
+            //    // 5.
+            foreach (Crop crop in cropLists)
+            {
 
-            //        string tableName = "sowingjob";
-            //        string query = "SELECT id FROM " + tableName + " WHERE name = " + crop.Name;
-            //        MySqlCommand cmd = new MySqlCommand(query, MysqlDbc.Instance.getConn());
+                cbCrop.Items.Add(crop.Id );
+                cbCrop.Items.Add(crop.Name);
 
-            //        cbCrop.Items.Add(crop.Id + ". " + crop.Name);
+            }
 
-            //    }
+            foreach (Vehicle vehicle in vehicleList)
+            {
 
-            //    foreach (Vehicle vehicle in vehicleList)
-            //    {
+                cbVehicle.Items.Add(vehicle.Id);
+                cbVehicle.Items.Add(vehicle.Name);
 
-            //        cbVehicle.Items.Add(vehicle.Id.ToString() + ". " + vehicle.Name);
+            }
 
+            foreach (Employee employee in employeeList)
+            {
+                if (employee.Admin == false)
+                {
 
-            //    }
+                    cbEmployee.Items.Add(employee.Id);
+                    cbEmployee.Items.Add(employee.Username);
+                }
 
-            //    foreach (Employee employee in employeeList)
-            //    {
-            //        if (employee.Admin == false)
-            //        {
+            }
 
-            //            cbEmployee.Items.Add(employee.Id.ToString() + ". " + employee.Username);
+            foreach (Farm farm in farmLists)
+            {
 
-            //        }
-
-            //    }
-
-            //    foreach (Farm farm in farmLists)
-            //    {
-
-            //        cbFarm.Items.Add(farm.Id.ToString() + ". " + farm.Description);
-
-            //    }
+                cbFarm.Items.Add(farm.Id);
+                cbFarm.Items.Add(farm.Description);
+            }
         }
 
-        //public MySqlDataReader getsowing(string ) 
 
         public void checkAsignJobandAdd()
         {
@@ -242,7 +210,32 @@ namespace JustRipeFarm
             //string query = "SELECT * FROM " + tableName;
             //MySqlCommand cmd = new MySqlCommand(query, MysqlDbc.Instance.getConn());
 
-           
+            TestSQL ts = new TestSQL();
+            cropLists = ts.GetCropList();
+            employeeList = ts.GetEmployeeList();
+            farmLists = ts.GetFarmList();
+            vehicleList = ts.GetVehicleList();
+
+            DateTime start_date = Convert.ToDateTime("12/12/2018");
+            DateTime end_date = Convert.ToDateTime("12/12/2018");
+            DateTime currentDate = Convert.ToDateTime(DateTime.Now.ToString("MMM/dd/yyyy"));
+            int duration = 0; int todayduration = 0;
+            foreach (Employee employee in employeeList)
+            {
+                MySqlDataReader drrr = csql.getsowinginfo(employee.Id.ToString());
+                if (drrr.Read())
+                {
+                    start_date = Convert.ToDateTime(drrr[8].ToString());
+                    end_date = Convert.ToDateTime(drrr[7].ToString());
+                    duration = Convert.ToInt32((end_date - start_date).TotalDays);
+                    todayduration = Convert.ToInt32((currentDate - start_date).TotalDays);
+                    if (duration < todayduration)
+                    {
+                        cbEmployee.Items.Add(employee.Id.ToString());
+                        add();
+                    }
+                }
+            }
         }
 
         private void nUDQty_ValueChanged(object sender, EventArgs e)
@@ -256,3 +249,33 @@ namespace JustRipeFarm
         }
     }
 }
+//public void checkAsignJobandAdd()
+//{
+//    //string tableName = "sowingJob";
+//    //string query = "SELECT * FROM " + tableName;
+//    //MySqlCommand cmd = new MySqlCommand(query, MysqlDbc.Instance.getConn());
+
+
+
+//    DateTime start_date = Convert.ToDateTime("12/12/2018");
+//    DateTime end_date = Convert.ToDateTime("12/12/2018");
+//    DateTime currentDate = Convert.ToDateTime(DateTime.Now.ToString("MMM/dd/yyyy"));
+//    int duration = 0; int todayduration = 0;
+//    MySqlDataReader dr2 = csql.getempname();
+//    while (dr2.Read())
+//    {
+//        MySqlDataReader drrr = csql.getsowinginfo(dr2[7].ToString());
+//        if (drrr.Read())
+//        {
+//            start_date = Convert.ToDateTime(drrr[8].ToString());
+//            end_date = Convert.ToDateTime(drrr[7].ToString());
+//            duration = Convert.ToInt32((end_date - start_date).TotalDays);
+//            todayduration = Convert.ToInt32((currentDate - start_date).TotalDays);
+//            if (duration < todayduration)
+//            {
+//                cbEmployee.Items.Add(dr2[1].ToString());
+//                add();
+//            }
+//        }
+//    }
+//}
