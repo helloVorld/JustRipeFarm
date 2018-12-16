@@ -108,7 +108,9 @@ namespace JustRipeFarm
             s1.Farm_id = int.Parse(cbFarm.Text);
             s1.Used_area = nUDArea.Text;
             s1.Vehicle_id = int.Parse(cbVehicle.Text);
-            s1.Employee_id = int.Parse(cbEmployee.Text);
+            string idStr = cbEmployee.Text.Split('.')[0];
+            s1.Employee_id = int.Parse(idStr);
+            //s1.Employee_id = int.Parse(cbEmployee.Text);
             s1.Date_start = this.dtpDate.Value;
             s1.Date_end = this.dtpDateEnd.Value;
            
@@ -188,9 +190,11 @@ namespace JustRipeFarm
             {
                 if (employee.Admin == false)
                 {
+                    string showText = employee.Id + ". " + employee.Username;
+                    cbEmployee.Items.Add(showText);
 
-                    cbEmployee.Items.Add(employee.Id);
-                    cbEmployee.Items.Add(employee.Username);
+                    //cbEmployee.Items.Add(employee.Id);
+                    //cbEmployee.Items.Add(employee.Username);
                 }
 
             }
