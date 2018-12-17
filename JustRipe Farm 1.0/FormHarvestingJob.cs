@@ -158,6 +158,7 @@ namespace JustRipeFarm
                 employeeList = ts.GetEmployeeList();
                 farmLists = ts.GetFarmList();
                 vehicleList = ts.GetVehicleList();
+                sowingLists = ts.GetSowingJobList();
 
                 SowingJob sj11 = new SowingJob();
 

@@ -463,6 +463,8 @@ namespace JustRipeFarm
                         cbFilter1.Items.Add(str);
                     }
                     currentUpdateOption = JRF.OrderStatusOption();
+                    lblUpdateField.Hide();
+                    btnUpdateField.Hide();
                     foreach ( string str in currentUpdateOption)
                     {
                         cbUpdateField.Items.Add(str);
