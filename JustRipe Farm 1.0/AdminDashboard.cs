@@ -458,6 +458,8 @@ namespace JustRipeFarm
                     btnEditItem.Text = pnItems[0].BtnEdit;
                     btnUpdateField.Text = pnItems[0].BtnUpdate;
                     currentUpdateOption = JRF.OrderStatusOption();
+                    lblUpdateField.Hide();
+                    btnUpdateField.Hide();
                     foreach ( string str in currentUpdateOption)
                     {
                         cbUpdateField.Items.Add(str);
