@@ -13,6 +13,15 @@ namespace JustRipeFarm
 {
     public partial class FormPesticideJob : Form
     {
+        List<Crop> cropLists;
+        List<Vehicle> vehicleList;
+        List<Farm> farmLists;
+        List<SowingJob> sowingLists;
+        List<HarvestingJob> harvestLists;
+        List<Employee> employeeList;
+        List<Pesticide> pesticideList;
+        List<PesticideJob> pesticideLists;
+
         public string state = "";
         public PesticideJob pjj1;
         public FormPesticideJob()
@@ -29,19 +38,25 @@ namespace JustRipeFarm
         {
             PesticideJob pj = new PesticideJob();
             pj.Description = textBox1.Text;
-            pj.Pesticide_id = Convert.ToInt32(textBox2.Text);
+            string idStr = cbPesticide.Text.Split('.')[0];
+            pj.Pesticide_id = int.Parse(idStr);
             pj.Quantity_kg = int.Parse(textBox3.Text);
-            pj.SowingJob_id = int.Parse(textBox4.Text);
-            pj.Farm_id = int.Parse(textBox5.Text);
-            pj.Crop_id = int.Parse(textBox6.Text);
-            pj.Vehicle_id = int.Parse(textBox7.Text);
-            pj.Employee_id = int.Parse(textBox8.Text);
-            pj.Date_start = Convert.ToDateTime(dateTimePicker1.Text);
-            pj.Date_end = Convert.ToDateTime(dateTimePicker2.Text);
+            string idStr1 = cbSoj.Text.Split('.')[0];
+            pj.SowingJob_id = int.Parse(idStr1);
+            string idStr2 = cbFarm.Text.Split('.')[0];
+            pj.Farm_id = int.Parse(idStr2);
+            string idStr3 = cbVehicle.Text.Split('.')[0];
+            pj.Vehicle_id = int.Parse(idStr3);
+            string idStr4 = cbCrop.Text.Split('.')[0];
+            pj.Crop_id = int.Parse(idStr4);
+            string idStr5 = cbEmployee.Text.Split('.')[0];
+            pj.Employee_id = int.Parse(idStr5);
+            pj.Date_start = Convert.ToDateTime(dtpStart.Text);
+            pj.Date_end = Convert.ToDateTime(dtpEnd.Text);
 
             InsertSQL add = new InsertSQL();
             int addrecord = add.addNewPesticideJob(pj);
-            MessageBox.Show("Seccuess!!");
+            MessageBox.Show("Success!!");
             this.Close();
         }
 
@@ -49,19 +64,25 @@ namespace JustRipeFarm
         {
             PesticideJob pj = new PesticideJob();
             pj.Description = textBox1.Text;
-            pj.Pesticide_id = Convert.ToInt32(textBox2.Text);
+            string idStr = cbPesticide.Text.Split('.')[0];
+            pj.Pesticide_id = int.Parse(idStr);
             pj.Quantity_kg = int.Parse(textBox3.Text);
-            pj.SowingJob_id = int.Parse(textBox4.Text);
-            pj.Farm_id = int.Parse(textBox5.Text);
-            pj.Crop_id = int.Parse(textBox6.Text);
-            pj.Vehicle_id = int.Parse(textBox7.Text);
-            pj.Employee_id = int.Parse(textBox8.Text);
-            pj.Date_start = Convert.ToDateTime(dateTimePicker1.Text);
-            pj.Date_end = Convert.ToDateTime(dateTimePicker2.Text);
+            string idStr1 = cbSoj.Text.Split('.')[0];
+            pj.SowingJob_id = int.Parse(idStr1);
+            string idStr2 = cbFarm.Text.Split('.')[0];
+            pj.Farm_id = int.Parse(idStr2);
+            string idStr3 = cbVehicle.Text.Split('.')[0];
+            pj.Vehicle_id = int.Parse(idStr3);
+            string idStr4 = cbCrop.Text.Split('.')[0];
+            pj.Crop_id = int.Parse(idStr4);
+            string idStr5 = cbEmployee.Text.Split('.')[0];
+            pj.Employee_id = int.Parse(idStr5);
+            pj.Date_start = Convert.ToDateTime(dtpStart.Text);
+            pj.Date_end = Convert.ToDateTime(dtpEnd.Text);
 
             UpdateSQL hdl = new UpdateSQL();
             hdl.updatePesticideJob(pj);
-            MessageBox.Show("Seccuess!!");
+            MessageBox.Show("Success!!");
             this.Close();
         }
 
@@ -75,23 +96,23 @@ namespace JustRipeFarm
             {
                 if (String.IsNullOrEmpty(textBox1.Text))
                 {
-                    if (String.IsNullOrEmpty(textBox2.Text))
+                    if (String.IsNullOrEmpty(cbPesticide.Text))
                     {
                         if (String.IsNullOrEmpty(textBox3.Text))
                         {
-                            if (String.IsNullOrEmpty(textBox4.Text))
+                            if (String.IsNullOrEmpty(cbSoj.Text))
                             {
-                                if (String.IsNullOrEmpty(textBox5.Text))
+                                if (String.IsNullOrEmpty(cbFarm.Text))
                                 {
-                                    if (String.IsNullOrEmpty(textBox6.Text))
+                                    if (String.IsNullOrEmpty(cbCrop.Text))
                                     {
-                                        if (String.IsNullOrEmpty(textBox7.Text))
+                                        if (String.IsNullOrEmpty(cbVehicle.Text))
                                         {
-                                            if (String.IsNullOrEmpty(textBox8.Text))
+                                            if (String.IsNullOrEmpty(cbEmployee.Text))
                                             {
-                                                if (String.IsNullOrEmpty(dateTimePicker1.Text))
+                                                if (String.IsNullOrEmpty(dtpStart.Text))
                                                 {
-                                                    if (String.IsNullOrEmpty(dateTimePicker1.Text))
+                                                    if (String.IsNullOrEmpty(dtpStart.Text))
                                                     {
                                                         MessageBox.Show("Please fill up the box");
                                                     }
@@ -121,6 +142,42 @@ namespace JustRipeFarm
             
         }
 
+        public void checkAssignJobandAdd()
+        {
+
+            TestSQL ts = new TestSQL();
+            cropLists = ts.GetCropList();
+            employeeList = ts.GetEmployeeList();
+            farmLists = ts.GetFarmList();
+            vehicleList = ts.GetVehicleList();
+            pesticideLists = ts.GetPesticideJobList();
+
+            DateTime start_date = Convert.ToDateTime("12/12/2018");
+            DateTime end_date = Convert.ToDateTime("12/12/2018");
+            DateTime currentDate = Convert.ToDateTime(DateTime.Now.ToString("MM/dd/yyyy"));
+            int duration = 0; int todayduration = 0;
+            foreach (Employee employee in employeeList)
+            {
+                foreach (PesticideJob pesticide in pesticideLists)
+                {
+                    start_date = Convert.ToDateTime(pesticide.Date_start.ToString());
+                    end_date = Convert.ToDateTime(pesticide.Date_end.ToString());
+                    duration = Convert.ToInt32((end_date - start_date).TotalDays);
+                    todayduration = Convert.ToInt32((currentDate - start_date).TotalDays);
+                    if (duration < todayduration)
+                    {
+                        cbEmployee.Items.Add(employee.Id.ToString());
+                        //add();
+                        MessageBox.Show("yes");
+                    }
+                    else
+                    {
+                        MessageBox.Show("no");
+                    }
+                }
+            }
+        }
+
         private void FormPesticideJob_Load(object sender, EventArgs e)
         {
             InsertSQL pesticideJob = new InsertSQL();
@@ -128,15 +185,74 @@ namespace JustRipeFarm
             if (state == "Edit")
             {
                 textBox1.Text = pjj1.Description;
-                textBox2.Text = pjj1.Pesticide_id.ToString();
+                cbPesticide.Text = pjj1.Pesticide_id.ToString();
                 textBox3.Text = pjj1.Quantity_kg.ToString();
-                textBox4.Text = pjj1.SowingJob_id.ToString();
-                textBox5.Text = pjj1.Farm_id.ToString();
-                textBox6.Text = pjj1.Crop_id.ToString();
-                textBox7.Text = pjj1.Vehicle_id.ToString();
-                textBox8.Text = pjj1.Employee_id.ToString();
-                dateTimePicker1.Value = pjj1.Date_start;
-                dateTimePicker2.Value = pjj1.Date_end;
+                cbSoj.Text = pjj1.SowingJob_id.ToString();
+                cbFarm.Text = pjj1.Farm_id.ToString();
+                cbCrop.Text = pjj1.Crop_id.ToString();
+                cbVehicle.Text = pjj1.Vehicle_id.ToString();
+                cbEmployee.Text = pjj1.Employee_id.ToString();
+                dtpStart.Value = pjj1.Date_start;
+                dtpEnd.Value = pjj1.Date_end;
+
+                TestSQL ts = new TestSQL();
+                cropLists = ts.GetCropList();
+                employeeList = ts.GetEmployeeList();
+                farmLists = ts.GetFarmList();
+                vehicleList = ts.GetVehicleList();
+                pesticideList = ts.GetPesticideList();
+                sowingLists = ts.GetSowingJobList();
+                employeeList = ts.GetEmployeeList();
+
+                SowingJob sj11 = new SowingJob();
+
+                foreach (SowingJob sow in sowingLists)
+                {
+
+                    cbSoj.Items.Add(sow.Id);
+
+                }
+
+                foreach (Crop crop1 in cropLists)
+                {
+
+                    string showText = crop1.Id + ". " + crop1.Name;
+                    cbCrop.Items.Add(showText);
+
+                }
+
+                foreach (Pesticide pest in pesticideList)
+                {
+
+                    string showText = pest.Id + ". " + pest.Name;
+                    cbVehicle.Items.Add(showText);
+
+                }
+
+                foreach (Vehicle vehicle in vehicleList)
+                {
+
+                    string showText = vehicle.Id + ". " + vehicle.Name;
+                    cbVehicle.Items.Add(showText);
+
+                }
+
+                foreach (Employee employee in employeeList)
+                {
+                    if (employee.Admin == false)
+                    {
+                        string showText = employee.Id + ". " + employee.Username;
+                        cbEmployee.Items.Add(showText);
+                    }
+
+                }
+
+                foreach (Farm farm in farmLists)
+                {
+                    string showText = farm.Id + ". " + farm.Description;
+                    cbFarm.Items.Add(showText);
+                }
+            
             }
         }
     }

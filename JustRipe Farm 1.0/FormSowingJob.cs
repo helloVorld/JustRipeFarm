@@ -244,11 +244,11 @@ namespace JustRipeFarm
                     {
                         cbEmployee.Items.Add(employee.Id.ToString());
                         //add();
-                        MessageBox.Show("yes");
+                        //MessageBox.Show("yes");
                     }
                     else
                     {
-                        MessageBox.Show("no");
+                        //MessageBox.Show("no");
                     }
                 }
             }

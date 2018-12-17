@@ -13,6 +13,13 @@ namespace JustRipeFarm
 {
     public partial class FormStoringJob : Form
     {
+        List<Crop> cropLists;
+        List<Vehicle> vehicleList;
+        List<Farm> farmLists;
+        List<SowingJob> sowingLists;
+        List<HarvestingJob> harvestLists;
+        List<Employee> employeeList;
+        List<Box> boxList;
         public string state = "";
         public StoringJob sj;
 
@@ -30,14 +37,19 @@ namespace JustRipeFarm
         {
             StoringJob sj = new StoringJob();
             sj.Description = textBox1.Text;
-            sj.Harvest_id = int.Parse(textBox2.Text);
-            sj.Crop_id = int.Parse(textBox3.Text);
-            sj.Box_id = int.Parse(textBox4.Text);
+            string idStr = cbHarvest.Text.Split('.')[0];
+            sj.Harvest_id = int.Parse(idStr);
+            string idStr1 = cbCrop.Text.Split('.')[0];
+            sj.Crop_id = int.Parse(idStr1);
+            string idStr2 = cbBox.Text.Split('.')[0];
+            sj.Box_id = int.Parse(idStr2);
             sj.Quantity = int.Parse(textBox5.Text);
-            sj.Vehicle_id = int.Parse(textBox6.Text);
-            sj.Employee_id = int.Parse(textBox7.Text);
-            sj.Date_start = Convert.ToDateTime(dateTimePicker1.Text);
-            sj.Date_end = Convert.ToDateTime(dateTimePicker2.Text);
+            string idStr3 = cbVehicle.Text.Split('.')[0];
+            sj.Vehicle_id = int.Parse(idStr3);
+            string idStr4 = cbEmployee.Text.Split('.')[0];
+            sj.Employee_id = int.Parse(idStr4);
+            sj.Date_start = Convert.ToDateTime(dtpStart.Text);
+            sj.Date_end = Convert.ToDateTime(dtpEnd.Text);
 
             InsertSQL addHnd = new InsertSQL();
             int addrecord = addHnd.addNewStoringJob(sj);
@@ -49,14 +61,19 @@ namespace JustRipeFarm
         {
             StoringJob sj = new StoringJob();
             sj.Description = textBox1.Text;
-            sj.Harvest_id = int.Parse(textBox2.Text);
-            sj.Crop_id = int.Parse(textBox3.Text);
-            sj.Box_id = int.Parse(textBox4.Text);
+            string idStr = cbHarvest.Text.Split('.')[0];
+            sj.Harvest_id = int.Parse(idStr);
+            string idStr1 = cbCrop.Text.Split('.')[0];
+            sj.Crop_id = int.Parse(idStr1);
+            string idStr2 = cbBox.Text.Split('.')[0];
+            sj.Box_id = int.Parse(idStr2);
             sj.Quantity = int.Parse(textBox5.Text);
-            sj.Vehicle_id = int.Parse(textBox6.Text);
-            sj.Employee_id = int.Parse(textBox7.Text);
-            sj.Date_start = Convert.ToDateTime(dateTimePicker1.Text);
-            sj.Date_end = Convert.ToDateTime(dateTimePicker2.Text);
+            string idStr3 = cbVehicle.Text.Split('.')[0];
+            sj.Vehicle_id = int.Parse(idStr3);
+            string idStr4 = cbEmployee.Text.Split('.')[0];
+            sj.Employee_id = int.Parse(idStr4);
+            sj.Date_start = Convert.ToDateTime(dtpStart.Text);
+            sj.Date_end = Convert.ToDateTime(dtpEnd.Text);
 
             UpdateSQL update = new UpdateSQL();
             update.updateStoringJob(sj);
@@ -71,14 +88,104 @@ namespace JustRipeFarm
             if (state == "Edit")
             {
                 textBox1.Text = sj.Description;
-                textBox2.Text = sj.Harvest_id.ToString();
-                textBox3.Text = sj.Crop_id.ToString();
-                textBox4.Text = sj.Box_id.ToString();
+                cbHarvest.Text = sj.Harvest_id.ToString();
+                cbCrop.Text = sj.Crop_id.ToString();
+                cbBox.Text = sj.Box_id.ToString();
                 textBox5.Text = sj.Quantity.ToString();
-                textBox6.Text = sj.Vehicle_id.ToString();
-                textBox7.Text = sj.Employee_id.ToString();
-                dateTimePicker1.Value = sj.Date_start;
-                dateTimePicker2.Value = sj.Date_end;
+                cbVehicle.Text = sj.Vehicle_id.ToString();
+                cbEmployee.Text = sj.Employee_id.ToString();
+                dtpStart.Value = sj.Date_start;
+                dtpEnd.Value = sj.Date_end;
+
+                TestSQL ts = new TestSQL();
+                cropLists = ts.GetCropList();
+                employeeList = ts.GetEmployeeList();
+                vehicleList = ts.GetVehicleList();
+                boxList = ts.GetBoxList();
+                harvestLists = ts.GetHarvestingJobList();
+
+                SowingJob sj11 = new SowingJob();
+
+                foreach (HarvestingJob harvest in harvestLists)
+                {
+
+                    string showText = harvest.Id + ". " + harvest.Description;
+                    cbCrop.Items.Add(showText);
+
+                }
+
+                foreach (Box box in boxList)
+                {
+
+                    string showText = box.Id + ". " + box.Name;
+                    cbCrop.Items.Add(showText);
+
+                }
+
+                foreach (Crop crop1 in cropLists)
+                {
+
+                    string showText = crop1.Id + ". " + crop1.Name;
+                    cbCrop.Items.Add(showText);
+
+                }
+
+                foreach (Vehicle vehicle in vehicleList)
+                {
+
+                    string showText = vehicle.Id + ". " + vehicle.Name;
+                    cbVehicle.Items.Add(showText);
+
+                }
+
+                foreach (Employee employee in employeeList)
+                {
+                    if (employee.Admin == false)
+                    {
+                        string showText = employee.Id + ". " + employee.Username;
+                        cbEmployee.Items.Add(showText);
+                    }
+
+                }
+
+                
+            
+            }
+        }
+
+        public void checkAssignJobandAdd()
+        {
+
+            TestSQL ts = new TestSQL();
+            cropLists = ts.GetCropList();
+            employeeList = ts.GetEmployeeList();
+            farmLists = ts.GetFarmList();
+            vehicleList = ts.GetVehicleList();
+            harvestLists = ts.GetHarvestingJobList();
+
+            DateTime start_date = Convert.ToDateTime("12/12/2018");
+            DateTime end_date = Convert.ToDateTime("12/12/2018");
+            DateTime currentDate = Convert.ToDateTime(DateTime.Now.ToString("MM/dd/yyyy"));
+            int duration = 0; int todayduration = 0;
+            foreach (Employee employee in employeeList)
+            {
+                foreach (HarvestingJob harvest in harvestLists)
+                {
+                    start_date = Convert.ToDateTime(harvest.Date_start.ToString());
+                    end_date = Convert.ToDateTime(harvest.Date_end.ToString());
+                    duration = Convert.ToInt32((end_date - start_date).TotalDays);
+                    todayduration = Convert.ToInt32((currentDate - start_date).TotalDays);
+                    if (duration < todayduration)
+                    {
+                        cbEmployee.Items.Add(employee.Id.ToString());
+                        //add();
+                        MessageBox.Show("yes");
+                    }
+                    else
+                    {
+                        MessageBox.Show("no");
+                    }
+                }
             }
         }
 
@@ -94,21 +201,21 @@ namespace JustRipeFarm
             {
                 if (String.IsNullOrEmpty(textBox1.Text))
                 {
-                    if (String.IsNullOrEmpty(textBox2.Text))
+                    if (String.IsNullOrEmpty(cbHarvest.Text))
                     {
-                        if (String.IsNullOrEmpty(textBox3.Text))
+                        if (String.IsNullOrEmpty(cbCrop.Text))
                         {
-                            if (String.IsNullOrEmpty(textBox4.Text))
+                            if (String.IsNullOrEmpty(cbBox.Text))
                             {
                                 if (String.IsNullOrEmpty(textBox5.Text))
                                 {
-                                    if (String.IsNullOrEmpty(textBox6.Text))
+                                    if (String.IsNullOrEmpty(cbVehicle.Text))
                                     {
-                                        if (String.IsNullOrEmpty(textBox7.Text))
+                                        if (String.IsNullOrEmpty(cbEmployee.Text))
                                         {
-                                            if (String.IsNullOrEmpty(dateTimePicker1.Text))
+                                            if (String.IsNullOrEmpty(dtpStart.Text))
                                             {
-                                                if (String.IsNullOrEmpty(dateTimePicker2.Text))
+                                                if (String.IsNullOrEmpty(dtpEnd.Text))
                                                 {
                                                     MessageBox.Show("Please fill up the box");
                                                 }
@@ -130,6 +237,7 @@ namespace JustRipeFarm
                 }
                 else
                 {
+                    //checkAssignJobandAdd();
                     addStoringJob();
                 }
             }

@@ -28,15 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -48,44 +42,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnDone = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
+            this.cbPesticide = new System.Windows.Forms.ComboBox();
+            this.cbSoj = new System.Windows.Forms.ComboBox();
+            this.cbFarm = new System.Windows.Forms.ComboBox();
+            this.cbCrop = new System.Windows.Forms.ComboBox();
+            this.cbVehicle = new System.Windows.Forms.ComboBox();
+            this.cbEmployee = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(164, 252);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 22);
-            this.textBox8.TabIndex = 174;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(164, 208);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 22);
-            this.textBox7.TabIndex = 173;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(164, 172);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 22);
-            this.textBox6.TabIndex = 172;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(164, 135);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 22);
-            this.textBox5.TabIndex = 171;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(164, 103);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 170;
             // 
             // textBox3
             // 
@@ -94,13 +59,6 @@
             this.textBox3.Size = new System.Drawing.Size(100, 22);
             this.textBox3.TabIndex = 169;
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(164, 35);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 168;
-            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(164, 4);
@@ -108,12 +66,12 @@
             this.textBox1.Size = new System.Drawing.Size(100, 22);
             this.textBox1.TabIndex = 167;
             // 
-            // dateTimePicker1
+            // dtpStart
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(164, 288);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(230, 22);
-            this.dateTimePicker1.TabIndex = 166;
+            this.dtpStart.Location = new System.Drawing.Point(164, 288);
+            this.dtpStart.Name = "dtpStart";
+            this.dtpStart.Size = new System.Drawing.Size(230, 22);
+            this.dtpStart.TabIndex = 166;
             // 
             // label7
             // 
@@ -183,9 +141,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(51, 44);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 17);
+            this.label3.Size = new System.Drawing.Size(84, 17);
             this.label3.TabIndex = 156;
-            this.label3.Text = "fertiliser id:";
+            this.label3.Text = "Pesticide id:";
             // 
             // label1
             // 
@@ -217,12 +175,12 @@
             this.btnDone.UseVisualStyleBackColor = true;
             this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
-            // dateTimePicker2
+            // dtpEnd
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(161, 325);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(230, 22);
-            this.dateTimePicker2.TabIndex = 176;
+            this.dtpEnd.Location = new System.Drawing.Point(161, 325);
+            this.dtpEnd.Name = "dtpEnd";
+            this.dtpEnd.Size = new System.Drawing.Size(230, 22);
+            this.dtpEnd.TabIndex = 176;
             // 
             // label10
             // 
@@ -233,22 +191,70 @@
             this.label10.TabIndex = 175;
             this.label10.Text = "Date end:";
             // 
+            // cbPesticide
+            // 
+            this.cbPesticide.FormattingEnabled = true;
+            this.cbPesticide.Location = new System.Drawing.Point(161, 37);
+            this.cbPesticide.Name = "cbPesticide";
+            this.cbPesticide.Size = new System.Drawing.Size(121, 24);
+            this.cbPesticide.TabIndex = 177;
+            // 
+            // cbSoj
+            // 
+            this.cbSoj.FormattingEnabled = true;
+            this.cbSoj.Location = new System.Drawing.Point(161, 105);
+            this.cbSoj.Name = "cbSoj";
+            this.cbSoj.Size = new System.Drawing.Size(121, 24);
+            this.cbSoj.TabIndex = 178;
+            // 
+            // cbFarm
+            // 
+            this.cbFarm.FormattingEnabled = true;
+            this.cbFarm.Location = new System.Drawing.Point(161, 140);
+            this.cbFarm.Name = "cbFarm";
+            this.cbFarm.Size = new System.Drawing.Size(121, 24);
+            this.cbFarm.TabIndex = 179;
+            // 
+            // cbCrop
+            // 
+            this.cbCrop.FormattingEnabled = true;
+            this.cbCrop.Location = new System.Drawing.Point(161, 174);
+            this.cbCrop.Name = "cbCrop";
+            this.cbCrop.Size = new System.Drawing.Size(121, 24);
+            this.cbCrop.TabIndex = 180;
+            // 
+            // cbVehicle
+            // 
+            this.cbVehicle.FormattingEnabled = true;
+            this.cbVehicle.Location = new System.Drawing.Point(161, 212);
+            this.cbVehicle.Name = "cbVehicle";
+            this.cbVehicle.Size = new System.Drawing.Size(121, 24);
+            this.cbVehicle.TabIndex = 181;
+            // 
+            // cbEmployee
+            // 
+            this.cbEmployee.FormattingEnabled = true;
+            this.cbEmployee.Location = new System.Drawing.Point(161, 250);
+            this.cbEmployee.Name = "cbEmployee";
+            this.cbEmployee.Size = new System.Drawing.Size(121, 24);
+            this.cbEmployee.TabIndex = 182;
+            // 
             // FormPesticideJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dateTimePicker2);
+            this.ClientSize = new System.Drawing.Size(412, 450);
+            this.Controls.Add(this.cbEmployee);
+            this.Controls.Add(this.cbVehicle);
+            this.Controls.Add(this.cbCrop);
+            this.Controls.Add(this.cbFarm);
+            this.Controls.Add(this.cbSoj);
+            this.Controls.Add(this.cbPesticide);
+            this.Controls.Add(this.dtpEnd);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpStart);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
@@ -269,15 +275,9 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpStart;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -289,7 +289,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnDone;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpEnd;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cbPesticide;
+        private System.Windows.Forms.ComboBox cbSoj;
+        private System.Windows.Forms.ComboBox cbFarm;
+        private System.Windows.Forms.ComboBox cbCrop;
+        private System.Windows.Forms.ComboBox cbVehicle;
+        private System.Windows.Forms.ComboBox cbEmployee;
     }
 }
