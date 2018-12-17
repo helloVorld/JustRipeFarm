@@ -82,7 +82,7 @@ namespace JustRipeFarm
         }
         public void add()
         {
-            checkAsignJobandAdd();
+            //checkAsignJobandAdd();
             SowingJob s1 = new SowingJob();
             s1.Description = tbDescription.Text;
             string idStr = cbCrop.Text.Split('.')[0];
@@ -228,10 +228,11 @@ namespace JustRipeFarm
 
             DateTime start_date = Convert.ToDateTime("12/12/2018");
             DateTime end_date = Convert.ToDateTime("12/12/2018");
-            DateTime currentDate = Convert.ToDateTime(DateTime.Now.ToString("MM/dd/yyyy"));
+            DateTime currentDate = Convert.ToDateTime(DateTime.Now.ToString("MMM/dd/yyyy"));
             int duration = 0; int todayduration = 0;
-            foreach (Employee employee in employeeList)
+            foreach (Employee employee1 in employeeList)
             {
+                //var sowing_list = sowingLists.Where(employee => employee.Id == employee1.Id);
                 foreach(SowingJob sowing in sowingLists)
                 {
                     start_date = Convert.ToDateTime(sowing.Date_start.ToString());
@@ -242,13 +243,13 @@ namespace JustRipeFarm
                     todayduration = Convert.ToInt32((currentDate - start_date).TotalDays);
                     if (duration < todayduration)
                     {
-                        cbEmployee.Items.Add(employee.Id.ToString());
+                        //cbEmployee.Items.Add(employee.Id.ToString());
                         //add();
-                        //MessageBox.Show("yes");
+                        MessageBox.Show("yes");
                     }
                     else
                     {
-                        //MessageBox.Show("no");
+                        MessageBox.Show("no");
                     }
                 }
             }

@@ -457,6 +457,11 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[0].BtnNew;
                     btnEditItem.Text = pnItems[0].BtnEdit;
                     btnUpdateField.Text = pnItems[0].BtnUpdate;
+                    currentSearchOption = JobOp.getOrderList();
+                    foreach (string str in currentSearchOption)
+                    {
+                        cbFilter1.Items.Add(str);
+                    }
                     currentUpdateOption = JRF.OrderStatusOption();
                     foreach ( string str in currentUpdateOption)
                     {
@@ -480,7 +485,11 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[1].BtnNew;
                     btnEditItem.Text = pnItems[1].BtnEdit;
                     btnUpdateField.Text = pnItems[1].BtnUpdate;
-
+                    currentSearchOption = JobOp.getProductList();
+                    foreach (string str in currentSearchOption)
+                    {
+                        cbFilter1.Items.Add(str);
+                    }
                     try
                     {
                         currentDataSet = JRFdataset.Table.getAllProduct().Tables[0];
@@ -499,6 +508,11 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[2].BtnNew;
                     btnEditItem.Text = pnItems[2].BtnEdit;
                     btnUpdateField.Text = pnItems[2].BtnUpdate;
+                    currentSearchOption = JobOp.getSowingJobList();
+                    foreach (string str in currentSearchOption)
+                    {
+                        cbFilter1.Items.Add(str);
+                    }
                     try
                     {
                         currentDataSet = JRFdataset.Table.getAllSowing().Tables[0];
@@ -516,6 +530,11 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[3].BtnNew;
                     btnEditItem.Text = pnItems[3].BtnEdit;
                     btnUpdateField.Text = pnItems[3].BtnUpdate;
+                    currentSearchOption = JobOp.getHarvestingJobList();
+                    foreach (string str in currentSearchOption)
+                    {
+                        cbFilter1.Items.Add(str);
+                    }
                     try
                     {
                         currentDataSet = JRFdataset.Table.getAllHarvesting().Tables[0];
@@ -533,6 +552,11 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[4].BtnNew;
                     btnEditItem.Text = pnItems[4].BtnEdit;
                     btnUpdateField.Text = pnItems[4].BtnUpdate;
+                    currentSearchOption = JobOp.getStoringJobList();
+                    foreach (string str in currentSearchOption)
+                    {
+                        cbFilter1.Items.Add(str);
+                    }
                     try
                     {
                         currentDataSet = JRFdataset.Table.getAllStoringJobStorage().Tables[0];
@@ -550,6 +574,11 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[5].BtnNew;
                     btnEditItem.Text = pnItems[5].BtnEdit;
                     btnUpdateField.Text = pnItems[5].BtnUpdate;
+                    currentSearchOption = JobOp.getFertilisingList();
+                    foreach (string str in currentSearchOption)
+                    {
+                        cbFilter1.Items.Add(str);
+                    }
                     try
                     {
                         currentDataSet = JRFdataset.Table.getAllFertilising().Tables[0];
@@ -567,6 +596,11 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[6].BtnNew;
                     btnEditItem.Text = pnItems[6].BtnEdit;
                     btnUpdateField.Text = pnItems[6].BtnUpdate;
+                    currentSearchOption = JobOp.getPesticideJobList();
+                    foreach (string str in currentSearchOption)
+                    {
+                        cbFilter1.Items.Add(str);
+                    }
                     try
                     {
                         currentDataSet = JRFdataset.Table.getAllPests().Tables[0];
@@ -610,6 +644,11 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[8].BtnNew;
                     btnEditItem.Text = pnItems[8].BtnEdit;
                     btnUpdateField.Text = pnItems[8].BtnUpdate;
+                    currentSearchOption = JobOp.getEmployeeList();
+                    foreach (string str in currentSearchOption)
+                    {
+                        cbFilter1.Items.Add(str);
+                    }
                     try
                     {
                         currentDataSet = JRFdataset.Table.getAllEmployee().Tables[0];
@@ -627,6 +666,11 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[9].BtnNew;
                     btnEditItem.Text = pnItems[9].BtnEdit;
                     btnUpdateField.Text = pnItems[9].BtnUpdate;
+                    currentSearchOption = JobOp.getCustomerList();
+                    foreach (string str in currentSearchOption)
+                    {
+                        cbFilter1.Items.Add(str);
+                    }
                     try
                     {
                         currentDataSet = JRFdataset.Table.getAllCustomer().Tables[0];
@@ -644,6 +688,11 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[10].BtnNew;
                     btnEditItem.Text = pnItems[10].BtnEdit;
                     btnUpdateField.Text = pnItems[10].BtnUpdate;
+                    currentSearchOption = JobOp.getStoreroomList();
+                    foreach (string str in currentSearchOption)
+                    {
+                        cbFilter1.Items.Add(str);
+                    }
                     try
                     {
                         currentDataSet = JRFdataset.Table.getAllStoreroom().Tables[0];
@@ -661,6 +710,11 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[11].BtnNew;
                     btnEditItem.Text = pnItems[11].BtnEdit;
                     btnUpdateField.Text = pnItems[11].BtnUpdate;
+                    currentSearchOption = JobOp.getVehicleList();
+                    foreach (string str in currentSearchOption)
+                    {
+                        cbFilter1.Items.Add(str);
+                    }
                     try
                     {
                         currentDataSet = JRFdataset.Table.getAllVehicle().Tables[0];
@@ -679,6 +733,11 @@ namespace JustRipeFarm
                     btnEditItem.Text = pnItems[12].BtnEdit;
                     btnUpdateField.Text = pnItems[12].BtnUpdate;
                     currentDataSet = JRFdataset.Table.getAllCrop().Tables[0];
+                    currentSearchOption = JobOp.getCropList();
+                    foreach (string str in currentSearchOption)
+                    {
+                        cbFilter1.Items.Add(str);
+                    }
                     try
                     {
                         currentDataSet = JRFdataset.Table.getAllCrop().Tables[0];
@@ -696,6 +755,11 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[13].BtnNew;
                     btnEditItem.Text = pnItems[13].BtnEdit;
                     btnUpdateField.Text = pnItems[13].BtnUpdate;
+                    currentSearchOption = JobOp.getFertiliserList();
+                    foreach (string str in currentSearchOption)
+                    {
+                        cbFilter1.Items.Add(str);
+                    }
                     try
                     {
                         currentDataSet = JRFdataset.Table.getAllFertiliser().Tables[0];
@@ -713,6 +777,11 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[14].BtnNew;
                     btnEditItem.Text = pnItems[14].BtnEdit;
                     btnUpdateField.Text = pnItems[14].BtnUpdate;
+                    currentSearchOption = JobOp.getPesticideList();
+                    foreach (string str in currentSearchOption)
+                    {
+                        cbFilter1.Items.Add(str);
+                    }
                     try
                     {
                         currentDataSet = JRFdataset.Table.getAllPesticide().Tables[0];
@@ -730,6 +799,11 @@ namespace JustRipeFarm
                     btnNewItem.Text = pnItems[15].BtnNew;
                     btnEditItem.Text = pnItems[15].BtnEdit;
                     btnUpdateField.Text = pnItems[15].BtnUpdate;
+                    currentSearchOption = JobOp.getBoxList();
+                    foreach (string str in currentSearchOption)
+                    {
+                        cbFilter1.Items.Add(str);
+                    }
                     try
                     {
                         currentDataSet = JRFdataset.Table.getAllBox().Tables[0];
