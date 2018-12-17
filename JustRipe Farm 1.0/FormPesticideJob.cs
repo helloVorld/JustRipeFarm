@@ -17,7 +17,7 @@ namespace JustRipeFarm
         List<Vehicle> vehicleList;
         List<Farm> farmLists;
         List<SowingJob> sowingLists;
-        List<HarvestingJob> harvestLists;
+        //List<HarvestingJob> harvestLists;
         List<Employee> employeeList;
         List<Pesticide> pesticideList;
         List<PesticideJob> pesticideLists;
