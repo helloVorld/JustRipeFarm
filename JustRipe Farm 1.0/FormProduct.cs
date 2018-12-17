@@ -67,6 +67,7 @@ namespace JustRipeFarm
             InsertSQL prodHnd = new InsertSQL();
             int addrecord = prodHnd.addNewProduct(prod);
             MessageBox.Show("Your record is added");
+            this.Close();
         }
 
         private void update()
