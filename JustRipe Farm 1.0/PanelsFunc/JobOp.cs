@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using JustRipeFarm.ClassEntity;
 
 namespace JustRipeFarm
 {
@@ -93,6 +94,265 @@ namespace JustRipeFarm
             return 0;
         }
 
+        public static List<string> getOrderList()
+        {
+            Order order = new Order();
+            List<string> flist = new List<string>();
+            MySqlDataReader rdr = null;
+            try
+            {
+                string tableName = "orders";
+                string query = "SELECT * FROM " + tableName;
+
+                MySqlCommand cmd = new MySqlCommand(query, MysqlDbc.Instance.getConn());
+                rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    order.Description = rdr.GetString("description");
+                    flist.Add(order.Description);
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+            }
+
+            return flist;
+        }
+
+        public static List<string> getProductList()
+        {
+            Product prod = new Product();
+            List<string> flist = new List<string>();
+            MySqlDataReader rdr = null;
+            try
+            {
+                string tableName = "product";
+                string query = "SELECT * FROM " + tableName;
+
+                MySqlCommand cmd = new MySqlCommand(query, MysqlDbc.Instance.getConn());
+                rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    prod.Name = rdr.GetString("name");
+                    flist.Add(prod.Name);
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+            }
+
+            return flist;
+        }
+
+        public static List<string> getSowingJobList()
+        {
+            SowingJob sowing = new SowingJob();
+            List<string> flist = new List<string>();
+            MySqlDataReader rdr = null;
+            try
+            {
+                string tableName = "sowingjob";
+                string query = "SELECT * FROM " + tableName;
+
+                MySqlCommand cmd = new MySqlCommand(query, MysqlDbc.Instance.getConn());
+                rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    sowing.Description = rdr.GetString("description");
+                    flist.Add(sowing.Description);
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+            }
+
+            return flist;
+        }
+
+        public static List<string> getHarvestingJobList()
+        {
+            HarvestingJob harvesting = new HarvestingJob();
+            List<string> flist = new List<string>();
+            MySqlDataReader rdr = null;
+            try
+            {
+                string tableName = "harvestingjob";
+                string query = "SELECT * FROM " + tableName;
+
+                MySqlCommand cmd = new MySqlCommand(query, MysqlDbc.Instance.getConn());
+                rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    harvesting.Description = rdr.GetString("description");
+                    flist.Add(harvesting.Description);
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+            }
+
+            return flist;
+        }
+
+        public static List<string> getStoringJobList()
+        {
+            StoringJob storing = new StoringJob();
+            List<string> flist = new List<string>();
+            MySqlDataReader rdr = null;
+            try
+            {
+                string tableName = "storingjob";
+                string query = "SELECT * FROM " + tableName;
+
+                MySqlCommand cmd = new MySqlCommand(query, MysqlDbc.Instance.getConn());
+                rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    storing.Description = rdr.GetString("description");
+                    flist.Add(storing.Description);
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+            }
+
+            return flist;
+        }
+
+        public static List<string> getFertilisingList()
+        {
+            FertilisingJob fertilising = new FertilisingJob();
+            List<string> flist = new List<string>();
+            MySqlDataReader rdr = null;
+            try
+            {
+                string tableName = "fertilisingjob";
+                string query = "SELECT * FROM " + tableName;
+
+                MySqlCommand cmd = new MySqlCommand(query, MysqlDbc.Instance.getConn());
+                rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    fertilising.Description = rdr.GetString("description");
+                    flist.Add(fertilising.Description);
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+            }
+
+            return flist;
+        }
+
+        public static List<string> getPesticideJobList()
+        {
+            PesticideJob pest = new PesticideJob();
+            List<string> flist = new List<string>();
+            MySqlDataReader rdr = null;
+            try
+            {
+                string tableName = "pesticidejob";
+                string query = "SELECT * FROM " + tableName;
+
+                MySqlCommand cmd = new MySqlCommand(query, MysqlDbc.Instance.getConn());
+                rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    pest.Description = rdr.GetString("description");
+                    flist.Add(pest.Description);
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+            }
+
+            return flist;
+        }
+
         public static List<string> getFarmList()
         {
             Farm farm = new Farm();
@@ -129,6 +389,303 @@ namespace JustRipeFarm
 
             return flist;
         }
+
+        public static List<string> getEmployeeList()
+        {
+            Employee employee = new Employee();
+            List<string> flist = new List<string>();
+            MySqlDataReader rdr = null;
+            try
+            {
+                string tableName = "employee";
+                string query = "SELECT * FROM " + tableName;
+
+                MySqlCommand cmd = new MySqlCommand(query, MysqlDbc.Instance.getConn());
+                rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    employee.First_name = rdr.GetString("first_name");
+                    flist.Add(employee.First_name);
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+            }
+
+            return flist;
+        }
+
+        public static List<string> getCustomerList()
+        {
+            Customer customer = new Customer();
+            List<string> flist = new List<string>();
+            MySqlDataReader rdr = null;
+            try
+            {
+                string tableName = "customer";
+                string query = "SELECT * FROM " + tableName;
+
+                MySqlCommand cmd = new MySqlCommand(query, MysqlDbc.Instance.getConn());
+                rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    customer.Name = rdr.GetString("name");
+                    flist.Add(customer.Name);
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+            }
+
+            return flist;
+        }
+
+        public static List<string> getStoreroomList()
+        {
+            Storeroom storeroom = new Storeroom();
+            List<string> flist = new List<string>();
+            MySqlDataReader rdr = null;
+            try
+            {
+                string tableName = "storeroom";
+                string query = "SELECT * FROM " + tableName;
+
+                MySqlCommand cmd = new MySqlCommand(query, MysqlDbc.Instance.getConn());
+                rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    storeroom.Description = rdr.GetString("description");
+                    flist.Add(storeroom.Description);
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+            }
+
+            return flist;
+        }
+
+        public static List<string> getVehicleList()
+        {
+            Vehicle vehicle = new Vehicle();
+            List<string> flist = new List<string>();
+            MySqlDataReader rdr = null;
+            try
+            {
+                string tableName = "vehicle";
+                string query = "SELECT * FROM " + tableName;
+
+                MySqlCommand cmd = new MySqlCommand(query, MysqlDbc.Instance.getConn());
+                rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    vehicle.Name = rdr.GetString("name");
+                    flist.Add(vehicle.Name);
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+            }
+
+            return flist;
+        }
+
+        public static List<string> getCropList()
+        {
+            Crop crop = new Crop();
+            List<string> flist = new List<string>();
+            MySqlDataReader rdr = null;
+            try
+            {
+                string tableName = "crop";
+                string query = "SELECT * FROM " + tableName;
+
+                MySqlCommand cmd = new MySqlCommand(query, MysqlDbc.Instance.getConn());
+                rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    crop.Name = rdr.GetString("name");
+                    flist.Add(crop.Name);
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+            }
+
+            return flist;
+        }
+
+        public static List<string> getFertiliserList()
+        {
+            Fertiliser fertiliser = new Fertiliser();
+            List<string> flist = new List<string>();
+            MySqlDataReader rdr = null;
+            try
+            {
+                string tableName = "fertiliser";
+                string query = "SELECT * FROM " + tableName;
+
+                MySqlCommand cmd = new MySqlCommand(query, MysqlDbc.Instance.getConn());
+                rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    fertiliser.Name = rdr.GetString("name");
+                    flist.Add(fertiliser.Name);
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+            }
+
+            return flist;
+        }
+
+        public static List<string> getPesticideList()
+        {
+            Pesticide pesticide = new Pesticide();
+            List<string> flist = new List<string>();
+            MySqlDataReader rdr = null;
+            try
+            {
+                string tableName = "pesticide";
+                string query = "SELECT * FROM " + tableName;
+
+                MySqlCommand cmd = new MySqlCommand(query, MysqlDbc.Instance.getConn());
+                rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    pesticide.Name = rdr.GetString("name");
+                    flist.Add(pesticide.Name);
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+            }
+
+            return flist;
+        }
+
+        public static List<string> getBoxList()
+        {
+            Box box = new Box();
+            List<string> flist = new List<string>();
+            MySqlDataReader rdr = null;
+            try
+            {
+                string tableName = "box";
+                string query = "SELECT * FROM " + tableName;
+
+                MySqlCommand cmd = new MySqlCommand(query, MysqlDbc.Instance.getConn());
+                rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    box.Name = rdr.GetString("name");
+                    flist.Add(box.Name);
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+            }
+
+            return flist;
+        }
+
 
         public static int GetAllJobCountFor(bool isToday,int employeeID)
         {
