@@ -28,12 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -45,24 +40,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnDone = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpStart = new System.Windows.Forms.DateTimePicker();
+            this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
+            this.cbHarvest = new System.Windows.Forms.ComboBox();
+            this.cbCrop = new System.Windows.Forms.ComboBox();
+            this.cbBox = new System.Windows.Forms.ComboBox();
+            this.cbVehicle = new System.Windows.Forms.ComboBox();
+            this.cbEmployee = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(207, 215);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 22);
-            this.textBox7.TabIndex = 111;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(207, 178);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 22);
-            this.textBox6.TabIndex = 110;
             // 
             // textBox5
             // 
@@ -70,27 +56,6 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 22);
             this.textBox5.TabIndex = 109;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(207, 107);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 108;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(207, 78);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 107;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(207, 39);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 106;
             // 
             // textBox1
             // 
@@ -147,7 +112,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(75, 78);
+            this.label3.Location = new System.Drawing.Point(80, 75);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 17);
             this.label3.TabIndex = 95;
@@ -192,19 +157,19 @@
             this.btnDone.UseVisualStyleBackColor = true;
             this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
-            // dateTimePicker1
+            // dtpStart
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(207, 248);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 117;
+            this.dtpStart.Location = new System.Drawing.Point(207, 248);
+            this.dtpStart.Name = "dtpStart";
+            this.dtpStart.Size = new System.Drawing.Size(200, 22);
+            this.dtpStart.TabIndex = 117;
             // 
-            // dateTimePicker2
+            // dtpEnd
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(207, 293);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker2.TabIndex = 119;
+            this.dtpEnd.Location = new System.Drawing.Point(207, 293);
+            this.dtpEnd.Name = "dtpEnd";
+            this.dtpEnd.Size = new System.Drawing.Size(200, 22);
+            this.dtpEnd.TabIndex = 119;
             // 
             // label8
             // 
@@ -215,20 +180,60 @@
             this.label8.TabIndex = 118;
             this.label8.Text = "Date end:";
             // 
+            // cbHarvest
+            // 
+            this.cbHarvest.FormattingEnabled = true;
+            this.cbHarvest.Location = new System.Drawing.Point(207, 39);
+            this.cbHarvest.Name = "cbHarvest";
+            this.cbHarvest.Size = new System.Drawing.Size(121, 24);
+            this.cbHarvest.TabIndex = 120;
+            // 
+            // cbCrop
+            // 
+            this.cbCrop.FormattingEnabled = true;
+            this.cbCrop.Location = new System.Drawing.Point(206, 72);
+            this.cbCrop.Name = "cbCrop";
+            this.cbCrop.Size = new System.Drawing.Size(121, 24);
+            this.cbCrop.TabIndex = 121;
+            // 
+            // cbBox
+            // 
+            this.cbBox.FormattingEnabled = true;
+            this.cbBox.Location = new System.Drawing.Point(206, 112);
+            this.cbBox.Name = "cbBox";
+            this.cbBox.Size = new System.Drawing.Size(121, 24);
+            this.cbBox.TabIndex = 122;
+            // 
+            // cbVehicle
+            // 
+            this.cbVehicle.FormattingEnabled = true;
+            this.cbVehicle.Location = new System.Drawing.Point(207, 174);
+            this.cbVehicle.Name = "cbVehicle";
+            this.cbVehicle.Size = new System.Drawing.Size(121, 24);
+            this.cbVehicle.TabIndex = 123;
+            // 
+            // cbEmployee
+            // 
+            this.cbEmployee.FormattingEnabled = true;
+            this.cbEmployee.Location = new System.Drawing.Point(207, 211);
+            this.cbEmployee.Name = "cbEmployee";
+            this.cbEmployee.Size = new System.Drawing.Size(121, 24);
+            this.cbEmployee.TabIndex = 124;
+            // 
             // FormStoringJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dateTimePicker2);
+            this.ClientSize = new System.Drawing.Size(456, 450);
+            this.Controls.Add(this.cbEmployee);
+            this.Controls.Add(this.cbVehicle);
+            this.Controls.Add(this.cbBox);
+            this.Controls.Add(this.cbCrop);
+            this.Controls.Add(this.cbHarvest);
+            this.Controls.Add(this.dtpEnd);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.dtpStart);
             this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
@@ -249,12 +254,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
@@ -266,8 +266,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnDone;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpStart;
+        private System.Windows.Forms.DateTimePicker dtpEnd;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cbHarvest;
+        private System.Windows.Forms.ComboBox cbCrop;
+        private System.Windows.Forms.ComboBox cbBox;
+        private System.Windows.Forms.ComboBox cbVehicle;
+        private System.Windows.Forms.ComboBox cbEmployee;
     }
 }

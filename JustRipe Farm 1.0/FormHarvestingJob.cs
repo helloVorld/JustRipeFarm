@@ -164,7 +164,7 @@ namespace JustRipeFarm
                 foreach (SowingJob sow in sowingLists)
                 {
 
-                    cbCrop.Items.Add(sow.Id);
+                    cbSoj.Items.Add(sow.Id);
 
                 }
 

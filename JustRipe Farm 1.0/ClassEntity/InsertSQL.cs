@@ -591,5 +591,236 @@ namespace JustRipeFarm.ClassEntity
             return harvestLists;
         }
 
+        public List<Box> GetBoxList() //string employee_id
+        {
+            List<Box> boxLists = new List<Box>();
+            MySqlDataReader rdr = null;
+            try
+            {
+
+
+                string stm = "SELECT * FROM box";
+                MySqlCommand cmd = new MySqlCommand(stm, MysqlDbc.Instance.getConn());
+                rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    Box sj1 = new Box();
+                    sj1.Id = rdr.GetInt32("id"); ;
+                    sj1.Name = rdr.GetString("name");
+                    sj1.Width = rdr.GetDouble("width");
+                    sj1.Height = rdr.GetDouble("height");
+                    sj1.Length = rdr.GetDouble("length");
+                    sj1.Max_weight = rdr.GetDouble("max_weight");
+                    sj1.Quantity = rdr.GetInt32("quantity");
+                    sj1.Status = rdr.GetString("status");
+                    
+
+                    boxLists.Add(sj1);
+
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+            }
+
+            return boxLists;
+        }
+
+        public List<Pesticide> GetPesticideList() //string employee_id
+        {
+            List<Pesticide> pesticideLists = new List<Pesticide>();
+            MySqlDataReader rdr = null;
+            try
+            {
+
+
+                string stm = "SELECT * FROM pesticide";
+                MySqlCommand cmd = new MySqlCommand(stm, MysqlDbc.Instance.getConn());
+                rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    Pesticide sj1 = new Pesticide();
+                    sj1.Id = rdr.GetInt32("id"); ;
+                    sj1.Name = rdr.GetString("name");
+                    sj1.Quantity_kg = rdr.GetInt32("quantity_kg");
+                    sj1.Remark = rdr.GetString("remark");
+
+
+                    pesticideLists.Add(sj1);
+
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+            }
+
+            return pesticideLists;
+        }
+
+        public List<Fertiliser> GetFertiliserList() //string employee_id
+        {
+            List<Fertiliser> fertiliserLists = new List<Fertiliser>();
+            MySqlDataReader rdr = null;
+            try
+            {
+
+
+                string stm = "SELECT * FROM fertiliser";
+                MySqlCommand cmd = new MySqlCommand(stm, MysqlDbc.Instance.getConn());
+                rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    Fertiliser sj1 = new Fertiliser();
+                    sj1.Id = rdr.GetInt32("id"); ;
+                    sj1.Name = rdr.GetString("name");
+                    sj1.Quantity_kg = rdr.GetInt32("quantity_kg");
+                    sj1.Remark = rdr.GetString("remark");
+
+
+                    fertiliserLists.Add(sj1);
+
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+            }
+
+            return fertiliserLists;
+        }
+
+        public List<FertilisingJob> GetFertilisingJobList() //string employee_id
+        {
+            List<FertilisingJob> fertiliserLists = new List<FertilisingJob>();
+            MySqlDataReader rdr = null;
+            try
+            {
+
+
+                string stm = "SELECT * FROM fertilisingjob";
+                MySqlCommand cmd = new MySqlCommand(stm, MysqlDbc.Instance.getConn());
+                rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    FertilisingJob sj1 = new FertilisingJob();
+                    sj1.Id = rdr.GetInt32("id"); ;
+                    sj1.Description = rdr.GetString("description");
+                    sj1.Fertiliser_id = rdr.GetInt32("fertiliser_id");
+                    sj1.Quantity_kg = rdr.GetInt32("quantity_kg");
+                    sj1.SowingJob_id = rdr.GetInt32("sowingJob_id");
+                    sj1.Farm_id = rdr.GetInt32("farm_id");
+                    sj1.Crop_id = rdr.GetInt32("crop_id");
+                    sj1.Vehicle_id = rdr.GetInt32("vehicle_id");
+                    sj1.Employee_id = rdr.GetInt32("employee_id");
+                    sj1.Date_start = rdr.GetDateTime("date_start");
+                    sj1.Date_end = rdr.GetDateTime("date_end");
+
+                    fertiliserLists.Add(sj1);
+
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+            }
+
+            return fertiliserLists;
+        }
+
+        public List<PesticideJob> GetPesticideJobList() //string employee_id
+        {
+            List<PesticideJob> pesticideLists = new List<PesticideJob>();
+            MySqlDataReader rdr = null;
+            try
+            {
+
+
+                string stm = "SELECT * FROM pesticidejob";
+                MySqlCommand cmd = new MySqlCommand(stm, MysqlDbc.Instance.getConn());
+                rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    PesticideJob sj1 = new PesticideJob();
+                    sj1.Id = rdr.GetInt32("id"); ;
+                    sj1.Description = rdr.GetString("description");
+                    sj1.Pesticide_id = rdr.GetInt32("pesticide_id");
+                    sj1.Quantity_kg = rdr.GetInt32("quantity_kg");
+                    sj1.SowingJob_id = rdr.GetInt32("sowingJob_id");
+                    sj1.Farm_id = rdr.GetInt32("farm_id");
+                    sj1.Crop_id = rdr.GetInt32("crop_id");
+                    sj1.Vehicle_id = rdr.GetInt32("vehicle_id");
+                    sj1.Employee_id = rdr.GetInt32("employee_id");
+                    sj1.Date_start = rdr.GetDateTime("date_start");
+                    sj1.Date_end = rdr.GetDateTime("date_end");
+
+                    pesticideLists.Add(sj1);
+
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+            }
+
+            return pesticideLists;
+        }
+
     }
 }
