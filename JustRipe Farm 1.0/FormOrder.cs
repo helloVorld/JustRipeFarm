@@ -117,7 +117,7 @@ namespace JustRipeFarm
             ordi.Description = textBox1.Text;
             ordi.Product_id = Int32.Parse(comboBox1.Text);
             ordi.Quantity_box = Int32.Parse(textBox2.Text);
-            ordi.Weight = Int32.Parse(textBox3.Text);
+            ordi.Weight = Double.Parse(textBox3.Text);
             ordi.PalletAllocation = int.Parse(textBox4.Text);
             ordi.Customer_id = int.Parse(comboBox2.Text);
             ordi.Order_date = this.dateTimePicker2.Value;

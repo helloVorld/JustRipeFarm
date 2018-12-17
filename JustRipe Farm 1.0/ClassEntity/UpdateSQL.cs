@@ -11,7 +11,7 @@ namespace JustRipeFarm.ClassEntity
     {
         public int UpdateOrder(Order order)
         {
-            string query = "UPDATE orders SET description = @description ,product_id = @product_id,quantity_box = @quantity_box,weight = @weight,palletAllocation = @palletAllocation,customer_id = @customer_id, order_date = @order_date, collection = @collection, price = @price, status = @status, remark = @remark " +
+            string query = "UPDATE orders SET description = @description,product_id = @product_id,quantity_box = @quantity_box,weight = @weight,palletAllocation = @palletAllocation,customer_id = @customer_id, order_date = @order_date, collection = @collection, price = @price, status = @status, remark = @remark " +
                                    "WHERE id = " + order.Id;
             MySqlCommand sqlComm = new MySqlCommand(query, MysqlDbc.Instance.getConn());
             sqlComm.Parameters.Add("@description", MySqlDbType.Text).Value = order.Description;
@@ -31,7 +31,7 @@ namespace JustRipeFarm.ClassEntity
 
         public int UpdateEmployee(Employee employee)
         {
-            string query = "UPDATE" + " employee SET first_name=@first_name,last_name=@last_name,username=@username,password=@password,dob=@dob,mobile=@mobile,email=@email,admin=@admin,status=@status,remark=@remark " +
+            string query = "UPDATE" + " employee SET first_name =@first_name,last_name= @last_name,username= @username,password= @password,dob= @dob,mobile= @mobile,email= @email,admin= @admin,status= @status,remark= @remark " +
                                            "WHERE id = " + employee.Id;
             MySqlCommand sqlComm = new MySqlCommand(query, MysqlDbc.Instance.getConn());
             sqlComm.Parameters.Add("@first_name", MySqlDbType.Text).Value = employee.First_name;
@@ -50,7 +50,7 @@ namespace JustRipeFarm.ClassEntity
 
         public int updateCustomer(Customer customer)
         {
-            string query = "UPDATE" + " customer SET name=@name,email=@email,phone=@phone,remark=@remark " +
+            string query = "UPDATE" + " customer SET name = @name, email = @email,p hone= @ phone , remark = @remark " +
                                            "WHERE id = " + customer.Id;
             MySqlCommand sqlComm = new MySqlCommand(query, MysqlDbc.Instance.getConn());
             sqlComm.Parameters.Add("@name", MySqlDbType.Text).Value = customer.Name;
