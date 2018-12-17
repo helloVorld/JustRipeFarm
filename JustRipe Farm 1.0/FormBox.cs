@@ -42,6 +42,7 @@ namespace JustRipeFarm
         private void updateBox()
         {
             Box box = new Box();
+            box.Id = bb1.Id;
             box.Name = textBox1.Text;
             box.Width = Convert.ToDouble(textBox2.Text);
             box.Height = Convert.ToDouble(textBox3.Text);

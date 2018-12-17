@@ -63,6 +63,7 @@ namespace JustRipeFarm
         public void updateFarm()
         {
             Farm f1 = new Farm();
+            f1.Id = farmfarm.Id;
             f1.Description = descriptionText.Text;
             f1.Area = Convert.ToInt32(areaText.Text);
             f1.Utilize_area = Convert.ToInt32(utiliseAreaText.Text);

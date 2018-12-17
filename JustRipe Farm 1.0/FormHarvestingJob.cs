@@ -20,7 +20,7 @@ namespace JustRipeFarm
         List<HarvestingJob> harvestLists;
         List<Employee> employeeList;
         public string state = "";
-        public HarvestingJob hj1;
+        public HarvestingJob hj11;
         public FormHarvestingJob()
         {
             InitializeComponent();
@@ -114,6 +114,7 @@ namespace JustRipeFarm
         private void updateHarvestingJob()
         {
             HarvestingJob hj = new HarvestingJob();
+            hj.Id = hj11.Id;
             hj.Description = textBox1.Text;
             hj.SowingJob_id = Convert.ToInt32(cbSoj.Text);
             string idStr = cbFarm.Text.Split('.')[0];
@@ -141,16 +142,16 @@ namespace JustRipeFarm
 
             if (state == "Edit")
             {
-                textBox1.Text = hj1.Description;
-                cbSoj.Text = hj1.SowingJob_id.ToString();
-                cbFarm.Text = hj1.Farm_id.ToString();
-                cbCrop.Text = hj1.Crop_id.ToString();
-                cbVehicle.Text = hj1.Vehicle_id.ToString();
-                numericUpDown1.Text = hj1.Est_quantity.ToString();
-                numericUpDown2.Text = hj1.Harvested_quantity.ToString();
-                cbEmployee.Text = hj1.Employee_id.ToString();
-                dtpStart1.Text = hj1.Date_start.ToString();
-                dtpEnd.Text = hj1.Date_end.ToString();
+                textBox1.Text = hj11.Description;
+                cbSoj.Text = hj11.SowingJob_id.ToString();
+                cbFarm.Text = hj11.Farm_id.ToString();
+                cbCrop.Text = hj11.Crop_id.ToString();
+                cbVehicle.Text = hj11.Vehicle_id.ToString();
+                numericUpDown1.Text = hj11.Est_quantity.ToString();
+                numericUpDown2.Text = hj11.Harvested_quantity.ToString();
+                cbEmployee.Text = hj11.Employee_id.ToString();
+                dtpStart1.Text = hj11.Date_start.ToString();
+                dtpEnd.Text = hj11.Date_end.ToString();
 
 
                 TestSQL ts = new TestSQL();

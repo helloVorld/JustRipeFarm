@@ -23,7 +23,7 @@ namespace JustRipeFarm
         List<PesticideJob> pesticideLists;
 
         public string state = "";
-        public PesticideJob pjj1;
+        public PesticideJob pjj11;
         public FormPesticideJob()
         {
             InitializeComponent();
@@ -63,6 +63,7 @@ namespace JustRipeFarm
         private void updatePesticideJob()
         {
             PesticideJob pj = new PesticideJob();
+            pj.Id = pjj11.Id;
             pj.Description = textBox1.Text;
             string idStr = cbPesticide.Text.Split('.')[0];
             pj.Pesticide_id = int.Parse(idStr);
@@ -184,16 +185,16 @@ namespace JustRipeFarm
 
             if (state == "Edit")
             {
-                textBox1.Text = pjj1.Description;
-                cbPesticide.Text = pjj1.Pesticide_id.ToString();
-                textBox3.Text = pjj1.Quantity_kg.ToString();
-                cbSoj.Text = pjj1.SowingJob_id.ToString();
-                cbFarm.Text = pjj1.Farm_id.ToString();
-                cbCrop.Text = pjj1.Crop_id.ToString();
-                cbVehicle.Text = pjj1.Vehicle_id.ToString();
-                cbEmployee.Text = pjj1.Employee_id.ToString();
-                dtpStart.Value = pjj1.Date_start;
-                dtpEnd.Value = pjj1.Date_end;
+                textBox1.Text = pjj11.Description;
+                cbPesticide.Text = pjj11.Pesticide_id.ToString();
+                textBox3.Text = pjj11.Quantity_kg.ToString();
+                cbSoj.Text = pjj11.SowingJob_id.ToString();
+                cbFarm.Text = pjj11.Farm_id.ToString();
+                cbCrop.Text = pjj11.Crop_id.ToString();
+                cbVehicle.Text = pjj11.Vehicle_id.ToString();
+                cbEmployee.Text = pjj11.Employee_id.ToString();
+                dtpStart.Value = pjj11.Date_start;
+                dtpEnd.Value = pjj11.Date_end;
 
                 TestSQL ts = new TestSQL();
                 cropLists = ts.GetCropList();

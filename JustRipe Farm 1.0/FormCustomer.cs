@@ -26,18 +26,7 @@ namespace JustRipeFarm
             InitializeComponent();
         }
 
-        private void FormCustomer_Load(object sender, EventArgs e)
-        {
-            InsertSQL customer = new InsertSQL();
-
-            if (state == "Edit")
-            {
-                textBox1.Text = cust.Name;
-                textBox2.Text = cust.Email;
-                textBox3.Text = cust.Phone;
-                textBox4.Text = cust.Remark;
-            }
-        }
+        
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -60,13 +49,13 @@ namespace JustRipeFarm
                         {
                             if (String.IsNullOrEmpty(textBox4.Text))
                             {
-                                MessageBox.Show("Please check remark again");
+                                MessageBox.Show("Please check again");
                             }
-                            MessageBox.Show("Please check phone again");
+                            MessageBox.Show("Please check again");
                         }
-                        MessageBox.Show("Please check email again");
+                        MessageBox.Show("Please check again");
                     }
-                    MessageBox.Show("Please check name again");
+                    MessageBox.Show("Please check again");
                 }
                 else
                 {
@@ -93,6 +82,7 @@ namespace JustRipeFarm
         {
             //CheckCustomer(textBox1.Text, textBox2.Text, textBox3.Text, textBox2.Text);
             Customer custU = new Customer();
+            custU.Id = cust.Id;
             custU.Name = textBox1.Text;
             custU.Email = textBox2.Text;
             custU.Phone = textBox3.Text;
@@ -104,7 +94,21 @@ namespace JustRipeFarm
             this.Close();
         }
 
-        
+
+        private void FormCustomer_Load(object sender, EventArgs e)
+        {
+            InsertSQL customer1 = new InsertSQL();
+
+            if (state == "Edit")
+            {
+                textBox1.Text = cust.Name;
+                textBox2.Text = cust.Email;
+                textBox3.Text = cust.Phone;
+                textBox4.Text = cust.Remark;
+            }
+        }
+
+
 
         private void phoneText_KeyPress(object sender, KeyPressEventArgs e)
         {

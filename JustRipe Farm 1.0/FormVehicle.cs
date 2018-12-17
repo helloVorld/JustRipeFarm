@@ -14,7 +14,7 @@ namespace JustRipeFarm
     public partial class FormVehicle : Form
     {
         public string state = "";
-        public Vehicle v1;
+        public Vehicle v11;
         public FormVehicle()
         {
             InitializeComponent();
@@ -73,6 +73,7 @@ namespace JustRipeFarm
         public void updateVehicle()
         {
             Vehicle vech = new Vehicle();
+            vech.Id = v11.Id;
             vech.Name = nameText.Text;
             vech.Serial_number = serialNumText.Text;
             vech.Buy_date = this.buyDateTimePicker.Value;
@@ -100,11 +101,11 @@ namespace JustRipeFarm
 
             if (state == "Edit")
             {
-                nameText.Text = v1.Name;
-                serialNumText.Text = v1.Serial_number;
-                buyDateTimePicker.Text = v1.Buy_date.ToString();
-                serviceDateTimePicker.Text = v1.Last_service_date.ToString();
-                remarkText.Text = v1.Remark.ToString();
+                nameText.Text = v11.Name;
+                serialNumText.Text = v11.Serial_number;
+                buyDateTimePicker.Text = v11.Buy_date.ToString();
+                serviceDateTimePicker.Text = v11.Last_service_date.ToString();
+                remarkText.Text = v11.Remark.ToString();
             }
         }
     }

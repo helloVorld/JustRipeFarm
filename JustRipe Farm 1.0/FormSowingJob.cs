@@ -109,6 +109,7 @@ namespace JustRipeFarm
         public void update()
         {
             SowingJob s1 = new SowingJob();
+            s1.Id = sowj.Id;
             s1.Description = tbDescription.Text;
             string idStr = cbCrop.Text.Split('.')[0];
             s1.Crop_id = int.Parse(idStr);

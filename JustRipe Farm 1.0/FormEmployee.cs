@@ -14,7 +14,7 @@ namespace JustRipeFarm
     public partial class FormEmployee : Form
     {
         public string state = "";
-        public Employee emp;
+        public Employee emp1;
 
         public FormEmployee()
         {
@@ -102,7 +102,7 @@ namespace JustRipeFarm
         public void UpdateEmployee()
         {
             Employee empi = new Employee();
-            //empi.Id = emp.Id;
+            empi.Id = emp1.Id;
             empi.First_name = firstNameText.Text;
             empi.Last_name = lastNameText.Text;
             empi.Username = usernameText.Text;
@@ -132,16 +132,16 @@ namespace JustRipeFarm
 
             if (state == "Edit")
             {
-                firstNameText.Text = emp.First_name;
-                lastNameText.Text = emp.Last_name;
-                usernameText.Text = emp.Username;
-                passwordText.Text = emp.Password;
-                dobText.Text = emp.Dob.ToString();
-                mobileText.Text = emp.Mobile;
-                emailText.Text = emp.Email;
-                adminText.Text = emp.Admin.ToString();
-                statusText.Text = emp.Status;
-                remarkText.Text = emp.Remark;
+                firstNameText.Text = emp1.First_name;
+                lastNameText.Text = emp1.Last_name;
+                usernameText.Text = emp1.Username;
+                passwordText.Text = emp1.Password;
+                dobText.Text = emp1.Dob.ToString();
+                mobileText.Text = emp1.Mobile;
+                emailText.Text = emp1.Email;
+                adminText.Text = emp1.Admin.ToString();
+                statusText.Text = emp1.Status;
+                remarkText.Text = emp1.Remark;
             }
         }
     }

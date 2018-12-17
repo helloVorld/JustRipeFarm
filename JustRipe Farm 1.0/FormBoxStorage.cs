@@ -16,7 +16,7 @@ namespace JustRipeFarm
     {
 
         public string state = "";
-        public BoxStorage bs1;
+        public BoxStorage bs11;
 
         public FormBoxStorage()
         {
@@ -45,6 +45,7 @@ namespace JustRipeFarm
         private void updateBoxStorage()
         {
             BoxStorage bs1 = new BoxStorage();
+            bs1.Id = bs11.Id;
             bs1.StoringJob_id = int.Parse(textBox1.Text);
             bs1.Product_id = int.Parse(textBox2.Text);
             bs1.Box_id = int.Parse(textBox3.Text);
@@ -78,16 +79,16 @@ namespace JustRipeFarm
 
                 if (state == "Edit")
                 {
-                    bs1.Add_date = Convert.ToDateTime(dateTimePicker1.Text);
-                    textBox1.Text = bs1.StoringJob_id.ToString();
-                    textBox2.Text = bs1.Product_id.ToString();
-                    textBox3.Text = bs1.Box_id.ToString();
-                    textBox4.Text = bs1.NettWeight.ToString();
-                    textBox5.Text = bs1.Storeroom_id.ToString();
-                    dateTimePicker1.Value = bs1.Add_date;
-                    dateTimePicker2.Value = bs1.Best_before;
-                    dateTimePicker3.Value = bs1.Out_date;
-                    textBox6.Text = bs1.Order_id.ToString();
+                    bs11.Add_date = Convert.ToDateTime(dateTimePicker1.Text);
+                    textBox1.Text = bs11.StoringJob_id.ToString();
+                    textBox2.Text = bs11.Product_id.ToString();
+                    textBox3.Text = bs11.Box_id.ToString();
+                    textBox4.Text = bs11.NettWeight.ToString();
+                    textBox5.Text = bs11.Storeroom_id.ToString();
+                    dateTimePicker1.Value = bs11.Add_date;
+                    dateTimePicker2.Value = bs11.Best_before;
+                    dateTimePicker3.Value = bs11.Out_date;
+                    textBox6.Text = bs11.Order_id.ToString();
 
                 }
             }

@@ -843,7 +843,7 @@ namespace JustRipeFarm
                     fp.state = newOrEdit;
                     if (newOrEdit == "Edit")
                     {
-                        fp.prod = JRFdataset.Table.GetProductFromID(currentID);
+                        fp.prodd = JRFdataset.Table.GetProductFromID(currentID);
                     }
                     fp.Show();
                     break;
@@ -862,7 +862,7 @@ namespace JustRipeFarm
                     if (newOrEdit == "Edit")
                     {
                         // MySQL Need Check 
-                        hj.hj1 = JRFdataset.Table.GetHarvestingJobFromID(currentID);
+                        hj.hj11 = JRFdataset.Table.GetHarvestingJobFromID(currentID);
                     }
                     hj.Show();
 
@@ -873,7 +873,7 @@ namespace JustRipeFarm
                     if (newOrEdit == "Edit")
                     {
                         // MySQL Need Check 
-                        sj1.sj = JRFdataset.Table.GetStoringJobFromID(currentID);
+                        sj1.sj1 = JRFdataset.Table.GetStoringJobFromID(currentID);
                     }
                     sj1.Show();
 
@@ -884,7 +884,7 @@ namespace JustRipeFarm
                     if (newOrEdit == "Edit")
                     {
                         // MySQL Need Check 
-                        fj1.jb1 = JRFdataset.Table.GetFertilisingJobFromID(currentID);
+                        fj1.fb11 = JRFdataset.Table.GetFertilisingJobFromID(currentID);
                     }
                     fj1.Show();
                     
@@ -895,7 +895,7 @@ namespace JustRipeFarm
                     if (newOrEdit == "Edit")
                     {
                         // MySQL Need Check 
-                        fp1.pjj1 = JRFdataset.Table.GetPesticideJobFromID(currentID);
+                        fp1.pjj11 = JRFdataset.Table.GetPesticideJobFromID(currentID);
                     }
                     fp1.Show();
 
@@ -917,7 +917,7 @@ namespace JustRipeFarm
                     if (newOrEdit == "Edit")
                     {
                         // MySQL Need Check 
-                        fe.emp = JRFdataset.Table.GetEmployeeFromID(currentID);
+                        fe.emp1 = JRFdataset.Table.GetEmployeeFromID(currentID);
                     }
                     fe.Show();
 
@@ -950,7 +950,7 @@ namespace JustRipeFarm
                     if (newOrEdit == "Edit")
                     {
                         // MySQL Need Check 
-                        fv.v1 = JRFdataset.Table.GetVehicleFromID(currentID);
+                        fv.v11 = JRFdataset.Table.GetVehicleFromID(currentID);
                     }
                     fv.Show();
                     
@@ -970,7 +970,7 @@ namespace JustRipeFarm
                     f1.state = newOrEdit;
                     if (newOrEdit == "Edit")
                     {
-                        f1.f1 = JRFdataset.Table.GetFertiliserFromID(currentID);
+                        f1.f11 = JRFdataset.Table.GetFertiliserFromID(currentID);
                     }
                     f1.Show();
                     
@@ -980,7 +980,7 @@ namespace JustRipeFarm
                     p1.state = newOrEdit;
                     if (newOrEdit == "Edit")
                     {
-                        p1.p1 = JRFdataset.Table.GetPesticideFromID(currentID);
+                        p1.p11 = JRFdataset.Table.GetPesticideFromID(currentID);
                     }
                     p1.Show();
                     break;

@@ -90,6 +90,7 @@ namespace JustRipeFarm
         public void updateCrop()
         {
             Crop crop = new Crop();
+            crop.Id = cr.Id;
             crop.Name = textBox1.Text;
             crop.Type = textBox2.Text;
             crop.Quantity_plot = Convert.ToInt32(textBox3.Text);

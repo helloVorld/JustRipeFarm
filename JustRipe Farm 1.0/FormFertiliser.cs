@@ -17,7 +17,7 @@ namespace JustRipeFarm
         List<Fertiliser> FertiliserList;
 
         public string state = "";
-        public Fertiliser f1;
+        public Fertiliser f11;
 
 
         public FormFertiliser()
@@ -76,6 +76,7 @@ namespace JustRipeFarm
         private void updateFertiliser()
         {
             Fertiliser f1 = new Fertiliser();
+            f1.Id = f11.Id;
             f1.Name = textBox1.Text;
             f1.Quantity_kg = Convert.ToInt32(textBox2.Text);
             f1.Remark = textBox3.Text;
@@ -92,9 +93,9 @@ namespace JustRipeFarm
 
             if (state == "Edit")
             {
-                textBox1.Text = f1.Name;
-                textBox2.Text = f1.Quantity_kg.ToString();
-                textBox3.Text = f1.Remark;
+                textBox1.Text = f11.Name;
+                textBox2.Text = f11.Quantity_kg.ToString();
+                textBox3.Text = f11.Remark;
             }
         }
     }

@@ -23,7 +23,7 @@ namespace JustRipeFarm
         List<FertilisingJob> fertiliserLists;
 
         public string state = "";
-        public FertilisingJob jb1;
+        public FertilisingJob fb11;
         public FormFertilisingJob()
         {
             InitializeComponent();
@@ -154,6 +154,7 @@ namespace JustRipeFarm
         private void updateFertiliser()
         {
             FertilisingJob fj = new FertilisingJob();
+            fj.Id = fb11.Id;
             fj.Description = textBox1.Text;
             string idStr = cbFertiliser.Text.Split('.')[0];
             fj.Fertiliser_id = int.Parse(idStr);
@@ -183,16 +184,16 @@ namespace JustRipeFarm
 
             if (state == "Edit")
             {
-                textBox1.Text = jb1.Description;
-                cbFertiliser.Text = jb1.Fertiliser_id.ToString();
-                textBox3.Text = jb1.Quantity_kg.ToString();
-                cbSoj.Text = jb1.SowingJob_id.ToString();
-                cbFarm.Text = jb1.Farm_id.ToString();
-                cbCrop.Text = jb1.Crop_id.ToString();
-                cbVehicle.Text = jb1.Vehicle_id.ToString();
-                cbEmployee.Text = jb1.Employee_id.ToString();
-                dtpStart.Text = jb1.Date_start.ToString();
-                dtpEnd.Text = jb1.Date_end.ToString();
+                textBox1.Text = fb11.Description;
+                cbFertiliser.Text = fb11.Fertiliser_id.ToString();
+                textBox3.Text = fb11.Quantity_kg.ToString();
+                cbSoj.Text = fb11.SowingJob_id.ToString();
+                cbFarm.Text = fb11.Farm_id.ToString();
+                cbCrop.Text = fb11.Crop_id.ToString();
+                cbVehicle.Text = fb11.Vehicle_id.ToString();
+                cbEmployee.Text = fb11.Employee_id.ToString();
+                dtpStart.Text = fb11.Date_start.ToString();
+                dtpEnd.Text = fb11.Date_end.ToString();
 
 
                 TestSQL ts = new TestSQL();

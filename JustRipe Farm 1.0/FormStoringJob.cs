@@ -21,7 +21,7 @@ namespace JustRipeFarm
         List<Employee> employeeList;
         List<Box> boxList;
         public string state = "";
-        public StoringJob sj;
+        public StoringJob sj1;
 
         public FormStoringJob()
         {
@@ -60,6 +60,7 @@ namespace JustRipeFarm
         private void updateStoringJob()
         {
             StoringJob sj = new StoringJob();
+            sj.Id = sj1.Id;
             sj.Description = textBox1.Text;
             string idStr = cbHarvest.Text.Split('.')[0];
             sj.Harvest_id = int.Parse(idStr);
@@ -87,15 +88,15 @@ namespace JustRipeFarm
 
             if (state == "Edit")
             {
-                textBox1.Text = sj.Description;
-                cbHarvest.Text = sj.Harvest_id.ToString();
-                cbCrop.Text = sj.Crop_id.ToString();
-                cbBox.Text = sj.Box_id.ToString();
-                textBox5.Text = sj.Quantity.ToString();
-                cbVehicle.Text = sj.Vehicle_id.ToString();
-                cbEmployee.Text = sj.Employee_id.ToString();
-                dtpStart.Value = sj.Date_start;
-                dtpEnd.Value = sj.Date_end;
+                textBox1.Text = sj1.Description;
+                cbHarvest.Text = sj1.Harvest_id.ToString();
+                cbCrop.Text = sj1.Crop_id.ToString();
+                cbBox.Text = sj1.Box_id.ToString();
+                textBox5.Text = sj1.Quantity.ToString();
+                cbVehicle.Text = sj1.Vehicle_id.ToString();
+                cbEmployee.Text = sj1.Employee_id.ToString();
+                dtpStart.Value = sj1.Date_start;
+                dtpEnd.Value = sj1.Date_end;
 
                 TestSQL ts = new TestSQL();
                 cropLists = ts.GetCropList();

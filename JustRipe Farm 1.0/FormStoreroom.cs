@@ -68,6 +68,7 @@ namespace JustRipeFarm
         public void updateStock()
         {
             Storeroom store = new Storeroom();
+            store.Id = sr1.Id;
             store.Description = descriptionText.Text;
             store.StoringQty = Convert.ToInt32(storeNumericUpDown.Value);
             store.Temperature = Int32.Parse(tempText.Text);

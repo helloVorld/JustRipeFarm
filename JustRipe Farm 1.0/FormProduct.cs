@@ -14,7 +14,7 @@ namespace JustRipeFarm
     public partial class FormProduct : Form
     {
         public string state = "";
-        public Product prod;
+        public Product prodd;
         public FormProduct()
         {
             InitializeComponent();
@@ -72,7 +72,9 @@ namespace JustRipeFarm
 
         private void update()
         {
+            
             Product prod = new Product();
+            prod.Id = prodd.Id;
             prod.Name = nameText.Text;
             prod.Type = typeText.Text;
             prod.Quantity_box = Convert.ToInt32(quantityNumericUpDown.Value);
@@ -80,8 +82,8 @@ namespace JustRipeFarm
             prod.Box_id = Int32.Parse(boxIdText.Text);
 
             UpdateSQL prodHnd = new UpdateSQL();
-            int addrecord = prodHnd.updateProduct(prod);
-            MessageBox.Show("Your record is added");
+            int updaterecord = prodHnd.updateProduct(prod);
+            MessageBox.Show(updaterecord + " Your record is added");
             this.Close();
         }
 
@@ -91,11 +93,11 @@ namespace JustRipeFarm
 
             if (state == "Edit")
             {
-                nameText.Text = prod.Name;
-                typeText.Text = prod.Type;
-                quantityNumericUpDown.Text = prod.Quantity_box.ToString();
-                weightText.Text = prod.Weight.ToString();
-                boxIdText.Text = prod.Box_id.ToString();
+                nameText.Text = prodd.Name;
+                typeText.Text = prodd.Type;
+                quantityNumericUpDown.Text = prodd.Quantity_box.ToString();
+                weightText.Text = prodd.Weight.ToString();
+                boxIdText.Text = prodd.Box_id.ToString();
             }
         }
 

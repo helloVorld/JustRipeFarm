@@ -14,7 +14,7 @@ namespace JustRipeFarm
     public partial class FormPesticide : Form
     {
         public string state = "";
-        public Pesticide p1;
+        public Pesticide p11;
         public FormPesticide()
         {
             InitializeComponent();
@@ -23,6 +23,7 @@ namespace JustRipeFarm
         public void UpdatePesticide()
         {
             Pesticide p1 = new Pesticide();
+            p1.Id = p11.Id;
             p1.Name = textBox1.Text;
             p1.Quantity_kg = Int32.Parse(textBox2.Text);
             p1.Remark = textBox3.Text;
@@ -78,9 +79,9 @@ namespace JustRipeFarm
 
             if (state == "Edit")
             {
-                textBox1.Text = p1.Name;
-                textBox2.Text = p1.Quantity_kg.ToString();
-                textBox3.Text = p1.Remark;
+                textBox1.Text = p11.Name;
+                textBox2.Text = p11.Quantity_kg.ToString();
+                textBox3.Text = p11.Remark;
             }
 
         }
