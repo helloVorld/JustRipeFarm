@@ -950,6 +950,7 @@ namespace JustRipeFarm
 
         private void panelOperation_Paint(object sender, PaintEventArgs e)
         {
+            
             Console.WriteLine("panel operation loaded");
             
             lblTodaySowing.Text = JobOp.GetJobCountFor(true,"sowingjob").ToString();

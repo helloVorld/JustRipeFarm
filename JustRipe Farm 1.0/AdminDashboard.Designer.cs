@@ -265,9 +265,9 @@
             this.label19.Location = new System.Drawing.Point(8, 36);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(84, 25);
+            this.label19.Size = new System.Drawing.Size(68, 25);
             this.label19.TabIndex = 6;
-            this.label19.Text = "Pending";
+            this.label19.Text = "Future";
             // 
             // lblPendingAllOrder
             // 
@@ -346,9 +346,9 @@
             this.label17.Location = new System.Drawing.Point(8, 36);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(84, 25);
+            this.label17.Size = new System.Drawing.Size(68, 25);
             this.label17.TabIndex = 6;
-            this.label17.Text = "Pending";
+            this.label17.Text = "Future";
             // 
             // lblPendingAllJob
             // 
@@ -476,9 +476,9 @@
             this.label32.Location = new System.Drawing.Point(8, 36);
             this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(84, 25);
+            this.label32.Size = new System.Drawing.Size(68, 25);
             this.label32.TabIndex = 6;
-            this.label32.Text = "Pending";
+            this.label32.Text = "Future";
             // 
             // lblPendingPest
             // 
@@ -557,9 +557,9 @@
             this.label28.Location = new System.Drawing.Point(8, 36);
             this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(84, 25);
+            this.label28.Size = new System.Drawing.Size(68, 25);
             this.label28.TabIndex = 6;
-            this.label28.Text = "Pending";
+            this.label28.Text = "Future";
             // 
             // lblPendingFertilising
             // 
@@ -638,9 +638,9 @@
             this.label24.Location = new System.Drawing.Point(8, 36);
             this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(84, 25);
+            this.label24.Size = new System.Drawing.Size(68, 25);
             this.label24.TabIndex = 6;
-            this.label24.Text = "Pending";
+            this.label24.Text = "Future";
             // 
             // lblPendingStore
             // 
@@ -719,9 +719,9 @@
             this.label20.Location = new System.Drawing.Point(8, 36);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(84, 25);
+            this.label20.Size = new System.Drawing.Size(68, 25);
             this.label20.TabIndex = 6;
-            this.label20.Text = "Pending";
+            this.label20.Text = "Future";
             // 
             // lblPendingHarvest
             // 
@@ -800,9 +800,9 @@
             this.label16.Location = new System.Drawing.Point(8, 36);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(84, 25);
+            this.label16.Size = new System.Drawing.Size(68, 25);
             this.label16.TabIndex = 6;
-            this.label16.Text = "Pending";
+            this.label16.Text = "Future";
             // 
             // lblPendingSowing
             // 
@@ -1063,7 +1063,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1157, 923);
+            this.ClientSize = new System.Drawing.Size(1157, 863);
             this.Controls.Add(this.panelCommon);
             this.Controls.Add(this.panelHome);
             this.Controls.Add(this.panelOperation);

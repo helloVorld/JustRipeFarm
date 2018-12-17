@@ -82,12 +82,11 @@ namespace JustRipeFarm
                     }
                 }  
             }
-            
-
-            //Mainscreen mainscreen = new Mainscreen();
-            //mainscreen.Show();
-            //this.Close();
         }
+        //upcode
+        //Mainscreen mainscreen = new Mainscreen();
+        //mainscreen.Show();
+        //this.Close();
 
         private void labDashBtn_Click(object sender, EventArgs e)
         {

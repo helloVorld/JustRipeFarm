@@ -81,6 +81,7 @@ namespace JustRipeFarm
             UpdateSQL prodHnd = new UpdateSQL();
             int addrecord = prodHnd.updateProduct(prod);
             MessageBox.Show("Your record is added");
+            this.Close();
         }
 
         private void FormProduct_Load(object sender, EventArgs e)

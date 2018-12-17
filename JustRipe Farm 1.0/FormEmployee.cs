@@ -15,6 +15,7 @@ namespace JustRipeFarm
     {
         public string state = "";
         public Employee emp;
+
         public FormEmployee()
         {
             InitializeComponent();
@@ -126,6 +127,9 @@ namespace JustRipeFarm
 
         private void FormEmployee_Load(object sender, EventArgs e)
         {
+
+            InsertSQL farm = new InsertSQL();
+
             if (state == "Edit")
             {
                 firstNameText.Text = emp.First_name;

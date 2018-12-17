@@ -44,7 +44,7 @@ namespace JustRipeFarm
                         {
                             if (String.IsNullOrEmpty(Convert.ToString(cbFarm.Text)))
                             {
-                                if (String.IsNullOrEmpty(Convert.ToString(nUDArea.Text)))
+                                if (String.IsNullOrEmpty(Convert.ToString(textBox1.Text)))
                                 {
                                     if (String.IsNullOrEmpty(Convert.ToString(cbVehicle.Text)))
                                     {
@@ -74,15 +74,15 @@ namespace JustRipeFarm
                 }
                 else
                 {
-                    //add();
-                    checkAsignJobandAdd();
+                    add();
+                    //checkAsignJobandAdd();
 
                 }
             }
         }
         public void add()
         {
-            checkAsignJobandAdd();
+            //checkAsignJobandAdd();
             SowingJob s1 = new SowingJob();
             s1.Description = tbDescription.Text;
             string idStr = cbCrop.Text.Split('.')[0];
@@ -90,7 +90,7 @@ namespace JustRipeFarm
             s1.Quantity_prop = Int32.Parse(nUDQty.Text);
             string idStr1 = cbFarm.Text.Split('.')[0];
             s1.Farm_id = int.Parse(idStr1);
-            s1.Used_area = nUDArea.Text;
+            s1.Used_area = textBox1.Text;
             string idStr2 = cbVehicle.Text.Split('.')[0];
             s1.Vehicle_id = int.Parse(idStr2);
             string idStr3 = cbEmployee.Text.Split('.')[0];
@@ -102,6 +102,7 @@ namespace JustRipeFarm
             InsertSQL add = new InsertSQL();
             int addrecord = add.addNewSowingJob(s1);
             MessageBox.Show("Success!!");
+            
             this.Close();
         }
 
@@ -114,7 +115,7 @@ namespace JustRipeFarm
             s1.Quantity_prop = int.Parse(nUDQty.Text);
             string idStr1 = cbFarm.Text.Split('.')[0];
             s1.Farm_id = int.Parse(idStr1);
-            s1.Used_area = nUDArea.Text;
+            s1.Used_area = textBox1.Text;
             string idStr2 = cbVehicle.Text.Split('.')[0];
             s1.Vehicle_id = int.Parse(idStr2);
             string idStr3 = cbEmployee.Text.Split('.')[0];
@@ -144,7 +145,7 @@ namespace JustRipeFarm
                 cbCrop.Text = sowj.Crop_id.ToString();
                 nUDQty.Text = sowj.Quantity_prop.ToString();
                 cbFarm.Text = sowj.Farm_id.ToString();
-                nUDArea.Text = sowj.Used_area.ToString();
+                textBox1.Text = sowj.Used_area.ToString();
                 cbVehicle.Text = sowj.Vehicle_id.ToString();
                 cbEmployee.Text = sowj.Employee_id.ToString();
                 dtpDate.Value = sowj.Date_start;

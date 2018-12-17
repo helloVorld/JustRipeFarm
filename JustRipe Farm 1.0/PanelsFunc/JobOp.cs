@@ -17,10 +17,8 @@ namespace JustRipeFarm
             List<int> datesRead = new List<int>();
             MySqlDataReader rdr = null;
             try
-            {
-
-                
-                string query = "SELECT * FROM `"+ tableName + "` WHERE " + tableName + ".date "+ condition + " CURRENT_DATE";
+            { 
+                string query = "SELECT * FROM `"+ tableName + "` WHERE " + tableName + ".date_start "+ condition + " CURRENT_DATE";
                 
                 MySqlCommand cmd = new MySqlCommand(query, MysqlDbc.Instance.getConn());
                 rdr = cmd.ExecuteReader();
@@ -29,7 +27,7 @@ namespace JustRipeFarm
                 {
                     int id = rdr.GetInt32("id");
                     
-                    DateTime dd = rdr.GetDateTime("date");
+                    DateTime dd = rdr.GetDateTime("date_start");
                     Console.WriteLine("get job => " + id + " => " + dd);
                     datesRead.Add(id);
                 }
@@ -63,7 +61,7 @@ namespace JustRipeFarm
             {
 
 
-                string query = "SELECT * FROM `" + tableName + "` WHERE " + tableName + ".date " + condition + " CURRENT_DATE AND "+tableName+".employee_id = "+employeeID;
+                string query = "SELECT * FROM `" + tableName + "` WHERE " + tableName + ".date_start " + condition + " CURRENT_DATE AND "+tableName+".employee_id = "+employeeID;
 
                 MySqlCommand cmd = new MySqlCommand(query, MysqlDbc.Instance.getConn());
                 rdr = cmd.ExecuteReader();
@@ -72,7 +70,7 @@ namespace JustRipeFarm
                 {
                     int id = rdr.GetInt32("id");
 
-                    DateTime dd = rdr.GetDateTime("date");
+                    DateTime dd = rdr.GetDateTime("date_start");
                     Console.WriteLine("get job => " + id + " => " + dd);
                     datesRead.Add(id);
                 }

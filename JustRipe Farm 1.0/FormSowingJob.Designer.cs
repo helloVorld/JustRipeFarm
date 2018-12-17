@@ -42,7 +42,6 @@
             this.cbCrop = new System.Windows.Forms.ComboBox();
             this.cbFarm = new System.Windows.Forms.ComboBox();
             this.nUDQty = new System.Windows.Forms.NumericUpDown();
-            this.nUDArea = new System.Windows.Forms.NumericUpDown();
             this.cbVehicle = new System.Windows.Forms.ComboBox();
             this.cbEmployee = new System.Windows.Forms.ComboBox();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
@@ -50,8 +49,8 @@
             this.dtpDate2 = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.dtpDateEnd = new System.Windows.Forms.DateTimePicker();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nUDQty)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nUDArea)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -192,14 +191,6 @@
             this.nUDQty.TabIndex = 19;
             this.nUDQty.ValueChanged += new System.EventHandler(this.nUDQty_ValueChanged);
             // 
-            // nUDArea
-            // 
-            this.nUDArea.Location = new System.Drawing.Point(177, 192);
-            this.nUDArea.Margin = new System.Windows.Forms.Padding(4);
-            this.nUDArea.Name = "nUDArea";
-            this.nUDArea.Size = new System.Drawing.Size(160, 22);
-            this.nUDArea.TabIndex = 20;
-            // 
             // cbVehicle
             // 
             this.cbVehicle.FormattingEnabled = true;
@@ -261,17 +252,24 @@
             this.dtpDateEnd.Size = new System.Drawing.Size(265, 22);
             this.dtpDateEnd.TabIndex = 27;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(177, 196);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(160, 22);
+            this.textBox1.TabIndex = 28;
+            // 
             // FormSowingJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(497, 549);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dtpDateEnd);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.cbEmployee);
             this.Controls.Add(this.cbVehicle);
-            this.Controls.Add(this.nUDArea);
             this.Controls.Add(this.nUDQty);
             this.Controls.Add(this.cbFarm);
             this.Controls.Add(this.cbCrop);
@@ -291,7 +289,6 @@
             this.Text = "Sowing Job";
             this.Load += new System.EventHandler(this.FormSowingJob_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nUDQty)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nUDArea)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,7 +310,6 @@
         private System.Windows.Forms.ComboBox cbCrop;
         private System.Windows.Forms.ComboBox cbFarm;
         private System.Windows.Forms.NumericUpDown nUDQty;
-        private System.Windows.Forms.NumericUpDown nUDArea;
         private System.Windows.Forms.ComboBox cbVehicle;
         private System.Windows.Forms.ComboBox cbEmployee;
         private System.Windows.Forms.DateTimePicker dtpDate;
@@ -321,5 +317,6 @@
         private System.Windows.Forms.DateTimePicker dtpDate2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DateTimePicker dtpDateEnd;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
